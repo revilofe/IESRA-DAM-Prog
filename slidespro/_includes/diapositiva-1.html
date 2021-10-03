@@ -1,0 +1,313 @@
+<section>
+    <section data-markdown>
+        # Unidad 1
+        ## Introducción a la programación en Kotlin
+    </section>
+    <!--
+        Bloques de diapositivas
+    -->
+    <section data-markdown>
+        ## Resultado de Aprendizaje 1
+        > Conoce la estructura de un programa informático, identificando y relacionando los elementos propios del
+        lenguaje de programación utilizado.
+    </section>
+    <section data-markdown>
+        ## Criterios de evaluación
+        - a) Se han identificado los bloques que componen la estructura de un programa informático.
+        - b) Se han creado proyectos de desarrollo de aplicaciones.
+        - c) Se han utilizado entornos integrados de desarrollo.
+        - d) Se han identificado los distintos tipos de variables y la utilidad específica de cada uno.
+        - e) Se ha modificado el código de un programa para crear y utilizar variables.
+        - f) Se han creado y utilizado constantes y literales.
+        - g) Se han clasificado, reconocido y utilizado en expresiones los operadores del lenguaje.
+        - h) Se ha comprobado el funcionamiento de las conversiones de tipos explícitas e implícitas.
+        - i) Se han introducido comentarios en el código.
+    </section>
+
+    <section data-markdown>
+        ## Contenidos mínimos:
+        **Identificación de los elementos de un programa informático:**
+        - Estructura y bloques fundamentales.
+        - Variables.
+        - Tipos de datos.
+        - Literales.
+        - Constantes.
+        - Operadores y expresiones.
+        - Conversiones de tipo.
+        - Comentarios.
+        - Entornos integrados de desarrollo.
+        - Definición y tipos. Entornos comerciales y de Softwarelibre.
+        - Instalación y descripción de entornos integrados dedesarrollo.
+        - Creación de proyectos. Estructura y componentes.
+    </section>
+    <section data-markdown>
+        *********************
+    </section>
+    <section data-markdown>
+        ## La programación 1
+        - [Definición](https://es.wikipedia.org/wiki/Programaci%C3%B3n)
+        - Es el **proceso** por el cual se desarrolla un **programa**, haciendo uso de herramientas como un **lenguajes
+        de programación** y de otra que sea capaz de “traducirlo” a lo que se conoce como lenguaje de máquina, que puede
+        "comprender" el microprocesador.
+        - **Ciclo de vida**: Entender el problema, recopilar requisitos, Planificar, Diseñar, Programar, Probar,
+        Desplegar, Mantener.
+    </section>
+    <section data-markdown>
+        ## La programación 2
+        ![](images/cdv.png)
+    </section>
+
+    <section data-markdown>
+        ## Ordenador 1
+        - **Máquina** electrónica, analógica o digital, dotada de una memoria de gran capacidad y de métodos de
+        tratamiento de la información, capaz de resolver problemas matemáticos y lógicos mediante la utilización de
+        programas informáticos.
+        - Un ordenador **ejecuta programas**, que son un conjunto de instrucciones representadas mediante un lenguaje de
+        programación y datos que se ejecutan de forma secuencial y que a partir de unos datos de entrada producen una
+        salida. Para ejecutar esos programas el ordenador sigue esta estructura básica:
+    </section>
+    <section data-markdown>
+        ## Ordenador 2
+        ![](images/Arquitectura_von_Neumann.png)
+    </section>
+
+    <section data-markdown>
+        ## Programa 1
+        - Un programa informático es una secuencia de instrucciones, escritas para realizar una tarea específica en un
+        computador.
+        - **Algoritmo**: En términos de programación, un algoritmo es una secuencia de pasos lógicos que permiten
+        solucionar un problema.
+    </section>
+    <section data-markdown>
+        ## Programa 2
+        ![](images/flujo.png)
+    </section>
+
+    <section data-markdown>
+        ## Lenguaje de programación
+        - [TIOBE](https://www.tiobe.com/tiobe-index/)
+        - [Encuesta stackoverflow](https://insights.stackoverflow.com/survey/2021#overview)
+        - ¿Que lenguajes de programación conoces?
+        - ¿Tienes alguna preferencia?
+        - ¿Cuás crees que se adapta mejor a [multiplataforma](https://kotlinlang.org/docs/mpp-intro.html)?
+
+    </section>
+
+    <section data-markdown>
+        ## [Kotlin](https://es.wikipedia.org/wiki/Kotlin) 1
+        - Kotlin Apareció en 2016
+        - Propietario por JetBrains, al giual que IntelliJ IDEA y Android Studio.
+        - Se ejecuta sobre la JVM de Java.
+        - Intenta mejorar Java, pero influido por Java, Scala, Groovy, C#
+        - Google lo nombra en el 2017 lenguaje oficial para Android.
+        - Totalmente interoperable con Java.
+        - [Kotlin for
+        Beginners](https://docs.google.com/document/d/1XIJaV3zhn-tJhDc_6Kr00lmTo5zCBuES3Yt67wX752M/edit#heading=h.cbodwtv878mx)
+    </section>
+
+    <section data-markdown>
+        ## [Kotlin](https://es.wikipedia.org/wiki/Kotlin) 2
+        ~~~
+        fun main() {
+        val scope = "mundo"
+        println("Hola, $scope!")
+        }
+        ~~~
+        https://play.kotlinlang.org/byExample
+
+    </section>
+
+    <section data-markdown>
+        # Comenzamos.
+    </section>
+
+    <section data-markdown>
+        ## Instalar IDE (RA1.c)
+        - Descargar e Instalar el IDE siguiendo el proceso
+        - Instalar Jet Brains Tools box, usarlo para instalar **IntelliJ Idea Edu**.
+        - URL https://www.jetbrains.com/es-es/idea/download
+    </section>
+
+    <section data-markdown>
+        ## Bloques básicos (RA1.a) 1
+        ![](images/bloquesPrograma.png) { width=50% }
+    </section>
+
+    <section data-markdown>
+        ## Bloques básicos (RA1.a) 2
+        - Main, punto de entrada
+        - https://kotlinlang.org/docs/basic-syntax.html#program-entry-point
+        - Paquetes e import
+        - https://kotlinlang.org/docs/basic-syntax.html#package-definition-and-imports
+        - Funciones
+        - https://kotlinlang.org/docs/basic-syntax.html#functions
+    </section>
+
+    <section data-markdown>
+        ## Crear proyecto (RA1.b)
+        ![](https://kotlinlang.org/docs/jvm-get-started.html#create-an-application)
+        - Lanzar el IDE y crear un proyecto.
+        - Proyecto tipo: Kotlin
+        - Nombre: Calc
+        - Plantilla: Aplicación de consola
+        - Junit 5
+    </section>
+
+    <section data-markdown>
+        ## Compilador, linea de comandos 1
+        - Instalar el compilador desde linea de comandos.
+        - Desde [esta pagina](https://kotlinlang.org/docs/command-line.html) puedes seguir los pasos
+        - Ten en cuenta el S.O.
+        - Si windows, instalalo manualmente, configura el path adecuadamente
+        - Si linux, usa SDKMAN.
+    </section>
+
+    <section data-markdown>
+        ## Compilador, linea de comandos 2
+        - Mira [aqui](https://github.com/JetBrains/kotlin/releases/tag/v1.5.31)
+        - Fijate en las descargas. ¿Cual es la diferencia?
+        - kotlin-compiler-xxxx.zip
+        - kotlin-native-xxxxxx.zip
+        - Siguiendo los pasos
+        - crea un programa basico con un editor.
+        - compilalo.
+        - ejecutalo.
+        - Mira la opcion de ejecución REPL ¿Que és?
+    </section>
+
+    <section data-markdown>
+        ## Gradle, 1
+        - Instalar gradle.
+        - Desde [esta pagina](https://gradle.org/install/) puedes seguir los pasos
+        - Ten en cuenta el S.O.
+        - Si windows, instalalo manualmente, configura el path adecuadamente
+        - Si linux, usa SDKMAN.
+    </section>
+
+    <section data-markdown>
+        ## Gradle, 2
+        - Create una apps en kotlin usando gradle.
+        - gradle init
+        - [Diferencia](https://www.it-swarm-es.com/es/gradle/diferencia-entre-el-uso-de-gradlew-y-gradle/828397775/)
+        entre gradle y gradlew.
+        - Mira [aqui](https://docs.gradle.org/current/samples/sample_building_kotlin_applications.html) para seguir los
+        pasos.
+    </section>
+
+    <section data-markdown>
+        ## Gradle, 3
+        - Ejecuta la aplicación
+            - ./gradlew run
+        - Ejecuta los test
+            - ./gradlew test
+        - Cambia el test para que compruebe que el metodo greeting devuelve "hola tu_nombre"
+        - Ejecuta los test
+            - ./gradlew test
+        - Cambia la aplicación para que pase el test correctamente.
+        - Otras tareas
+        - ./gradlew build --scan #Deja constancia de los tiempos de construcción
+        - ./gradlew tasks # Lista las tareas de gradle
+    </section>
+
+    <section data-markdown>
+        ## Comentarios (RA1.i)
+        - De una línea **//** y multilíne **/\* \*/**
+        - https://kotlinlang.org/docs/basic-syntax.html#comments
+    </section>
+
+    <section data-markdown>
+        ## Variables y Tipos (RA1.d)
+        - Variables
+        - https://kotlinlang.org/docs/basic-syntax.html#variables
+        - https://play.kotlinlang.org/byExample/01_introduction/03_Variables
+        - Constantes
+        - https://kotlinlang.org/docs/basic-types.html#literal-constants
+        - Tipos (numbers, booleans, characters, strings, and arrays)
+        - https://kotlinlang.org/docs/basic-types.html
+    </section>
+
+    <section data-markdown>
+        ## Actividad (RA1.e) (RA1.f)
+        - Modificar una aplicación que usa constantes y literales para que use variables.
+        - Hacer uso de readLine().
+        - Crear una función: 'fun suma(a:Int, b:Int): Int'
+    </section>
+
+    <section data-markdown>
+        ## Crear test con Junit.
+        - https://kotlinlang.org/docs/jvm-test-using-junit.html
+        - https://kotlinlang.org/docs/mpp-run-tests.html#test-shared-code
+        - Hacer un test a la función suma.
+    </section>
+
+    <section data-markdown>
+        ## Conversión entre tipos (RA1.h)
+        - explícitas e implícitas
+        - https://kotlinlang.org/docs/basic-syntax.html#type-checks-and-automatic-casts
+        - https://kotlinlang.org/docs/basic-types.html#explicit-conversions
+        - https://kotlinlang.org/docs/typecasts.html
+        - https://kotlinlang.org/docs/typecasts.html#smart-casts
+    </section>
+
+    <section data-markdown>
+        ## Operadores (RA1.g) 1
+        - https://kotlinlang.org/docs/basic-types.html#operations
+        - https://www.develou.com/operadores-en-kotlin/
+    </section>
+
+    <section data-markdown>
+        ## Operadores (RA1.g) 2
+        - Aritméticos
+        - (+) val suma:Int = 5 + 2 // 8
+        - (-) val resta:Int = 5 - 2 // 3
+        - (\*) val multipli:Int = 5 \* 2 // 10
+        - (/) val divide:Int = 5 / 2 // 2
+        - (%) val resto:Int = 5 % 2 // 1
+    </section>
+
+    <section data-markdown>
+        ## Operadores (RA1.g) 3
+        - Comparación
+        - (==) val igual:Boolean = 5 == 2 // False
+        - (!=) val distinto:Boolean = 5 != 2 // True
+        - (>, >=) val mayorIgual:Boolean = 5 >= 2 // True
+        - (<, <=) val menor:Boolean = 5 < 2 // False
+    </section>
+
+    <section data-markdown>
+        ## Operadores (RA1.g) 3
+        - Lógicos
+        - (&&) val conjuncion:Boolean = igual && mayorIgual // true
+        - (!!) val disyuncion:Boolean = distinto || menor // True
+        - (!) val mayorIgual:Boolean = ! disyuncion // False
+    </section>
+
+    <section data-markdown>
+        ## Valores Nulos
+        - Intenta evitar NullPointerException
+        - No nos deja asignar variables a nulo, tenemos que forzarlo con ?
+        - val nullString: String? = null //Declaración de nulo usando ?
+        - nullString?.let { println(nullString) } // solo se ejecuta si nullString no es nulo
+        - nullString?.let { ... } ?: run { println("la cadena es nula") } // Codigo a ejecutar si es nulo
+        - nullString?.let { ... } ?: run { println(nullString!!) } // con !! asumimos el riesgo de que sea nulo
+    </section>
+
+    <section data-markdown>
+        ## Funciones 1
+        - Definición: fun nombreFuncion(parametro:Int): Unit { }
+        - Las funciones SOLO DEBEN HACER UNA COSA
+        - El nombre de la función tiene que describir qué hace.
+    </section>
+
+    <section data-markdown>
+        ## Funciones 2
+        ~~~
+        fun functionName(p1: Type1, p2: Type2, ...): ReturnType {
+        lines of code
+        return result
+        }
+        ~~~
+
+    </section>
+
+</section>
