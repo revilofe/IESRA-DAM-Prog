@@ -197,16 +197,16 @@
     <section data-markdown>
         ## Gradle, 3
         - Ejecuta la aplicación
-            - ./gradlew run
+            + ./gradlew run
         - Ejecuta los test
-            - ./gradlew test
+            + ./gradlew test
         - Cambia el test para que compruebe que el metodo greeting devuelve "hola tu_nombre"
         - Ejecuta los test
-            - ./gradlew test
+            + ./gradlew test
         - Cambia la aplicación para que pase el test correctamente.
         - Otras tareas
-        - ./gradlew build --scan #Deja constancia de los tiempos de construcción
-        - ./gradlew tasks # Lista las tareas de gradle
+            + ./gradlew build --scan #Deja constancia de los tiempos de construcción
+            + ./gradlew tasks # Lista las tareas de gradle
     </section>
 
     <section data-markdown>
@@ -218,83 +218,86 @@
     <section data-markdown>
         ## Variables y Tipos (RA1.d)
         - Variables
-        - https://kotlinlang.org/docs/basic-syntax.html#variables
-        - https://play.kotlinlang.org/byExample/01_introduction/03_Variables
+            + https://kotlinlang.org/docs/basic-syntax.html#variables
+            + https://play.kotlinlang.org/byExample/01_introduction/03_Variables
         - Constantes
-        - https://kotlinlang.org/docs/basic-types.html#literal-constants
+            + https://kotlinlang.org/docs/basic-types.html#literal-constants
         - Tipos (numbers, booleans, characters, strings, and arrays)
-        - https://kotlinlang.org/docs/basic-types.html
+            + https://kotlinlang.org/docs/basic-types.html
     </section>
 
     <section data-markdown>
         ## Actividad (RA1.e) (RA1.f)
         - Modificar una aplicación que usa constantes y literales para que use variables.
         - Hacer uso de readLine().
-        - Crear una función: 'fun suma(a:Int, b:Int): Int'
+        - Crear una función:
+            ```fun suma(a:Int, b:Int): Int```
     </section>
 
     <section data-markdown>
         ## Crear test con Junit.
-        - https://kotlinlang.org/docs/jvm-test-using-junit.html
-        - https://kotlinlang.org/docs/mpp-run-tests.html#test-shared-code
-        - Hacer un test a la función suma.
+        - Puedes seguir los pasos aqui:
+            + https://kotlinlang.org/docs/jvm-test-using-junit.html
+            + https://kotlinlang.org/docs/mpp-run-tests.html#test-shared-code
+        - **Actividad**: Hacer un test a la función suma.
     </section>
 
     <section data-markdown>
         ## Conversión entre tipos (RA1.h)
         - explícitas e implícitas
-        - https://kotlinlang.org/docs/basic-syntax.html#type-checks-and-automatic-casts
-        - https://kotlinlang.org/docs/basic-types.html#explicit-conversions
-        - https://kotlinlang.org/docs/typecasts.html
-        - https://kotlinlang.org/docs/typecasts.html#smart-casts
+            + https://kotlinlang.org/docs/basic-syntax.html#type-checks-and-automatic-casts
+            + https://kotlinlang.org/docs/basic-types.html#explicit-conversions
+            + https://kotlinlang.org/docs/typecasts.html#smart-casts
     </section>
 
     <section data-markdown>
         ## Operadores (RA1.g) 1
-        - https://kotlinlang.org/docs/basic-types.html#operations
-        - https://www.develou.com/operadores-en-kotlin/
+        - Aqui puedes ver los tipos de operadores mas usados en kotlin
+            + https://kotlinlang.org/docs/basic-types.html#operations
+            + https://www.develou.com/operadores-en-kotlin/
     </section>
 
     <section data-markdown>
         ## Operadores (RA1.g) 2
         - Aritméticos
-        - (+) val suma:Int = 5 + 2 // 8
-        - (-) val resta:Int = 5 - 2 // 3
-        - (\*) val multipli:Int = 5 \* 2 // 10
-        - (/) val divide:Int = 5 / 2 // 2
-        - (%) val resto:Int = 5 % 2 // 1
+            + (+) val suma:Int = 5 + 2 // 8
+            + (-) val resta:Int = 5 - 2 // 3
+            + (\*) val multipli:Int = 5 \* 2 // 10
+            + (/) val divide:Int = 5 / 2 // 2
+            + (%) val resto:Int = 5 % 2 // 1
     </section>
 
     <section data-markdown>
         ## Operadores (RA1.g) 3
         - Comparación
-        - (==) val igual:Boolean = 5 == 2 // False
-        - (!=) val distinto:Boolean = 5 != 2 // True
-        - (>, >=) val mayorIgual:Boolean = 5 >= 2 // True
-        - (<, <=) val menor:Boolean = 5 < 2 // False
+            + (==) val igual:Boolean = 5 == 2 // False
+            + (!=) val distinto:Boolean = 5 != 2 // True
+            + (>, >=) val mayorIgual:Boolean = 5 >= 2 // True
+            + (<, <=) val menor:Boolean = 5 < 2 // False
     </section>
 
     <section data-markdown>
         ## Operadores (RA1.g) 3
         - Lógicos
-        - (&&) val conjuncion:Boolean = igual && mayorIgual // true
-        - (!!) val disyuncion:Boolean = distinto || menor // True
-        - (!) val mayorIgual:Boolean = ! disyuncion // False
+            + (&&) val conjuncion:Boolean = igual && mayorIgual // true
+            + (!!) val disyuncion:Boolean = distinto || menor // True
+            + (!) val mayorIgual:Boolean = ! disyuncion // False
     </section>
 
     <section data-markdown>
         ## Valores Nulos
         - Intenta evitar NullPointerException
         - No nos deja asignar variables a nulo, tenemos que forzarlo con ?
-        - val nullString: String? = null //Declaración de nulo usando ?
-        - nullString?.let { println(nullString) } // solo se ejecuta si nullString no es nulo
-        - nullString?.let { ... } ?: run { println("la cadena es nula") } // Codigo a ejecutar si es nulo
-        - nullString?.let { ... } ?: run { println(nullString!!) } // con !! asumimos el riesgo de que sea nulo
+        - ```val nullString: String? = null //Declaración de nulo usando ?```
+        - ```nullString?.let { println(nullString) } // solo se ejecuta si nullString no es nulo ```
+        - ```nullString?.let { ... } ?: run { println("la cadena es nula") } // Codigo a ejecutar si es nulo ```
+        - ```nullString?.let { ... } ?: run { println(nullString!!) } // con !! asumimos el riesgo de que sea nulo ```
     </section>
 
     <section data-markdown>
         ## Funciones 1
-        - Definición: fun nombreFuncion(parametro:Int): Unit { }
+        - Definición:
+        ```fun nombreFuncion(parametro:Int): Unit { }```
         - Las funciones SOLO DEBEN HACER UNA COSA
         - El nombre de la función tiene que describir qué hace.
     </section>
