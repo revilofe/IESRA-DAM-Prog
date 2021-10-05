@@ -36,6 +36,6 @@ En nuestra versión del ahorcado, no dibujaremos el cuerpo, sino que esta parte 
 
 
 ~~~ kt
-...
+....
 
 ~~~
