@@ -24,36 +24,6 @@ Para poder generar las contraseñas necesitamos varias cosas:
 
 
 ~~~ kt
-import random
-import sys
+...
 
-letras='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-numeros='0123456789'
-puntuacion="!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~"
-caracteres=letras+numeros+puntuacion
-
-contrasenya=""
-try:
-    longitud=int(input("¿Longitud de la contraseña?"))
-except ValueError:
-    print("La longitud debe ser un valor numérico. Adiós")
-    // también podríamos poner una longitud por defecto y trabajar con
-    // esa longitud si no se introduce una longitud válida
-    sys.exit(1)
-
-for i in range(1,longitud+1):
-    contrasenya += caracteres[random.randint(0,len(caracteres)-1)]
-
-print("la contraseña es ", contrasenya)
-
-/*
-fun main() {
-    //val digi = 0..9
-    val char = '!'..'~'
-    var caracteres: String = ""
-    //for (d in digi) caracteres += d
-    for (c in char) caracteres += c
-    println(caracteres)
-}
-*/
 ~~~
