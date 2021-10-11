@@ -19,7 +19,8 @@
         - e) Se ha escrito código utilizando control de excepciones.
         - f) Se han creado programas ejecutables utilizando diferentes estructuras de control.
         - g) Se han probado y depurado los programas.
-        - h) Se ha comentado y documentado el código.    </section>
+        - h) Se ha comentado y documentado el código.
+    </section>
 
     <section data-markdown>
         ## Contenidos mínimos:
@@ -70,12 +71,41 @@
         - [Ejemplos](http://www.androidcurso.com/index.php/99-kotlin/912-estructuras-de-control-en-kotlin)
     </section>
     <section data-markdown>
-        ## Control de excepciones. (RA3.e)
-        - try
-        - throw
+        ## Control de excepciones (RA3.e) 1
+        - En Kotlin todas las excepciones son subclases de la clase ```Throwable```.
+        - Cada excepción tiene un mensaje, un seguimiento de la pila y una causa opcional.
+        - Para lanzar un objeto de excepción, se utiliza la palabra clave ```throw```:
+            + ```throw Exception("Message")```
     </section>
     <section data-markdown>
-        ## Ejemplos de programas. (RA3.e)
+        ## Control de excepciones (RA3.e) 2
+        - Para capturar una excepción lanzada se utiliza un bloque 'try':
+            ~~~Kt
+                try {
+                    // some code
+                }
+                    catch (e: SomeException) { // Captura y maneja la excepción, mas de uno
+                }
+                finally {
+                    // optional finally block, Solo uno
+                }
+            ~~~
+    </section>
+    <section data-markdown>
+        ## Control de excepciones (RA3.e) 3
+        - Uso de ```try``` como expresión, por tanto puede devolver un valor.
+        ~~~Kt
+            val a: Int? = try { parseInt(input) } catch (e: NumberFormatException) { null }
+        ~~~
+        - Uso de ```throw``` es una expresión, por tanto se puede usar, por ejemplo, como parte de una 'Elvis expression':
+        ~~~Kt
+            val s = person.name ?: throw IllegalArgumentException("Name required")
+        ~~~
+    </section>
+
+    <section data-markdown>
+        ## Ejemplos de programas. (RA3.f)
+        **Actividad** Eje 2.1: Juego del ahorcado
     </section>
     <section data-markdown>
         ## Depuración de programas. (RA3.g)
@@ -96,10 +126,10 @@
         - Documentación interna, comentarios.
             + https://runebook.dev/es/docs/kotlin/docs/reference/kotlin-doc
             + https://github.com/Kotlin/dokka/blob/master/README.md
-        - Documentación externa, diagramas de clases, requisitos, guías, etc.
-            + UML
-            + Otra documentación.
+        - Documentación externa:
+            + UML: Lenguaje unificado de modelado
+                * [Más info](https://es.wikipedia.org/wiki/Lenguaje_unificado_de_modelado)
+            + Requisitos: Casos de Uso, Historias de usuarios
+            + Otra documentación: Manuales de usuario, Manuales de operación, Manuales de administración
     </section>
-
-
 </section>
