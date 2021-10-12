@@ -317,11 +317,20 @@
     <section data-markdown>
         ## Funciones 2
         ~~~
-        fun functionName(p1: Type1, p2: Type2, ...): ReturnType {
-        lines of code
-        return result
-        }
+            fun callMe() {
+                println("Printing from callMe() function.")
+                println("This is cool (still printing from inside).")
+            }
+            fun main(args: Array<String>) {
+                callMe()
+                println("Printing outside from callMe() function.")
+            }
         ~~~
+        ![](images/kotlin-function-call.webp)
+    </section>
+    <section data-markdown>
+        ## Funciones 3
+        ![](images/kotlin-function-call.webp)
     </section>
 
 </section>
