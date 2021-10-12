@@ -1,4 +1,18 @@
 # Examen 1
+## ¿Qué se evalúa?
+Se evaluará cada uno de los CE del RA1 y RA3
+- RA1: ***Conoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.***
+- RA3: ***Escribe y depura código, analizando y utilizando las estructuras de control del lenguaje.***
+
+Los contenidos que abordaremos durante el ejercicio:
+- Creación de un proyecto, haciendo uso del IDE.
+- Usar distintos tipos de variables, constantes y literales
+- Hacer uso de expresiones y operadores según los tipos del lenguaje, haciendo uso de las conversiones.
+- Comentar el código.
+- Uso de estructuras de repetición y selección
+- Uso de control de excepciones
+- Depurar y comentar código.
+
 ## Tabla de multiplicar
 El CEIP Profesor Juan Carlos Aragón está probando un nuevo método para enseñar las tablas de multiplicar al alumnado. Y solicita ayuda al IES Rafael Alberti para que desarrolle una aplicación que cumpla con los siguientes requisitos:
 
