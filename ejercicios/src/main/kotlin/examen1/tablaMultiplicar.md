@@ -14,20 +14,18 @@ Los contenidos que abordaremos durante el ejercicio:
 - Depurar y comentar código.
 
 ## Tabla de multiplicar
-El CEIP Profesor Juan Carlos Aragón está probando un nuevo método para enseñar las tablas de multiplicar al alumnado. Y solicita ayuda al IES Rafael Alberti para que desarrolle una aplicación que cumpla con los siguientes requisitos:
+El CEIP Profesor Juan Carlos Aragón está probando un nuevo método para enseñar las tablas de multiplicar al alumnado. Ha solicitado ayuda al IES Rafael Alberti para que desarrolle una aplicación que cumpla con los siguientes requisitos:
 
-El método se basa en la técnica divide y vencerás, y consiste en dividir el esfuerzo en el tiempo, poniendo el foco, durante un intervalo de tiempo, en un conjunto de tablas.
-La división se realiza de la siguiente forma:
+El método se basa en la técnica divide y vencerás, y consiste en dividir el esfuerzo, poniendo el foco, durante un intervalo de tiempo, en un conjunto de tablas.
+La división del esfuerzo se realiza de la siguiente forma:
 
-| Por edades  |  ¿Que tablas? |  Mes pares | Mes impares
+| Por edades  |  ¿Que tablas estudian? |  Tablas de los meses pares | Tablas de los meses impares
 |---|---|---|---|
 |  Mayores de 10 años hasta 12 incluido | Tablas del 11 hasta el 13  | 11,12,13 | 11,12,13 | 
 |  Mayores de 8 años hasta los 10 incluidos | Tablas del 6 hasta el 10  | 6,8,10 | 7,9 |
 |  Mayores o iguales a 6 hasta los 8 incluidos | Tablas del 1 hasta el 5  | 2, 4 | 1, 3, 5 |
 
-Por tanto, para la entrada siguiente 
-8, 12
-el programa mostrará la siguiente salida
+Por tanto, para la entrada ```8, 12```, el programa mostrará la siguiente salida:
 ~~~
 *********************************************************************************
 PROGRAMA DE GENERACIÓN DE TABLAS: <NOMBRE DEL ALUMNO>
@@ -51,6 +49,26 @@ TABLA DEL 4
 2 x 10 = 40
 *********************************************************************************
 
+~~~
+Si el rango de edad no se contempla o no es correcto el mes, el programa terminará mostrando los siguientes mensajes, por ejemplo:
+
+para la entrada ```15, 3```, la salida será:
+~~~
+*********************************************************************************
+PROGRAMA DE GENERACIÓN DE TABLAS: <NOMBRE DEL ALUMNO>
+̣̣̣_________________________________________________________________________________
+Edad: 15. No se cotempla esta edad.
+̣̣̣_________________________________________________________________________________
+*********************************************************************************
+~~~
+para la entrada ```8, 13```, la salida será:
+~~~
+*********************************************************************************
+PROGRAMA DE GENERACIÓN DE TABLAS: <NOMBRE DEL ALUMNO>
+̣̣̣_________________________________________________________________________________
+Mes: 12. El mes es erroneo.
+̣̣̣_________________________________________________________________________________
+*********************************************************************************
 ~~~
 ### ¿Qué vamos a necesitar?
 
