@@ -1,6 +1,6 @@
 # Examen 1
 ## ¿Qué se evalúa?
-Se evaluará cada uno de los CE del RA1 y RA3
+Se evaluará cada uno de los CE del RA1 y RA3 (Los criterios de evaluación están al comiendo de la unidad 1 y 2)
 > **RA1**: *Conoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.*
 
 > **RA3**: *Escribe y depura código, analizando y utilizando las estructuras de control del lenguaje.*
@@ -14,7 +14,7 @@ Los contenidos que abordaremos durante el ejercicio:
 - Uso de control de excepciones
 - Depurar y comentar código.
 ---
-## Tabla de multiplicar
+## Descripción del examen: Tabla de multiplicar
 El *CEIP Profesor Juan Carlos Aragón* está probando un nuevo método para enseñar las tablas de multiplicar al alumnado. Ha solicitado ayuda al *IES Rafael Alberti* para que desarrolle una aplicación que cumpla con los siguientes requisitos:
 
 El método se basa en la técnica divide y vencerás, y consiste en dividir el esfuerzo, poniendo el foco, durante un intervalo de tiempo, en un conjunto de tablas.
@@ -71,14 +71,9 @@ Mes: 12. El mes es erroneo.
 ̣̣̣_________________________________________________________________________________
 *********************************************************************************
 ~~~
-### Ayuda para el cuerpo del programa
-- Lee la entrada, recuerda que es: `<edadDelAlumno> <mesEnElQueSeEsta>`
-- Comprueba que la entrada es correcta, si no el programa termina mostrando mensaje.
-  - `<edadDelAlumno>` tiene que estar en los rangos permitidos.
-  - `<mesEnElQueSeEsta>` tiene que ser un número válido: 1-12.
-- Muestra por pantalla en función de las especificaciones indicadas: Se tiene en cuenta la edad del alumno y el mes en el que se está.
+
 ## ¿Qué se pide?
-Realizar un programa que satisfaga las necesidades del *CEIP Profesor Juan Carlos Aragón*, en base a los siguinetes criterios de evaluación:
+Realizar un programa que satisfaga las necesidades del *CEIP Profesor Juan Carlos Aragón*, basándose en los siguientes criterios de evaluación:
 - **[20]** El programa hace lo que se pide.
 - **[20]** El programa usa estructuras de repetición y selección adecuadas para la resolución.
 - **[15]** El programa usa tipos de variables, constantes y literales adecuadamente.
@@ -98,6 +93,27 @@ Realizar un programa que satisfaga las necesidades del *CEIP Profesor Juan Carlo
 - Ve poco a poco y prueba las cosas que haces antes de pasar a la siguiente.
 - El código no tiene que estar perfecto, siempre se puede modificar a posteriori.
 - Usa el depurador si te atascas.
+### Crear, realizar y entregar el examen
+1. Crea el proyecto usando el IDE:
+    - Opción del Menú: `File` -> `New` -> `Project...` y siguen los pasos indicados aquí:
+    ![](./../../resources/img/examen1/creaProyecto.png)
+    - Sigue los pasos hasta crear el proyecto. 
+2. Realiza el examen: Ayuda para plantear el examen:
+    - Lee la entrada, recuerda que es: `<edadDelAlumno> <mesEnElQueSeEsta>`
+    - Comprueba que la entrada es correcta, si no el programa termina mostrando mensaje.
+      - `<edadDelAlumno>` tiene que estar en los rangos permitidos.
+      - `<mesEnElQueSeEsta>` tiene que ser un número válido: 1-12.
+    - Muestra por pantalla en función de las especificaciones indicadas: 
+      - Se tiene en cuenta la edad del alumno y el mes en el que se está.
+3. Comparte el proyecto:
+    - Opción de Menú: `VCS` -> `Share Project on GitHub`.
+      - Deja todo tal como esta. 
+      - Pulsa en `Share`
+    - Visita tu cuenta de GitHub 
+      - Copia la URL del repositorio que acabas de crear.
+      - Comparte en la tarea del examen de la moodle la url de tu repositorio.
+    - Desde GitHub, puedes añadirme también como colaborador en ese repositorio.
+
 
 ## Solución
 ~~~ kt
