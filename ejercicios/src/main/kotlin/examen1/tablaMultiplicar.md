@@ -20,7 +20,7 @@ El *CEIP Profesor Juan Carlos Aragón* está probando un nuevo método para ense
 El método se basa en la técnica divide y vencerás, y consiste en dividir el esfuerzo, poniendo el foco, durante un intervalo de tiempo, en un conjunto de tablas.
 La división del esfuerzo se realiza de la siguiente forma:
 
-| Por edades  |  ¿Que tablas estudian? |  Tablas de los meses pares | Tablas de los meses impares
+| Por edades  |  ¿Que tablas estudian el alumnado? |  Tablas de los meses pares | Tablas de los meses impares
 |---|---|---|---|
 |  Mayores de 10 años hasta 12 incluido | Tablas del 11 hasta el 13  | 11,12,13 | 11,12,13 | 
 |  Mayores de 8 años hasta los 10 incluidos | Tablas del 6 hasta el 10  | 6,8,10 | 7,9 |
@@ -51,7 +51,9 @@ TABLA DEL 4
 *********************************************************************************
 
 ~~~
-Si el rango de edad no se contempla o no es correcto el mes, el programa terminará mostrando los siguientes mensajes, por ejemplo:
+No olvides sustituir `<NOMBRE DEL ALUMNO>` por tu nombre.
+
+Por otro lado, si el rango de edad no se contempla o no es correcto el mes, el programa terminará mostrando los siguientes mensajes, por ejemplo:
 
 para la entrada `15, 3`, la salida será:
 ~~~
@@ -114,7 +116,6 @@ Realizar un programa que satisfaga las necesidades del *CEIP Profesor Juan Carlo
       - Copia la URL del repositorio que acabas de crear.
       - Comparte en la tarea del examen de la moodle la url de tu repositorio.
     - Desde GitHub, puedes añadirme también como colaborador en ese repositorio.
-
 
 ## Solución
 ~~~ kt
