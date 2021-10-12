@@ -71,12 +71,18 @@ Mes: 12. El mes es erroneo.
 ̣̣̣_________________________________________________________________________________
 *********************************************************************************
 ~~~
+### Ayuda para el cuerpo del programa
+- Lee la entrada, recuerda que es: `<edadDelAlumno> <mesEnElQueSeEsta>`
+- Comprueba que la entrada es correcta, si no el programa termina mostrando mensaje.
+  - `<edadDelAlumno>` tiene que estar en los rangos permitidos.
+  - `<mesEnElQueSeEsta>` tiene que ser un número válido: 1-12.
+- Muestra por pantalla en función de las especificaciones indicadas: Se tiene en cuenta la edad del alumno y el mes en el que se está.
 ## ¿Qué se pide?
 Realizar un programa que satisfaga las necesidades del *CEIP Profesor Juan Carlos Aragón*, en base a los siguinetes criterios de evaluación:
 - **[20]** El programa hace lo que se pide.
+- **[20]** El programa usa estructuras de repetición y selección adecuadas para la resolución.
 - **[15]** El programa usa tipos de variables, constantes y literales adecuadamente.
 - **[15]** El programa usa expresiones y operadores adecuados al problema para su resolución. 
-- **[20]** El programa usa estructuras de repetición y selección adecuadas para la resolución.
 - **[10]** El código fuente está bien comentado.
 - **[5]** Se usa un IDE y Gradle para la creación del proyecto.
 - **[5]** El programa gestiona los posibles errores, gestión de excepciones.
@@ -84,6 +90,16 @@ Realizar un programa que satisfaga las necesidades del *CEIP Profesor Juan Carlo
 - **[5]** El código fuente es eficiente
 
 ## ¿Qué vamos a hacer?
+### Está permitido
+- El uso de internet.
+- El uso de manuales y documentación adicional.
+### Recuerda
+- Márcate objetivos pequeños, crea el código y pruébalo.
+- Ve poco a poco y prueba las cosas que haces antes de pasar a la siguiente.
+- El código no tiene que estar perfecto, siempre se puede modificar a posteriori.
+- Usa el depurador si te atascas.
+
+## Solución
 ~~~ kt
 ....
 
