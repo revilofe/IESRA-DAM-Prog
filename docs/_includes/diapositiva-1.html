@@ -285,11 +285,15 @@
             + (!!) ```val disyuncion:Boolean = distinto || menor // True```
             + (!) ```val mayorIgual:Boolean = ! disyuncion // False```
     </section>
-
+    <section data-markdown>
+        ## Operadores (RA1.g) 4
+        - Operador in
+    </section>
     <section data-markdown>
         ## Valores Nulos
         - Intenta evitar NullPointerException
         - No nos deja asignar variables a nulo, tenemos que forzarlo con ?
+        - ```val nullString: String = readline() ?: "" //Operador Elvis ?:```
         - ```val nullString: String? = null //Declaración de nulo usando ?```
         - ```nullString?.let { println(nullString) } // solo se ejecuta si nullString no es nulo ```
         - ```nullString?.let { ... } ?: run { println("la cadena es nula") } // Codigo a ejecutar si es nulo ```
