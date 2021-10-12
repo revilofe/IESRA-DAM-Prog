@@ -1,8 +1,9 @@
 # Examen 1
 ## ¿Qué se evalúa?
 Se evaluará cada uno de los CE del RA1 y RA3
-- RA1: ***Conoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.***
-- RA3: ***Escribe y depura código, analizando y utilizando las estructuras de control del lenguaje.***
+> **RA1**: *Conoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.*
+
+> **RA3**: *Escribe y depura código, analizando y utilizando las estructuras de control del lenguaje.*
 
 Los contenidos que abordaremos durante el ejercicio:
 - Creación de un proyecto, haciendo uso del IDE.
@@ -12,9 +13,9 @@ Los contenidos que abordaremos durante el ejercicio:
 - Uso de estructuras de repetición y selección
 - Uso de control de excepciones
 - Depurar y comentar código.
-
+---
 ## Tabla de multiplicar
-El CEIP Profesor Juan Carlos Aragón está probando un nuevo método para enseñar las tablas de multiplicar al alumnado. Ha solicitado ayuda al IES Rafael Alberti para que desarrolle una aplicación que cumpla con los siguientes requisitos:
+El *CEIP Profesor Juan Carlos Aragón* está probando un nuevo método para enseñar las tablas de multiplicar al alumnado. Ha solicitado ayuda al *IES Rafael Alberti* para que desarrolle una aplicación que cumpla con los siguientes requisitos:
 
 El método se basa en la técnica divide y vencerás, y consiste en dividir el esfuerzo, poniendo el foco, durante un intervalo de tiempo, en un conjunto de tablas.
 La división del esfuerzo se realiza de la siguiente forma:
@@ -25,7 +26,7 @@ La división del esfuerzo se realiza de la siguiente forma:
 |  Mayores de 8 años hasta los 10 incluidos | Tablas del 6 hasta el 10  | 6,8,10 | 7,9 |
 |  Mayores o iguales a 6 hasta los 8 incluidos | Tablas del 1 hasta el 5  | 2, 4 | 1, 3, 5 |
 
-Por tanto, para la entrada ```8, 12```, el programa mostrará la siguiente salida:
+Por tanto, para la entrada `8, 12`, el programa mostrará la siguiente salida:
 ~~~
 *********************************************************************************
 PROGRAMA DE GENERACIÓN DE TABLAS: <NOMBRE DEL ALUMNO>
@@ -52,7 +53,7 @@ TABLA DEL 4
 ~~~
 Si el rango de edad no se contempla o no es correcto el mes, el programa terminará mostrando los siguientes mensajes, por ejemplo:
 
-para la entrada ```15, 3```, la salida será:
+para la entrada `15, 3`, la salida será:
 ~~~
 *********************************************************************************
 PROGRAMA DE GENERACIÓN DE TABLAS: <NOMBRE DEL ALUMNO>
@@ -61,7 +62,7 @@ Edad: 15. No se cotempla esta edad.
 ̣̣̣_________________________________________________________________________________
 *********************************************************************************
 ~~~
-para la entrada ```8, 13```, la salida será:
+para la entrada `8, 13`, la salida será:
 ~~~
 *********************************************************************************
 PROGRAMA DE GENERACIÓN DE TABLAS: <NOMBRE DEL ALUMNO>
@@ -70,11 +71,19 @@ Mes: 12. El mes es erroneo.
 ̣̣̣_________________________________________________________________________________
 *********************************************************************************
 ~~~
-### ¿Qué vamos a necesitar?
+## ¿Qué se pide?
+Realizar un programa que satisfaga las necesidades del *CEIP Profesor Juan Carlos Aragón*, en base a los siguinetes criterios de evaluación:
+- **[20]** El programa hace lo que se pide.
+- **[15]** El programa usa tipos de variables, constantes y literales adecuadamente.
+- **[15]** El programa usa expresiones y operadores adecuados al problema para su resolución. 
+- **[20]** El programa usa estructuras de repetición y selección adecuadas para la resolución.
+- **[10]** El código fuente está bien comentado.
+- **[5]** Se usa un IDE y Gradle para la creación del proyecto.
+- **[5]** El programa gestiona los posibles errores, gestión de excepciones.
+- **[5]** El código fuente está bien estructurado haciendo uso de funciones
+- **[5]** El código fuente es eficiente
 
-### ¿Qué vamos a hacer?
-
-
+## ¿Qué vamos a hacer?
 ~~~ kt
 ....
 
