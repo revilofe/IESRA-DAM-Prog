@@ -7,11 +7,7 @@ package examen1
 
 fun main() {
     // Declaración de variables
-    val miNombre = "Eduardo Fernández Oliver"
-    val entrada: String
-    val listaEntrada: List<String>
-    val edad: Byte
-    val mes: Byte
+    // Aqui tienes que definir las variables que se utilizan
 
     // Leo desde teclado la edad del alumno y el mes acutal
     println("Introduzca la configuración del programa en este formato: <edadDelAlumno>,  <mesActual>")
