@@ -11,7 +11,11 @@ fun tablaDeMultiplicar(factor)
 
 fun main() {
     // Declaración de variables
-    // Aqui tienes que definir las variables que se utilizan
+    val miNombre = "Eduardo Fernández Oliver"
+    val entrada: String
+    val listaEntrada: List<String>
+    val edad: Byte
+    val mes: Byte
 
     // Leo desde teclado la edad del alumno y el mes acutal
     println("Introduzca la configuración del programa en este formato: <edadDelAlumno>,  <mesActual>")
