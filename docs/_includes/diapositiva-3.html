@@ -108,30 +108,30 @@
     <section data-markdown>
         ## Clases y objetos (RA2.a)
         - ***Actividad:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
-        ~~~Kt
-            class InitOrderDemo(name: String) {
-            val firstProperty = "First property: $name"
-                init {
-                    println("First initializer block that prints ${name}")
-                }
-                val secondProperty = "Second property: ${name.length}"
-                init {
-                    println("Second initializer block that prints ${name.length}")
-                }
-            }
-        ~~~
+                ~~~Kt
+                    class InitOrderDemo(name: String) {
+                    val firstProperty = "First property: $name"
+                        init {
+                            println("First initializer block that prints ${name}")
+                        }
+                        val secondProperty = "Second property: ${name.length}"
+                        init {
+                            println("Second initializer block that prints ${name.length}")
+                        }
+                    }
+                ~~~
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
         - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros.
-                ~~~Kt
+                    ~~~Kt
                     class Coche constructor(marca: String)
                     {
                         init{
-                                require(marca.trim().length > 0) { "Argumento marca inválido." }
+                            require(marca.trim().length > 0) { "Argumento marca inválido." }
                         }
                     }
-                ~~~
+                    ~~~
         - ***Actividad:*** Modifica la clase persona para que compruebe mediante `require` en el bloque `init` que el nombre no es nulo.
     </section>
     <section data-markdown>
