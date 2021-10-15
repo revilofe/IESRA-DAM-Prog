@@ -124,15 +124,15 @@
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
-        - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros
-        ~~~Kt
-        class Coche constructor(marca: String)
-        {
-            init{
-                    require(marca.trim().length > 0) { "Argumento marca inválido." }
+        - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros.
+                ~~~Kt
+                    class Coche constructor(marca: String)
+                    {
+                        init{
+                                require(marca.trim().length > 0) { "Argumento marca inválido." }
+                        }
                 }
-        }
-        ~~~
+                ~~~
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
