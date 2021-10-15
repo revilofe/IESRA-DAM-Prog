@@ -1,11 +1,151 @@
 <section>
     <section data-markdown>
-        ## Unidad 3
+        # Unidad 3
+        ## Introducción a la programación orientada a objetos
     </section>
     <!--
         Bloques de diapositivas
     -->
     <section data-markdown>
-        Bloques de diapositivas
+        ## Resultado de Aprendizaje 2
+        > Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos.
     </section>
+    <section data-markdown>
+        ## Criterios de evaluación
+        - a) Se han identificado los fundamentos de la programación orientada a objetos.
+        - b) Se han escrito programas simples.
+        - c) Se han instanciado objetos a partir de clases predefinidas.
+        - d) Se han utilizado métodos y propiedades de los objetos.
+        - e) Se han escrito llamadas a métodos estáticos.
+        - f) Se han utilizado parámetros en la llamada a métodos.
+        - g) Se han incorporado y utilizado librerías de objetos.
+        - h) Se han utilizado constructores.
+        - i) Se ha utilizado el entorno integrado de desarrollo en la creación y compilación de programas simples
+    </section>
+
+    <section data-markdown>
+        ## Contenidos mínimos:
+        **Utilización de objetos:**
+        - Características de los objetos.
+        - Instanciación de objetos.
+        - Utilización de métodos.
+        - Utilización de propiedades.
+        - Utilización de métodos estáticos.
+        - Librerías de objetos. Inclusión y uso.
+        - Constructores.
+        - Destrucción de objetos y liberación de memoria.
+        - Entornos de desarrollo para programación orientada a objetos.
+            - Entornos específicos.
+            - Plugins de integración en entornos genéricos.
+    </section>
+    <section data-markdown>
+        *********************
+    </section>
+    <section data-markdown>
+        ## Programación OO (RA2.a)
+        La [**Programación Orientada a Objetos (POO)**](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos):  viene a cambiar la forma de programar. Los objetos se utilizan como metáfora para emular las entidades reales del negocio a modelar.
+        Está basada en varias técnicas como: herencia, cohesión, abstracción, polimorfismo, acoplamiento y encapsulamiento.
+        [mapa mental](https://www.mindomo.com/no/mindmap/programacion-orientada-a-objetos-e256c81f6f8fd0e0654dd70bf05ff657)
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        >>> **Clases**: plantilla para la creación de objetos de datos según un modelo predefinido
+        Las [**clases**](https://es.wikipedia.org/wiki/Clase_(inform%C3%A1tica)) tienen los siguientes componentes siguientes características, son:
+        - **Atributos/campos**: también variables de instancia, contienen la información de los futuros objetos. Normalmente privadas al objeto.
+        - **Métodos**: implementan la funcionalidad asociada al objeto, son funciones. Pueden acceder a las variables de instancia de la clase directamente.
+        Cuando se desea realizar una acción sobre un objeto, se dice que se le manda un mensaje invocando a un método que realizará la acción.
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        Los [**objetos**](https://es.wikipedia.org/wiki/Objeto_(programaci%C3%B3n)) tienen las siguientes características, son:
+        - **Identidad**: Lo identifica del resto.
+        - **Comportamiento**: Relacionadlo con su funcionalidad, determina las operaciones que se pueden realizar y con las que responde a los mensajes.
+        - **Estado**: Conjunto de atributos y sus valores en un momento determinado.
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        ![](images/homerpoo.png)
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        - En Kotlin, todo es un objeto en el sentido de que podemos llamar funciones y propiedades de miembro en cualquier variable.
+        >>> `Int` es una clase y `1` es un objeto de la clase `Int`.
+        - Clases predefinidas en Kotlin
+            - https://kotlinlang.org/api/latest/jvm/stdlib/alltypes/
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        Las clases son los bloques de construcción principales de cualquier lenguaje de programación orientado a objetos. Las clases son esencialmente tipos personalizados: un grupo de variables y métodos unidos en una estructura coherente. Para definir una clase se usa la palabra clave `class`.
+        ~~~Kt
+            class Invoice { ... }
+            class Empty // Clase vacia
+        ~~~
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        En kotlin, las clases pueden contener:
+        - Constructores y bloques 'init'
+        - Métodos(Funciones)
+        - Atributos
+    </section>
+
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        Una clase en Kotlin puede tener un constructor primario y uno o más constructores secundarios.
+        - Primario: forma parte del encabezado de la clase
+        ~~~Kt
+                class Coche constructor(marca: String) { ... }
+        ~~~
+            - Por defecto, todos los constructores son públicos, lo que equivale efectivamente a que sean visible en todas partes donde la clase sea visible.
+            - Si el constructor principal no tiene anotaciones o modificadores de visibilidad, la palabra clave 'constructor' se puede omitir
+            - Este constructor no tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        ***Actividad:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
+        ~~~Kt
+            class InitOrderDemo(name: String) {
+            val firstProperty = "First property: $name"
+                init {
+                    println("First initializer block that prints ${name}")
+                }
+                val secondProperty = "Second property: ${name.length}"
+                init {
+                    println("Second initializer block that prints ${name.length}")
+                }
+            }
+        ~~~
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros
+        ~~~Kt
+        class Coche constructor(marca: String)
+        {
+            init{
+                    require(marca.trim().length > 0) { "Argumento marca inválido." }
+                }
+        }
+        ~~~
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+    </section>
+    <section data-markdown>
+        *********************
+    </section>
+    <section data-markdown>
+        *********************
+    </section>
+
+
 </section>
