@@ -1,5 +1,9 @@
 package examen1
 
+fun tablaDeMultiplicar(factor)
+{
+    for (i i..10) println("$factor x $i = ${factor*i}")
+}
 
 // #####################################
 // DEFINICIÓN DEL CUERPO DEL PROGRAMA
