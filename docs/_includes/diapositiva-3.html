@@ -110,16 +110,17 @@
         - Una clase en Kotlin puede tener un constructor primario y uno o más constructores secundarios.
             - **Primario**: forma parte del encabezado de la clase.
                 - Por defecto, todos los constructores son públicos. Visible donde sea visible la clase.
-                - Si el constructor principal no tiene anotaciones o modificadores de visibilidad, la palabra clave 'constructor' se puede omitir.
+                - Si el constructor principal no tiene anotaciones o modificadores de visibilidad, la palabra clave `constructor` se puede omitir.
                 - Este constructor no tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
 
         ~~~Kt
-                class Coche constructor(marca: String) { ... }
+            class Persona constructor(nombre: String) { ... } //Crea una clase
+            p = Persona("Jose")  //Instancia un objeto de la clase Persona,
         ~~~
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
-        - ***Actividad:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
+        - ***Actividad 3.1:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
 
         ~~~Kt
         class InitOrderDemo(name: String) {
@@ -139,7 +140,7 @@
         - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros.
 
         ~~~Kt
-        class Persona constructor(Nombre: String)
+        class Persona(Nombre: String)
         {
             init{
                     require(nombre.trim().length > 0) { "Argumento nombre inválido." }
@@ -147,14 +148,86 @@
         }
         ~~~
 
-        - ***Actividad:*** Crea una clase coche, y compruebe mediante `require` en el bloque `init` que el argumento marca no es nulo.
+        - ***Actividad 3.2:*** Crea una clase coche, que se inicializa con su marca. Ademas y compruebe mediante `require` en el bloque `init` que el argumento marca no es nulo.
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
+        - Si en el constructor principal usamos:
+            - val: Se crearán métodos getter
+            - var: Se crearán métodos getter y setter
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
+        - **Secundario**: puede tener uno o varios, y se definen con la palabra clave `constructor`
+        - Este constructor tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
+        - Si la clase tiene un constructor primario, el secundario debe delegar en el constructor primario, ya sea directamente o indirectamente usando la palabra clave 'this':
+
+        ~~~Kt
+        class Persona(Nombre: String){
+            // Constructor secundario, Usamos 'this' para invocar al primario
+            constructor(nombre: String, parent: Person) : this(nombre) {
+                parent.children.add(this)
+            }
+        }
+        ~~~
     </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.b, c)
+        ### Actividad 3.3: Un coche tiene:
+        - como atributos en su constructor secundario: Marca, Modelo, velocidadMax y color (por defecto blanco)
+        - Crea una clase coche, y compruebe mediante `require` en el bloque `init` que
+        - la velocidad es mayor que 10 y menor que 250.
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        - En Kotlin, los campos de la clase se llaman propiedades o variables de instancia.
+        - Las propiedades de una clase pueden declararse como mutables (var), o de inmutables o de sólo lectura (val)
+        - Se acceden a las propiedades a traves del `.` y el nombre de la propiedad
+
+        ~~~Kt
+        class Persona {
+            var ciudad: String
+            var fechanacimiento: Date
+            var codigoPostal: String =
+        }
+        p=Persona()
+        println("La ciudad de la persona es es:$p.ciudad")
+        ~~~
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.a)
+        - En Kotlin, las funciones definidas dentro de una clase se llaman funciones miembro o métodos de instancia.
+        ~~~Kt
+        class Persona {
+            var ciudad: String
+            fun soyDe():String = "Soy de $ciudad"
+        }
+        p=Persona()
+        println("De donde eres? La ciudad de la persona es es:$p.soyDe()")
+        ~~~
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.b, c)
+        ### Actividad 3.4: Un coche tiene:
+        - como atributos: Marca, Matricula, Modelo, #puertas #caballos, #velocidadMax, Color (defecto blanco), #tanque, #marchaActual
+        - como acciones: encender, apagar, iniciar, parar, acelerar, frenar, incrementaMarcha, decrementaMarcha, llenarTanque
+        - ademas podremos preguntarle por la descripción del coche, el estado, la marcha actual, la velicidad actual
+        - Crea una clase coche, y compruebe mediante `require` en el bloque `init` que
+            - el argumento marca no es nulo.
+            - la velocidad es mayor que 10 y menor que 250.
+    </section>
+    <section data-markdown>
+        ## Clases y objetos (RA2.b, c)
+        ### Actividad 3.4: Un coche tiene (continuación)
+        - encender: Devuelve true si enciende. Solo enciende si no esta encendido, tiene marcha metida y tiene gasolina
+        - apagar: Vuelve al estado inicial ¿necesitas alguna propiedad o método adicional?
+        - iniciar: Solo inicia si esta encendido y tiene marcha 1.  Iniciar llama a acelear.
+        - acelerar: Solo acelera (+5 Velocidad) si tiene gasolina, si no envía mensaje y llama al método parar. cuanto gasta? marcha->gasto: 1->5, 2->4, 3->4, 4->5, 5->1
+        - cambia marcha: establece la marcha en la que va: incrementaMarcha, decrementaMarcha
+        - frenar: (-5 Velocidad)
+        - parar: para el coche cuando esta frenado, es decir velocidad = 0.
+    </section>
+
     <section data-markdown>
         ## Clases y objetos (RA2.a)
     </section>
