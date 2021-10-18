@@ -32,8 +32,6 @@ En nuestra versión del ahorcado, no dibujaremos el cuerpo, sino que esta parte 
 - Dividirnos en grupos
 - Pensar cómo habría que hacerlo
 - ¿Tenemos todas las herramientas necesarias para conseguirlo?
-- *NO es necesario terminar la solución*, voy a poner una propuesta de solución para discutirla, pero intentadlo.
-
 
 ~~~ kt
 ....
