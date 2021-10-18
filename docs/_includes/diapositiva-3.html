@@ -81,10 +81,10 @@
         - Las clases son los bloques de construcción principales de cualquier lenguaje de programación orientado a objetos.
         - Las clases son esencialmente tipos personalizados: un grupo de variables y métodos unidos en una estructura coherente.
         - Para definir una clase se usa la palabra clave `class`.
-        ~~~Kt
+        ```Kt
             class Invoice { ... }
             class Empty // Clase vacia
-        ~~~
+        ```
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
@@ -101,14 +101,14 @@
                 - Por defecto, todos los constructores son públicos. Visible donde sea visible la clase.
                 - Si el constructor principal no tiene anotaciones o modificadores de visibilidad, la palabra clave 'constructor' se puede omitir.
                 - Este constructor no tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
-            ~~~Kt
+        ```Kt
                 class Coche constructor(marca: String) { ... }
-            ~~~
+        ```
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
         - ***Actividad:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
-                ~~~Kt
+        ```Kt
                     class InitOrderDemo(name: String) {
                     val firstProperty = "First property: $name"
                         init {
@@ -119,7 +119,7 @@
                             println("Second initializer block that prints ${name.length}")
                         }
                     }
-                ~~~
+        ```
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
