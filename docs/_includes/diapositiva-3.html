@@ -92,7 +92,7 @@
         - Las clases son esencialmente tipos personalizados: un grupo de variables y métodos unidos en una estructura coherente.
         - Para definir una clase se usa la palabra clave `class`.
         ```Kt
-            class Invoice { ... }
+            class Perro { ... }
             class Empty // Clase vacia
         ```
     </section>
@@ -135,14 +135,14 @@
         ## Clases y objetos (RA2.a)
         - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros.
                     ~~~Kt
-                    class Coche constructor(marca: String)
+                    class Persona constructor(Nombre: String)
                     {
                         init{
-                            require(marca.trim().length > 0) { "Argumento marca inválido." }
+                            require(nombre.trim().length > 0) { "Argumento nombre inválido." }
                         }
                     }
                     ~~~
-        - ***Actividad:*** Modifica la clase persona para que compruebe mediante `require` en el bloque `init` que el nombre no es nulo.
+        - ***Actividad:*** Crea una clase coche, y compruebe mediante `require` en el bloque `init` que el argumento marca no es nulo.
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
