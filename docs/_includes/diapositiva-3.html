@@ -171,7 +171,8 @@
         ~~~Kt
         class Persona(Nombre: String){
             // Constructor secundario, Usamos 'this' para invocar al primario
-            constructor(nombre: String, parent: Person) : this(nombre) {
+            constructor(nombre: String, parent: Person) : this(nombre)
+            {
                 parent.children.add(this)
             }
         }
