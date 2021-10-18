@@ -127,14 +127,12 @@
         class InitOrderDemo(name: String) {
             val firstProperty = "First property: $name"
             init
-            {
-                println("First initializer block that prints ${name}")
+            {   println("First initializer block that prints ${name}")
             }
 
             val secondProperty = "Second property: ${name.length}"
             init
-            {
-                println("Second initializer block that prints ${name.length}")
+            {   println("Second initializer block that prints ${name.length}")
             }
         }
         ~~~
@@ -147,8 +145,7 @@
         class Persona(Nombre: String)
         {
             init
-            {
-                require(nombre.trim().length > 0)
+            {   require(nombre.trim().length > 0)
                     { "Argumento nombre inválido." }
             }
         }
@@ -172,8 +169,7 @@
         class Persona(Nombre: String){
             // Constructor secundario, Usamos 'this' para invocar al primario
             constructor(nombre: String, parent: Person) : this(nombre)
-            {
-                parent.children.add(this)
+            {   parent.children.add(this)
             }
         }
         ~~~
