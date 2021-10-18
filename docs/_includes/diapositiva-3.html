@@ -121,31 +121,30 @@
         - ***Actividad:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
 
         ~~~Kt
-        class InitOrderDemo(name: String) {
-            val firstProperty = "First property: $name"
-            init {
-                println("First initializer block that prints ${name}")
-            }
-            val secondProperty = "Second property: ${name.length}"
-            init {
-                println("Second initializer block that prints ${name.length}")
-            }
-        }
+                    class InitOrderDemo(name: String) {
+                    val firstProperty = "First property: $name"
+                        init {
+                            println("First initializer block that prints ${name}")
+                        }
+                        val secondProperty = "Second property: ${name.length}"
+                        init {
+                            println("Second initializer block that prints ${name.length}")
+                        }
+                    }
         ~~~
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
         - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros.
 
-        ~~~Kt
-        class Persona constructor(Nombre: String)
-        {
-            init{
-                require(nombre.trim().length > 0) { "Argumento nombre inválido." }
-            }
-        }
-        ~~~
-
+                    ~~~Kt
+                    class Persona constructor(Nombre: String)
+                    {
+                        init{
+                            require(nombre.trim().length > 0) { "Argumento nombre inválido." }
+                        }
+                    }
+                    ~~~
         - ***Actividad:*** Crea una clase coche, y compruebe mediante `require` en el bloque `init` que el argumento marca no es nulo.
     </section>
     <section data-markdown>
