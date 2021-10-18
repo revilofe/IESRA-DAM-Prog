@@ -93,7 +93,7 @@
         - Las clases son esencialmente tipos personalizados: un grupo de variables y métodos unidos en una estructura coherente.
         - Para definir una clase se usa la palabra clave `class`.
 
-        ~~~Kt
+        ~~~
             class Perro { ... }
             class Empty // Clase vacia
         ~~~
@@ -114,7 +114,7 @@
                 - Si el constructor principal no tiene anotaciones o modificadores de visibilidad, la palabra clave `constructor` se puede omitir.
                 - Este constructor no tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
 
-        ~~~Kt
+        ~~~
             class Persona constructor(nombre: String) { ... } //Crea una clase
             p = Persona("Jose")  //Instancia un objeto de la clase Persona,
         ~~~
@@ -123,7 +123,7 @@
         ## Clases y objetos (RA2.a)
         - ***Actividad 3.2:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
 
-        ~~~Kt
+        ~~~
         class InitOrderDemo(name: String) {
             val firstProperty = "First property: $name"
             init
@@ -141,7 +141,7 @@
         ## Clases y objetos (RA2.a)
         - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros.
 
-        ~~~Kt
+        ~~~
         class Persona(Nombre: String)
         {
             init
@@ -158,6 +158,14 @@
         - Si en el constructor principal usamos:
             - val: Se crearán métodos getter
             - var: Se crearán métodos getter y setter
+        - También puedes definirlos tu
+        ~~~
+            var stringRepresentation: String
+            get() = this.toString()
+            set(value) {
+                setDataFromString(value) // parses the string and assigns values to other properties
+            }
+        ~~~
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
@@ -165,7 +173,7 @@
         - Este constructor tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
         - Si la clase tiene un constructor primario, el secundario debe delegar en el constructor primario, ya sea directamente o indirectamente usando la palabra clave 'this':
 
-        ~~~Kt
+        ~~~
         class Persona(Nombre: String){
             // Constructor secundario, Usamos 'this' para invocar al primario
             constructor(nombre: String, parent: Person) : this(nombre)
