@@ -79,7 +79,7 @@
         ![](images/homerpoo.png)
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Clases y objetos. En kotlin  (RA2.c)
         - En Kotlin, todo es un objeto en el sentido de que podemos llamar funciones y propiedades de miembro en cualquier variable.
             - `Int` es una clase y `1` es un objeto de la clase `Int`.
 
@@ -88,7 +88,7 @@
         - ***Actividad 3.1:*** Crea un programa en el que uses algún metodo de la clase Int y sacalo por consola. Haz lo mismo con otra Clase p.Ej: Pair,
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Clases y objetos. En kotlin  (RA2.a)
         - Las clases son los bloques de construcción principales de cualquier lenguaje de programación orientado a objetos.
         - Las clases son esencialmente tipos personalizados: un grupo de variables y métodos unidos en una estructura coherente.
         - Para definir una clase se usa la palabra clave `class`.
@@ -99,7 +99,7 @@
         ~~~
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Clases y objetos. En kotlin (RA2.a)
         En kotlin, las clases pueden contener:
         - Constructores y bloques `init`
         - Métodos(Funciones)
@@ -107,7 +107,7 @@
     </section>
 
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Constructores (RA2.a)
         - Una clase en Kotlin puede tener un constructor primario y uno o más constructores secundarios.
             - **Primario**: forma parte del encabezado de la clase.
                 - Por defecto, todos los constructores son públicos. Visible donde sea visible la clase.
@@ -120,7 +120,7 @@
         ~~~
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Constructores e init (RA2.a)
         - ***Actividad 3.2:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
 
         ~~~
@@ -138,7 +138,7 @@
         ~~~
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Constructores e init (RA2.a)
         - Dentro de los bloques `init` puedes usar la palabra `required` para validar las propiedades o parámetros.
 
         ~~~
@@ -153,7 +153,7 @@
         - ***Actividad 3.3:*** Crea una clase coche, que se inicializa con su marca. Ademas y compruebe mediante `require` en el bloque `init` que el argumento marca no es nulo.
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Constructores y propiedades (RA2.a)
         - Las variables de  instancia o propiedades pueden definirse en el constructor o en el cuerpo de la clase. Si en el constructor principal usamos:
             - val: Se crearán métodos getter
             - var: Se crearán métodos getter y setter
@@ -169,7 +169,7 @@
         ~~~
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Constructores secundarios (RA2.a)
         - **Secundario**: puede tener uno o varios, y se definen con la palabra clave `constructor`
         - Este constructor tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
         - Si la clase tiene un constructor primario, el secundario debe delegar en el constructor primario, ya sea directamente o indirectamente usando la palabra clave 'this':
@@ -184,15 +184,15 @@
         ~~~
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.b, c)
+        ## Constructores (RA2.b, c)
         - ***Actividad 3.4:*** Un coche tiene:
         - como atributos en su constructor secundario: Marca, Modelo, velocidadMax y color (por defecto blanco)
         - Crea una clase coche, y compruebe mediante `require` en el bloque `init` que
         - la velocidad es mayor que 10 y menor que 250.
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
-        - En Kotlin, los campos de la clase se llaman propiedades o variables de instancia.
+        ## Propiedades (RA2.a)
+        - En Kotlin, los campos de la clase se llaman **propiedades** o **variables de instancia**
         - Las propiedades de una clase pueden declararse como mutables (var), o de inmutables o de sólo lectura (val)
         - Se acceden a las propiedades a traves del `.` y el nombre de la propiedad
 
@@ -207,9 +207,9 @@
         ~~~
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Métodos (RA2.a)
         - En Kotlin, las funciones definidas dentro de una clase se llaman funciones miembro o métodos de instancia.
-        ~~~Kt
+        ~~~
         class Persona {
             var ciudad: String
             fun soyDe():String = "Soy de $ciudad"
@@ -219,7 +219,7 @@
         ~~~
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.b, c)
+        ## Métodos (RA2.b, c)
         - ***Actividad 3.5:*** Un coche tiene:
         - como atributos: Marca, Matricula, Modelo, #puertas #caballos, #velocidadMax, Color (defecto blanco), #tanque, #marchaActual
         - como acciones: encender, apagar, iniciar, parar, acelerar, frenar, incrementaMarcha, decrementaMarcha, llenarTanque
@@ -229,8 +229,8 @@
             - la velocidad es mayor que 10 y menor que 250.
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.b, c)
-        ***Actividad 3.5:*** Un coche tiene (continuación)
+        ## Métodos (RA2.b, c)
+        - ***Actividad 3.5:*** Un coche tiene (continuación)
         - encender: Devuelve true si enciende. Solo enciende si no esta encendido, tiene marcha metida y tiene gasolina
         - apagar: Vuelve al estado inicial ¿necesitas alguna propiedad o método adicional?
         - iniciar: Solo inicia si esta encendido y tiene marcha 1.  Iniciar llama a acelear.
@@ -241,10 +241,27 @@
     </section>
 
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Métodos y propiedades de clase (RA2.e)
+        - Similar a los métodos estáticos en Java, un `companion object` no está asociado con una instancia de clase, sino con la propia clase.
+        ~~~
+        class Persona private constructor(var nombre: String, var apellido: String) {
+        // Podemos omitir el nombre del objeto
+        companion object {
+            var count: Int = 0
+            fun create(nombre: String, apellido: String): Person = Person(nombre, apellido)
+
+            // Podemos tener bloques 'init' dentro de un 'companion object'
+            init
+                { println("Persona companion object created") }
+            }
+        }
+        val persona = Persona.create("John", "Doe")
+        ~~~
+
     </section>
     <section data-markdown>
-        ## Clases y objetos (RA2.a)
+        ## Métodos y propiedades de clase (RA2.e)
+        - ***Actividad 3.6:*** Añade un metodo de clase, a la clase coche que compare la velocidad de 2 objetos coche.
     </section>
     <section data-markdown>
         *********************
