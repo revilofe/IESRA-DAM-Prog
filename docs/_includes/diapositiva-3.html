@@ -221,7 +221,7 @@
     <section data-markdown>
         ## Métodos (RA2.b, c)
         - ***Actividad 3.5:*** Un coche tiene:
-        - como atributos: Marca, Matricula, Modelo, #puertas #caballos, #velocidadMax, Color (defecto blanco), #tanque, #marchaActual
+        - como atributos: Marca, Modelo, #gasolina, Color (defecto blanco), #tanque, #incrementoVelocidad=5, #decrementoVelocidad=5, #velocidadMax
         - como acciones: encender, apagar, iniciar, parar, acelerar, frenar, incrementaMarcha, decrementaMarcha, llenarTanque
         - ademas podremos preguntarle por la descripción del coche, el estado, la marcha actual, la velicidad actual
         - Crea una clase coche, y compruebe mediante `require` en el bloque `init` que
@@ -233,11 +233,12 @@
         - ***Actividad 3.5:*** Un coche tiene (continuación)
         - encender: Devuelve true si enciende. Solo enciende si no esta encendido, tiene marcha metida y tiene gasolina
         - apagar: Vuelve al estado inicial ¿necesitas alguna propiedad o método adicional?
-        - iniciar: Solo inicia si esta encendido y tiene marcha 1.  Iniciar llama a acelear.
-        - acelerar: Solo acelera (+5 Velocidad) si tiene gasolina, si no envía mensaje y llama al método parar. cuanto gasta? marcha->gasto: 1->5, 2->4, 3->4, 4->5, 5->1
+        - iniciar: Solo inicia si esta encendido (No andando), establece marcha 1 y llama a acelerar.
+        - acelerar: Devuelve la velocidad a la que va, solo acelera (+5 Velocidad) si tiene gasolina, si no envía mensaje y llama al método parar. No puede superar velocidadMax.
+            - cuanto gasta? marcha->gasto: 1->5, 2->4, 3->4, 4->5, 5->1
         - cambia marcha: establece la marcha en la que va: incrementaMarcha, decrementaMarcha
-        - frenar: (-5 Velocidad)
-        - parar: para el coche cuando esta frenado, es decir velocidad = 0.
+        - frenar: Devuelve la velocidad a la que va, (-5 Velocidad) cada vez que se frena
+        - parar: Devuelve true al parar, tiene sentido y esta moviéndose. Llama a frenar hasta velocidad =0, y establece marcha 0.
     </section>
 
     <section data-markdown>
