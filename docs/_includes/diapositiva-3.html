@@ -244,11 +244,13 @@
     <section data-markdown>
         ## Métodos y propiedades de clase (RA2.e)
         - Similar a los métodos estáticos en Java, un `companion object` no está asociado con una instancia de clase, sino con la propia clase.
+        - La propiedades y métodos se llaman haciendo uso de la clase.
+
         ~~~
         class Persona private constructor(var nombre: String, var apellido: String) {
         // Podemos omitir el nombre del objeto
-        companion object {
-            var count: Int = 0
+        companion object
+        {   var count: Int = 0
             fun create(nombre: String, apellido: String): Person = Person(nombre, apellido)
 
             // Podemos tener bloques 'init' dentro de un 'companion object'
