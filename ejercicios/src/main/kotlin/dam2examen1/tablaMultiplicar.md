@@ -98,7 +98,7 @@ Realizar un programa que satisfaga las necesidades del *CEIP Profesor Juan Carlo
 ### Crear, realizar y entregar el examen
 1. Crea el proyecto usando el IDE:
     - Opción del Menú: `File` -> `New` -> `Project...`
-    - Siguen los pasos indicados en la siguiente imagen: ***ATENCIÓN*** Sustituye **INICIALES** por tu iniciales, y ten en cuenta que en este caso es 2DAM
+    - Siguen los pasos indicados en la siguiente imagen: ***ATENCIÓN*** Sustituye **INICIALES** por tu iniciales, y ten en cuenta que en este caso es **2DAM**
     ![](./../../resources/img/examen1/creaProyecto.png)
     - Sigue los pasos hasta crear el proyecto. 
 2. Realiza el examen: Ayuda para plantear el examen:
