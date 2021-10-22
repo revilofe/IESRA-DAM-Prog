@@ -22,7 +22,7 @@ La división del esfuerzo se realiza de la siguiente forma:
 
 | Por edades  |  ¿Que tablas estudian el alumnado? |  Tablas de los meses pares | Tablas de los meses impares
 |---|---|---|---|
-|  Mayores de 10 años hasta 12 incluido | Tablas del 11 hasta el 13  | 11,12,13 | 11,12,13 | 
+|  Mayores de 10 años hasta 12 incluido | Tablas del 11 hasta el 13  | 11,12,13 | 14,15,16 | 
 |  Mayores de 8 años hasta los 10 incluidos | Tablas del 6 hasta el 10  | 7,9 | 6,8,10 |
 |  Mayores o iguales a 6 hasta los 8 incluidos | Tablas del 1 hasta el 5  | 1, 3, 5 | 2, 4 |
 
