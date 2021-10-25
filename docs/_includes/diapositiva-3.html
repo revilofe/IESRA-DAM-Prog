@@ -285,18 +285,16 @@
     </section>
     <section data-markdown>
         ## Métodos y propiedades de clase (RA2.e)
-        - Similar a los métodos estáticos en Java, un `companion object` no está asociado con una instancia de clase, sino con la propia clase.
+        - Similar a los métodos estáticos en Java, un [`companion object`](https://github.com/revilofe/_kotlin_#companion-objects) no está asociado con una instancia de clase, sino con la propia clase.
 
         ~~~
-        class Persona private constructor(var nombre: String, var apellido: String) {
-        // Podemos omitir el nombre del objeto
-        companion object {
-            var count: Int = 0
-            fun create(nombre: String, apellido: String): Person = Person(nombre, apellido)
+        class Persona private constructor(var nombre: String, var apellido: String) {  // Podemos omitir el nombre del objeto
+            companion object {
+                var count: Int = 0
+                fun create(nombre: String, apellido: String): Person = Person(nombre, apellido)
 
-            // Podemos tener bloques 'init' dentro de un 'companion object'
-            init
-                { println("Persona companion object created") }
+                // Podemos tener bloques 'init' dentro de un 'companion object'
+                init { println("Persona companion object created") }
             }
         }
         val persona = Persona.create("John", "Doe")
@@ -313,6 +311,4 @@
     <section data-markdown>
         *********************
     </section>
-
-
 </section>
