@@ -253,28 +253,32 @@
         ~~~
     </section>
     <section data-markdown>
-        ## Clases y métodos (RA2.d)
+        ## Clases y métodos (RA2.b)
         - ***Actividad 3.5:*** Un coche tiene:
-        - como atributos: Marca, Modelo, #gasolina, Color (defecto blanco), #tanque, #incrementoVelocidad=5, #decrementoVelocidad=5, #velocidadMax
+        - como atributos: Marca, Modelo, #gasolina, Color (defecto blanco), #tanque, #variacionVelocidad=5, #velocidadMax, #factorGasto (Double), #numeroMarchas
         - como acciones: encender, apagar, iniciar, parar, acelerar, frenar, incrementaMarcha, decrementaMarcha, llenarTanque
-        - ademas podremos preguntarle por la descripción del coche, el estado, la marcha actual, la velicidad actual
+        - además podremos preguntarle por la descripción del coche, el estado, la marcha actual, la velocidad actual
         - Crea una clase coche, y compruebe mediante `require` en el bloque `init` que
-            - el argumento marca no es nulo.
-            - la velocidad es mayor que 10 y menor que 250.
+        - el argumento marca no es nulo.
+        - la velocidad es mayor que 10 y menor que 250.
+        - cualquier otro valor que cras conveniente.
     </section>
     <section data-markdown>
-        ## Métodos (RA2.b, c)
+        ## Métodos (RA2.b)
         - ***Actividad 3.5:*** Un coche tiene (continuación)
-        - encender: Devuelve true si enciende. Solo enciende si no esta encendido, tiene marcha metida y tiene gasolina
+        - encender: Devuelve true si enciende. Solo enciende si no esta encendido, NO tiene marcha metida y tiene gasolina
         - apagar: Vuelve al estado inicial ¿necesitas alguna propiedad o método adicional?
-        - iniciar: Solo inicia si esta encendido (No andando), establece marcha 1 y llama a cocheacelerar.
-        - acelerar: Devuelve la velocidad a la que va, solo acelera (+5 Velocidad) si tiene gasolina, si no envía mensaje y llama al método parar. No puede superar velocidadMax.
-            - cuanto gasta? marcha->gasto: 1->5, 2->4, 3->4, 4->5, 5->1
-        - cambia marcha: establece la marcha en la que va: incrementaMarcha, decrementaMarcha
-        - frenar: Devuelve la velocidad a la que va, (-5 Velocidad) cada vez que se frena
-        - parar: Devuelve true al parar, tiene sentido y esta moviéndose. Llama a frenar hasta velocidad =0, y establece marcha 0.
+        - iniciar: Solo inicia si esta encendido (No andando). El proceso será establecer marcha 1 y acelerar.
     </section>
-
+    <section data-markdown>
+        ## Métodos (RA2.b)
+        - ***Actividad 3.5:*** Un coche tiene (continuación)
+        - acelerar: Devuelve la velocidad a la que va, solo acelera (+variacionVelocidad) si tiene gasolina, si no envía mensaje y llama al método parar. No puede superar velocidadMax.
+        - ¿cuanto gasta? Siempre que acelera gasta según lo siguiente: marcha->gasto: 1->5, 2->4, 3->3, 4->2, 5->1. Gasto se multiplica por factorGasto
+        - cambia marcha: establece la marcha en la que va: incrementaMarcha, decrementaMarcha. Hay que comprobar que no es menor que 0, ni mayor que el numero de marchas.
+        - frenar: Devuelve la velocidad a la que va, (-variacionVelocidad) cada vez que se frena, ademas en cada frenado se llama a actualizar el gasto de gasolina
+        - parar: Devuelve true al parar. Tiene sentido si esta moviéndose. El proceso sería Llamar a frenar hasta que la  velocidad =0, y establece marcha 0.
+    </section>
     <section data-markdown>
         ## Métodos y propiedades de clase (RA2.e)
         - Similar a los métodos estáticos en Java, un `companion object` no está asociado con una instancia de clase, sino con la propia clase.
