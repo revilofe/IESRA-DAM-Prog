@@ -50,7 +50,7 @@
     </section>
     <section data-markdown>
         ## Clases y objetos (RA2.a)
-        - **Clases:** Una plantilla para la creación de objetos de datos según un modelo predefinido.
+        - [**Clases:**](https://github.com/revilofe/_kotlin_#clases) Una plantilla para la creación de objetos de datos según un modelo predefinido.
         - Ej: Persona, Animal, Coche
         - Las [**clases**](shorturl.at/ikBI9) tienen los siguientes componentes siguientes características, son:
             - **Atributos/campos**: también variables de instancia, contienen la información de los futuros objetos. Normalmente privadas al objeto.
@@ -108,7 +108,7 @@
 
     <section data-markdown>
         ## Clases y constructores   (RA2.h)
-        - Una clase en Kotlin puede tener un constructor primario y uno o más constructores secundarios.
+        - Una clase en Kotlin puede tener un [constructor primario](https://github.com/revilofe/_kotlin_#constructor-primario) y uno o más [constructores secundarios](https://github.com/revilofe/_kotlin_#constructor-secundario).
             - **Primario**: forma parte del encabezado de la clase.
                 - Por defecto, todos los constructores son públicos. Visible donde sea visible la clase.
                 - Si el constructor principal no tiene anotaciones o modificadores de visibilidad, la palabra clave `constructor` se puede omitir.
@@ -154,10 +154,10 @@
     </section>
     <section data-markdown>
         ## Clases y constructores y propiedades (RA2.d)
-        - Las variables de  instancia o propiedades pueden definirse en el constructor o en el cuerpo de la clase. Si en el constructor principal usamos:
+        - Las [variables de  instancia o propiedades](https://github.com/revilofe/_kotlin_#propiedades) pueden definirse en el constructor o en el cuerpo de la clase. Si en el constructor principal usamos:
             - val: Se crearán métodos getter
-            - var: Se crearán métodos getter y setter
-        - También puedes definirlos tu:
+            - var: Se crearán métodos [getter y setter](https://github.com/revilofe/_kotlin_#getters-and-setters)
+        - También puedes definirlos tu :
 
         ~~~
         var stringRepresentation: String
@@ -169,8 +169,26 @@
         ~~~
     </section>
     <section data-markdown>
+        ## Clases y constructores y propiedades (RA2.d)
+        - Existe un [campo de respaldo](https://github.com/revilofe/_kotlin_#backing-fields) `field`, que solo tiene sentido dentro de getter o setter.
+
+        ~~~
+        var selectedColor: Int = someDefaultValue
+            get() = selectedColor
+            set(value) { this.selectedColor = value
+                doSomething()
+            }
+        // Código correcto
+        var selectedColor: Int = someDefaultValue
+            get() = field
+            set(value) { field = value
+                doSomething()
+            }
+        ~~~
+    </section>
+    <section data-markdown>
         ## Clases y constructores   (RA2.h)
-        - Una clase en Kotlin puede tener un constructor primario y uno o más constructores secundarios.
+        - Una clase en Kotlin puede tener un [constructor primario](https://github.com/revilofe/_kotlin_#constructor-primario) y uno o más [constructores secundarios](https://github.com/revilofe/_kotlin_#constructor-secundario).
             - **Secundario**: puede tener uno o varios, y se definen con la palabra clave `constructor`
             - Este constructor tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
             - Si la clase tiene un constructor primario, el secundario debe delegar en el constructor primario, ya sea directamente o indirectamente usando la palabra clave 'this':
