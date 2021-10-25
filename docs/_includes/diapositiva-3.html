@@ -110,15 +110,23 @@
         ## Clases y constructores   (RA2.h)
         - Una clase en Kotlin puede tener un [constructor primario](https://github.com/revilofe/_kotlin_#constructor-primario) y uno o más [constructores secundarios](https://github.com/revilofe/_kotlin_#constructor-secundario).
             - **Primario**: forma parte del encabezado de la clase.
-                - Por defecto, todos los constructores son públicos. Visible donde sea visible la clase.
-                - Si el constructor principal no tiene anotaciones o modificadores de visibilidad, la palabra clave `constructor` se puede omitir.
-                - Este constructor no tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
+            - Por defecto, todos los constructores son públicos. Visible donde sea visible la clase.
+            - Si el constructor principal no tiene anotaciones o modificadores de visibilidad, la palabra clave `constructor` se puede omitir.
+            - Este constructor no tiene código, pero se coloca en bloques de inicialización con la palabra clave `init`
+    </section>
+
+    <section data-markdown>
+        ## Clases y constructores   (RA2.h)
+        - Una clase en Kotlin puede tener un [constructor primario](https://github.com/revilofe/_kotlin_#constructor-primario) y uno o más [constructores secundarios](https://github.com/revilofe/_kotlin_#constructor-secundario).
+
+        Ej. constructor primario.
 
         ~~~
-            class Persona constructor(nombre: String) { ... } //Crea una clase
-            p = Persona("Jose")  //Instancia un objeto de la clase Persona,
+        class Persona constructor(nombre: String) { ... } //Crea una clase
+        p = Persona("Jose")  //Instancia un objeto de la clase Persona,
         ~~~
     </section>
+
     <section data-markdown>
         ## Clases y constructores   (RA2.h)
         - ***Actividad 3.2:*** Copia y ejecuta el siguiente código. ¿Cómo se crea una instancia de la clase? Create una instancia de clase InitOrderDemo ¿Cuál es el orden de ejecución del código?
