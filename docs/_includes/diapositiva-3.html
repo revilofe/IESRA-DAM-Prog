@@ -276,6 +276,10 @@
             - acelerar: Devuelve la velocidad a la que va, solo acelera (+variacionVelocidad) si tiene gasolina, si no envía mensaje y llama al método parar. No puede superar velocidadMax.
                 - ¿cuanto gasta? Siempre que acelera gasta según lo siguiente: marcha->gasto: 1->5, 2->4, 3->3, 4->2, 5->1. Gasto se multiplica por factorGasto
             - cambia marcha: establece la marcha en la que va: incrementaMarcha, decrementaMarcha. Hay que comprobar que no es menor que 0, ni mayor que el numero de marchas.
+    </section>
+    <section data-markdown>
+        ## Métodos (RA2.b)
+        - ***Actividad 3.5:*** Un coche tiene (continuación)
             - frenar: Devuelve la velocidad a la que va, (-variacionVelocidad) cada vez que se frena, ademas en cada frenado se llama a actualizar el gasto de gasolina
             - parar: Devuelve true al parar. Tiene sentido si esta moviéndose. El proceso sería Llamar a frenar hasta que la  velocidad =0, y establece marcha 0.
     </section>
