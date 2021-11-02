@@ -7,3 +7,9 @@
 // Components
 @import "components/forkme";
 @import "components/footer";
+
+// Custom style
+.reveal section img[alt=left] {
+  display: inline;
+  margin: 0px;
+  vertical-align: middle;
