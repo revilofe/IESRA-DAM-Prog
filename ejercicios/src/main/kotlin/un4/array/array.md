@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/kotlin-playground@1" data-selector="code"></script>
+
 # Relacion 4.1
 
 ## Ejercicio
@@ -12,3 +14,10 @@ Usa dos arrays, uno para guardar los nombres de los estudiantes, y el otro para 
 Para comparar el nombre del estudiante introducido por teclado con los nombres de los estudiantes en el array de estudiantes, puedes usar el método equals de la Clase String.
 
 Una posible solución sería:
+
+``` run-kotlin
+fun main()
+{
+
+}
+```
