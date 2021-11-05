@@ -15,7 +15,7 @@ TODO()
 
 -una lista de los clientes que viven en una determinada ciudad determinada.
 ```
-fun Tienda.obtenerClientesPorCiudad(): List<Cliente> = 
+fun Tienda.obtenerClientesPorCiudad(): List<Cliente> =  
 TODO()  
 ```
 
