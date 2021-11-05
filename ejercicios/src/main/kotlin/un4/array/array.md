@@ -15,7 +15,7 @@ Para comparar el nombre del estudiante introducido por teclado con los nombres d
 
 Una posible solución sería:
 
-``` run-kotlin
+``` kt
 fun main()
 {
 
