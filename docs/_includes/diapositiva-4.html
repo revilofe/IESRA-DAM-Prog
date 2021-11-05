@@ -246,9 +246,56 @@
             println(shopping.indexOf("Milk"))  //Prints 2
         }
         ```
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableList (RA6.e)
+        ![](images/MutableList.png)
+        - Se crean igual pero susando constructores distintos.
+
+        ```
+        val mShopping = mutableListOf("Tea", "Eggs") //Crea mutable list
+        ```
+        - Tiene los mismos metodos mas los adicionales para poder modificar la lista.
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableList (RA6.e)
+
+        ```
+        mShopping.add("Milk")  //Añade elemento al final
+        mShopping.add(1, "Milk") //Añade elemento en la posición 1
+        ```
+
+        ![](images/MutableList-add.png)
 
 
     </section>
+
+    <section data-markdown>
+        ## Las Collections. MutableList (RA6.e)
+
+        ```
+        if (mShopping.contains("Milk")) {
+            Shopping.remove("Milk")
+        }
+
+        if (mShopping.size > 1) {
+            mShopping.removeAt(1)
+        }
+        ```
+
+        ![](images/MutableList-remove.png)
+
+
+    </section>
+
+
+
+
+
+
+
+
     <section data-markdown>
         ## Las Collections. Set (RA6.e)
         ![](images/Set.png)
