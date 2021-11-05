@@ -189,6 +189,33 @@
         - Tiene en cuenta el orden.
     </section>
     <section data-markdown>
+        ## Las Collections. List (RA6.e)
+        ![](images/List-crea.png)
+        - El compilador infiere el tipo, aunque puedes declararlo si quieres.
+    </section>
+    <section data-markdown>
+        ## Las Collections. List (RA6.e)
+        - Aquí declaramos el tipo
+        ```
+        val shopping: List<String>
+        shopping = listOf("Tea", "Eggs", "Milk")
+        ```
+
+        ![](images/List-usa.png)
+
+        ```
+        //Recorre
+        for (item in shopping) println (item)
+
+        // Si una lista contiene una referencia a un objeto obtienes el indice
+        if (shopping.contains("Milk")) {
+            println(shopping.indexOf("Milk"))  //Prints 2
+        }
+        ```
+
+
+    </section>
+    <section data-markdown>
         ## Las Collections. Set (RA6.e)
         ![](images/Set.png)
         - No permite duplicados.
@@ -203,7 +230,7 @@
     </section>
     <section data-markdown>
         ## Las Collections. (RA6.a)
-        Ademas, de arrays. Tambien tenemos:
+        Ademas, de arrays. También tenemos:
     </section>
     <section data-markdown>
         - ***Actividad 4.1:*** Se el compilador. I
@@ -242,6 +269,8 @@
         ## BIBLIOGRAFÍA
         - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
         - ![left](images/link.png) [API de Array](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/)
+        - ![left](images/link.png) [Array en kotlin](https://zetcode.com/kotlin/arrays/)
+        - ![left](images/link.png) [Collections en Kotlin] (https://chercher.tech/kotlin/collections-kotlin)
         - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
     </section>
     <section data-markdown>
