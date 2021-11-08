@@ -265,11 +265,8 @@
         mShopping.add("Milk")  //Añade elemento al final
         mShopping.add(1, "Milk") //Añade elemento en la posición 1
         ```
-    </section>
-    <section data-markdown>
 
         ![](images/MutableList-add.png)
-
 
     </section>
 
@@ -278,16 +275,20 @@
 
         ```
         if (mShopping.contains("Milk")) {
-            Shopping.remove("Milk")
+            Shopping.remove("Milk") //Elimina el elemento Milk
         }
 
         if (mShopping.size > 1) {
-            mShopping.removeAt(1)
+            mShopping.removeAt(1) //Elimina el elemento en la posicion 1
         }
         ```
 
-        ![](images/MutableList-remove.png)
+    </section>
 
+    <section data-markdown>
+        ## Las Collections. MutableList (RA6.e)
+
+        ![](images/MutableList-remove.png)
 
     </section>
 
@@ -297,7 +298,7 @@
 
         ```
         if (mShopping.size > 0) {
-            mShopping.set(0, "Coffee")
+            mShopping.set(0, "Coffee") //Añade el elemento a la posición 0
         }
         ```
 
@@ -305,11 +306,11 @@
     </section>
 
     <section data-markdown>
-        - ***Actividad 4.2:*** Tienes un conjunto de imanes des ordenados. Ordenalos dentro de la función main para que de la salida que se muestra
+        - ***Actividad 4.4:*** Tienes un conjunto de imanes des ordenados. Ordenalos dentro de la función main para que de la salida que se muestra
         ![](images/Actividad4.4.png)
     </section>
     <section data-markdown>
-        - ***Actividad 4.2:*** Tienes un conjunto de imanes desordenados. Ordenalos dentro de la función main para que obtener la salida que se muestra
+        - ***Actividad 4.4:*** Tienes un conjunto de imanes desordenados. Ordenalos dentro de la función main para que obtener la salida que se muestra
 
         ~~~
         fun main() {
@@ -330,10 +331,11 @@
         - No permite duplicados.
         - No tiene en cuenta el orden.
     </section>
+
     <section data-markdown>
         ## Las Collections. Map (RA6.e)
         ![](images/Map.png)
-        - ![left](images/link.png) [Operaciones especificas de listas ](https://kotlinlang.org/docs/map-operations.html)
+        - ![left](images/link.png) [Operaciones especificas de mapas ](https://kotlinlang.org/docs/map-operations.html)
         - Utiliza pares /<key,value/>
         - Puedes tener dos claves referenciando al mismo objeto.
         - No puedes tener claves duplicadas.
