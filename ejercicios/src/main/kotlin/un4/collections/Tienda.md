@@ -1,19 +1,24 @@
 # Relacion 4.2 
 >Para los ejercicios se usará como base el archivo Shop.kt
 
-**4.2.1** Kotlin tiene metodos para transformar de un tipo a otro de colleciones. Normalmente comientan con `to`, por ejemplo `toSet`. 
+**4.2.1** Kotlin tiene métodos para transformar de un tipo a otro de coleciones. Normalmente comienzan con `to`, por ejemplo `toSet`. 
 
-Implementa  una función `Tienda.obtenerConjuntoDeClientes()`.
+- Implementa  un método 
+```
+  fun Tienda.obtenerConjuntoDeClientes(): ?
+```
 
 
-**4.2.2** Implementa los siguientes métodos para **filtrar** datos, que devolveran:
+**4.2.2** Implementa los siguientes métodos para **filtrar** datos, que devolverán:
 - un conjunto de las ciudades de donde son los clientes.
+
 ```
 fun Tienda.obtenerCiudadesDeClientes(): Set<Ciudad> =
 TODO()  
 ```
 
--una lista de los clientes que viven en una determinada ciudad determinada.
+- una lista de los clientes que viven en una determinada ciudad determinada.
+
 ```
 fun Tienda.obtenerClientesPorCiudad(): List<Cliente> =  
 TODO()  
