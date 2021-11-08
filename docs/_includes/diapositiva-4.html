@@ -322,7 +322,10 @@
         [Two, Four, Six, Eight, Ten]
         [Two, Four, Six, Eight, Ten]
         ~~~
-
+    </section>
+    <section data-markdown>
+        ## Las Collections. Set (RA6.e)
+        ![](images/List-duplicados.png)
     </section>
     <section data-markdown>
         ## Las Collections. Set (RA6.e)
@@ -331,6 +334,85 @@
         - No permite duplicados.
         - No tiene en cuenta el orden.
     </section>
+    <section data-markdown>
+        ## Las Collections. Set (RA6.e)
+
+        ~~~
+        val friendSet = setOf("Jim",
+        "Sue","Sue", //Ignorará los valores duplicados
+        "Nick","Nick")
+        ~~~
+
+    </section>
+
+    <section data-markdown>
+        ## Las Collections. Set (RA6.e)
+        - Duplicado: 1 hash code
+        ![](images/Set-duplicados1.png)
+    </section>
+    <section data-markdown>
+        ## Las Collections. Set (RA6.e)
+        - Duplicado: 2 Operador === (Misma referencia)
+
+        ~~~
+        val a = "Sue"
+        val b = a
+        val set = setOf(a, b)
+        ~~~
+
+        ![](images/Set-duplicados2.png)
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. Set (RA6.e)
+        - Duplicado: 3 Operador == (equals function y data class)
+
+        ~~~
+        val a = Recipe("Thai Curry")
+        val b = Recipe("Thai Curry")
+        val set = setOf(a, b)
+        ~~~
+
+        ![](images/Set-duplicados3.png)
+    </section>
+    <section data-markdown>
+        ## Las Collections. Set (RA6.e)
+        - Operador == (equals function y data class)
+
+        ![](images/Set-duplicados4.png)
+    </section>
+
+    <section data-markdown>
+        ## Las Collections. Set (RA6.e)
+        - Trabajar con Mutables
+
+        ~~~
+        val mFriendSet = mutableSetOf("Jim", "Sue")
+        ~~~
+
+        ![](images/MutableSet.png)
+    </section>
+
+    <section data-markdown>
+        ## Las Collections. Set (RA6.e)
+        - Trabajar con Mutables
+
+        ~~~
+        val friendSetCopy = mFriendSet.toSet() //Crea una copia en un conjunto, tb toMutableSet
+        val friendList = mFriendSet.toList() //Crea una copia en una lista, tb toMutableList
+
+        ~~~
+
+        ![](images/MutableSet-copy.png)
+    </section>
+
+
+    <section data-markdown>
+        https://devexperto.com/data-classes-kotlin/
+
+    </section>
+
+
 
     <section data-markdown>
         ## Las Collections. Map (RA6.e)
