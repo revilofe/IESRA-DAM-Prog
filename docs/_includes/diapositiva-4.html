@@ -221,6 +221,7 @@
         - ![left](images/link.png) [Operaciones especificas de listas](https://kotlinlang.org/docs/list-operations.html)
         - Permite duplicar valores
         - Tiene en cuenta el orden.
+        - Puedes usar == para comparar dos conjuntos. True si contiene los mismos elementos y el orden.
     </section>
     <section data-markdown>
         ## Las Collections. List (RA6.e)
@@ -340,6 +341,7 @@
         - ![left](images/link.png) [Operaciones especificas de conjuntos ](https://kotlinlang.org/docs/set-operations.html)
         - No permite duplicados.
         - No tiene en cuenta el orden.
+        - Puedes usar == para comparar dos conjuntos. True si contiene los mismos elementos.
     </section>
 
     <section data-markdown>
@@ -392,12 +394,13 @@
 
     <section data-markdown>
         ## Las Collections. Set (RA6.e)
-        - Trabajar con Mutables
+        - Trabajar con Mutables. Convertibles a otras colecciones.
 
         ~~~
-        val friendSetCopy = mFriendSet.toSet() //Crea una copia en un conjunto, tb toMutableSet
-        val friendList = mFriendSet.toList() //Crea una copia en una lista, tb toMutableList
-
+        val shoppingSet = mShopping.toSet()
+        if (mShopping.size > mShopping.toSet().size) {
+            //mShopping has duplicate values
+        }
         ~~~
 
         ![](images/MutableSet-copy.png)
