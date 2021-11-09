@@ -7,8 +7,8 @@ propiedades
 - evaluaciones
 
 metodos
-- (1) Modulo(maxAlumnos:Int), establecerNota(idAlumno:String, evaluacion:String, nota:Float): Booblean
-- (2) calculaEvaluacionFinal
+- (1) Modulo(maxAlumnos:Int), establecerNota(idAlumno:String, evaluacion:String, nota:Float): Boolean
+X (2) calculaEvaluacionFinal()
 - (3) listaNotas(evaluacion:String): List<Pair>
 - (4) numeroAprobados(evaluacion:String): Int
 - (5) notaMasBaja(evaluacion:String): Float
@@ -19,7 +19,7 @@ metodos
 - (10) primeraNotaNoAprobada(evaluacion:String): Float
 - (11) listaNotasOrdenados(evaluacion:String): List<Pair>
 - (12) matricularAlumno(alumno:Alumno): Boolean
-- (13) bajaAlumno(alumno:Alumno): Boolean
+_ (13) bajaAlumno(idAlumno:String): Boolean
 
 Alumnos
 
@@ -30,9 +30,3 @@ propiedades
 - ap2: String
 */
 
-//Clases
-
-//Main
-fun main() {
-    TODO("Pendiente de hacer")
-}
