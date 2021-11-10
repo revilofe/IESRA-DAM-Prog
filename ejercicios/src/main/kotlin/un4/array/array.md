@@ -33,7 +33,7 @@ Opcional: Puedes hacer un menu para cada opción.
 
 IMPORTANTE: Comenta el código e identifica claramente que parte del ejercicio estas resolviendo, haciendo referencia a los puntos del ejercicio.
 
-### Crear, realizar y entregar el examen
+### Crear, realizar y entregar el ejercicio:
 a. Crea el proyecto usando el IDE:
     - Opción del Menú: `File` -> `New` -> `Project...`
     - Nombre del proyecto será DAM&lt;curso>-&lt;relacion>-&lt;iniciales>
