@@ -1,5 +1,3 @@
-<script src="https://unpkg.com/kotlin-playground@1" data-selector="code"></script>
-
 # Relacion 4.1
 
 >Objetivo: Uso de arrays.
