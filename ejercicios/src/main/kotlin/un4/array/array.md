@@ -11,7 +11,7 @@ El programa tendrá la siguiente estructura. Los datos de inicialización estar�
     - Módulo, que tendrá
         - un array de los alumnos matriculados, al listarse quedarán ordenados por el identificador del alumno.
         - un array bidimensional, 3 evaluaciones + uno final, que almacena un array de notas de alumnos ordenadas según el orden de los alumnos. (Guarda la información de la nota el mismo valor del índice en el que se encuentra el alumno. Es decir, si por ejemplo el estudiante Pedro está en la posición 2 del array de estudiantes del módulo, su nota estaría en la posición 2 del array de notas.) 
-    - Alumnos
+    - Alumno
         - identificador numérico en el instituto. 
         - nombre y apellidos. 
     - Crea las clases y métodos que creas conveniente para realizar las operaciones que se listan a continuación.
