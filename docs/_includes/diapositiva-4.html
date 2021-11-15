@@ -205,34 +205,36 @@
 
     </section>
     <section data-markdown>
-        - ***Actividad 4.3:*** Cuando se alcance la linea //Do stuf, a que objeto apuntará cada elemento del array.
+        - ***Actividad 4.3:*** Cuando se alcance la linea `//Do stuf`, a que objeto apuntará cada elemento del array.
         ![](images/actividad4.3.png)
     </section>
     <section data-markdown>
         ## Las Collections. Otros (RA6.e)
-        - Listas, Set y Map
-        - Son inmutables por defecto.
-        - MutableList, MutableSet y MutableMap son mutables.
+        - `List`, `Set` y `Map` son inmutables por defecto.
+        - `MutableList`, `MutableSet` y `MutableMap` son mutables.
 
     </section>
     <section data-markdown>
         ## Las Collections. List (RA6.e)
         ![](images/List.png)
+
         - ![left](images/link.png) [Operaciones especificas de listas](https://kotlinlang.org/docs/list-operations.html)
         - Permite duplicar valores
         - Tiene en cuenta el orden.
-        - Puedes usar == para comparar dos conjuntos. True si contiene los mismos elementos y el orden.
+        - Puedes usar `==` para comparar dos conjuntos. Será `True` si contiene los mismos elementos y el orden.
     </section>
     <section data-markdown>
         ## Las Collections. List (RA6.e)
         ![](images/List-crea.png)
+
         - El compilador infiere el tipo, aunque puedes declararlo si quieres.
     </section>
     <section data-markdown>
         ## Las Collections. List (RA6.e)
         - Aquí declaramos el tipo
+
         ```
-        val shopping: List/<String/>
+        val shopping: List&lt;String&gt;
         shopping = listOf("Tea", "Eggs", "Milk")
         ```
 
@@ -251,12 +253,14 @@
     <section data-markdown>
         ## Las Collections. MutableList (RA6.e)
         ![](images/MutableList.png)
-        - Se crean igual pero susando constructores distintos.
+
+
+        - Las `MutableList` se crean igual pero usando un constructor especifico.
+        - Estas listas tiene los mismos métodos mas los adicionales para poder modificar la lista.
 
         ```
         val mShopping = mutableListOf("Tea", "Eggs") //Crea mutable list
         ```
-        - Tiene los mismos metodos mas los adicionales para poder modificar la lista.
 
     </section>
     <section data-markdown>
@@ -341,17 +345,17 @@
         - ![left](images/link.png) [Operaciones especificas de conjuntos ](https://kotlinlang.org/docs/set-operations.html)
         - No permite duplicados.
         - No tiene en cuenta el orden.
-        - Puedes usar == para comparar dos conjuntos. True si contiene los mismos elementos.
+        - Puedes usar `==` para comparar dos conjuntos. True si contiene los mismos elementos.
     </section>
 
     <section data-markdown>
         ## Las Collections. Set (RA6.e)
-        - Duplicado: 1 hash code
+        - Duplicado: 1 Igual `hashCode`
         ![](images/Set-duplicados1.png)
     </section>
     <section data-markdown>
         ## Las Collections. Set (RA6.e)
-        - Duplicado: 2 Operador === (Misma referencia)
+        - Duplicado: 2 Operador `===` (Misma referencia)
 
         ~~~
         val a = "Sue"
@@ -364,7 +368,7 @@
     </section>
     <section data-markdown>
         ## Las Collections. Set (RA6.e)
-        - Duplicado: 3 Operador == (equals function y data class)
+        - Duplicado: 3 Operador `==` (equals function y data class)
 
         ~~~
         val a = Recipe("Thai Curry")
@@ -377,14 +381,17 @@
     </section>
     <section data-markdown>
         ## Las Collections. Set (RA6.e)
-        - Duplicado: 3 Operador == (equals function y data class)
+
+        - Duplicado: 3 Operador `==` (equals function y data class)
 
         ![](images/Set-duplicados4.png)
     </section>
 
     <section data-markdown>
         ## Las Collections. MutableSet (RA6.e)
-        - Trabajar con Mutables
+
+        * Se pueden crear conjuntos con los metodos `setOf` o con el constructor `Set`.
+        * Para trabajar con Mutables, `mutableSetOf`
 
         ~~~
         val mFriendSet = mutableSetOf("Jim", "Sue")
@@ -395,6 +402,7 @@
 
     <section data-markdown>
         ## Las Collections. MutableSet (RA6.e)
+
         - Trabajar con Mutables. Convertibles a otras colecciones.
 
         ~~~
@@ -411,18 +419,18 @@
         ## Las Collections. Map (RA6.e)
         ![](images/Map.png)
         - ![left](images/link.png) [Operaciones especificas de mapas ](https://kotlinlang.org/docs/map-operations.html)
-        - Utiliza pares /<key,value/>
+        - Utiliza pares `&lt;key,value&gt;`
         - Puedes tener dos claves referenciando al mismo objeto.
         - No puedes tener claves duplicadas.
     </section>
     <section data-markdown>
         ## Las Collections. Map (RA6.e)
-        - Como creamos los Maps
+        - Como creamos los `Maps`
         ![](images/Map-crea.png)
     </section>
     <section data-markdown>
         ## Las Collections. Map (RA6.e)
-        - Toman la forma Mapa/<tipo_clave,tipo_valor/>
+        - Toman la forma `Map&lt;tipo_clave,tipo_valor&gt;`
         ![](images/Map-crea2.png)
     </section>
 
