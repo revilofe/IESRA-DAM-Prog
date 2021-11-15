@@ -1,5 +1,3 @@
-<script src="https://unpkg.com/kotlin-playground@1" data-selector="code"></script>
-
 # Relacion 4.1
 
 >Objetivo: Uso de arrays.
@@ -13,7 +11,7 @@ El programa tendrá la siguiente estructura. Los datos de inicialización estar�
     - Módulo, que tendrá
         - un array de los alumnos matriculados, al listarse quedarán ordenados por el identificador del alumno.
         - un array bidimensional, 3 evaluaciones + uno final, que almacena un array de notas de alumnos ordenadas según el orden de los alumnos. (Guarda la información de la nota el mismo valor del índice en el que se encuentra el alumno. Es decir, si por ejemplo el estudiante Pedro está en la posición 2 del array de estudiantes del módulo, su nota estaría en la posición 2 del array de notas.) 
-    - Alumnos
+    - Alumno
         - identificador numérico en el instituto. 
         - nombre y apellidos. 
     - Crea las clases y métodos que creas conveniente para realizar las operaciones que se listan a continuación.
@@ -35,7 +33,7 @@ Opcional: Puedes hacer un menu para cada opción.
 
 IMPORTANTE: Comenta el código e identifica claramente que parte del ejercicio estas resolviendo, haciendo referencia a los puntos del ejercicio.
 
-### Crear, realizar y entregar el examen
+### Crear, realizar y entregar el ejercicio:
 a. Crea el proyecto usando el IDE:
     - Opción del Menú: `File` -> `New` -> `Project...`
     - Nombre del proyecto será DAM&lt;curso>-&lt;relacion>-&lt;iniciales>
