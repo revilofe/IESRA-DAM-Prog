@@ -459,9 +459,9 @@
             - Recorrer las entradas de un map
 
         ~~~
-            for ((key, value) in recipeMap) {
-                println("Key is $key, value is $value")
-            }
+        for ((key, value) in recipeMap) {
+            println("Key is $key, value is $value")
+        }
         ~~~
 
     </section>
@@ -539,8 +539,8 @@
     <section data-markdown>
         ## Las Collections. MutableMap (RA6.e)
         - Obtener las entradas de `MutableMap` y `Map`
-        - Devuelve un `Set` o MutableSet` de `Pair&lt;key,value&gt`
-        - Dependiendo si mRecipeMap es `Map` o `MutableMap` respectivamente.
+        - Devuelve un `Set` o MutableSet` de `Pair &lt;key,value&gt;`
+        - Dependiendo si `mRecipeMap` es `Map` o `MutableMap` respectivamente.
 
         ~~~
         val recipeEntries = mRecipeMap.entries
@@ -548,7 +548,7 @@
 
         - `keys` devuelve `Set`, o `MutableSet` de las `keys` del `Map` o `MutableMap` respectivamente
         - `values` devuelve una `Collection` genérica con los `value` del `Map`
-        > Ojo, `enries`, `keys` y `values` contiene los actuales valores del  `Map`
+        > Ojo, `entries`, `keys` y `values` contiene los valores actuales del  `Map`
 
         ~~~
         if (mRecipeMap.size > mRecipeMap.values.toSet().size) { //Values duplicados? ¿PQ?
