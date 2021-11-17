@@ -209,13 +209,13 @@
         ![](images/actividad4.3.png)
     </section>
     <section data-markdown>
-        ## Las Collections. Otros (RA6.e)
+        ## Las Collections. Otros
         - `List`, `Set` y `Map` son inmutables por defecto.
         - `MutableList`, `MutableSet` y `MutableMap` son mutables.
 
     </section>
     <section data-markdown>
-        ## Las Collections. List (RA6.e)
+        ## Las Collections. List (RA6.c)
         ![](images/List.png)
 
         - ![left](images/link.png) [Operaciones especificas de listas](https://kotlinlang.org/docs/list-operations.html)
@@ -224,13 +224,13 @@
         - Puedes usar `==` para comparar dos conjuntos. Será `True` si contiene los mismos elementos y el orden.
     </section>
     <section data-markdown>
-        ## Las Collections. List (RA6.e)
+        ## Las Collections. List (RA6.c)
         ![](images/List-crea.png)
 
         - El compilador infiere el tipo, aunque puedes declararlo si quieres.
     </section>
     <section data-markdown>
-        ## Las Collections. List (RA6.e)
+        ## Las Collections. List (RA6.c)
         - Aquí declaramos el tipo
 
         ```
@@ -251,7 +251,7 @@
         ```
     </section>
     <section data-markdown>
-        ## Las Collections. MutableList (RA6.e)
+        ## Las Collections. MutableList (RA6.c)
         ![](images/MutableList.png)
 
 
@@ -264,7 +264,7 @@
 
     </section>
     <section data-markdown>
-        ## Las Collections. MutableList (RA6.e)
+        ## Las Collections. MutableList (RA6.c)
 
         ```
         mShopping.add("Milk")  //Añade elemento al final
@@ -276,7 +276,7 @@
     </section>
 
     <section data-markdown>
-        ## Las Collections. MutableList (RA6.e)
+        ## Las Collections. MutableList (RA6.c)
 
         ```
         if (mShopping.contains("Milk")) {
@@ -291,7 +291,7 @@
     </section>
 
     <section data-markdown>
-        ## Las Collections. MutableList (RA6.e)
+        ## Las Collections. MutableList (RA6.c)
 
         ![](images/MutableList-remove.png)
 
@@ -299,7 +299,7 @@
 
 
     <section data-markdown>
-        ## Las Collections. MutableList (RA6.e)
+        ## Las Collections. MutableList (RA6.c)
 
         ```
         if (mShopping.size > 0) {
@@ -433,10 +433,145 @@
         - Toman la forma `Map&lt;tipo_clave,tipo_valor&gt;`
         ![](images/Map-crea2.png)
     </section>
+    <section data-markdown>
+        ## Las Collections. Map (RA6.e)
+        - Como vas a usar un `Map`
+            - Chequear si contiene una `key` - `containsKey`
+            - Chequear si contiene un `value` - `containsValue`
+
+        ~~~
+            recipeMap.containsKey("Recipe1")
+        ~~~
+
+        ![](images/Map-containsValue.png)
+    </section>
+    <section data-markdown>
+        ## Las Collections. Map (RA6.e)
+
+        - Como vas a usar un `Map`
+            - Recuperar una `value` para una especifica `key` - `get` y `getValue`
+
+        ![](images/Map-getValue.png)
+    </section>
+    <section data-markdown>
+        ## Las Collections. Map (RA6.e)
+        - Como vas a usar un `Map`
+            - Recorrer las entradas de un map
+
+        ~~~
+            for ((key, value) in recipeMap) {
+                println("Key is $key, value is $value")
+            }
+        ~~~
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableMap (RA6.e)
+        - `MutableMap` es un subtipo de `Map`. Por tanto, tiene los mismos métodos.
+        - `MutableMap` tiene métodos adicionales para añadir, modificar y eliminar.
+        - Como creamos los `MutableMap`: usando `mutableMapOf` en lugar de `mapOf`
+
+        ~~~
+        val r1 = Recipe("Chicken Soup")
+        val r2 = Recipe("Quinoa Salad")
+        val mRecipeMap = mutableMapOf("Recipe1" to r1, "Recipe2" to r2)
+        ~~~
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableMap (RA6.e)
+        - El compilador infiere que es `MutableMap` de tipo `MutableMap&lt;String, Recipe&gt;`
+
+        ![](images/MutableMap.png)
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableMap (RA6.e)
+        - Añadir una entrada usando `put`
+
+        ![](images/MutableMap-add.png)
+
+        - Si ya contiene un elemento con la `key` `"Recipe3"`, sustituye el `value` y devuelve el original.
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableMap (RA6.e)
+        - Añadir varias entradas usando `putAll`
+
+        ~~~
+        val r4 = Recipe("Jambalaya")
+        val r5 = Recipe("Sausage Rolls")
+        val recipesToAdd = mapOf("Recipe4" to r4, "Recipe5" to r5)
+        mRecipeMap.putAll(recipesToAdd)
+        ~~~
+        > Atención a la sintaxis: `key to value`
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableMap (RA6.e)
+        - Borrar entradas usando `remove`. Dos formas:
+
+        ![](images/MutableMap-remove1.png)
+        ![](images/MutableMap-remove2.png)
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableMap (RA6.e)
+        - Vacía el `MutableMap` usando `clear`.
+
+        ![](images/MutableMap-clear.png)
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableMap (RA6.e)
+        - Copiar el `MutableMap` a otro `Map` usando `toMap`.
+
+        ~~~
+        val recipeMapCopy = mRecipeMap.toMap()
+        ~~~
+
+        - Copiar el `MutableMap` a una `List` usando `toList`.
+
+        ~~~
+        val recipelistCopy = mRecipeMap.toListp()
+        ~~~
+
+    </section>
+    <section data-markdown>
+        ## Las Collections. MutableMap (RA6.e)
+        - Obtener las entradas de `MutableMap` y `Map`
+        - Devuelve un `Set` o MutableSet` de `Pair&lt;key,value&gt`
+        - Dependiendo si mRecipeMap es `Map` o `MutableMap` respectivamente.
+
+        ~~~
+        val recipeEntries = mRecipeMap.entries
+        ~~~
+
+        - `keys` devuelve `Set`, o `MutableSet` de las `keys` del `Map` o `MutableMap` respectivamente
+        - `values` devuelve una `Collection` genérica con los `value` del `Map`
+        > Ojo, `enries`, `keys` y `values` contiene los actuales valores del  `Map`
+
+        ~~~
+        if (mRecipeMap.size > mRecipeMap.values.toSet().size) { //Values duplicados? ¿PQ?
+            println("mRecipeMap contains duplicates values")
+        }
+        ~~~
+    </section>
 
     <section data-markdown>
-        ## Las Collections. (RA6.a)
-        Ademas, de arrays. También tenemos:
+        ## Iteradores. (RA6.d)
+        Iteradores sobre elementos de una lista, set, map:
+    </section>
+    <section data-markdown>
+        ## Clases y métodos genéricos. (RA6.d)
+        - Cada vez que te defines una `Collection` hay que definir dos tipos
+            - El tipo de la `Collection`
+            - El tipo del Elemento. Definido entre &lt; y &gt;
+        ~~~
+        val x: MutableList &lt;String&gt;
+        ~~~
+        - Con esto conseguimos que nuestro código sea codigo seguro.
+
+        El tipo
     </section>
     <section data-markdown>
         ## BIBLIOGRAFÍA
