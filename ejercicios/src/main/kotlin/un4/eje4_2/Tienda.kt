@@ -1,4 +1,4 @@
-package un4.collections
+package un4.eje4_2
 
 data class Tienda(val nombre: String, val clientes: List<Clientes>)
 

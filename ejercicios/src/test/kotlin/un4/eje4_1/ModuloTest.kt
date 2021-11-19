@@ -1,10 +1,8 @@
-package un4.array
+package un4.eje4_1
 
 import Alumno
 import Modulo
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 
 internal class ModuloTest {
 
