@@ -1,4 +1,4 @@
-package eje2
+package un2.eje2
 
 // Función para obtener la palabra a adivinar
 // return: la palabra que hay que adivinar. Si es menor que 5 o contiene espacios devuelve ""

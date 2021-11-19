@@ -1,4 +1,4 @@
-package eje1
+package un1.eje1
 
 import kotlin.random.Random
 

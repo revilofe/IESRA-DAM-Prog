@@ -1,4 +1,4 @@
-package examen1
+package un2.dam1examen1
 
 // #####################################
 // DEFINICIÓN DEL CUERPO DEL PROGRAMA
