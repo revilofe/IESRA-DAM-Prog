@@ -1,11 +1,12 @@
-# Relacion 4.2
+# Relacion 4.3
 > Se evaluará el RA6, CE 
-Esta tarea esta inspirada en [GS Collections Kata.](https://github.com/goldmansachs/gs-collections-kata)
+Esta tarea está inspirada en [GS Collections Kata.](https://github.com/goldmansachs/gs-collections-kata)
 
 >Para los ejercicios se usará como base el archivo Shop.kt.
 
+#### Los puntos marcados con (Ampliación) con opcionales. 
 
-**4.2.1** Kotlin tiene métodos para transformar de un tipo a otro de coleciones. Normalmente comienzan con `to`, por ejemplo `toSet`. 
+**4.3.1** Kotlin tiene métodos para transformar de un tipo a otro de coleciones. Normalmente comienzan con `to`, por ejemplo `toSet`. 
 
 - Implementa un método para obtener un conjunto de todos los clientes.
 ```Kt
@@ -14,7 +15,7 @@ Esta tarea esta inspirada en [GS Collections Kata.](https://github.com/goldmansa
 ```
 
 
-**4.2.2** Implementa los siguientes métodos para **filtrar** datos, que devolverán:
+**4.3.2** Implementa los siguientes métodos para **filtrar** datos, que devolverán:
 - un conjunto de las ciudades de donde son los clientes, puedes hacer uso de `map`
 
 ```kt
@@ -29,7 +30,7 @@ fun Tienda.obtenerClientesPor(ciudad:Ciudad): List<Cliente> =
 TODO()  
 ```
 
-**4.2.3** Implementa los siguientes métodos, recomendado haciendo uso de  `all`, `any`, `count` y `find`. Piensa cuál usar en los siguientes métodos:
+**4.3.3** Implementa los siguientes métodos, recomendado haciendo uso de  `all`, `any`, `count` y `find`. Piensa cuál usar en los siguientes métodos:
 
 - Método que devuelve true si todos los clientes son de una determinada ciudad
 
@@ -54,19 +55,19 @@ fun Tienda.encuentraClienteDe(ciudad: Ciudad): Customer? =
 TODO()
 ```
 
-**4.2.4** Implementa un método para que devuelva una lista de clientes, **ordenadas** descendientemente por el número de pedidos que ellos han realizado. Puedes hacer uso de `sortedDescending` o `sortedByDescending`.
+**4.3.4** Implementa un método para que devuelva una lista de clientes, **ordenadas** descendientemente por el número de pedidos que ellos han realizado. Puedes hacer uso de `sortedDescending` o `sortedByDescending`.
 ```Kt
 fun Tienda.obtenerClientesOrdenadosPorPedidos(): List<Clientes> =
 TODO()
 ```
 
-**4.2.5** Implementa un método para que devuelva una lista de clientes que tiene más pedidos sin entregar que entregados, puedes hacer uso de `Partition`.
+**4.3.5** Implementa un método para que devuelva una lista de clientes que tiene más pedidos sin entregar que entregados, puedes hacer uso de `Partition`.
 ```Kt
 fun Tienda.obtenerClientesConPedidosSinEngregar(): Set<Cliente> = 
 TODO()
 ```
 
-**4.2.6** Implementa un método para que devuelva 
+**4.3.6** Implementa un método para que devuelva 
 
 - Los productos pedidos por un cliente, pudiendo usar flatmap
 ```Kt
@@ -80,13 +81,13 @@ fun Tienda.obtenerProductosPedidos(): Set<Producto> =
 TODO()
 ```
 
-**4.2.7**(Ampliación) Implementa un método para que devuelva el conjunto de productos que han sido pedidos por TODOS los clientes. Puedes usar `flatMap` y `fold` y Puedes usar `Cliente.obtenerProductosPedidos()`
+**4.3.7**(Ampliación) Implementa un método para que devuelva el conjunto de productos que han sido pedidos por TODOS los clientes. Puedes usar `flatMap` y `fold` y Puedes usar `Cliente.obtenerProductosPedidos()`
 ```Kt
 fun Tienda.obtenerProductosPedidosPorTodos(): Set<Producto> =
 TODO()
 ```
 
-**4.2.8** Implementa un método para que devuelva
+**4.3.8** Implementa un método para que devuelva
 
 - Encuentra el producto más caro entre los productos entregados pedidos por el cliente. Usa `Pedido.estaEntregado`
 ```Kt
@@ -100,13 +101,13 @@ fun Tienda.obtenerNumeroVecesProductoPedido(producto: Producto): Int =
 TODO()
 ```
 
-**4.2.9** Implementa un método para que un map que almacene los clientes viviendo en una determinada ciudad. Puedes usar `groupBy`
+**4.3.9** Implementa un método para que un map que almacene los clientes viviendo en una determinada ciudad. Puedes usar `groupBy`
 ```Kt
 fun Tienda.agrupaClientesPorCiudad(): Map<Ciudad, List<Cliente>> =
 TODO()
 ```
 
-**4.2.10**(Ampliación) Implementa un método para que devuelva
+**4.3.10**(Ampliación) Implementa un método para que devuelva
 - un mapa desde el nombre del cliente al cliente, puedes usar `associateBy`
 ```Kt
 fun Tienda.mapeaNombreACliente(): Map<String, Cliente> =
@@ -122,7 +123,7 @@ TODO()
 fun Tienda.mapeaNombreClienteACiudad(): Map<String, Ciudad> =
 TODO()
 ```
-**4.2.11**(Ampliación) Implementa un método para que devuelva
+**4.3.11**(Ampliación) Implementa un método para que devuelva
 - el cliente que ha realizado más pedidos en la tienda, puedes usar `maxByOrNull`.
 ```Kt
 fun Tienda.obtenerClientesConMaxPedidos(): Cliente? =
@@ -134,7 +135,7 @@ TODO()
 fun Cliente.obtenerProductoMasCaroPedido(): Producto? =
 TODO()
 ```
-**4.2.12** Implementa un método para que devuelva
+**4.3.12** Implementa un método para que devuelva
 - la suma de los precios de todos los productos pedidos por un cliente, puedes usar `flatMap` y `sumOf`
 ```Kt
 fun Cliente.dineroGastado(): Double =
