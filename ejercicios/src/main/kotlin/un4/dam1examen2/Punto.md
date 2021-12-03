@@ -33,7 +33,7 @@ La prueba teórica consiste en contestar a las preguntas disponibles en el cuest
     presultado(pa.id+pb.id, pb.x-pa.x, pb.y-pa.y)  
   ~~~ 
 
-- *(RA2.e,f)* Create un método estático (método de clase) con nombre `distancia` que obtiene la diferencia entre dos puntos.
+- - **OPCIONAL** Create un método estático (método de clase) con nombre `distancia` que obtiene la diferencia entre dos puntos.
   El método recibirá como parámetros los dos puntos, y retornará un Double. El método realizará lo siguiente:
 
   ~~~Kt
