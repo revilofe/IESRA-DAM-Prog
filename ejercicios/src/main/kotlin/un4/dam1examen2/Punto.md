@@ -11,7 +11,7 @@ Se evaluará cada uno de los CE del RA2(a, i) y RA6(a, f)
 ## Descripción de la prueba
 Consistirá de una prueba teórica y práctica.
 ### Teoria (2/10)
-La prueba teórica consiste en contestar a las siguientes preguntas. Las respuestas se almacenarán en un fichero llamado parte1.md
+La prueba teórica consiste en contestar a las preguntas disponibles en el cuestionario de Moodle.
 ### Práctica  (8/10)
 - Create una clase `Punto`. El constructor principal de la clase punto recibe como parámetro una variable, de clase `String`, que actuará de identificador del punto.
 - Seguidamente declara dos variables de instancia que almacena los valores de las coordenadas `x` e `y`, de clase `Int`.
@@ -30,10 +30,10 @@ La prueba teórica consiste en contestar a las siguientes preguntas. Las respues
     1 parametro: pa("pa", x,y) 
     2 parametro: pb("pb", x,y)
     // Puntos resultado
-    presultado(pa.id+pb.b, pb.x-pa-x, pb.y-pa.y)  
+    presultado(pa.id+pb.id, pb.x-pa.x, pb.y-pa.y)  
   ~~~ 
 
-- ***OPCIONAL** *(RA2.e,f)* Create un método estático (método de clase) con nombre `distancia` que obtiene la diferencia entre dos puntos.
+- *(RA2.e,f)* Create un método estático (método de clase) con nombre `distancia` que obtiene la diferencia entre dos puntos.
   El método recibirá como parámetros los dos puntos, y retornará un Double. El método realizará lo siguiente:
 
   ~~~Kt
