@@ -102,7 +102,8 @@ Adicionalmente se tendrá en cuenta:
 - Usa el depurador si te atascas.
 ### Crear, realizar y entregar el examen
 1. Crea el proyecto usando el IDE:
-    - Opción del Menú: `File` -> `New` -> `Project...`
+    - Opción del Menú: `File` -> `New` -> `Project...`  
+        - examen2_2DAM_iniciales
     - Siguen los pasos indicados en la siguiente imagen: ***ATENCIÓN*** Sustituye **INICIALES** por tu iniciales.
       ![](./../../resources/img/examen1/creaProyecto.png)
     - Sigue los pasos hasta crear el proyecto.
