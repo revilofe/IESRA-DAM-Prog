@@ -7,6 +7,7 @@ Implementar una clase `ArmaDeFuego` con sus métodos y propiedades:
 ### Propiedades
 - `private nombre: String`
 - `private municion: Int`
+- `private municionARestar: Int`
 - `private tipoDeMunicion String`
 - `private danio: Int`
 - `private radio: String` puede tomar valores '["Pequeño", "Amplio"]`
