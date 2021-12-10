@@ -73,6 +73,8 @@
         - Todas las clases en Kotlin tienen una superclase común `Any`, que es la superclase predeterminada para una clase sin supertipos declarados.
         - Esta clase `Any` tiene unos pocos métodos básicos como `equals()` o `toString()`
 
+        - ***Actividad:*** ¿Qué métodos y propiedades hereda `Example` de `Any`?
+
         ~~~Kt
             // Hereda de 'Any' implícitamente
             class Example
@@ -88,8 +90,9 @@
         - Para permitir que una clase sea heredada, hay que utilizar la palabra clave `open`
         - Si la clase derivada tiene un constructor primario, la clase base puede (y debe) inicializarse allí mismo, utilizando los parámetros del constructor primario.
 
+        - ***Actividad:*** ¿create una variable de clase `Base`? ¿Puedes asignarle una instancia de `DerivedWithConstructor`?
         ~~~Kt
-            open class Base(p: Int)
+            open class Base(var p: Int)
 
             // la clase derivada tiene un constructor primario
             class DerivedWithConstructor(p: Int) : Base(p)
@@ -105,7 +108,7 @@
         - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase con 1 e imprime el valor de p ¿Que muestra en pantalla? ¿Que sucede si quitas el constructor de la subclase? ¿Podemos definir la subclase de otra forma? ¿Que tenemos que hacer para llamar al constructor de 2 parámetros?
 
         ~~~Kt
-        open class Base(p: Int) {
+        open class Base(var p: Int) {
             constructor(p: Int, q: Int): this(p)
         }
 
@@ -147,19 +150,37 @@
         - Un método con la palabra clave `override` también es `open` por definición y puede ser sobreescrita por las subclases sucesivas.
         - Es posible marcar una función `override` con la palabra clave `final` para evitar que sea sobreescrita.
 
+        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la base y derivada y llama a todos los mètodos. ¿Que muestra en pantalla? ¿Que sucede si intentas sobre escribir el método nv? ¿Que sucede si intentas sobre escribir el método `x` de `Derived` en una nueva clase `Derived2`? Crea una nueva clase `Derived2` que sobreescriba el método `v`, sacando "Derivada2".
 
         ~~~Kt
         open class Base {
-            open fun v() { ... }
-            open fun x(p: Int) { ... }
-            fun nv() { ... }
+            open fun v() { println("base") }
+            open fun x(p: Int) { println(p) }
+            fun nv() { println(this.toString() + ": sin sobreescribir") }
         }
 
         class Derived: Base() {
-            override fun v() { ... }
+            override fun v() { println("derivada") }
             // Restringir la sobreescritura
-            final override fun x(p: Int) { ... }
+            final override fun x(p: Int) { println(p+1) }
         }
+        <!--
+            fun main()
+           {
+               var b = Base()
+               var d = Derived()
+
+               b.v(); AbstractCollectionb.x(1); b.nv()
+               d.v(); d.x(1); d.nv()
+
+           }
+           //base
+           //1
+           //Base@2c7b84de: sin sobreescribir
+           //derivada
+           //2
+           //Derived@3fee733d: sin sobreescribir
+        -->
         ~~~
     </section>
 
@@ -170,7 +191,8 @@
             - Si una clase hereda varias implementaciones del mismo miembro de sus superclases inmediatas, debe invalidar este miembro y proporcionar su propia implementación.
             - Para denotar el supertipo del cual se toma la implementación heredada, usamos la palaba clave `super` calificado por el nombre de supertipo entre paréntesis angulares, por ejemplo, `super&lt;Base&gt;`:
 
-        ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase ¿Que muestra en pantalla?
+        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase ¿Que muestra en pantalla? ¿Que muestra en pantalla si me declaro lo siguiente `var a: A = C(); a.f()` y `var b: B = C(); b.f()`? ¿Si instancias `A` y lo asignas a `a`, llamando a `a.f()`, que diferencias encuentras con la anterior llamada a `a.f()`?
+
         ~~~Kt
         open class A {
             open fun f() { print("A") }
@@ -178,7 +200,7 @@
         }
 
         interface B {
-            fun f() { print("B") } // interface members are 'open' by default
+            fun f() { print("B") } // Los miembros de las interfaces son `open` por defecto.
             fun b() { print("b") }
         }
 
@@ -209,7 +231,8 @@
         - También se puede usar la palabra clave `override` como parte de la declaración de una propiedad en un constructor primario.
         - Cada propiedad declarada puede ser sobreescrita por una propiedad con un inicializador o por una propiedad con un método `getter()`.
 
-        ***Actividad:*** Ejecuta el codigo siguiente. Crea el main,  create objetos de las subclases ¿Que muestra en pantalla?
+        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, crea un objeto de `Foo` e imprime por pantalla su valor `x`. Create objetos de las subclases ¿Que diferencias ves en pantalla?
+
         ~~~Kt
         open class Foo {
             open val x: String
@@ -221,7 +244,7 @@
         }
 
         interface Foo1 {
-        val count: Int
+            val count: Int
         }
 
         class Bar1(override val count: Int) : Foo1
@@ -251,7 +274,8 @@
        <section data-markdown>
            ## Orden de inicialización
 
-           ***Actividad:*** Ejecuta el codigo siguiente. Crea el main y instancia la clase base. ¿Cual es el orden?
+           - ***Actividad:*** Ejecuta el codigo siguiente. Crea el main y instancia la clase base. ¿Cual es el orden?
+
            ~~~Kt
            open class Base(val name: String) {
 
@@ -283,13 +307,12 @@
            ~~~
        </section>
 
-
-
        <section data-markdown>
            ## BIBLIOGRAFÍA
            - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
            - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
-           - ![left](images/link.png) [interfaces en kotlin](https://devexperto.com/interfaces-kotlin/)
+           - ![left](images/link.png) [Herencia en kotlin](https://www.develou.com/herencia-en-kotlin/)
+           - ![left](images/link.png) [Interfaces en kotlin](https://devexperto.com/interfaces-kotlin/)
            - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
        </section>
 
