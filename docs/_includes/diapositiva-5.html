@@ -1,11 +1,89 @@
+<script src="https://unpkg.com/kotlin-playground@1" data-selector="code"></script>
+
 <section>
     <section data-markdown>
-        ## Unidad 5
+        # Unidad 5
+        ## Creación de estructuras de datos propias usando poo: Listas, mapas, etc
     </section>
     <!--
         Bloques de diapositivas
     -->
     <section data-markdown>
-        Bloques de diapositivas
+        ## Resultado de Aprendizaje 4
+
+        > Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.
+
     </section>
+    <section data-markdown>
+        ## Criterios de evaluación
+
+        - a) Se ha reconocido la sintaxis, estructura y componentes típicos de una clase.
+        - b) Se han definido clases.
+        - c) Se han definido clases.
+        - d) Se han definido propiedades y métodos.
+        - e) Se han creado constructores.
+        - f) Se han desarrollado programas que instancien y utilicen objetos de las clases creadas anteriormente.
+        - g) Se han utilizado mecanismos para controlar la visibilidad de las clases y de sus miembros.
+        - h) Se han definido y utilizado clases heredadas.
+        - i) Se han creado y utilizado métodos estáticos.
+        - j) Se han definido y utilizado interfaces.
+        - k) Se han creado y utilizado conjuntos y librerías de clases.
+
+    </section>
+    <section data-markdown>
+        ## Contenidos mínimos:
+
+        **Desarrollo de clases:**
+        - Concepto de clase y objeto.
+        - Estructura y miembros de una clase. Diagramas de clase.
+        - Creación de atributos.
+        - Creación de métodos.
+        - Creación de constructores.
+        - Utilización de clases y objetos.
+        - Concepto de herencia. Tipos. Utilización de clases heredadas.
+        - Librerías de clases. Creación. Inclusión y uso de la interface.
+
+
+
+    </section>
+    <section data-markdown>
+        *********************
+    </section>
+
+    <!--
+        Bloques de diapositivas
+    -->
+
+    <section data-markdown>
+        ## Herencia. (RA4.h)
+
+        ![left](images/link.png) [https://kotlinlang.org/](https://github.com/revilofe/apuntes-kotlin#herencia)
+
+        - La herencia es fundamental para la programación orientada a objetos.
+        - Nos permite crear nuevas clases que reutilizan, amplían y/o modifican el comportamiento de los preexistentes.
+        - La clase preexistente se llama **superclase** (o clase base), y la clase nueva que estamos creando se llama **subclase** (o clase derivada).
+        - Una subclase obtendrá implícitamente todos los campos, propiedades y métodos de la superclase (y de la superclase de la superclase si es el caso).
+        - Hay una restricción en cuanto a cuántas clases podemos heredar; en una JVM, solo puede tener una clase base. Pero se puede heredar de múltiples interfaces.
+        - La herencia es transitiva. Si la clase C se deriva de la clase B y esa clase B se deriva de una clase A dada, entonces la clase C es una clase derivada de A.
+        - Todas las clases en Kotlin tienen una superclase común `Any`, que es la superclase predeterminada para una clase sin supertipos declarados.
+        - Esta clase `Any` tiene unos pocos métodos básicos como `equals()` o `toString()`
+        ~~~
+        // Hereda de 'Any' implícitamente
+        class Example
+        ~~~
+
+    </section>
+    <section data-markdown>
+        ## BIBLIOGRAFÍA
+        - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
+        - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
+        - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
+    </section>
+
 </section>
+
+
+
+
+
+

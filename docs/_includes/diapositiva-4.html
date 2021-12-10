@@ -23,9 +23,6 @@
         - d) Se han utilizado iteradores para recorrer los elementos de las listas.
         - e) Se han reconocido las características y ventajas de cada una de la colecciones de datos disponibles.
         - f) Se han creado clases y métodos genéricos.
-        - g) Se han utilizado expresiones regulares en la búsqueda de patrones en cadenas de texto.
-        - h) Se han identificado las clases relacionadas con el tratamiento de documentos XML.
-        - i) Se han realizado programas que realicen manipulaciones sobre documentos XML.
 
     </section>
     <section data-markdown>
@@ -35,11 +32,10 @@
         - Estructuras, tipos, definición y usos.
         - Librerías estándar de objetos.
         - Arrays, definición, tipos, creación, recorridos, búsquedas y operaciones.
-        - Cadenas de caracteres, usos, recorridos. Expresiones regulares.
         - Listas, definición, tipos, creación, recorridos, búsquedas y operaciones.
         - Otras estructuras: Conjuntos y Mapas.
         - Tipos genéricos: Definición de clases y métodos genéricos.
-        - XML, clases para manipularlos.
+
     </section>
     <section data-markdown>
         *********************
@@ -558,20 +554,25 @@
     </section>
 
     <section data-markdown>
-        ## Iteradores. (RA6.d)
-        Iteradores sobre elementos de una lista, set, map:
-    </section>
-    <section data-markdown>
-        ## Clases y métodos genéricos. (RA6.d)
+        ## Clases y métodos genéricos. (RA6.f)
         - Cada vez que te defines una `Collection` hay que definir dos tipos
-            - El tipo de la `Collection`
-            - El tipo del Elemento. Definido entre &lt; y &gt;
+        - El tipo de la `Collection`
+        - El tipo del Elemento. Definido entre &lt; y &gt;
         ~~~
         val x: MutableList &lt;String&gt;
         ~~~
-        - Con esto conseguimos que nuestro código sea codigo seguro.
+        - Con esto conseguimos que nuestro código sea código seguro.
 
-        El tipo
+        - Investiga sobre los tipos genéricos en la siguiente actividad.
+        ![left](images/link.png) [Actividad ](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un4/eje4_4/Generics.md)
+
+    </section>
+    <section data-markdown>
+        ## Iteradores. (RA6.d)
+        Iteradores sobre elementos de una lista, set, map.
+
+        - Investiga sobre los iteradores en la siguiente actividad.
+        ![left](images/link.png) [Actividad ](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un4/eje4_4/Generics.md)
     </section>
     <section data-markdown>
         ## BIBLIOGRAFÍA
@@ -582,17 +583,6 @@
         - ![left](images/link.png) [Collections en Kotlin] (https://chercher.tech/kotlin/collections-kotlin)
         - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
     </section>
-    <section data-markdown>
-        Bloques de diapositivas
-        ![left](images/link.png) [Resumen de collections](https://kotlinlang.org/docs/collections-overview.html)
-        https://play.kotlinlang.org/byExample/05_Collections/01_List
-``` run-kotlin
-fun main()
-{
-}
-```
-    </section>
-
 </section>
 
 
