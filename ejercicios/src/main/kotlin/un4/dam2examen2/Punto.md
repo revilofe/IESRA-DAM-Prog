@@ -11,19 +11,19 @@ Se evaluará cada uno de los CE del RA2(a, i) y RA6(a, f)
 ## Descripción de la prueba
 Consistirá de una prueba teórica y práctica.
 ### Teoria (2/10)
-La prueba teórica consiste en contestar a las preguntas disponibles en el cuestionario de Moodle.
+La prueba teórica consiste en contestar a las preguntas del cuestionario de Moodle.
 ### Práctica  (8/10)
-- Create una clase `Punto`. El constructor principal de la clase punto recibe como parámetro una variable, de clase `String`, que actuará de identificador del punto.
-- Seguidamente declara dos variables de instancia que almacena los valores de las coordenadas `x` e `y`, de clase `Int`.
-- La clase punto tiene un constructor secundario, que recibirá como parámetros dos `Int` `x` e `y`, que se utilizan para inicializar las variables de instancia definidas en el punto anterior.
-- *(RA2.c)* Crea un método llamado `obtenerCoordenadas` que devuelva una instancia de la clase `Pair`, con las coordenadas del punto, `x` e `y`.
-- *(RA2.d)* Crea un método llamado `toString` que devuelva un objeto de clase `String` que representará, en este formato, la instancia de la clase `Punto`.  
+1. Create una clase `Punto`. El constructor principal de la clase punto recibe como parámetro una variable, de clase `String`, que actuará de identificador del punto.
+2. Seguidamente declara dos variables de instancia que almacena los valores de las coordenadas `x` e `y`, de clase `Int`.
+3. La clase punto tiene un constructor secundario, que recibirá como parámetros dos `Int` `x` e `y`, que se utilizan para inicializar las variables de instancia definidas en el punto anterior.
+4. *(RA2.c)* Crea un método llamado `obtenerCoordenadas` que devuelva una instancia de la clase `Pair`, con las coordenadas del punto, `x` e `y`.
+5. *(RA2.d)* Crea un método llamado `toString` que devuelva un objeto de clase `String` que representará, en este formato, la instancia de la clase `Punto`.  
   El formato será:
   ~~~Kt 
     punto <id> -> [<x>,<y>]
   ~~~
   Donde `id` es el identificador del punto, y `x` e `y` son las coordenadas del punto.
-- *(RA2.e,f)* Create un método estático (método de clase) con nombre `componenteDeVector` que realiza la resta entre dos puntos.  
+6. *(RA2.e,f)* Create un método estático (método de clase) con nombre `componenteDeVector` que realiza la resta entre dos puntos.  
   El método recibirá como parámetros los dos puntos, y retornará un punto resultado. El método realizará lo siguiente.
   ~~~Kt 
     // Puntos entrada
@@ -33,7 +33,7 @@ La prueba teórica consiste en contestar a las preguntas disponibles en el cuest
     presultado(pa.id+pb.id, pb.x-pa.x, pb.y-pa.y)  
   ~~~ 
 
-- - **OPCIONAL** Create un método estático (método de clase) con nombre `distancia` que obtiene la diferencia entre dos puntos.
+7. *(RA2.e,f)* Create un método estático (método de clase) con nombre `distancia` que obtiene la diferencia entre dos puntos.
   El método recibirá como parámetros los dos puntos, y retornará un Double. El método realizará lo siguiente:
 
   ~~~Kt
@@ -43,14 +43,14 @@ La prueba teórica consiste en contestar a las preguntas disponibles en el cuest
     // Puntos resultado
     d(pa, pb) = RaizCuadrada(PotenciaDos(pb.x-pa.x) + PotenciaDos(pb.y-pa.y)) 
   ~~~ 
-- *(RA2.b,d,h)* Escribe un programa que reste dos puntos, el programa tendrá que instanciar dos objetos de la clase punto, a(3,2) y b(1,3) y haciendo uso del método `componenteDeVector` devuelva un tercer punto. La salida será similar a:
+8. *(RA2.b,d,h)* Escribe un programa que reste dos puntos, el programa tendrá que instanciar dos objetos de la clase punto, a(3,2) y b(1,3) y haciendo uso del método `componenteDeVector` devuelva un tercer punto. La salida será similar a:
 
   ~~~Kt
     punto pA -> [3, 2]
     punto pB -> [1, 3]
     Componente AB: punto pApB -> [-2, 1]
   ~~~
-- *(RA6.a,c)* Create un método estático (método de clase) con nombre `localizacionGeograficaNS` que clasifica los puntos geográficamente, en `Norte` y `Sur`.
+9. *(RA6.a,c)* Create un método estático (método de clase) con nombre `localizacionGeograficaNS` que clasifica los puntos geográficamente, en `Norte` y `Sur`.
   El método recibirá como parámetros un `Array` de puntos y devolverá un `Map` en el que la cadena `"Norte"` tendrá asociada una lista de puntos localizados al norte y la cadena `"Sur"` tendrá una lista de puntos localizados al sur.
   El método realizará lo siguiente:
 
@@ -65,7 +65,7 @@ La prueba teórica consiste en contestar a las preguntas disponibles en el cuest
             introducir pto en la lista del Sur, que se almacena en el Map 
     Retornará: Map ("Sur" to {pa.id+pb.b, pb.x-pa-x, pb.y-pa.y)  
   ~~~ 
-- *(RA6.a,c)* Escribe un programa que haga uso del método estático con nombre `localizacionGeograficaNS`, al que se le pasará la lista de puntos y retornará la clasificación geográfica de los puntos.  
+10. *(RA6.a,c)* Escribe un programa que haga uso del método estático con nombre `localizacionGeograficaNS`, al que se le pasará la lista de puntos y retornará la clasificación geográfica de los puntos.  
   El resultado será similar al siguiente:
   ~~~Kt 
     Lista de puntos: [punto p1 -> [-1, 0], punto p2 -> [3, -1], punto p3 -> [-4, 4], punto p4 -> [-3, 2], punto p5 -> [6, -4], punto p6 -> [-5, 6], punto p7 -> [10, -8], punto p8 -> [1, 5], punto p9 -> [6, -7]]
@@ -102,7 +102,8 @@ Adicionalmente se tendrá en cuenta:
 - Usa el depurador si te atascas.
 ### Crear, realizar y entregar el examen
 1. Crea el proyecto usando el IDE:
-    - Opción del Menú: `File` -> `New` -> `Project...`
+    - Opción del Menú: `File` -> `New` -> `Project...`  
+        - examen2_2DAM_iniciales
     - Siguen los pasos indicados en la siguiente imagen: ***ATENCIÓN*** Sustituye **INICIALES** por tu iniciales.
       ![](./../../resources/img/examen1/creaProyecto.png)
     - Sigue los pasos hasta crear el proyecto.
