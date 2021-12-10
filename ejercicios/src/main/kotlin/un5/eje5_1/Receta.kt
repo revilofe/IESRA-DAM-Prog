@@ -1,3 +1,5 @@
+package un1.eje5_1
+
 data class Ingrediente(val nombre: String, val cantidad: Double, val unidad: String)
 data class Receta(val nombre: String, val ingredientes: Set<Ingrediente>, val pasos: Map<Int, String>)
 
