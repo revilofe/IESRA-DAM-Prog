@@ -1,5 +1,5 @@
 # Relación 5.1
-> Se evaluará el RA4, CE h
+> Se evaluará el RA4, CE a, b, d, e, f, h
 
 
 ## Descripción
@@ -27,6 +27,11 @@ Recorrelas y dispara una vez y muestra su información cada vez que dispares.
 ### Evaluación
 | Criterio                                           | Valor 1                              | Valor 2                                            | Valor 3                       |
 |----------------------------------------------------|--------------------------------------|----------------------------------------------------|-------------------------------|
+| RA4.a Sintaxis y estructura de una clase | No funciona o no adecuada 0          | Se han implmentado correctamente pero con problemas 5| Funciona y es correcta la implementación 10 |
+| RA4.b Definición de clases | No funciona o no adecuada 0          | Se han implmentado correctamente pero con problemas 5| Funciona y es correcta la implementación 10 |
+| RA4.d Definición de métodos y propiedades | No funciona o no adecuada 0          | Se han implmentado correctamente pero con problemas 5| Funciona y es correcta la implementación 10 |
+| RA4.e Creación de constructores | No funciona o no adecuada 0          | Se han implmentado correctamente pero con problemas 5| Funciona y es correcta la implementación 10 |
+| RA4.f Instanciación y uso de objetos de clases creadas | No funciona o no adecuada 0          | Se han implmentado correctamente pero con problemas 5| Funciona y es correcta la implementación 10 |
 | RA4.h Se han definido y utilizado clases heredadas | No funciona o no adecuada 0          | Se han implmentado la herencia, los metodos y propiedades pero no del todo correcto 5| Funciona y es correcta la implementación 10 |
 
 Adicionalmente se tendrá en cuenta:
