@@ -64,21 +64,112 @@
         - La clase preexistente se llama **superclase** (o clase base), y la clase nueva que estamos creando se llama **subclase** (o clase derivada).
         - Una subclase obtendrá implícitamente todos los campos, propiedades y métodos de la superclase (y de la superclase de la superclase si es el caso).
         - Hay una restricción en cuanto a cuántas clases podemos heredar; en una JVM, solo puede tener una clase base. Pero se puede heredar de múltiples interfaces.
+    </section>
+
+
+    <section data-markdown>
+        ## Herencia. (RA4.h)
         - La herencia es transitiva. Si la clase C se deriva de la clase B y esa clase B se deriva de una clase A dada, entonces la clase C es una clase derivada de A.
         - Todas las clases en Kotlin tienen una superclase común `Any`, que es la superclase predeterminada para una clase sin supertipos declarados.
         - Esta clase `Any` tiene unos pocos métodos básicos como `equals()` o `toString()`
+
         ~~~
-        // Hereda de 'Any' implícitamente
-        class Example
+            // Hereda de 'Any' implícitamente
+            class Example
         ~~~
 
     </section>
+
+    <section data-markdown>
+        ## Herencia. (RA4.h)
+
+        - Para declarar que una clase hereda de una clase base, colocamos el tipo de la clase base después de **dos puntos** en el encabezado de la subclase.
+        - Por defecto en Kotlin las clases están cerradas a la herencia, es decir, son `final`.
+        - Para permitir que una clase sea heredada, hay que utilizar la palabra clave `open`
+        - Si la clase derivada tiene un constructor primario, la clase base puede (y debe) inicializarse allí mismo, utilizando los parámetros del constructor primario.
+
+        ~~~
+            open class Base(p: Int)
+
+            // la clase derivada tiene un constructor primario
+            class DerivedWithConstructor(p: Int) : Base(p)
+        ~~~
+
+    </section>
+
+    <section data-markdown>
+        ## Herencia. (RA4.h)
+        - Si la clase no tiene un constructor primario, entonces cada constructor secundario tiene que inicializar el tipo base usando la palabra clave `super`, o delegar a otro constructor que haga eso.
+        - Tenga en cuenta que en este caso, diferentes constructores secundarios pueden llamar a diferentes constructores de la clase base:
+
+        ~~~Kt
+        open class Base(p: Int) {
+            constructor(p: Int, q: Int): this(p)
+        }
+
+        class DerivedWithoutConstructor : Base {
+            // llamando al constructor base con super() desde constructor secundario
+            constructor(p: Int) : super(p)
+        }
+        ~~~
+    </section>
+
+
+    <section data-markdown>
+        ## Sobreescribir métodos
+        - Kotlin requiere anotaciones explícitas para la sobreescritura de funciones miembro.
+        - Para que una función pueda ser sobreescrita se utiliza la palabra clave `open` delante del nombre del método.
+        - Dado que las clases son finales en Kotlin, sólo podemos utilizar la palabra clave `open` en métodos de instancia de clases que también hayan sido definidas como `open`.
+        - Para indicar que una función en la clase derivada sobreescribe una función de la clase padre se utiliza la palabra clave `override` delante del nombre del método.
+        - De esta forma le indicamos al compilador que este método sobreescribe un método de la clase padre y puede realizar las comprobaciones en tiempo de compilación.
+    </section>
+
+
+    <section data-markdown>
+        ## Sobreescribir métodos
+        - Un método con la palabra clave `override` también es `open` por definición y puede ser sobreescrita por las subclases sucesivas.
+        - Es posible marcar una función `override` con la palabra clave `final` para evitar que sea sobreescrita.
+
+        <script src="https://gist.github.com/revilofe/f1b26d0c9534409c3dbf804e9c258f56.js"></script>
+
+    </section>
+
+
+    <section data-markdown>
+        ## Sobreescribir métodos
+        En Kotlin, la herencia está regulada por la siguiente regla: si una clase hereda varias implementaciones del mismo miembro de sus superclases inmediatas, debe invalidar este miembro y proporcionar su propia implementación. Para denotar el supertipo del cual se toma la implementación heredada, usamos la palaba clave 'super' calificado por el nombre de supertipo entre paréntesis angulares, por ejemplo, super<Base>:
+
+        ~~~
+        open class A {
+        open fun f() { print("A") }
+        fun a() { print("a") }
+        }
+
+        interface B {
+        fun f() { print("B") } // interface members are 'open' by default
+        fun b() { print("b") }
+        }
+
+        class C() : A(), B {
+        // El compilador requiere que 'f()' sea sobreescrito para eliminar la ambigüedad
+        override fun f() {
+        super&lt;A&gt;.f() // call to A.f()
+        super&lt;B&gt;.f() // call to B.f()
+            }
+            }
+        ~~~
+
+    </section>
+
+
+
     <section data-markdown>
         ## BIBLIOGRAFÍA
         - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
         - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
         - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
     </section>
+
 
 </section>
 
