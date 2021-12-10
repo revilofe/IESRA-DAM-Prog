@@ -73,7 +73,7 @@
         - Todas las clases en Kotlin tienen una superclase común `Any`, que es la superclase predeterminada para una clase sin supertipos declarados.
         - Esta clase `Any` tiene unos pocos métodos básicos como `equals()` o `toString()`
 
-        ~~~
+        ~~~Kt
             // Hereda de 'Any' implícitamente
             class Example
         ~~~
@@ -88,7 +88,7 @@
         - Para permitir que una clase sea heredada, hay que utilizar la palabra clave `open`
         - Si la clase derivada tiene un constructor primario, la clase base puede (y debe) inicializarse allí mismo, utilizando los parámetros del constructor primario.
 
-        ~~~
+        ~~~Kt
             open class Base(p: Int)
 
             // la clase derivada tiene un constructor primario
@@ -102,6 +102,8 @@
         - Si la clase no tiene un constructor primario, entonces cada constructor secundario tiene que inicializar el tipo base usando la palabra clave `super`, o delegar a otro constructor que haga eso.
         - Tenga en cuenta que en este caso, diferentes constructores secundarios pueden llamar a diferentes constructores de la clase base:
 
+        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase con 1 e imprime el valor de p ¿Que muestra en pantalla? ¿Que sucede si quitas el constructor de la subclase? ¿Podemos definir la subclase de otra forma? ¿Que tenemos que hacer para llamar al constructor de 2 parámetros?
+
         ~~~Kt
         open class Base(p: Int) {
             constructor(p: Int, q: Int): this(p)
@@ -110,7 +112,22 @@
         class DerivedWithoutConstructor : Base {
             // llamando al constructor base con super() desde constructor secundario
             constructor(p: Int) : super(p)
+            <!-- constructor(p: Int, q:Int) : super(p,q) -->
+
         }
+        <!--
+            //	class DerivedWithoutConstructor(p:Int) : Base(p)
+           fun main()
+           {
+                var d1 = DerivedWithoutConstructor(1)
+                var d2 = DerivedWithoutConstructor(2)
+                var d3 = DerivedWithoutConstructor(2,3)
+
+               println(d1.p)
+               println(d2.p)
+
+           }
+        -->
         ~~~
     </section>
 
@@ -130,48 +147,154 @@
         - Un método con la palabra clave `override` también es `open` por definición y puede ser sobreescrita por las subclases sucesivas.
         - Es posible marcar una función `override` con la palabra clave `final` para evitar que sea sobreescrita.
 
-        <script src="https://gist.github.com/revilofe/f1b26d0c9534409c3dbf804e9c258f56.js"></script>
 
+        ~~~Kt
+        open class Base {
+            open fun v() { ... }
+            open fun x(p: Int) { ... }
+            fun nv() { ... }
+        }
+
+        class Derived: Base() {
+            override fun v() { ... }
+            // Restringir la sobreescritura
+            final override fun x(p: Int) { ... }
+        }
+        ~~~
     </section>
 
 
     <section data-markdown>
         ## Sobreescribir métodos
-        En Kotlin, la herencia está regulada por la siguiente regla: si una clase hereda varias implementaciones del mismo miembro de sus superclases inmediatas, debe invalidar este miembro y proporcionar su propia implementación. Para denotar el supertipo del cual se toma la implementación heredada, usamos la palaba clave 'super' calificado por el nombre de supertipo entre paréntesis angulares, por ejemplo, super<Base>:
+        - En Kotlin, la herencia está regulada por la siguiente regla:
+            - Si una clase hereda varias implementaciones del mismo miembro de sus superclases inmediatas, debe invalidar este miembro y proporcionar su propia implementación.
+            - Para denotar el supertipo del cual se toma la implementación heredada, usamos la palaba clave `super` calificado por el nombre de supertipo entre paréntesis angulares, por ejemplo, `super&lt;Base&gt;`:
 
-        ~~~
+        ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase ¿Que muestra en pantalla?
+        ~~~Kt
         open class A {
-        open fun f() { print("A") }
-        fun a() { print("a") }
+            open fun f() { print("A") }
+            fun a() { print("a") }
         }
 
         interface B {
-        fun f() { print("B") } // interface members are 'open' by default
-        fun b() { print("b") }
+            fun f() { print("B") } // interface members are 'open' by default
+            fun b() { print("b") }
         }
 
         class C() : A(), B {
-        // El compilador requiere que 'f()' sea sobreescrito para eliminar la ambigüedad
-        override fun f() {
-        super&lt;A&gt;.f() // call to A.f()
-        super&lt;B&gt;.f() // call to B.f()
+            // El compilador requiere que 'f()' sea sobreescrito para eliminar la ambigüedad
+            override fun f() {
+            super&lt;A&gt;.f() // call to A.f()
+            super&lt;B&gt;.f() // call to B.f()
             }
-            }
+        }
+        <!--
+        fun main()
+        {
+            var c = C()
+            c.f()
+        }
+        //AB
+        -->
+
         ~~~
-
     </section>
-
-
 
     <section data-markdown>
-        ## BIBLIOGRAFÍA
-        - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
-        - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
-        - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
+        ## Sobreescribir propiedades
+        - La sobreescritura de propiedades funciona de manera similar a la sobreescritura de métodos.
+        - La propiedades que pueden ser sobreescritas tienen que tener la palabra `open` en su definición.
+        - Las propiedades declaradas en una superclase que luego se vuelven a declarar en una subclase deben ir precedidas por la palabra clave `override` y deben tener un tipo compatible.
+        - También se puede usar la palabra clave `override` como parte de la declaración de una propiedad en un constructor primario.
+        - Cada propiedad declarada puede ser sobreescrita por una propiedad con un inicializador o por una propiedad con un método `getter()`.
+
+        ***Actividad:*** Ejecuta el codigo siguiente. Crea el main,  create objetos de las subclases ¿Que muestra en pantalla?
+        ~~~Kt
+        open class Foo {
+            open val x: String
+            get() { return "base" }
+        }
+
+        class Bar : Foo() {
+            override val x: String = "subclase"
+        }
+
+        interface Foo1 {
+        val count: Int
+        }
+
+        class Bar1(override val count: Int) : Foo1
+        <!--
+           fun main()
+           {
+           var b = Bar()
+           println(b.x)
+           var b1 = Bar1(b.x.length)
+           println(b1.count)
+           }
+        //subclase
+        //8
+        -->
+        ~~~
     </section>
 
 
-</section>
+      <section data-markdown>
+           ## Orden de inicialización
+           - Durante la construcción de una nueva instancia de una clase derivada, la inicialización de la clase base se realiza como primer paso (precedida solo por la evaluación de los argumentos para el constructor de la clase base) y, por lo tanto, ocurre antes de que se ejecute la lógica de inicialización de la clase derivada.
+           - Por lo tanto:
+               - Durante la inicialización de las propiedades de la clase base, las propiedades de la clase derivada aún no se han inicializado.
+               - Si alguna de esas propiedades se utilizan (de forma directa o indirecta) en la inicialización de la clase base se pueden producir comportamientos extraños o errores en tiempo de ejecución.
+      </section>
+
+       <section data-markdown>
+           ## Orden de inicialización
+
+           ***Actividad:*** Ejecuta el codigo siguiente. Crea el main y instancia la clase base. ¿Cual es el orden?
+           ~~~Kt
+           open class Base(val name: String) {
+
+               init { println("Initializing Base")
+               }
+               open val size: Int = name.length.also { println("Initializing size in Base: $it") }
+           }
+
+           class Derived(name: String, val lastName: String) : Base(name.capitalize().also { println("Argument for Base: $it") }) {
+
+               init { println("Initializing Derived")
+               }
+
+               override val size: Int =
+               (super.size + lastName.length).also { println("Initializing size in Derived: $it") }
+           }
+           <!--
+           fun main()
+           {
+               var d = Derived("La base", "La derivada")
+           }
+            //Argument for Base: La base
+            //Initializing Base
+            //Initializing size in Base: 7
+            //Initializing Derived
+            //Initializing size in Derived: 18
+            -->
+
+           ~~~
+       </section>
+
+
+
+       <section data-markdown>
+           ## BIBLIOGRAFÍA
+           - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
+           - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
+           - ![left](images/link.png) [interfaces en kotlin](https://devexperto.com/interfaces-kotlin/)
+           - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
+       </section>
+
+
+      </section>
 
 
 
