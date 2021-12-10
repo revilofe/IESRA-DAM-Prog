@@ -3,23 +3,26 @@
 
 
 ## Descripción
-Implementar una clase `ArmaDeFuego` y sus métodos y propiedades: 
+Implementar una clase `ArmaDeFuego` con sus métodos y propiedades: 
 ### Propiedades
-- `nombre`: `String`
-- `cantidadMunicion`: `Int`
-- `tipoDeMunicion`: `String`
-- `danio`: `Int`
-- `radio`: `[Pequeño, Amplio]`
+- `private nombre: String`
+- `private municion: Int`
+- `private tipoDeMunicion String`
+- `private danio: Int`
+- `private radio: String` puede tomar valores '["Pequeño", "Amplio"]`
 
 ### Metodos 
 - `dispara`: resta munición
+- `recarga`: aumenta la munición.
+
+> **NOTA:** Puedes utilizar println para mostrar información 
 
 El ejercicio consistirá en dos partes:
 
-Implementa la subarmas 
-- `pistola`: Resta munición * 1
-- `rifle`: Resta munición * 2
-- `bazooka`: Resta munición * 3
+Implementa la sub-armas 
+- `Pistola`: Resta munición * 1
+- `Rifle`: Resta munición * 2
+- `Bazooka`: Resta munición * 3
 
 Desde el programa principal, create un mapa en el que registrar aletoriamente 6 armas.
 Recorrelas y dispara una vez y muestra su información cada vez que dispares. 
