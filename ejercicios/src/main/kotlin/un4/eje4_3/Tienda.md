@@ -63,7 +63,7 @@ TODO()
 
 **4.3.5** Implementa un método para que devuelva una lista de clientes que tiene más pedidos sin entregar que entregados, puedes hacer uso de `Partition`.
 ```Kt
-fun Tienda.obtenerClientesConPedidosSinEngregar(): Set<Cliente> = 
+fun Tienda.obtenerClientesConPedidosSinEntregar(): Set<Cliente> = 
 TODO()
 ```
 
