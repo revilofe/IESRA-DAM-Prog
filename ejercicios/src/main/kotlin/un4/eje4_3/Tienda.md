@@ -49,9 +49,9 @@ TODO()
 fun Tienda.cuentaClientesDe(ciudad: Ciudad): Int =
 TODO()
 ```
-- Método que devuelve un cliente que vive en una ciudad dada o nulo si no hay ninguno
+- Método que devuelve los clientes que viven en una ciudad dada o lista vacia si no hay ninguno
 ```Kt
-fun Tienda.encuentraClienteDe(ciudad: Ciudad): Cliente? =
+fun Tienda.encuentraClienteDe(ciudad: Ciudad): List<Cliente> =
 TODO()
 ```
 
