@@ -41,7 +41,7 @@ TODO()
 
 - Método que devuelve true si al menos un cliente es de una determinada ciudad
 ```Kt
-fun Tieda.hayClientesDe(ciudad: Ciudad): Boolean =
+fun Tienda.hayClientesDe(ciudad: Ciudad): Boolean =
 TODO()
 ```
 - Método que devuelve el número de cliente de una determinada ciudad
@@ -51,13 +51,13 @@ TODO()
 ```
 - Método que devuelve un cliente que vive en una ciudad dada o nulo si no hay ninguno
 ```Kt
-fun Tienda.encuentraClienteDe(ciudad: Ciudad): Customer? =
+fun Tienda.encuentraClienteDe(ciudad: Ciudad): Cliente? =
 TODO()
 ```
 
 **4.3.4** Implementa un método para que devuelva una lista de clientes, **ordenadas** descendientemente por el número de pedidos que ellos han realizado. Puedes hacer uso de `sortedDescending` o `sortedByDescending`.
 ```Kt
-fun Tienda.obtenerClientesOrdenadosPorPedidos(): List<Clientes> =
+fun Tienda.obtenerClientesOrdenadosPorPedidos(): List<Cliente> =
 TODO()
 ```
 
