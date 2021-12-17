@@ -307,7 +307,157 @@
            ~~~
        </section>
 
-       <section data-markdown>
+    <section data-markdown>
+        ## Orden de inicialización
+        - Durante la construcción de una nueva instancia de una clase derivada, la inicialización de la clase base se realiza como primer paso (precedida solo por la evaluación de los argumentos para el constructor de la clase base) y, por lo tanto, ocurre antes de que se ejecute la lógica de inicialización de la clase derivada.
+        - Por lo tanto:
+        - Durante la inicialización de las propiedades de la clase base, las propiedades de la clase derivada aún no se han inicializado.
+        - Si alguna de esas propiedades se utilizan (de forma directa o indirecta) en la inicialización de la clase base se pueden producir comportamientos extraños o errores en tiempo de ejecución.
+    </section>
+
+    <section data-markdown>
+        ## Interfaces. (RA4.j)
+
+        - Las interfaces en Kotlin son muy similares.
+        - Pueden contener declaraciones de **métodos abstractos**, así como implementaciones de métodos.
+        - Lo que los diferencia de las **clases abstractas** es que las interfaces no pueden almacenar el estado, es decir, no pueden tener variables de instancia.
+        - Pueden tener propiedades, pero estas deben ser abstractas o proporcionar implementaciones de accesores.
+        - Una interfaz se define usando la palabra clave `interface`.
+        - Un método en una interfaz es abstracto por defecto si no se proporciona una implementación.
+
+        - ***Actividad:*** Create la interface. Create una instancia de la interface MyInterface ¿Que sucede?
+
+        ~~~Kt
+        interface MyInterface {
+            fun bar(): String  // abstract por defecto
+            fun foo() = 1 + 1 //Cuerpo opcional
+        }
+        ~~~
+    </section>
+    <section data-markdown>
+        ## Interfaces. (RA4.j)
+
+        - Una clase u objeto pueden implementar una o varias interfaces:
+
+        - ***Actividad:*** Create una clase que implemente la interface. Create una variable e instánciala con un objeto de la clase Child. ¿Que sucede si no sobreescribes el método bar?  ¿y con foo, puedes llamar al método foo?
+
+        ~~~Kt
+            class Child : MyInterface {
+                override fun bar() = "uno"
+                fun foo3() = 1 + 2;
+            }
+        ~~~
+    </section>
+    <section data-markdown>
+        ## Interfaces. (RA4.j)
+
+        - En una interfaz se pueden declarar propiedades.
+        - Una propiedad declarada en una interfaz puede ser abstracta o puede proporcionar implementaciones para el `getter()` o `setter()`.
+        - Las propiedades declaradas en interfaces no pueden tener `backing fields` y, por lo tanto, los accesores declarados en interfaces no pueden hacer referencia a ellos.
+
+        - ***Actividad:*** Create una clase `Child` vacia que implemente la interface, sin sobreescribir prop. ¿Qué sucece si intentas instanciar la clase Child?
+
+        ~~~Kt
+            interface MyInterface {
+                val prop: Int // abstract
+
+                val propertyWithImplementation: String
+                get() = "foo"
+
+                fun foo() {  print(prop)
+                }
+            }
+
+            class Child : MyInterface {
+                override val prop: Int = 29
+            }
+        ~~~
+    </section>
+
+    <section data-markdown>
+        ## Interfaces. (RA4.j)
+        - Una interfaz puede derivar de otras interfaces y, por lo tanto, proporcionar implementaciones para sus miembros y declarar nuevas funciones y propiedades.
+        - Naturalmente, las clases que implementen dicha interfaz solo tienen que definir las implementaciones que faltan:
+
+        - ***Actividad:*** Copia el código, create `name2` en `Named` y sobreescribe `name2` asi  `override val name: String` en `Person`. Create un objeto `Employee` ¿Compila? ¿Que sucede?
+
+        ~~~Kt
+            interface Named {
+                val name: String
+            }
+            interface Person : Named {
+                val firstName: String
+                val lastName: String
+                override val name: String get() = "$firstName $lastName"
+            }
+            data class Employee(
+                // implementing 'name' is not required
+                override val firstName: String,
+                override val lastName: String,
+                val position: Position
+            ) : Person
+        ~~~
+
+    </section>
+    <section data-markdown>
+        ## Interfaces. (RA4.j)
+        - En el caso de clases que hereden de varias interfaces, para evitar ambigüedades la subclase deberá proporcionar implementaciones tanto para métodos que tienen una implementación en una de las interfaces como en métodos que tiene implementaciones en varias interfaces.
+
+        - ***Actividad:*** Modifica el método foo en `D` para que llame también a foo de `B`
+
+        ~~~Kt
+            interface A {
+                fun foo() { print("A") }
+                fun bar()  // abstract
+            }
+
+            interface B {
+                fun foo() { print("B") }
+                fun bar() { print("bar") }
+            }
+
+            class C : A {
+                override fun bar() { print("bar") }
+            }
+
+            // la clase 'D' tiene que implementar tanto foo() como bar()
+            class D : A, B {
+                override fun foo() {
+                super&lt;A&gt;.foo()
+                }
+
+                override fun bar() {
+                super&lt;B&gt;.bar()
+                }
+            }
+        ~~~
+    </section>
+
+    <section data-markdown>
+        ## Visibilidad. (RA4.g)
+
+        - Las clases, objetos, interfaces, constructores, funciones, propiedades y sus 'setters' pueden tener modificadores de visibilidad.
+        - Los 'setters' siempre tienen la misma visibilidad que la propiedad.
+
+            - **Public** - Este es el valor predeterminado, y se puede acceder a cualquier clase, función, propiedad, interfaz u objeto que tenga este modificador desde cualquier lugar.
+            - **Private** - Se puede acceder a una función, interfaz o clase de nivel superior que se declara como privada solo dentro del mismo archivo.
+
+        - Cualquier función o propiedad que se declare privada dentro de una clase, objeto o interfaz solo puede ser visible para otros miembros de esa misma clase, objeto o interfaz.
+        - Un constructor privado debe usar la palabra clave `constructor`. Si un constructor es marcado como privado no se puede instanciar un objeto con ese constructor.
+
+        - ***Actividad:*** Create una clase Car ¿Que sucede?
+
+        ~~~Kt
+            class Car private constructor(val name: String, val plateNo: String) {
+                // ....
+            }
+        ~~~
+            - **Protected** - Solo se puede aplicar a propiedades o funciones dentro de una clase, objeto o interfaz, no se puede aplicar a funciones, clases o interfaces de nivel superior. Las propiedades o funciones con este modificador solo son accesibles dentro de la clase que lo define y cualquier subclase.
+            - **Internal** - En un proyecto que tiene un módulo (módulo Gradle o Maven), una clase, objeto, interfaz o función especificada con este modificador dentro de ese módulo solo es accesible desde ese módulo.
+
+    </section>
+
+    <section data-markdown>
            ## BIBLIOGRAFÍA
            - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
            - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)

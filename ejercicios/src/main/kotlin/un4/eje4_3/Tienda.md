@@ -41,7 +41,7 @@ TODO()
 
 - Método que devuelve true si al menos un cliente es de una determinada ciudad
 ```Kt
-fun Tieda.hayClientesDe(ciudad: Ciudad): Boolean =
+fun Tienda.hayClientesDe(ciudad: Ciudad): Boolean =
 TODO()
 ```
 - Método que devuelve el número de cliente de una determinada ciudad
@@ -49,21 +49,26 @@ TODO()
 fun Tienda.cuentaClientesDe(ciudad: Ciudad): Int =
 TODO()
 ```
-- Método que devuelve un cliente que vive en una ciudad dada o nulo si no hay ninguno
+- Método que devuelve los clientes que viven en una ciudad dada o lista vacia si no hay ninguno
 ```Kt
-fun Tienda.encuentraClienteDe(ciudad: Ciudad): Customer? =
+fun Tienda.encuentraClientesDe(ciudad: Ciudad): List<Cliente> =
+TODO()
+```
+- Método que devuelve el primer cliente que viven en una ciudad dada o null si no hay ninguno
+```Kt
+fun Tienda.encuentraClienteDe(ciudad: Ciudad): Cliente? =
 TODO()
 ```
 
 **4.3.4** Implementa un método para que devuelva una lista de clientes, **ordenadas** descendientemente por el número de pedidos que ellos han realizado. Puedes hacer uso de `sortedDescending` o `sortedByDescending`.
 ```Kt
-fun Tienda.obtenerClientesOrdenadosPorPedidos(): List<Clientes> =
+fun Tienda.obtenerClientesOrdenadosPorPedidos(): List<Cliente> =
 TODO()
 ```
 
 **4.3.5** Implementa un método para que devuelva una lista de clientes que tiene más pedidos sin entregar que entregados, puedes hacer uso de `Partition`.
 ```Kt
-fun Tienda.obtenerClientesConPedidosSinEngregar(): Set<Cliente> = 
+fun Tienda.obtenerClientesConPedidosSinEntregar(): Set<Cliente> = 
 TODO()
 ```
 
@@ -72,7 +77,7 @@ TODO()
 - Los productos pedidos por un cliente, pudiendo usar flatmap
 ```Kt
 fun Cliente.obtenerProductosPedidos(): List<Producto> =
-sTODO()
+TODO()
 ```
 
 - Los productos que fueron pedidos por al menos un cliente.
