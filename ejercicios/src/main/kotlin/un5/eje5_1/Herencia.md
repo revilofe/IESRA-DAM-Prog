@@ -25,8 +25,9 @@ Implementa la sub-armas
 - `Rifle`: Resta munición * 2
 - `Bazooka`: Resta munición * 3
 
-Desde el programa principal, create un mapa en el que registrar aletoriamente 6 armas.
-Recorrelas y dispara una vez y muestra su información cada vez que dispares. 
+Create una instancia de cada arma (Solo 3)
+Desde el programa principal, create un mapa en el que registrar aletoriamente 6 disparos sobre el armas.
+Recorre el mapa y dispara y muestra su información cada vez que dispares. 
 
 ### Evaluación
 | Criterio                                           | Valor 1                              | Valor 2                                            | Valor 3                       |
