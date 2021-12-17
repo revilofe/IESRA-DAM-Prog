@@ -51,7 +51,12 @@ TODO()
 ```
 - Método que devuelve los clientes que viven en una ciudad dada o lista vacia si no hay ninguno
 ```Kt
-fun Tienda.encuentraClienteDe(ciudad: Ciudad): List<Cliente> =
+fun Tienda.encuentraClientesDe(ciudad: Ciudad): List<Cliente> =
+TODO()
+```
+- Método que devuelve el primer cliente que viven en una ciudad dada o null si no hay ninguno
+```Kt
+fun Tienda.encuentraClienteDe(ciudad: Ciudad): Cliente? =
 TODO()
 ```
 
