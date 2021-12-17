@@ -2,6 +2,7 @@ package un4.eje4_1
 
 import Alumno
 import Modulo
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 internal class ModuloTest {
@@ -16,11 +17,14 @@ internal class ModuloTest {
         matricularAlumno(Alumno("6", "Andrea 6", "Astana", "Santana"))
         matricularAlumno(Alumno("5", "Andrea 5", "Astana", "Santana"))
     }
-    modulo.bajaAlumno(Alumno("5", "Andrea", "Astana", "Santana"))
-    modulo.matricularAlumno(Alumno("17", "Andrea 17", "Astana", "Santana"))
-    modulo.matricularAlumno(Alumno("16", "Andrea 16", "Astana", "Santana"))
-    modulo.matricularAlumno(Alumno("15", "Andrea 15", "Astana", "Santana"))
 
+    @BeforeEach
+    fun setUp() {
+        modulo.bajaAlumno(Alumno("5", "Andrea", "Astana", "Santana"))
+        modulo.matricularAlumno(Alumno("17", "Andrea 17", "Astana", "Santana"))
+        modulo.matricularAlumno(Alumno("16", "Andrea 16", "Astana", "Santana"))
+        modulo.matricularAlumno(Alumno("15", "Andrea 15", "Astana", "Santana"))
+    }
 
     @Test
     fun `establecer notas a los alumnos`() {
@@ -30,10 +34,12 @@ internal class ModuloTest {
         assert(modulo.establecerNota("15", Modulo.EV_PRIMERA, 4.5F))
         assert(modulo.establecerNota("15", Modulo.EV_SEGUNDA, 5.5F))
         assert(modulo.establecerNota("15", Modulo.EV_TERCERA, 6.5F))
+        assert(modulo.listaNotas(Modulo.EV_PRIMERA).first { it.first.id == "15" }.second==4.5F) {"recuperada"}
     }
 
     @Test
     fun getAlumnosMatriculados() {
+        modulo.listaNotas(Modulo.EV_PRIMERA)
     }
 
     @Test
