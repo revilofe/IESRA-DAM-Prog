@@ -71,8 +71,8 @@ TODO()
 
 - Los productos pedidos por un cliente, pudiendo usar flatmap
 ```Kt
-fun Cliente.obtenerProductosPedidos(): List<Producto> =
-sTODO()
+fun Cliente.obtenerProductosPedidosPorCliente(cliente: Cliente): Set<Producto> =
+TODO()
 ```
 
 - Los productos que fueron pedidos por al menos un cliente.
