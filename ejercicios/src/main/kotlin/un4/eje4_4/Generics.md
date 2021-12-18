@@ -1,5 +1,5 @@
 # Relación 4.4
-> Se evaluará el RA6, CE c, d y f
+> Se evaluará el RA6, CE d y f
 
 
 ## Descripción
