@@ -32,8 +32,8 @@ Para llevar a cabo la función `reverse`, será **obligatorio**:
 ### Evaluación
 | Criterio                                    | Valor 1                | Valor 2                                            | Valor 3                       |
 |---------------------------------------------|------------------------|----------------------------------------------------|-------------------------------|
-| RA6.c Desarrolla la pila mediante una lista | No funciona o no adecuada 0          | Funciona algún metodo 5                            | Funciona todos los metodos 10 |
-| RA6.c Funciona adecuadamente la pila        | No funciona o no adecuada 0          | Funciona algún metodo 5                            | Funciona todos los metodos 10 |
+| Desarrolla la pila mediante una lista | No funciona o no adecuada 0          | Funciona algún metodo 5                            | Funciona todos los metodos 10 |
+| Funciona adecuadamente la pila        | No funciona o no adecuada 0          | Funciona algún metodo 5                            | Funciona todos los metodos 10 |
 | RA6.d Hace uso de los iteradores            | No usa o no adecuada 0 | Lo usa pero no correctamente 5                     | Lo usa correctamente 10       |
 | RA6.d Itera adecuadamente en la pila        | No usa o no adecuada 0 | Adecuado pero mejorable, haciendo uso de métodos 5 | Adecuado 10                     |
 | RA6.f La pila hace uso de Generics          | No usa o no adecuada 0 | Usa Generics, pero mejorable 5                     | Usa Generics adecuadamente 10 |
