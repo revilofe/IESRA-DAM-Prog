@@ -436,12 +436,13 @@
     <section data-markdown>
         ## Visibilidad. (RA4.g)
 
-        - Las clases, objetos, interfaces, constructores, funciones, propiedades y sus 'setters' pueden tener modificadores de visibilidad.
-        - Los 'setters' siempre tienen la misma visibilidad que la propiedad.
-
+        - Modificadores de visibilidad:
             - **Public** - Este es el valor predeterminado, y se puede acceder a cualquier clase, función, propiedad, interfaz u objeto que tenga este modificador desde cualquier lugar.
             - **Private** - Se puede acceder a una función, interfaz o clase de nivel superior que se declara como privada solo dentro del mismo archivo.
-
+            - **Protected** - Solo se puede aplicar a propiedades o funciones dentro de una clase, objeto o interfaz, no se puede aplicar a funciones, clases o interfaces de nivel superior. Las propiedades o funciones con este modificador solo son accesibles dentro de la clase que lo define y cualquier subclase.
+            - **Internal** - En un proyecto que tiene un módulo (módulo Gradle o Maven), una clase, objeto, interfaz o función especificada con este modificador dentro de ese módulo solo es accesible desde ese módulo.
+        - Las clases, objetos, interfaces, constructores, funciones, propiedades y sus 'setters' pueden tener modificadores de visibilidad.
+        - Los 'setters' siempre tienen la misma visibilidad que la propiedad.
         - Cualquier función o propiedad que se declare privada dentro de una clase, objeto o interfaz solo puede ser visible para otros miembros de esa misma clase, objeto o interfaz.
         - Un constructor privado debe usar la palabra clave `constructor`. Si un constructor es marcado como privado no se puede instanciar un objeto con ese constructor.
 
@@ -452,8 +453,7 @@
                 // ....
             }
         ~~~
-            - **Protected** - Solo se puede aplicar a propiedades o funciones dentro de una clase, objeto o interfaz, no se puede aplicar a funciones, clases o interfaces de nivel superior. Las propiedades o funciones con este modificador solo son accesibles dentro de la clase que lo define y cualquier subclase.
-            - **Internal** - En un proyecto que tiene un módulo (módulo Gradle o Maven), una clase, objeto, interfaz o función especificada con este modificador dentro de ese módulo solo es accesible desde ese módulo.
+        
 
     </section>
 
