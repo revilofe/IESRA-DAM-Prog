@@ -56,7 +56,7 @@ class Punto(val id:String){
     }
 
     fun obtenerCoordenadas()= Pair(x,y)
-    override fun toString()= "punto $id -> [$x, $y]"
+    //override fun toString()=
 
 }
 

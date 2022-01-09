@@ -8,6 +8,7 @@ group = "me.usuario"
 version = "1.0-SNAPSHOT"
 
 dependencies {
+    implementation("org.junit.jupiter:junit-jupiter:5.7.0")
     testImplementation(kotlin("test"))
 }
 
