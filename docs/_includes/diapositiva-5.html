@@ -91,6 +91,7 @@
 
         - ***Actividad:*** ¿create una variable de clase `Base`? ¿Puedes asignarle una instancia de
         `DerivedWithConstructor`?
+
         ~~~Kt
         open class Base(var p: Int)
 
@@ -151,37 +152,38 @@
         - Un método con la palabra clave `override` también es `open` por definición y puede ser sobreescrita por las subclases sucesivas.
         - Es posible marcar una función `override` con la palabra clave `final` para evitar que sea sobreescrita.
 
-        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la base y derivada y llama a todos los  mètodos. ¿Que muestra en pantalla? ¿Que sucede si intentas sobre escribir el método nv? ¿Que sucede si intentas sobre escribir el método `x` de `Derived` en una nueva clase `Derived2`? Crea una nueva clase `Derived2` que sobreescriba el método `v`, sacando "Derivada2".
+        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la base y derivada y llama a todos los  mètodos. ¿Que muestra en pantalla? ¿Que sucede si intentas sobre escribir el método nv? ¿Que sucede si intentas sobre escribir el método `x` de `Derived` en una nueva clase `Derived2`? Crea una nueva clase `Derived2` que sobreescriba el método `v`, imprimiendo `Derivada2`.
 
         ~~~Kt
-        open class Base {
-        open fun v() { println("base") }
-        open fun x(p: Int) { println(p) }
-        fun nv() { println(this.toString() + ": sin sobreescribir") }
-        }
 
-        class Derived: Base() {
-        override fun v() { println("derivada") }
-        // Restringir la sobreescritura
-        final override fun x(p: Int) { println(p+1) }
-        }
-        <!--
-            fun main()
-           {
-               var b = Base()
-               var d = Derived()
+            open class Base {
+                open fun v() { println("base") }
+                open fun x(p: Int) { println(p) }
+                fun nv() { println(this.toString() + ": sin sobreescribir") }
+            }
 
-               b.v(); AbstractCollectionb.x(1); b.nv()
-               d.v(); d.x(1); d.nv()
+            class Derived: Base() {
+                override fun v() { println("derivada") }
+                // Restringir la sobreescritura
+                final override fun x(p: Int) { println(p+1) }
+            }
+            <!--
+                fun main()
+               {
+                   var b = Base()
+                   var d = Derived()
 
-           }
-           //base
-           //1
-           //Base@2c7b84de: sin sobreescribir
-           //derivada
-           //2
-           //Derived@3fee733d: sin sobreescribir
-        -->
+                   b.v(); AbstractCollectionb.x(1); b.nv()
+                   d.v(); d.x(1); d.nv()
+
+               }
+               //base
+               //1
+               //Base@2c7b84de: sin sobreescribir
+               //derivada
+               //2
+               //Derived@3fee733d: sin sobreescribir
+            -->
         ~~~
     </section>
 
@@ -190,7 +192,7 @@
         ## Sobreescribir métodos
         - En Kotlin, la herencia está regulada por la siguiente regla:
         - Si una clase hereda varias implementaciones del mismo miembro de sus superclases inmediatas, debe invalidar este miembro y proporcionar su propia implementación.
-        - Para denotar el supertipo del cual se toma la implementación heredada, usamos la palaba clave `super` calificado por el nombre de supertipo entre paréntesis angulares, por ejemplo, `super&lt;Base&gt;`:
+        - Para denotar el supertipo del cual se toma la implementación heredada, usamos la palaba clave `super` calificado por el nombre de supertipo entre paréntesis angulares, por ejemplo, `super&lt;Base&gt;`.
     </section>
 
     <section data-markdown>
@@ -198,23 +200,24 @@
         - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase ¿Que muestra en pantalla?  ¿Que muestra en pantalla si me declaro lo siguiente `var a: A = C(); a.f()` y `var b: B = C(); b.f()`? ¿Si  instancias `A` y lo asignas a `a`, llamando a `a.f()`, que diferencias encuentras con la anterior llamada a `a.f()`?
 
         ~~~Kt
-        open class A {
-            open fun f() { print("A") }
-            fun a() { print("a") }
-        }
 
-        interface B {
-            fun f() { print("B") } // Los miembros de las interfaces son `open` por defecto.
-            fun b() { print("b") }
-        }
-
-        class C() : A(), B {
-            // El compilador requiere que 'f()' sea sobreescrito para eliminar la ambigüedad
-            override fun f() {
-                super&lt;A&gt;.f() // call to A.f()
-                super&lt;B&gt;.f() // call to B.f()
+            open class A {
+                open fun f() { print("A") }
+                fun a() { print("a") }
             }
-        }
+
+            interface B {
+                fun f() { print("B") } // Los miembros de las interfaces son `open` por defecto.
+                fun b() { print("b") }
+            }
+
+            class C() : A(), B {
+                // El compilador requiere que 'f()' sea sobreescrito para eliminar la ambigüedad
+                override fun f() {
+                    super&lt;A&gt;.f() // call to A.f()
+                    super&lt;B&gt;.f() // call to B.f()
+                }
+            }
         <!--
         fun main()
         {
@@ -225,6 +228,7 @@
         -->
 
         ~~~
+
     </section>
 
     <section data-markdown>
