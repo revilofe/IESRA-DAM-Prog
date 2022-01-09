@@ -196,11 +196,11 @@
     </section>
 
     <section data-markdown>
+        ## Sobreescribir métodos
 
         - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase ¿Que muestra en pantalla?  ¿Que muestra en pantalla si me declaro lo siguiente `var a: A = C(); a.f()` y `var b: B = C(); b.f()`? ¿Si  instancias `A` y lo asignas a `a`, llamando a `a.f()`, que diferencias encuentras con la anterior llamada a `a.f()`?
 
         ~~~Kt
-
             open class A {
                 open fun f() { print("A") }
                 fun a() { print("a") }
@@ -242,35 +242,36 @@
 
 
     <section data-markdown>
-
+        ## Sobreescribir propiedades
         - ***Actividad:*** Ejecuta el código siguiente. Crea el main, crea un objeto de `Foo` e imprime por pantalla su valor `x`. Create objetos de las subclases ¿Que diferencias ves en pantalla?
 
-        ~~~Kt
-        open class Foo {
-            open val x: String
-            get() { return "base" }
-        }
+        ~~~kt
 
-        class Bar : Foo() {
-            override val x: String = "subclase"
-        }
+            open class Foo {
+                open val x: String
+                get() { return "base" }
+            }
 
-        interface Foo1 {
-            val count: Int
-        }
+            class Bar : Foo() {
+                override val x: String = "subclase"
+            }
 
-        class Bar1(override val count: Int) : Foo1
-        <!--
-           fun main()
-           {
-           var b = Bar()
-           println(b.x)
-           var b1 = Bar1(b.x.length)
-           println(b1.count)
-           }
-        //subclase
-        //8
-        -->
+            interface Foo1 {
+                val count: Int
+            }
+
+            class Bar1(override val count: Int) : Foo1
+            <!--
+               fun main()
+               {
+               var b = Bar()
+               println(b.x)
+               var b1 = Bar1(b.x.length)
+               println(b1.count)
+               }
+            //subclase
+            //8
+            -->
         ~~~
     </section>
 
