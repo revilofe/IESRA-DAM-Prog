@@ -11,7 +11,8 @@
     <section data-markdown>
         ## Resultado de Aprendizaje 4
 
-        > Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos.
+        > Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada
+        a objetos.
 
     </section>
     <section data-markdown>
@@ -44,7 +45,6 @@
         - Librerías de clases. Creación. Inclusión y uso de la interface.
 
 
-
     </section>
     <section data-markdown>
         *********************
@@ -61,8 +61,8 @@
 
         - La herencia es fundamental para la programación orientada a objetos.
         - Nos permite crear nuevas clases que reutilizan, amplían y/o modifican el comportamiento de los preexistentes.
-        - La clase preexistente se llama **superclase** (o clase base), y la clase nueva que estamos creando se llama **subclase** (o clase derivada).
-        - Una subclase obtendrá implícitamente todos los campos, propiedades y métodos de la superclase (y de la superclase de la superclase si es el caso).
+        - La clase preexistente se llama **superclase** (o clase base), y la clase nueva que estamos creando se llama  **subclase** (o clase derivada).
+        - Una subclase obtendrá implícitamente todos los campos, propiedades y métodos de la superclase (y de la  superclase de la superclase si es el caso).
         - Hay una restricción en cuanto a cuántas clases podemos heredar; en una JVM, solo puede tener una clase base. Pero se puede heredar de múltiples interfaces.
     </section>
 
@@ -72,12 +72,11 @@
         - La herencia es transitiva. Si la clase C se deriva de la clase B y esa clase B se deriva de una clase A dada, entonces la clase C es una clase derivada de A.
         - Todas las clases en Kotlin tienen una superclase común `Any`, que es la superclase predeterminada para una clase sin supertipos declarados.
         - Esta clase `Any` tiene unos pocos métodos básicos como `equals()` o `toString()`
-
         - ***Actividad:*** ¿Qué métodos y propiedades hereda `Example` de `Any`?
 
         ~~~Kt
-            // Hereda de 'Any' implícitamente
-            class Example
+        // Hereda de 'Any' implícitamente
+        class Example
         ~~~
 
     </section>
@@ -90,12 +89,13 @@
         - Para permitir que una clase sea heredada, hay que utilizar la palabra clave `open`
         - Si la clase derivada tiene un constructor primario, la clase base puede (y debe) inicializarse allí mismo, utilizando los parámetros del constructor primario.
 
-        - ***Actividad:*** ¿create una variable de clase `Base`? ¿Puedes asignarle una instancia de `DerivedWithConstructor`?
+        - ***Actividad:*** ¿create una variable de clase `Base`? ¿Puedes asignarle una instancia de
+        `DerivedWithConstructor`?
         ~~~Kt
-            open class Base(var p: Int)
+        open class Base(var p: Int)
 
-            // la clase derivada tiene un constructor primario
-            class DerivedWithConstructor(p: Int) : Base(p)
+        // la clase derivada tiene un constructor primario
+        class DerivedWithConstructor(p: Int) : Base(p)
         ~~~
 
     </section>
@@ -105,7 +105,8 @@
         - Si la clase no tiene un constructor primario, entonces cada constructor secundario tiene que inicializar el tipo base usando la palabra clave `super`, o delegar a otro constructor que haga eso.
         - Tenga en cuenta que en este caso, diferentes constructores secundarios pueden llamar a diferentes constructores de la clase base:
 
-        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase con 1 e imprime el valor de p ¿Que muestra en pantalla? ¿Que sucede si quitas el constructor de la subclase? ¿Podemos definir la subclase de otra forma? ¿Que tenemos que hacer para llamar al constructor de 2 parámetros?
+        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase con 1 e imprime el valor de `p`
+        ¿Que muestra en pantalla? ¿Que sucede si quitas el constructor de la subclase? ¿Podemos definir la subclase de otra forma? ¿Que tenemos que hacer para llamar al constructor de 2 parámetros?
 
         ~~~Kt
         open class Base(var p: Int) {
@@ -113,7 +114,7 @@
         }
 
         class DerivedWithoutConstructor : Base {
-            // llamando al constructor base con super() desde constructor secundario
+        // llamando al constructor base con super() desde constructor secundario
             constructor(p: Int) : super(p)
             <!-- constructor(p: Int, q:Int) : super(p,q) -->
 
@@ -150,19 +151,19 @@
         - Un método con la palabra clave `override` también es `open` por definición y puede ser sobreescrita por las subclases sucesivas.
         - Es posible marcar una función `override` con la palabra clave `final` para evitar que sea sobreescrita.
 
-        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la base y derivada y llama a todos los mètodos. ¿Que muestra en pantalla? ¿Que sucede si intentas sobre escribir el método nv? ¿Que sucede si intentas sobre escribir el método `x` de `Derived` en una nueva clase `Derived2`? Crea una nueva clase `Derived2` que sobreescriba el método `v`, sacando "Derivada2".
+        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la base y derivada y llama a todos los  mètodos. ¿Que muestra en pantalla? ¿Que sucede si intentas sobre escribir el método nv? ¿Que sucede si intentas sobre escribir el método `x` de `Derived` en una nueva clase `Derived2`? Crea una nueva clase `Derived2` que sobreescriba el método `v`, sacando "Derivada2".
 
         ~~~Kt
         open class Base {
-            open fun v() { println("base") }
-            open fun x(p: Int) { println(p) }
-            fun nv() { println(this.toString() + ": sin sobreescribir") }
+        open fun v() { println("base") }
+        open fun x(p: Int) { println(p) }
+        fun nv() { println(this.toString() + ": sin sobreescribir") }
         }
 
         class Derived: Base() {
-            override fun v() { println("derivada") }
-            // Restringir la sobreescritura
-            final override fun x(p: Int) { println(p+1) }
+        override fun v() { println("derivada") }
+        // Restringir la sobreescritura
+        final override fun x(p: Int) { println(p+1) }
         }
         <!--
             fun main()
@@ -188,10 +189,13 @@
     <section data-markdown>
         ## Sobreescribir métodos
         - En Kotlin, la herencia está regulada por la siguiente regla:
-            - Si una clase hereda varias implementaciones del mismo miembro de sus superclases inmediatas, debe invalidar este miembro y proporcionar su propia implementación.
-            - Para denotar el supertipo del cual se toma la implementación heredada, usamos la palaba clave `super` calificado por el nombre de supertipo entre paréntesis angulares, por ejemplo, `super&lt;Base&gt;`:
+        - Si una clase hereda varias implementaciones del mismo miembro de sus superclases inmediatas, debe invalidar este miembro y proporcionar su propia implementación.
+        - Para denotar el supertipo del cual se toma la implementación heredada, usamos la palaba clave `super` calificado por el nombre de supertipo entre paréntesis angulares, por ejemplo, `super&lt;Base&gt;`:
+    </section>
 
-        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase ¿Que muestra en pantalla? ¿Que muestra en pantalla si me declaro lo siguiente `var a: A = C(); a.f()` y `var b: B = C(); b.f()`? ¿Si instancias `A` y lo asignas a `a`, llamando a `a.f()`, que diferencias encuentras con la anterior llamada a `a.f()`?
+    <section data-markdown>
+
+        - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase ¿Que muestra en pantalla?  ¿Que muestra en pantalla si me declaro lo siguiente `var a: A = C(); a.f()` y `var b: B = C(); b.f()`? ¿Si  instancias `A` y lo asignas a `a`, llamando a `a.f()`, que diferencias encuentras con la anterior llamada a `a.f()`?
 
         ~~~Kt
         open class A {
@@ -207,8 +211,8 @@
         class C() : A(), B {
             // El compilador requiere que 'f()' sea sobreescrito para eliminar la ambigüedad
             override fun f() {
-            super&lt;A&gt;.f() // call to A.f()
-            super&lt;B&gt;.f() // call to B.f()
+                super&lt;A&gt;.f() // call to A.f()
+                super&lt;B&gt;.f() // call to B.f()
             }
         }
         <!--
@@ -230,6 +234,10 @@
         - Las propiedades declaradas en una superclase que luego se vuelven a declarar en una subclase deben ir precedidas por la palabra clave `override` y deben tener un tipo compatible.
         - También se puede usar la palabra clave `override` como parte de la declaración de una propiedad en un constructor primario.
         - Cada propiedad declarada puede ser sobreescrita por una propiedad con un inicializador o por una propiedad con un método `getter()`.
+    </section>
+
+
+    <section data-markdown>
 
         - ***Actividad:*** Ejecuta el código siguiente. Crea el main, crea un objeto de `Foo` e imprime por pantalla su valor `x`. Create objetos de las subclases ¿Que diferencias ves en pantalla?
 
@@ -262,57 +270,50 @@
         ~~~
     </section>
 
+    <section data-markdown>
+        ## Orden de inicialización
 
-      <section data-markdown>
-           ## Orden de inicialización
-           - Durante la construcción de una nueva instancia de una clase derivada, la inicialización de la clase base se realiza como primer paso (precedida solo por la evaluación de los argumentos para el constructor de la clase base) y, por lo tanto, ocurre antes de que se ejecute la lógica de inicialización de la clase derivada.
-           - Por lo tanto:
-               - Durante la inicialización de las propiedades de la clase base, las propiedades de la clase derivada aún no se han inicializado.
-               - Si alguna de esas propiedades se utilizan (de forma directa o indirecta) en la inicialización de la clase base se pueden producir comportamientos extraños o errores en tiempo de ejecución.
-      </section>
+        - Durante la construcción de una nueva instancia de una clase derivada, la inicialización de la clase base se realiza como primer paso (precedida solo por la evaluación de los argumentos para el constructor de la clase base) y, por lo tanto, ocurre antes de que se ejecute la lógica de inicialización de la clase derivada.
+        - Por lo tanto:
+            - Durante la inicialización de las propiedades de la clase base, las propiedades de la clase derivada aún no se han inicializado.
+            - Si alguna de esas propiedades se utilizan (de forma directa o indirecta) en la inicialización de la clase base se pueden producir comportamientos extraños o errores en tiempo de ejecución.
+    </section>
 
-       <section data-markdown>
-           ## Orden de inicialización
+    <section data-markdown>
+        ## Orden de inicialización
+        - ***Actividad:*** Ejecuta el codigo siguiente. Crea el main y instancia la clase base. ¿Cual es el orden?
 
-           - ***Actividad:*** Ejecuta el codigo siguiente. Crea el main y instancia la clase base. ¿Cual es el orden?
+        ~~~Kt
+        open class Base(val name: String) {
+            init { println("Initializing Base")}
+            open val size: Int = name.length.also { println("Initializing size in Base: $it") }
+        }
 
-           ~~~Kt
-           open class Base(val name: String) {
+        class Derived(name: String, val lastName: String) : Base(name.capitalize().also { println("Argument for Base:$it") }) {
+            init { println("Initializing Derived")}
+            override val size: Int = (super.size + lastName.length).also { println("Initializing size in Derived: $it") }
+        }
+        <!--
+        fun main()
+        {
+            var d = Derived("La base", "La derivada")
+        }
+         //Argument for Base: La base
+         //Initializing Base
+         //Initializing size in Base: 7
+         //Initializing Derived
+         //Initializing size in Derived: 18
+         -->
 
-               init { println("Initializing Base")
-               }
-               open val size: Int = name.length.also { println("Initializing size in Base: $it") }
-           }
-
-           class Derived(name: String, val lastName: String) : Base(name.capitalize().also { println("Argument for Base: $it") }) {
-
-               init { println("Initializing Derived")
-               }
-
-               override val size: Int =
-               (super.size + lastName.length).also { println("Initializing size in Derived: $it") }
-           }
-           <!--
-           fun main()
-           {
-               var d = Derived("La base", "La derivada")
-           }
-            //Argument for Base: La base
-            //Initializing Base
-            //Initializing size in Base: 7
-            //Initializing Derived
-            //Initializing size in Derived: 18
-            -->
-
-           ~~~
-       </section>
+        ~~~
+    </section>
 
     <section data-markdown>
         ## Orden de inicialización
         - Durante la construcción de una nueva instancia de una clase derivada, la inicialización de la clase base se realiza como primer paso (precedida solo por la evaluación de los argumentos para el constructor de la clase base) y, por lo tanto, ocurre antes de que se ejecute la lógica de inicialización de la clase derivada.
         - Por lo tanto:
-        - Durante la inicialización de las propiedades de la clase base, las propiedades de la clase derivada aún no se han inicializado.
-        - Si alguna de esas propiedades se utilizan (de forma directa o indirecta) en la inicialización de la clase base se pueden producir comportamientos extraños o errores en tiempo de ejecución.
+            - Durante la inicialización de las propiedades de la clase base, las propiedades de la clase derivada aún no se han inicializado.
+            - Si alguna de esas propiedades se utilizan (de forma directa o indirecta) en la inicialización de la clase base se pueden producir comportamientos extraños o errores en tiempo de ejecución.
     </section>
 
     <section data-markdown>
@@ -329,7 +330,7 @@
 
         ~~~Kt
         interface MyInterface {
-            fun bar(): String  // abstract por defecto
+            fun bar(): String // abstract por defecto
             fun foo() = 1 + 1 //Cuerpo opcional
         }
         ~~~
@@ -339,13 +340,13 @@
 
         - Una clase u objeto pueden implementar una o varias interfaces:
 
-        - ***Actividad:*** Create una clase que implemente la interface. Create una variable e instánciala con un objeto de la clase Child. ¿Que sucede si no sobreescribes el método bar?  ¿y con foo, puedes llamar al método foo?
+        - ***Actividad:*** Create una clase `Child` que implemente la interface `MyInterface`. Create una variable e instánciala con un objeto de la clase `Child`. ¿Que sucede si no sobreescribes el método `bar`? ¿y con `foo`, puedes llamar al método `foo`?
 
         ~~~Kt
-            class Child : MyInterface {
-                override fun bar() = "uno"
-                fun foo3() = 1 + 2;
-            }
+        class Child : MyInterface {
+        <!-- override fun bar() = "uno"
+            fun foo3() = 1 + 2; -->
+        }
         ~~~
     </section>
     <section data-markdown>
@@ -355,123 +356,121 @@
         - Una propiedad declarada en una interfaz puede ser abstracta o puede proporcionar implementaciones para el `getter()` o `setter()`.
         - Las propiedades declaradas en interfaces no pueden tener `backing fields` y, por lo tanto, los accesores declarados en interfaces no pueden hacer referencia a ellos.
 
-        - ***Actividad:*** Create una clase `Child` vacia que implemente la interface, sin sobreescribir prop. ¿Qué sucece si intentas instanciar la clase Child?
+        - ***Actividad:*** Create una clase `Child` vacía que implemente la interface `MyInterface`, sin sobreescribir `prop`. ¿Qué sucede si intentas instanciar la clase `Child`?
 
         ~~~Kt
-            interface MyInterface {
-                val prop: Int // abstract
+        interface MyInterface {
+            val prop: Int // abstract
 
-                val propertyWithImplementation: String
-                get() = "foo"
+            val propertyWithImplementation: String
+            get() = "foo"
 
-                fun foo() {  print(prop)
-                }
-            }
+            fun foo() { print(prop) }
+        }
 
-            class Child : MyInterface {
-                override val prop: Int = 29
-            }
-        ~~~
-    </section>
+        class Child : MyInterface {
+        <!-- override val prop: Int = 29 -->
+        }
+~~~
+</section>
 
-    <section data-markdown>
-        ## Interfaces. (RA4.j)
-        - Una interfaz puede derivar de otras interfaces y, por lo tanto, proporcionar implementaciones para sus miembros y declarar nuevas funciones y propiedades.
-        - Naturalmente, las clases que implementen dicha interfaz solo tienen que definir las implementaciones que faltan:
+<section data-markdown>
+## Interfaces. (RA4.j)
+- Una interfaz puede derivar de otras interfaces y, por lo tanto, proporcionar implementaciones para sus miembros y declarar nuevas funciones y propiedades.
+- Naturalmente, las clases que implementen dicha interfaz solo tienen que definir las implementaciones que faltan:
 
-        - ***Actividad:*** Copia el código, create `name2` en `Named` y sobreescribe `name2` asi  `override val name: String` en `Person`. Create un objeto `Employee` ¿Compila? ¿Que sucede?
+- ***Actividad:*** Copia el código, create la propiedad `name2` en la interface `Named` y sobreescribe `name2` asi `override val name2: String` en la interface `Person`. Create un objeto de la clase `Employee` ¿Compila? ¿Qué sucede?
 
-        ~~~Kt
-            interface Named {
-                val name: String
-            }
-            interface Person : Named {
-                val firstName: String
-                val lastName: String
-                override val name: String get() = "$firstName $lastName"
-            }
-            data class Employee(
-                // implementing 'name' is not required
-                override val firstName: String,
-                override val lastName: String,
-                val position: Position
-            ) : Person
-        ~~~
+~~~Kt
+    interface Named {
+        val name: String
+    }
+    interface Person : Named {
+        val firstName: String
+        val lastName: String
+        override val name: String get() = "$firstName $lastName"
+    }
 
-    </section>
-    <section data-markdown>
-        ## Interfaces. (RA4.j)
-        - En el caso de clases que hereden de varias interfaces, para evitar ambigüedades la subclase deberá proporcionar implementaciones tanto para métodos que tienen una implementación en una de las interfaces como en métodos que tiene implementaciones en varias interfaces.
+    data class Employee(
+        // implementing 'name' is not required
+        override val firstName: String,
+        override val lastName: String,
+        val position: Position
+    ): Person
+~~~
 
-        - ***Actividad:*** Modifica el método foo en `D` para que llame también a foo de `B`
+</section>
+<section data-markdown>
+## Interfaces. (RA4.j)
+- En el caso de clases que hereden de varias interfaces, para evitar ambigüedades la subclase deberá proporcionar implementaciones tanto para métodos que tienen una implementación en una de las interfaces como en métodos que tiene implementaciones en varias interfaces.
 
-        ~~~Kt
-            interface A {
-                fun foo() { print("A") }
-                fun bar()  // abstract
-            }
+- ***Actividad:*** Modifica el método `foo` en la clase `D` para que llame también a `foo` de `B`
 
-            interface B {
-                fun foo() { print("B") }
-                fun bar() { print("bar") }
-            }
+~~~Kt
+    interface A {
+        fun foo() { print("A") }
+        fun bar() // abstract
+    }
 
-            class C : A {
-                override fun bar() { print("bar") }
-            }
+    interface B {
+        fun foo() { print("B") }
+        fun bar() { print("bar") }
+    }
 
-            // la clase 'D' tiene que implementar tanto foo() como bar()
-            class D : A, B {
-                override fun foo() {
-                super&lt;A&gt;.foo()
-                }
+    class C : A {
+        override fun bar() { print("bar") }
+    }
 
-                override fun bar() {
-                super&lt;B&gt;.bar()
-                }
-            }
-        ~~~
-    </section>
+    // la clase 'D' tiene que implementar tanto foo() como bar()
+    class D : A, B {
+        override fun foo() {
+            super&lt;A&gt;.foo()
+        }
+        override fun bar() {
+            super&lt;B&gt;.bar()
+        }
+    }
+~~~
+</section>
 
-    <section data-markdown>
-        ## Visibilidad. (RA4.g)
+<section data-markdown>
+## Visibilidad. (RA4.g)
 
-        - Modificadores de visibilidad:
-            - **Public** - Este es el valor predeterminado, y se puede acceder a cualquier clase, función, propiedad, interfaz u objeto que tenga este modificador desde cualquier lugar.
-            - **Private** - Se puede acceder a una función, interfaz o clase de nivel superior que se declara como privada solo dentro del mismo archivo.
-            - **Protected** - Solo se puede aplicar a propiedades o funciones dentro de una clase, objeto o interfaz, no se puede aplicar a funciones, clases o interfaces de nivel superior. Las propiedades o funciones con este modificador solo son accesibles dentro de la clase que lo define y cualquier subclase.
-            - **Internal** - En un proyecto que tiene un módulo (módulo Gradle o Maven), una clase, objeto, interfaz o función especificada con este modificador dentro de ese módulo solo es accesible desde ese módulo.
-        - Las clases, objetos, interfaces, constructores, funciones, propiedades y sus 'setters' pueden tener modificadores de visibilidad.
-        - Los 'setters' siempre tienen la misma visibilidad que la propiedad.
-        - Cualquier función o propiedad que se declare privada dentro de una clase, objeto o interfaz solo puede ser visible para otros miembros de esa misma clase, objeto o interfaz.
-        - Un constructor privado debe usar la palabra clave `constructor`. Si un constructor es marcado como privado no se puede instanciar un objeto con ese constructor.
+- Modificadores de visibilidad:
+    - **Public** - Este es el valor predeterminado, y se puede acceder a cualquier clase, función, propiedad, interfaz u objeto que tenga este modificador desde cualquier lugar.
+    - **Private** - Se puede acceder a una función, interfaz o clase de nivel superior que se declara como privada solo dentro del mismo archivo.
+    - **Protected** - Solo se puede aplicar a propiedades o funciones dentro de una clase, objeto o interfaz, no se  puede aplicar a funciones, clases o interfaces de nivel superior. Las propiedades o funciones con este  modificador solo son accesibles dentro de la clase que lo define y cualquier subclase.
+    - **Internal** - En un proyecto que tiene un módulo (módulo Gradle o Maven), una clase, objeto, interfaz o  función especificada con este modificador dentro de ese módulo solo es accesible desde ese módulo.
+- Las clases, objetos, interfaces, constructores, funciones, propiedades y sus 'setters' pueden tener modificadores de visibilidad.
+- Los 'setters' siempre tienen la misma visibilidad que la propiedad.
+- Cualquier función o propiedad que se declare privada dentro de una clase, objeto o interfaz solo puede ser visible para otros miembros de esa misma clase, objeto o interfaz.
+- Un constructor privado debe usar la palabra clave `constructor`. Si un constructor es marcado como privado no se puede instanciar un objeto con ese constructor.
 
-    </section>
+</section>
 
-    <section data-markdown>
-        ## Visibilidad. (RA4.g)
-        - ***Actividad:*** Create una clase Car ¿Que sucede?
+<section data-markdown>
+## Visibilidad. (RA4.g)
+- ***Actividad:*** Create un objeto de la clase `Car` ¿Que sucede?
 
-        ~~~Kt
-            class Car private constructor(val name: String, val plateNo: String) {
-                // ....
-            }
-        ~~~
-        
-
-    </section>
-
-    <section data-markdown>
-           ## BIBLIOGRAFÍA
-           - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
-           - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
-           - ![left](images/link.png) [Herencia en kotlin](https://www.develou.com/herencia-en-kotlin/)
-           - ![left](images/link.png) [Interfaces en kotlin](https://devexperto.com/interfaces-kotlin/)
-           - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
-       </section>
+~~~Kt
+    class Car private constructor(val name: String, val plateNo: String) {
+        // ....
+    }
+~~~
 
 
-      </section>
+</section>
+
+<section data-markdown>
+## BIBLIOGRAFÍA
+- ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
+- ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
+- ![left](images/link.png) [Herencia en kotlin](https://www.develou.com/herencia-en-kotlin/)
+- ![left](images/link.png) [Interfaces en kotlin](https://devexperto.com/interfaces-kotlin/)
+- Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
+</section>
+
+</section>
 
 
 
