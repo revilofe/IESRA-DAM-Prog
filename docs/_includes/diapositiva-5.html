@@ -156,34 +156,34 @@
 
         ~~~Kt
 
-            open class Base {
-                open fun v() { println("base") }
-                open fun x(p: Int) { println(p) }
-                fun nv() { println(this.toString() + ": sin sobreescribir") }
-            }
+        open class Base {
+            open fun v() { println("base") }
+            open fun x(p: Int) { println(p) }
+            fun nv() { println(this.toString() + ": sin sobreescribir") }
+        }
 
-            class Derived: Base() {
-                override fun v() { println("derivada") }
-                // Restringir la sobreescritura
-                final override fun x(p: Int) { println(p+1) }
-            }
-            <!--
-                fun main()
-               {
-                   var b = Base()
-                   var d = Derived()
+        class Derived: Base() {
+            override fun v() { println("derivada") }
+            // Restringir la sobreescritura
+            final override fun x(p: Int) { println(p+1) }
+        }
+        <!--
+            fun main()
+           {
+               var b = Base()
+               var d = Derived()
 
-                   b.v(); AbstractCollectionb.x(1); b.nv()
-                   d.v(); d.x(1); d.nv()
+               b.v(); AbstractCollectionb.x(1); b.nv()
+               d.v(); d.x(1); d.nv()
 
-               }
-               //base
-               //1
-               //Base@2c7b84de: sin sobreescribir
-               //derivada
-               //2
-               //Derived@3fee733d: sin sobreescribir
-            -->
+           }
+           //base
+           //1
+           //Base@2c7b84de: sin sobreescribir
+           //derivada
+           //2
+           //Derived@3fee733d: sin sobreescribir
+        -->
         ~~~
     </section>
 
@@ -201,23 +201,23 @@
         - ***Actividad:*** Ejecuta el código siguiente. Crea el main, instancia la subclase ¿Que muestra en pantalla?  ¿Que muestra en pantalla si me declaro lo siguiente `var a: A = C(); a.f()` y `var b: B = C(); b.f()`? ¿Si  instancias `A` y lo asignas a `a`, llamando a `a.f()`, que diferencias encuentras con la anterior llamada a `a.f()`?
 
         ~~~Kt
-            open class A {
-                open fun f() { print("A") }
-                fun a() { print("a") }
-            }
+        open class A {
+            open fun f() { print("A") }
+            fun a() { print("a") }
+        }
 
-            interface B {
-                fun f() { print("B") } // Los miembros de las interfaces son `open` por defecto.
-                fun b() { print("b") }
-            }
+        interface B {
+            fun f() { print("B") } // Los miembros de las interfaces son `open` por defecto.
+            fun b() { print("b") }
+        }
 
-            class C() : A(), B {
-                // El compilador requiere que 'f()' sea sobreescrito para eliminar la ambigüedad
-                override fun f() {
-                    super&lt;A&gt;.f() // call to A.f()
-                    super&lt;B&gt;.f() // call to B.f()
-                }
+        class C() : A(), B {
+            // El compilador requiere que 'f()' sea sobreescrito para eliminar la ambigüedad
+            override fun f() {
+                super&lt;A&gt;.f() // call to A.f()
+                super&lt;B&gt;.f() // call to B.f()
             }
+        }
         <!--
         fun main()
         {
@@ -247,31 +247,31 @@
 
         ~~~kt
 
-            open class Foo {
-                open val x: String
-                get() { return "base" }
-            }
+        open class Foo {
+            open val x: String
+            get() { return "base" }
+        }
 
-            class Bar : Foo() {
-                override val x: String = "subclase"
-            }
+        class Bar : Foo() {
+            override val x: String = "subclase"
+        }
 
-            interface Foo1 {
-                val count: Int
-            }
+        interface Foo1 {
+            val count: Int
+        }
 
-            class Bar1(override val count: Int) : Foo1
-            <!--
-               fun main()
-               {
-               var b = Bar()
-               println(b.x)
-               var b1 = Bar1(b.x.length)
-               println(b1.count)
-               }
-            //subclase
-            //8
-            -->
+        class Bar1(override val count: Int) : Foo1
+        <!--
+           fun main()
+           {
+           var b = Bar()
+           println(b.x)
+           var b1 = Bar1(b.x.length)
+           println(b1.count)
+           }
+        //subclase
+        //8
+        -->
         ~~~
     </section>
 
