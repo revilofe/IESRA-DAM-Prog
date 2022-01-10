@@ -1,11 +1,193 @@
+<script src="https://unpkg.com/kotlin-playground@1" data-selector="code"></script>
+
 <section>
     <section data-markdown>
-        ## Unidad 6
+        # Unidad 6
+        ## Creación de programas haciendo uso de características avanzadas de la POO: Herencia y polimorfismo
     </section>
     <!--
         Bloques de diapositivas
     -->
     <section data-markdown>
-        Bloques de diapositivas
+        ## Resultado de Aprendizaje 7
+
+        > Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.
+
     </section>
-</section>
+    <section data-markdown>
+        ## Criterios de evaluación
+
+        - a) Se han identificado los conceptos de herencia, superclase y subclase.
+        - b) Se han utilizado modificadores para bloquear y forzar la herencia de clases y métodos.
+        - c) Se ha reconocido la incidencia de los constructores en la herencia.
+        - d) Se han creado clases heredadas que sobrescriban la implementación de métodos de la superclase.
+        - e) Se han diseñado y aplicado jerarquías de clases.
+        - f) Se han probado y depurado las jerarquías de clases.
+        - g) Se han realizado programas que implementen y utilicen jerarquías de clases.
+        - h) Se ha comentado y documentado el código.
+
+    </section>
+    <section data-markdown>
+        ## Contenidos mínimos:
+
+        **Utilización avanzada de clases:**
+        - Composición de clases.
+        - Herencia.
+        - Superclases y subclases.
+        - Clases y métodos abstractos y finales.
+        - Sobreescritura de métodos.
+        - Constructores y herencia.
+    </section>
+
+    <section data-markdown>
+        *********************
+    </section>
+
+    <!--
+        Bloques de diapositivas
+    -->
+
+    <section data-markdown>
+        ## herencia, superclase, subclase. (RA7.a)
+
+        ![left](images/link.png) [Herencia] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/5)
+        - Existen varias funcionalidades que se le puede dar a la herencia:
+            - Especialización (es un): Se crea una estructura de clases en la que una especializa a la otra `Cuadrado -> Figura`
+            - Extensión (extiende funcionalidad heredada): Se crea estructura en la que una clase extiende el comportamiento de otra sin que sea necesariamente un concepto mas especifico 'ListaSalvable -> Lista'
+            - Especificación (define interface): Se crea una estructura en la que la superclase especifica la interface de sus descendientes. `Texto, Linea, Figura -> ObjetoGrafico`
+            - Construcción (Usado para construir la subbase): La hija puede aprovechar la padre pero no tienen conexión. `Pila -> Lista`
+    </section>
+    <section data-markdown>
+        ## herencia, superclase, subclase. (RA7.a)
+        - ***Actividad Evaluable:*** 6.1 De los 4 tipos vistos,
+            - Crea dos tipos de estructuras
+            - Quién es la superclase y subclase
+            - Di que tipo de herencia es
+            - Que ventajas aporta esta implementación.
+            - Existe otra forma de implementarlo que no sea a través de la herencia
+    </section>
+    <section data-markdown>
+        ## Clases Abstractas, Interfaces (RA7.b)
+
+        - Kotlin admite clases abstractas al igual que Java.
+        - Una clase abstracta es una clase con métodos marcados como abstractos y que por tanto no puede ser instanciada.
+        - Si una clase tiene uno o varios métodos abstractos es una clase abstracta y se indica con la palabra clave `abstract`.
+        - La subclase concreta de una clase abstracta deberá implementar todos los métodos y propiedades definidos en la clase abstracta; de lo contrario, también será considerada como una clase abstracta.
+        - Las clases abstractas pueden contener métodos con implementación por defecto como cualquier otra clase.
+        - Las subclases de la clase abstracta pueden sobreescribir la implementación predeterminada de un método pero solo si el método tiene el modificador 'open'.
+        - Los métodos marcados como 'abstract' también son 'open' por defecto.
+        - Las clases abstractas también pueden definir variables de instancia al contrario que pasa con las interfaces.
+
+    </section>
+    <section data-markdown>
+        ## Clases Abstractas, Interfaces (RA7.b)
+
+        - ***Actividad:*** Hereda de `Employee` y crea una clase `Teacher`.
+
+        ~~~Kt
+
+        open class Person {
+            open fun fullName(): String { ... }
+        }
+
+        abstract class Employee (val firstName: String, val lastName: String): Person() {
+            // Variable de intancia en una clase abstracta
+            val propFoo: String = "bla bla"
+
+            abstract fun earnings(): Double
+
+            // Podemos tener métodos con implementación por defecto
+            override fun fullName(): String {
+                return lastName + " " + firstName;
+            }
+        }
+
+        ~~~
+    </section>
+    <section data-markdown>
+        ## Clases Abstractas, Interfaces (RA7.b)
+        - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/16)
+        - Diferencias:
+            - Las interfaces permiten definir comportamiento compartidos, mientras que las clases establecen relación de "es un"
+            - Las clases puedes implementar varias interfaces, mientras que solo pueden heredar de una sola clase.
+            - Puede contener propiedades abstractas y regulares pero sin campos de respaldo (field)
+            - Las clases pueden tener constructores, mientras que las interfaces no.
+            - Todas los métodos definidos por las interfaces se pueden sobrescribir sin tener que ser marcados con open, mientras que en las clases no.
+    </section>
+    <section data-markdown>
+        ## Incidencia de constructores en la herencia (RA7.c)
+        - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/8)
+    </section>
+
+    <section data-markdown>
+        ## Principio de inversión de dependencias (RA7.)
+        - Básicamente lo que nos dice este principio es que:
+            - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
+            - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
+        - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que ***se suministran objetos a una clase*** en lugar de ser la propia clase quien cree el objeto.
+            - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar comportamientos a componentes.
+            - El término fue acuñado por primera vez por *Martin Fowler*.
+        - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
+        - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
+        https://programmerclick.com/article/7789294027/
+        http://joaquin.medina.name/web2008/documentos/informatica/documentacion/logica/OOP/Principios/Oop_Solid_DIP/2012_09_14_DependencyInversionPrincipe.html
+        https://devexperto.com/principio-de-inversion-de-dependencias/
+
+    </section>
+
+    <section data-markdown>
+
+    </section>
+    <section data-markdown>
+
+    </section>
+    <section data-markdown>
+
+    </section>
+
+    <section data-markdown>
+
+    </section>
+    <section data-markdown>
+        ## In
+        - En
+
+        - ***Actividad:*** Mo
+
+        ~~~Kt
+            interface A {
+
+        ~~~
+    </section>
+
+    <section data-markdown>
+        ##
+
+    </section>
+
+    <section data-markdown>
+
+
+
+    </section>
+
+    <section data-markdown>
+           ## BIBLIOGRAFÍA
+           - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
+           - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
+           - ![left](images/link.png) [Clases abstractas, interfaces, herencia] (https://code.tutsplus.com/es/tutorials/kotlin-from-scratch-abstract-classes-interfaces-inheritance-and-type-alias--cms-29744)
+           - ![left](images/link.png) [Clases abstractas] (https://www.develou.com/clases-abstractas-en-kotlin/)
+           - ![left](images/link.png) [Herencia en kotlin](https://www.develou.com/herencia-en-kotlin/)
+           - ![left](images/link.png) [Interfaces en kotlin I](https://www.develou.com/interfaces-en-kotlin/)
+           - ![left](images/link.png) [Interfaces en kotlin II](https://devexperto.com/interfaces-kotlin/)
+           - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
+       </section>
+
+
+      </section>
+
+
+
+
+
+
