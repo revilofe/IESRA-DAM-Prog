@@ -119,14 +119,15 @@
 
     <section data-markdown>
         ## Principio de inversión de dependencias (RA7.)
+        - Básicamente lo que nos dice este principio es que:
+            - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
+            - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
+        - En Informática, Inyección de Dependencias (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que se suministran objetos a una clase en lugar de ser la propia clase quien cree el objeto.
+            - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar comportamientos a componentes.
+            - El término fue acuñado por primera vez por *Martin Fowler*.
 
-        Básicamente lo que nos dice este principio es que
-
-A. Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
-B. Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
-En Informática, Inyección de Dependencias (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que se suministran objetos a una clase en lugar de ser la propia clase quien cree el objeto. Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar comportamientos a componentes. El término fue acuñado por primera vez por Martin Fowler.
-
-Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución. Es conveniente no confundir Inyección de dependencias (DIP) con Inversión de Control (IoC).
+        - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
+        - Es conveniente no confundir Inyección de dependencias (DIP) con Inversión de Control (IoC).
 
 
     </section>
