@@ -1,0 +1,14 @@
+<ItemSet>
+    <Item type="T0" count="1">
+        <Subitem> Valor T0.TT1 </Subitem>
+    </Item>
+    <Item type="T1" count="2">
+        <Subitem> Valor T1.TT1 </Subitem>
+    </Item>
+    <Item type="T2" count="1">
+        <Subitem> Valor T2.TT1 </Subitem>
+    </Item>
+    <Item type="T3" count="1">
+        <Subitem> Valor T3.TT1 </Subitem>
+    </Item>
+</ItemSet>

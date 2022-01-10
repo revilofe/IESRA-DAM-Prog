@@ -157,12 +157,12 @@ internal class TiendaTest {
             errorMessage("Tienda.obtenerClientesConPedidosSinEntregar")
         )
     }
-
+/*
     @Test
     fun testObtenerProductosPedidos() {
         assertTrue(productosPedidos == tienda.obtenerProductosPedidos(), errorMessage("Tienda.obtenerProductosPedidos"))
     }
-/*
+*/
         @Test
         fun obtenerProductosPedidosPorTodos() {
             val testShop = tienda(
@@ -190,7 +190,7 @@ internal class TiendaTest {
             errorMessage("Tienda.obtenerNumeroVecesProductoPedido")
         )
     }
-*/
+
 
     @Test
     fun agrupaClientesPorCiudad() {
@@ -199,6 +199,7 @@ internal class TiendaTest {
             errorMessage("Tienda.agrupaClientesPorCiudad()")
         )
     }
+
     @Test
     fun mapeaNombreACliente() {
         val expected = clientes.values.associateBy { it.nombre }
@@ -211,7 +212,7 @@ internal class TiendaTest {
         val actual = tienda.mapeaClienteACiudad()
         assertTrue(expected == actual, errorMessage("Tienda.mapeaClienteACiudad"))
     }
-    /*
+
 
         @Test
         fun mapeaNombreClienteACiudad() {
@@ -219,7 +220,7 @@ internal class TiendaTest {
             val actual = tienda.mapeaNombreClienteACiudad()
             assertTrue(expected == actual, errorMessage("Tienda.mapeaNombreClienteACiudad"))
         }
-        */
+
         @Test
         fun obtenerClientesConMaxPedidos() {
             assertTrue(
