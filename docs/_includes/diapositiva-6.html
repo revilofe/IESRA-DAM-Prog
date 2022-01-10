@@ -56,14 +56,15 @@
             - Extensión (extiende funcionalidad heredada): Se crea estructura en la que una clase extiende el comportamiento de otra sin que sea necesariamente un concepto mas especifico 'ListaSalvable -> Lista'
             - Especificación (define interface): Se crea una estructura en la que la superclase especifica la interface de sus descendientes. `Texto, Linea, Figura -> ObjetoGrafico`
             - Construcción (Usado para construir la subbase): La hija puede aprovechar la padre pero no tienen conexión. `Pila -> Lista`
-
+    </section>
+    <section data-markdown>
+        ## herencia, superclase, subclase. (RA7.a)
         - ***Actividad Evaluable:*** 6.1 De los 4 tipos vistos,
             - Crea dos tipos de estructuras
             - Quién es la superclase y subclase
             - Di que tipo de herencia es
             - Que ventajas aporta esta implementación.
             - Existe otra forma de implementarlo que no sea a través de la herencia
-
     </section>
     <section data-markdown>
         ## Clases Abstractas, Interfaces (RA7.b)
@@ -82,7 +83,9 @@
         ## Clases Abstractas, Interfaces (RA7.b)
 
         - ***Actividad:*** Hereda de `Employee` y crea una clase `Teacher`.
+
         ~~~Kt
+
         open class Person {
             open fun fullName(): String { ... }
         }
@@ -103,18 +106,17 @@
     </section>
     <section data-markdown>
         ## Clases Abstractas, Interfaces (RA7.b)
-        ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/16)
-
-        - Diferencia
-        - Las interfaces permiten definir comportamiento compartidos, mientras que las clases establecen relación de "es un"
-        - Las clases puedes implementar varias interfaces, mientras que solo pueden heredar de una sola clase.
-        - Puede contener propiedades abstractas y regulares pero sin campos de respaldo (field)
-        - Las clases pueden tener constructores, mientras que las interfaces no.
-        - Todas los métodos definidos por las interfaces se pueden sobrescribir sin tener que ser marcados con open, mientras que en las clases no.
+        - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/16)
+        - Diferencias:
+            - Las interfaces permiten definir comportamiento compartidos, mientras que las clases establecen relación de "es un"
+            - Las clases puedes implementar varias interfaces, mientras que solo pueden heredar de una sola clase.
+            - Puede contener propiedades abstractas y regulares pero sin campos de respaldo (field)
+            - Las clases pueden tener constructores, mientras que las interfaces no.
+            - Todas los métodos definidos por las interfaces se pueden sobrescribir sin tener que ser marcados con open, mientras que en las clases no.
     </section>
     <section data-markdown>
         ## Incidencia de constructores en la herencia (RA7.c)
-        ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/8)
+        - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/8)
     </section>
 
     <section data-markdown>
@@ -122,13 +124,14 @@
         - Básicamente lo que nos dice este principio es que:
             - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
             - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
-        - En Informática, Inyección de Dependencias (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que se suministran objetos a una clase en lugar de ser la propia clase quien cree el objeto.
+        - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que ***se suministran objetos a una clase*** en lugar de ser la propia clase quien cree el objeto.
             - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar comportamientos a componentes.
             - El término fue acuñado por primera vez por *Martin Fowler*.
-
         - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
-        - Es conveniente no confundir Inyección de dependencias (DIP) con Inversión de Control (IoC).
-
+        - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
+        https://programmerclick.com/article/7789294027/
+        http://joaquin.medina.name/web2008/documentos/informatica/documentacion/logica/OOP/Principios/Oop_Solid_DIP/2012_09_14_DependencyInversionPrincipe.html
+        https://devexperto.com/principio-de-inversion-de-dependencias/
 
     </section>
 
