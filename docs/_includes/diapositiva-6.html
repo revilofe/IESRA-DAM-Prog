@@ -74,15 +74,15 @@
         - Si una clase tiene uno o varios métodos abstractos es una clase abstracta y se indica con la palabra clave `abstract`.
         - La subclase concreta de una clase abstracta deberá implementar todos los métodos y propiedades definidos en la clase abstracta; de lo contrario, también será considerada como una clase abstracta.
         - Las clases abstractas pueden contener métodos con implementación por defecto como cualquier otra clase.
-        - Las subclases de la clase abstracta pueden sobreescribir la implementación predeterminada de un método pero solo si el método tiene el modificador 'open'.
-        - Los métodos marcados como 'abstract' también son 'open' por defecto.
+        - Las subclases de la clase abstracta pueden sobreescribir la implementación predeterminada de un método pero solo si el método tiene el modificador `open`.
+        - Los métodos marcados como `abstract` también son `open` por defecto.
         - Las clases abstractas también pueden definir variables de instancia al contrario que pasa con las interfaces.
 
     </section>
     <section data-markdown>
         ## Clases Abstractas, Interfaces (RA7.b)
 
-        - ***Actividad:*** Hereda de `Employee` y crea una clase `Teacher`.
+        - ***Actividad:*** Hereda de `Employee` y crea una clase `Teacher`. ¿Te has visto obligad@ a sobreescribir algún método? ¿Porqué?
 
         ~~~Kt
 
@@ -91,7 +91,7 @@
         }
 
         abstract class Employee (val firstName: String, val lastName: String): Person() {
-            // Variable de intancia en una clase abstracta
+            // Variable de instancia en una clase abstracta
             val propFoo: String = "bla bla"
 
             abstract fun earnings(): Double
@@ -108,9 +108,9 @@
         ## Clases Abstractas, Interfaces (RA7.b)
         - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/16)
         - Diferencias:
-            - Las interfaces permiten definir comportamiento compartidos, mientras que las clases establecen relación de "es un"
+            - Las interfaces permiten definir comportamiento compartidos, mientras que las clases establecen relación de **es un**
             - Las clases puedes implementar varias interfaces, mientras que solo pueden heredar de una sola clase.
-            - Puede contener propiedades abstractas y regulares pero sin campos de respaldo (field)
+            - Puede contener propiedades abstractas y regulares pero sin campos de respaldo (`field`)
             - Las clases pueden tener constructores, mientras que las interfaces no.
             - Todas los métodos definidos por las interfaces se pueden sobrescribir sin tener que ser marcados con open, mientras que en las clases no.
     </section>
@@ -121,22 +121,23 @@
 
     <section data-markdown>
         ## Principio de inversión de dependencias (RA7.)
+
         - Básicamente lo que nos dice este principio es que:
             - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
             - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
-        - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que ***se suministran objetos a una clase*** en lugar de ser la propia clase quien cree el objeto.
+
+        - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que **se suministran objetos a una clase** en lugar de ser la propia clase quien cree el objeto.
             - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar comportamientos a componentes.
             - El término fue acuñado por primera vez por *Martin Fowler*.
         - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
         - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
-        https://programmerclick.com/article/7789294027/
-        http://joaquin.medina.name/web2008/documentos/informatica/documentacion/logica/OOP/Principios/Oop_Solid_DIP/2012_09_14_DependencyInversionPrincipe.html
-        https://devexperto.com/principio-de-inversion-de-dependencias/
 
     </section>
 
     <section data-markdown>
-
+        https://programmerclick.com/article/7789294027/
+        http://joaquin.medina.name/web2008/documentos/informatica/documentacion/logica/OOP/Principios/Oop_Solid_DIP/2012_09_14_DependencyInversionPrincipe.html
+        https://devexperto.com/principio-de-inversion-de-dependencias/
     </section>
     <section data-markdown>
 
