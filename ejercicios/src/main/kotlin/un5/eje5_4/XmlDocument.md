@@ -108,7 +108,7 @@ Ten en cuenta que para validar el ejercicio se utilizará el nombre de Clase y m
 
 ### Evaluación
 - La clase se ha diseñado adecuadamente, creando las propiedades y métodos necesarios y separando la funcionalidad.
-- Se han utilizado los modificacdores de privacidad adecuados. 
+- Se han utilizado los modificadores de privacidad adecuados. 
 - La clase Funciona adecuadamente.
 
 Adicionalmente se tendrá en cuenta:
