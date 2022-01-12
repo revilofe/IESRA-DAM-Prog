@@ -92,8 +92,8 @@ Implementar una clase `CatalogoLibrosXML` con sus métodos y propiedades. Usa lo
 ### Propiedades
 - Las que necesites.
 ### Métodos
-- `establecerPathAXMLFile(pathAXMLFile:String): Boolean`: Devuelve `true`, si el fichero existe y es correcto. `false` en caso contrario. 
-- `existeLibro(idLibro:String): Boolean`: Devuelve true si existe, `false` en caso contrario
+- `constructor(pathAXMLFile:String)`: Debe abortar si el fichero no existe o es incorrecto. 
+- `existeLibro(idLibro:String): Boolean`: Devuelve true si existe, `false` en caso contrario.
 - `infoLibro(idLibro:String): Map<String,String>`: Devuelve un `Map` con los atributos y valores del libro. Devolverá un `Map` vacío en caso contrario. 
 
 
