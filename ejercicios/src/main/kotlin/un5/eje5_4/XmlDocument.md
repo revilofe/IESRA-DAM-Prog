@@ -91,9 +91,10 @@ Implementar una clase `CatalogoLibrosXML` con sus métodos y propiedades. Usa lo
 ### Propiedades
 - Las que necesites.
 ### Métodos
-- `constructor(pathAXMLFile:String)`: Debe abortar si el fichero no existe o es incorrecto. 
+- `constructor(cargador:String)`: Debe abortar si el fichero no existe o es incorrecto.
 - `existeLibro(idLibro:String): Boolean`: Devuelve true si existe, `false` en caso contrario.
-- `infoLibro(idLibro:String): Map<String,String>`: Devuelve un `Map` con los atributos y valores del libro. Devolverá un `Map` vacío en caso contrario.
+- `infoLibro(idLibro:String): Map<String,Any>`: Devuelve un `Map` con los atributos y valores del libro. Devolverá
+  un `Map` vacío en caso contrario.
 
 Ejemplo de lo que tendría que devolver `infoLibro` si recibe como parámetro `"bk101"` y existe un elemento en el fichero XML como este:
 ~~~
@@ -108,7 +109,7 @@ Ejemplo de lo que tendría que devolver `infoLibro` si recibe como parámetro `"
 ~~~
 Deberá devolver el `Map` siguiente (Ten en cuenta que también debe incluir el campo **id**):
 ~~~
-["id":"bk101", "autor":"Gambardella", "title":"XML Developer's Guide", "genre":"Computer", "price":"44.95", "publish_date":"2000-10-01", "description":"An in-depth look at creating applications with XML."]
+["id":"bk101", "autor":"Gambardella", "title":"XML Developer's Guide", "genre":"Computer", "price":44.95, "publish_date":"2000-10-01", "description":"An in-depth look at creating applications with XML."]
 ~~~
 
 > **NOTA:** Utiliza un método de Logger para mostrar información.
