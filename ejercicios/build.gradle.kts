@@ -10,6 +10,8 @@ version = "1.0-SNAPSHOT"
 dependencies {
     implementation("org.junit.jupiter:junit-jupiter:5.7.0")
     implementation("com.google.code.gson:gson:2.8.5") // GSON -> DataClass
+    implementation("io.github.microutils:kotlin-logging-jvm:2.1.20") // LOGGER
+    implementation("org.slf4j:slf4j-simple:1.7.32") // LOGGER
     testImplementation(kotlin("test"))
 }
 
