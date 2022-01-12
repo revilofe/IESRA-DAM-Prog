@@ -113,7 +113,7 @@ Deberá devolver el `Map` siguiente (Ten en cuenta que también debe incluir el 
 
 > **NOTA:** Utiliza un método de Logger para mostrar información.
 
-El ejercicio consistirá en dos partes:
+El ejercicio consistirá de dos partes:
 
 1. Implementa la clase y sus métodos. 
 2. Una función main en la que se prueba la clase. 
