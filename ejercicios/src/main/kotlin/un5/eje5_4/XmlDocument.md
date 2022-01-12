@@ -109,7 +109,10 @@ Ejemplo de lo que tendría que devolver `infoLibro` si recibe como parámetro `"
 ~~~
 Deberá devolver el `Map` siguiente (Ten en cuenta que también debe incluir el campo **id**):
 ~~~
-["id":"bk101", "autor":"Gambardella", "title":"XML Developer's Guide", "genre":"Computer", "price":44.95, "publish_date":"2000-10-01", "description":"An in-depth look at creating applications with XML."]
+["id":"bk101", "autor":"Gambardella", "title":"XML Developer's Guide", "genre":"Computer", "price":44.95, "publish_date":2000-10-01, "description":"An in-depth look at creating applications with XML."]
+// price es de tipo Double 
+// publish_date es de tipo Date
+// el resto son String
 ~~~
 
 > **NOTA:** Utiliza un método de Logger para mostrar información.
