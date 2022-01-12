@@ -74,7 +74,6 @@ fun obtenerAtributosEnMapKV(e: Element ):MutableMap<String, String>
         mMap.putIfAbsent(e.attributes.item(j).nodeName, e.attributes.item(j).nodeValue)
     return mMap
 }
-
 ~~~
 
 
