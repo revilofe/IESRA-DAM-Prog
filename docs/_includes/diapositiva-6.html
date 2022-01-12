@@ -50,26 +50,32 @@
     <section data-markdown>
         ## herencia, superclase, subclase. (RA7.a)
 
-        ![left](images/link.png) [Herencia] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/5)
+        > ¿Como identificamos los conceptos de herencia, superclase y subclase?
+
+        - Ya vimos en que consistía la herencia, las superclases y las subclases:
+            - ![left](images/link.png) [Herencia] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/5)
+
         - Existen varias funcionalidades que se le puede dar a la herencia:
             - Especialización (es un): Se crea una estructura de clases en la que una especializa a la otra `Cuadrado -> Figura`
-            - Extensión (extiende funcionalidad heredada): Se crea estructura en la que una clase extiende el comportamiento de otra sin que sea necesariamente un concepto mas especifico 'ListaSalvable -> Lista'
+            - Extensión (extiende funcionalidad heredada): Se crea estructura en la que una clase extiende el comportamiento de otra sin que sea necesariamente un concepto mas especifico `ListaSalvable -> Lista`
             - Especificación (define interface): Se crea una estructura en la que la superclase especifica la interface de sus descendientes. `Texto, Linea, Figura -> ObjetoGrafico`
             - Construcción (Usado para construir la subbase): La hija puede aprovechar la padre pero no tienen conexión. `Pila -> Lista`
     </section>
     <section data-markdown>
         ## herencia, superclase, subclase. (RA7.a)
-        - ***Actividad Evaluable:*** 6.1 De los 4 tipos vistos,
-            - Crea dos tipos de estructuras
-            - Quién es la superclase y subclase
-            - Di que tipo de herencia es
-            - Que ventajas aporta esta implementación.
-            - Existe otra forma de implementarlo que no sea a través de la herencia
+        - ***Actividad individual evaluable:*** 6.1 De los 4 tipos vistos,
+            - Crea dos tipos de estructuras de las vistas (Especialización, Extensión, Especificación, Construcción)
+            - Di que tipo de herencia es.
+            - ¿Quién es la superclase y subclase?
+            - ¿Existe otra forma de implementarlo que no sea a través de la herencia?
+            - Piensa y comenta qué ventajas aporta esta implementación de herencia, con respecto a otra.
     </section>
     <section data-markdown>
         ## Clases Abstractas, Interfaces (RA7.b)
 
-        - Kotlin admite clases abstractas al igual que Java.
+        > ¿Como bloqueamos o forzamos la herencia en métodos y clases?
+
+        - Kotlin admite **clases abstractas** al igual que Java.
         - Una clase abstracta es una clase con métodos marcados como abstractos y que por tanto no puede ser instanciada.
         - Si una clase tiene uno o varios métodos abstractos es una clase abstracta y se indica con la palabra clave `abstract`.
         - La subclase concreta de una clase abstracta deberá implementar todos los métodos y propiedades definidos en la clase abstracta; de lo contrario, también será considerada como una clase abstracta.
@@ -106,17 +112,22 @@
     </section>
     <section data-markdown>
         ## Clases Abstractas, Interfaces (RA7.b)
-        - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/16)
-        - Diferencias:
+
+        - Ya vimos en que consistían las interfaces
+            - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/16)
+
+        - Diferencias entre `Clases Abstractas` e `Interfaces` :
             - Las interfaces permiten definir comportamiento compartidos, mientras que las clases establecen relación de **es un**
             - Las clases puedes implementar varias interfaces, mientras que solo pueden heredar de una sola clase.
             - Puede contener propiedades abstractas y regulares pero sin campos de respaldo (`field`)
             - Las clases pueden tener constructores, mientras que las interfaces no.
-            - Todas los métodos definidos por las interfaces se pueden sobrescribir sin tener que ser marcados con open, mientras que en las clases no.
+            - Todas los métodos definidos por las interfaces se pueden sobrescribir sin tener que ser marcados con `open`, mientras que en las clases no.
     </section>
     <section data-markdown>
         ## Incidencia de constructores en la herencia (RA7.c)
-        - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/8)
+
+        - Ya vimos como inciden los constructores en la herencia:
+            - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/8)
     </section>
 
     <section data-markdown>
