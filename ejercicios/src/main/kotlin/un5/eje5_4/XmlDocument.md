@@ -94,8 +94,23 @@ Implementar una clase `CatalogoLibrosXML` con sus métodos y propiedades. Usa lo
 ### Métodos
 - `constructor(pathAXMLFile:String)`: Debe abortar si el fichero no existe o es incorrecto. 
 - `existeLibro(idLibro:String): Boolean`: Devuelve true si existe, `false` en caso contrario.
-- `infoLibro(idLibro:String): Map<String,String>`: Devuelve un `Map` con los atributos y valores del libro. Devolverá un `Map` vacío en caso contrario. 
+- `infoLibro(idLibro:String): Map<String,String>`: Devuelve un `Map` con los atributos y valores del libro. Devolverá un `Map` vacío en caso contrario.
 
+Ejemplo de lo que tendria que devolver `infoLibro` si recibe como parametro `"bk101"` y existe un elemento en el fichero XML como este:
+~~~
+<book id="bk101">
+    <author>Gambardella, Matthew</author>
+    <title>XML Developer's Guide</title>
+    <genre>Computer</genre>
+    <price>44.95</price>
+    <publish_date>2000-10-01</publish_date>
+    <description>An in-depth look at creating applications with XML.</description>
+</book>
+~~~
+deberá devolver el `Map` siguiente:
+~~~
+["id":"bk101", "autor":"Gambardella", "title":"XML Developer's Guide", "genre":"Computer", "price":"44.95", "publish_date":"2000-10-01", "description":"An in-depth look at creating applications with XML."]
+~~~
 
 > **NOTA:** Utiliza un método de Logger para mostrar información.
 
