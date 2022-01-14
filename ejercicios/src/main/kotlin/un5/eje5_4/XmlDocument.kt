@@ -30,7 +30,7 @@ fun obtenerListaNodosPorNombre(doc: Document, tagName: String): MutableList<Node
     return lista
 }
 fun main() {
-    var xmlDoc = readXml("/home/edu/IdeaProjects/IESRA-DAM-Prog/ejercicios/src/main/kotlin/un5/eje5_4/items.xml")
+    var xmlDoc = readXml("items.xml")
     println("Creo DOM")
 
     //https://runebook.dev/es/docs/dom/node/normalize
@@ -42,7 +42,7 @@ fun main() {
     lista.forEach{
         if (it.getNodeType() === Node.ELEMENT_NODE) {
             val elem = it as Element
-            val mMap = obtenerAtributosEnMapKV(elem)
+            val mMap = obtenerAtributosEnMapKV(it)
 
             println("- ${it.nodeName} - $mMap")
             println("`- Subitem: ${it.getElementsByTagName("Subitem").item(0).textContent}")

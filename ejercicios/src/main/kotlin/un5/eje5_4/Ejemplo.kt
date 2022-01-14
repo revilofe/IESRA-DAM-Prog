@@ -27,13 +27,25 @@ inline fun <I, reified O> I.convert(): O {
     return gson.fromJson(json, object : TypeToken<O>() {}.type)
 }
 
-//convert an object of type I to type O
+/**
+ * Convierte un objeto de tipo I a tipo O
+ * @return un objetio de tipo O
+ */
 inline fun <reified O> String.fromJson(): O {
     mi(this)
     return gson.fromJson(this, object : TypeToken<O>() {}.type)
 }
 
-//example usage
+/**
+ * Un *libro*.
+ *
+ * Esta clase no tiene lógica, es una data class
+ *
+ *
+ * @param id el identificador del libro
+ * @property autor el nombre del autor.
+ * @constructor crea un libro.
+ */
 data class Book(
     val id: String,
     val autor: String,
@@ -43,6 +55,14 @@ data class Book(
     val publish_date: Date,
     val description: String
 )
+
+/**
+ * Adds a [unObjetoMock] to this group.
+ * @return the new size of the group.
+ */
+fun mock(unObjetoMock: String): Int {
+    return 1
+}
 
 fun main() {
 
@@ -72,4 +92,19 @@ fun main() {
         |]""".trimMargin()
     mi(json.fromJson<List<Book>>().toString())
     mi(json.fromJson<List<Map<String, Any>>>().toString())
+}
+
+class Persona(val nombre: String, val fechaNacimiento: Date) {
+    val edad = calculaEdad(fechaNacimiento)
+
+    init {
+        require(nombre.isNullOrEmpty(), { "Error: El nombre de la persona no es correcta" })
+        require(edad < 0, { "Error: La edad no es correcta" })
+    }
+
+    private fun calculaEdad(fechaNacimiento: Date): Int //Devuelve -1 si hay error
+    {
+        //Aqui lo necesario para calcular la edad y si falla devuelves -1
+        return -1
+    }
 }

@@ -2,6 +2,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.5.31"
+    id("org.jetbrains.dokka") version "1.6.10"
+}
+
+repositories {
+    mavenCentral()
 }
 
 group = "me.usuario"
