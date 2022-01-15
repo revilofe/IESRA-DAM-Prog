@@ -53,16 +53,25 @@
         > ¿Como identificamos los conceptos de herencia, superclase y subclase?
 
         - Ya vimos en que consistía la herencia, las superclases y las subclases:
-            - ![left](images/link.png) [Herencia] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/5)
+        - ![left](images/link.png) [Herencia] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/5)
 
-        - Existen varias funcionalidades que se le puede dar a la herencia:
-            - Especialización (es un): Se crea una estructura de clases en la que una especializa a la otra `Cuadrado -> Figura`
-            - Extensión (extiende funcionalidad heredada): Se crea estructura en la que una clase extiende el comportamiento de otra sin que sea necesariamente un concepto mas especifico `ListaSalvable -> Lista`
-            - Especificación (define interface): Se crea una estructura en la que la superclase especifica la interface de sus descendientes. `Texto, Linea, Figura -> ObjetoGrafico`
-            - Construcción (Usado para construir la subbase): La hija puede aprovechar la padre pero no tienen conexión. `Pila -> Lista`
     </section>
     <section data-markdown>
         ## herencia, superclase, subclase. (RA7.a)
+
+        - Existen varias funcionalidades que se le puede dar a la herencia:
+        - Especialización (es un): Se crea una estructura de clases en la que una especializa a la otra `Cuadrado ->
+        Figura`
+        - Extensión (extiende funcionalidad heredada): Se crea estructura en la que una clase extiende el comportamiento
+        de otra sin que sea necesariamente un concepto mas especifico `ListaSalvable -> Lista`
+        - Especificación (define interface): Se crea una estructura en la que la superclase especifica la interface de
+        sus descendientes. `Texto, Linea, Figura -> ObjetoGrafico`
+        - Construcción (Usado para construir la subbase): La hija puede aprovechar la padre pero no tienen conexión.
+        `Pila -> Lista`
+    </section>
+    <section data-markdown>
+        ## herencia, superclase, subclase. (RA7.a)
+
         - ***Actividad individual evaluable:*** 6.1 De los 4 tipos vistos,
             - Crea dos tipos de estructuras de las vistas (Especialización, Extensión, Especificación, Construcción)
             - Di que tipo de herencia es.
@@ -76,11 +85,19 @@
         > ¿Como bloqueamos o forzamos la herencia en métodos y clases?
 
         - Kotlin admite **clases abstractas** al igual que Java.
-        - Una clase abstracta es una clase con métodos marcados como abstractos y que por tanto no puede ser instanciada.
-        - Si una clase tiene uno o varios métodos abstractos es una clase abstracta y se indica con la palabra clave `abstract`.
-        - La subclase concreta de una clase abstracta deberá implementar todos los métodos y propiedades definidos en la clase abstracta; de lo contrario, también será considerada como una clase abstracta.
+        - Una clase abstracta es una clase con métodos marcados como abstractos y que por tanto no puede ser
+        instanciada.
+        - Si una clase tiene uno o varios métodos abstractos es una clase abstracta y se indica con la palabra clave
+        `abstract`.
+        - La subclase concreta de una clase abstracta deberá implementar todos los métodos y propiedades definidos en la
+        clase abstracta; de lo contrario, también será considerada como una clase abstracta.
+    </section>
+    <section data-markdown>
+        ## Clases Abstractas, Interfaces (RA7.b)
+
         - Las clases abstractas pueden contener métodos con implementación por defecto como cualquier otra clase.
-        - Las subclases de la clase abstracta pueden sobreescribir la implementación predeterminada de un método pero solo si el método tiene el modificador `open`.
+        - Las subclases de la clase abstracta pueden sobreescribir la implementación predeterminada de un método pero
+        solo si el método tiene el modificador `open`.
         - Los métodos marcados como `abstract` también son `open` por defecto.
         - Las clases abstractas también pueden definir variables de instancia al contrario que pasa con las interfaces.
 
@@ -127,20 +144,33 @@
         ## Incidencia de constructores en la herencia (RA7.c)
 
         - Ya vimos como inciden los constructores en la herencia:
-            - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/8)
+        - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/8)
     </section>
 
     <section data-markdown>
         ## Principio de inversión de dependencias (RA7.)
 
         - Básicamente lo que nos dice este principio es que:
-            - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
-            - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
+        - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las
+        abstracciones.
+        - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
 
-        - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño orientado a objetos, en el que **se suministran objetos a una clase** en lugar de ser la propia clase quien cree el objeto.
-            - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar comportamientos a componentes.
-            - El término fue acuñado por primera vez por *Martin Fowler*.
-        - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
+    </section>
+
+    <section data-markdown>
+        ## Principio de inversión de dependencias (RA7.)
+        - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño
+        orientado a objetos, en el que **se suministran objetos a una clase** en lugar de ser la propia clase quien cree
+        el objeto.
+        - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar
+        comportamientos a componentes.
+        - El término fue acuñado por primera vez por *Martin Fowler*.
+    </section>
+
+    <section data-markdown>
+        ## Principio de inversión de dependencias (RA7.)
+        - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un
+        mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
         - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
 
     </section>
