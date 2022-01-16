@@ -104,7 +104,7 @@ Adicionalmente se tendrá en cuenta:
 1. Crea el proyecto usando el IDE:
     - Opción del Menú: `File` -> `New` -> `Project...`
     - Siguen los pasos indicados en la siguiente imagen: ***ATENCIÓN*** Sustituye **INICIALES** por tu iniciales.
-      ![](./../../resources/img/examen1/creaProyecto.png)
+      ![](../../../resources/img/examen1/creaProyecto.png)
     - Sigue los pasos hasta crear el proyecto.
 2. Realiza el examen: Ayuda para plantear el examen:
     - Ve realizando los métodos de las clases, y pruébalos en el `main`.
