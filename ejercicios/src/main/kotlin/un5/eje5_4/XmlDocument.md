@@ -1,17 +1,50 @@
 # Relación 5.4
+
 > Se evaluará el RAX, CE y
 
-## 1. ¿Cómo leo un archivo XML o html con Kotlin y examino su contenido? 
-Aquí hay algunos fragmentos de código sobre cómo leer un archivo XML o Html con Kotlin y luego examinar los elementos XML, sus atributos y valores. 
+## 1. Representación del XML mediante DOM y jerarquía de clases
+
+Para tratar un documento, utilizaremos la estructura que proporciona la API DOM
+
+![](../../../resources/img/5_4/jerarquiaDOM.png)
+
+Los objetos son los siguientes:
+
+| Objeto | Descripción |
+|---------------------------------------------	|------------------------	|
+| Node | Es el tipo de datos básico del DOM. El resto de los tipos derivan de él.|
+| Document | Un objeto Document representa el documento XML entero. Contiene el prólogo y el cuerpo del documento. |
+| Element | Un objeto Element representa una etiqueta del documento XML.|
+| Attr | Un objeto Attr representa un atributo.|
+| Text | Un objeto Text hace referencia al contenido de una etiqueta. |
+| Comment | Un objeto Comment hace referencia a un comentario.| 
+
+Trasladado a un ejemplo:
+
+Teniendo que el árbol está compuesto por nodos, que es el padre en la jerarquía:
+
+![](../../../resources/img/5_4/XmlDescription.png) -->
+
+Particularizamos a cada uno de los objetos (elementos, atributos, etc):
+
+![](../../../resources/img/5_4/xml-book.png)
+
+<!-- ![](../../../resources/img/5_4/html-tree.png)  -->
+
+## 2. ¿Cómo leo un archivo XML o HTML con Kotlin y examino su contenido?
+
+Aquí hay algunos fragmentos de código sobre cómo leer un archivo XML o Html con Kotlin y luego examinar los elementos
+XML, sus atributos y valores.
 
 El siguiente archivo XML se utiliza como archivo de muestra (items.xml):
 
 ~~~xml
+
 <ItemSet>
-    <Item type="T0" count="1">
-        <Subitem> Valor T0.TT1 </Subitem>
-    </Item>
-    <Item type="T1" count="2">
+  <Item type="T0" count="1">
+    <Subitem>Valor T0.TT1</Subitem>
+  </Item>
+  <Item type="T1" count="2">
         <Subitem> Valor T1.TT1 </Subitem>
     </Item>
     <Item type="T2" count="1">
@@ -77,21 +110,28 @@ fun obtenerAtributosEnMapKV(e: Element ):MutableMap<String, String>
 
 ~~~
 
-
 ### Bibliografía
+
 - [Clases Kotlin para la API DOM](https://kotlinlang.org/api/latest/jvm/stdlib/org.w3c.dom/)
 - [Como leer XML en kotlin usando el DOM parser](https://turreta.com/2017/07/07/how-to-read-xml-in-kotlin-using-dom-parser/)
-
 
 Relación 5.4
 > Se evaluará el RAX, CE y1,y2
 
+## 3. Puesta en práctica
 
-## 2. Puesta en práctica
-Implementar una clase `CatalogoLibrosXML` con sus métodos y propiedades. Usa los modificadores de acceso adecuado según lo creas conveniente e intenta separar la funcionalidad en métodos que tengan sentido para la clase y que hagan una única cosa. 
+> **NOTA** Con el [codigo que se da en el ejemplo](./XMLDocument.kt), reutilizando, es suficiente para hacer el ejercicio.
+
+Implementar una clase `CatalogoLibrosXML` con sus métodos y propiedades. Usa los modificadores de acceso adecuado según
+lo creas conveniente e intenta separar la funcionalidad en métodos que tengan sentido para la clase y que hagan una
+única cosa.
+
 ### Propiedades
+
 - Las que necesites.
+
 ### Métodos
+
 - `constructor(cargador:String)`: Debe abortar si el fichero no existe o es incorrecto.
 - `existeLibro(idLibro:String): Boolean`: Devuelve true si existe, `false` en caso contrario.
 - `infoLibro(idLibro:String): Map<String,Any>`: Devuelve un `Map` con los atributos y valores del libro. Devolverá
