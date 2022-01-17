@@ -61,28 +61,21 @@
 
         - Existen varias funcionalidades que se le puede dar a la herencia:
         1. **Especialización (es un)**: Se crea una estructura de clases en la que una especializa a la otra `Cuadrado
-        ->
-        Figura`
-        - `Figura` tiene un comportamiento básico, pero cuadrado lo especializa según sus características.
+        -> Figura`
+            - `Figura` tiene un comportamiento básico, pero cuadrado lo especializa según sus características.
         2. **Extensión (extiende funcionalidad heredada)**: Se crea estructura en la que una clase extiende el
-        comportamiento
-        de otra sin que sea necesariamente un concepto mas especifico `ListaSalvable -> Lista`
+        comportamiento de otra sin que sea necesariamente un concepto mas especifico `ListaSalvable -> Lista`
+            - `Lista` tiene un comportamiento completo funcional, `ListaSalvable` lo extiende añadiendo funcionalidad adicional.
     </section>
     <section data-markdown>
         ## herencia, superclase, subclase. (RA7.a)
 
         - Existen varias funcionalidades que se le puede dar a la herencia:
-        - `Lista` tiene un comportamiento completo funcional, `ListaSalvable` lo extiende añadiendo funcionalidad
-        adicional.
         3. **Especificación (define interface)**: Se crea una estructura en la que la superclase especifica la interface
-        de
-        sus descendientes. `Texto, Linea, Figura -> ObjetoGrafico`
-        - `ObjetoGráfico` especifica como trabajar con objetos gráficos, los descendientes pueden implementar los
-        detalles.
-        4. **Construcción (Usado para construir la subbase)**: La hija puede aprovechar la padre pero no tienen
-        conexión.
-        `Pila -> Lista`
-        - la clase `Lista` contribuye a crear una `Pila` a través de la herencia.
+        de sus descendientes. `Texto, Linea, Figura -> ObjetoGrafico`
+            - `ObjetoGráfico` especifica como trabajar con objetos gráficos, los descendientes pueden implementar los detalles.
+        4. **Construcción (Usado para construir la subbase)**: La hija puede aprovechar la padre pero no tienen conexión. `Pila -> Lista`
+            - la clase `Lista` contribuye a crear una `Pila` a través de la herencia.
 
     </section>
     <section data-markdown>
