@@ -67,6 +67,7 @@ fun readXml(pathName:String): Document
 ~~~
 ### Buscar un elemento en un árbol
 Haciendo uso de `obtenerListaNodosPorNombre`, el siguiente fragmento de código devuelve una lista de nodos que cumplen el criterio de búsqueda.
+
 ~~~kt
 /*
 * Crea una lista de nodos cuyo nonmbre es tagname
