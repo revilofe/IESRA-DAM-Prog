@@ -77,7 +77,7 @@ Haciendo uso de `obtenerListaNodosPorNombre`, el siguiente fragmento de código 
 * <item type = "T2" count = "3"> Value2 </item>
 * Si llamamos al método usando tagName="item", devuelve  [node, node] donde node.tagname="item"
 *
-* /
+*/
 fun obtenerListaNodosPorNombre(doc: Document, tagName: String): MutableList<Node>
 {
     val bookList: NodeList = doc.getElementsByTagName(tagName)
@@ -100,7 +100,7 @@ Haciendo uso de `obtenerAtributosEnMapKV`, el siguiente fragmento de código mue
 * <item type = "T1" count = "1"> Value1 </item>
 * Devuelve  [type="T1", count="1"]
 *
-* /
+*/
 fun obtenerAtributosEnMapKV(e: Element ):MutableMap<String, String>
 {
     val mMap = mutableMapOf<String, String>()
