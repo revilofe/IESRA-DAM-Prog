@@ -44,6 +44,14 @@ Adicionalmente se tendrá en cuenta:
 - El código realizado es limpio y está comentado.
 - Se cumple requisitos de entrega.
 
+### Condiciones de entrega
+Se entrega la URL al repositorio, el repositorio será:
+- **privado**
+- Compartido conmigo.
+- El nombre del repositorio será `DAM1_id_iniciales` donde:
+    - `id`: es el ide de la actividad, por ejemplo 5_1
+    - `iniciales': son tus iniciales por ejemplo EFO las mias.
+
 ### Apoyo
 - https://github.com/revilofe/_kotlin_
 - https://www.develou.com/herencia-en-kotlin/
