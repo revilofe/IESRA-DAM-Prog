@@ -89,15 +89,27 @@
 
         > ¿Como bloqueamos o forzamos la herencia en métodos y clases?
 
+        - Con las **clases abstractas** y las **interfaces** forzamos la herencia (Ten en cuenta que la "herencia" a través de la interfaces no exactamente herencia)
+        - Con `open` abrimos una clase y un método para poder heredar de la clase y sobreescribirlo el método.
+        - Con `final` se puede marcar un método para evitar que se sobreescriba.
+        - Recuerda
+            - [Forzar y bloquear la herencia en clases](https://revilofe.github.io/IESRA-DAM-Prog/#/5/7)
+            - [Forzar y bloquear la herencia en métodos](https://revilofe.github.io/IESRA-DAM-Prog/#/5/9)
+
+    </section>
+    <section data-markdown>
+        ## Clases Abstractas, Interfaces (RA7.b)
+
+        > ¿Como bloqueamos o forzamos la herencia en métodos y clases?
+
         - Kotlin admite **clases abstractas** al igual que Java.
         - Una clase abstracta es una clase con métodos marcados como abstractos y que por tanto no puede ser
         instanciada.
         - Si una clase tiene uno o varios métodos abstractos es una clase abstracta y se indica con la palabra clave
         `abstract`.
-        - La subclase concreta de una clase abstracta deberá implementar todos los métodos y propiedades definidos en la
+        - La subclase concreta de una clase abstracta ***deberá implementar*** todos los métodos y propiedades definidos en la
         clase abstracta; de lo contrario, también será considerada como una clase abstracta.
-    </section>
-    <section data-markdown>
+    </section> <section data-markdown>
         ## Clases Abstractas, Interfaces (RA7.b)
 
         - Las clases abstractas pueden contener métodos con implementación por defecto como cualquier otra clase.
@@ -110,7 +122,20 @@
     <section data-markdown>
         ## Clases Abstractas, Interfaces (RA7.b)
 
-        - ***Actividad:*** Hereda de `Employee` y crea una clase `Teacher`. ¿Te has visto obligad@ a sobreescribir algún método? ¿Porqué?
+        - Ya vimos en que consistían las interfaces
+        - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/16)
+
+        - Diferencias entre `Clases Abstractas` e `Interfaces` :
+        - Las interfaces permiten definir comportamiento compartidos, mientras que las clases establecen relación de **es un**
+        - Las clases puedes implementar varias interfaces, mientras que solo pueden heredar de una sola clase.
+        - Puede contener propiedades abstractas y regulares pero sin campos de respaldo (`field`)
+        - Las clases pueden tener constructores, mientras que las interfaces no.
+        - Todas los métodos definidos por las interfaces se pueden sobrescribir sin tener que ser marcados con `open`, mientras que en las clases no.
+    </section>
+    <section data-markdown>
+        ## Clases Abstractas, Interfaces (RA7.b)
+
+        - ***Actividad:*** Hereda de `Employee` y crea una clase `Teacher`. ¿Te has visto obligad@ a sobreescribir algún método? ¿Porqué? ¿Piensa dos maneras para evitar que fullName de Teacher no se pueda sobreescribir?
 
         ~~~Kt
 
@@ -131,19 +156,6 @@
         }
 
         ~~~
-    </section>
-    <section data-markdown>
-        ## Clases Abstractas, Interfaces (RA7.b)
-
-        - Ya vimos en que consistían las interfaces
-            - ![left](images/link.png) [Interfaces] (https://revilofe.github.io/IESRA-DAM-Prog/#/5/16)
-
-        - Diferencias entre `Clases Abstractas` e `Interfaces` :
-            - Las interfaces permiten definir comportamiento compartidos, mientras que las clases establecen relación de **es un**
-            - Las clases puedes implementar varias interfaces, mientras que solo pueden heredar de una sola clase.
-            - Puede contener propiedades abstractas y regulares pero sin campos de respaldo (`field`)
-            - Las clases pueden tener constructores, mientras que las interfaces no.
-            - Todas los métodos definidos por las interfaces se pueden sobrescribir sin tener que ser marcados con `open`, mientras que en las clases no.
     </section>
     <section data-markdown>
         ## Incidencia de constructores en la herencia (RA7.c)
