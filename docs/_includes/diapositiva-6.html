@@ -165,83 +165,180 @@
     </section>
 
     <section data-markdown>
-        ## Principio de inversión de dependencias (RA7.)
+        ## Se ha comentado y documentado el código (h)
 
-        - Básicamente lo que nos dice este principio es que:
-        - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las
-        abstracciones.
-        - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
+        A la hora de comentar, hay dos escuelas:
 
+        - usar los comentarios para clarificar lo que quisiste expresar con tu código
+        - mientras que la segunda dice que deberías evitarlos al máximo y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.
+
+        ¿A cuál de los dos consejos deberías hacerle caso?
+
+     </section>
+
+    <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
+
+        - Un sistema sin documentación está incompleto
+            - Para tener calidad, necesita tener documentación, pero esta tiene que tener sentido: es decir, información acerca del sistema que comunique cosas como la razón de existir de ciertos módulos, valores y funciones y cómo usarlo.
+            - Si tienes que modificarlo, facilitará la comprensíón de lo que los programadores anteriores hicieron o intentarón hacer.
+        - Por tanto la documentación es totalmente necesaria, ahora, donde la ponemos:
+            - Documentos separados del código suelen olvidarse y no se mantienen.
+            - Ponerla lo más cerca del código, para eso tenemos los comentarios, facilitará encontrarlos y mantenerlos.
     </section>
 
     <section data-markdown>
-        ## Principio de inversión de dependencias (RA7.)
-        - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño
-        orientado a objetos, en el que **se suministran objetos a una clase** en lugar de ser la propia clase quien cree
-        el objeto.
-        - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar
-        comportamientos a componentes.
-        - El término fue acuñado por primera vez por *Martin Fowler*.
+        ## Se ha comentado y documentado el código (h)
+
+        - Puedes usar los comentarios documentar:
+            - Decisiones de diseño
+            - Explicaciones sobre la existencia, funcionamiento o razón de ser de cierta parte del código
+            - Las interfaces y su ejemplo de uso
+            - Efectos de usar cierto código
+            - Partes inconclusas o que se pueden mejorar (TODO’s)
     </section>
 
     <section data-markdown>
-        ## Principio de inversión de dependencias (RA7.)
-        - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un
-        mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
-        - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
+        ## Se ha comentado y documentado el código (h)
 
-    </section>
-<!--
-    <section data-markdown>
-        https://programmerclick.com/article/7789294027/
-        http://joaquin.medina.name/web2008/documentos/informatica/documentacion/logica/OOP/Principios/Oop_Solid_DIP/2012_09_14_DependencyInversionPrincipe.html
-        https://devexperto.com/principio-de-inversion-de-dependencias/
-    </section>
--->
-    <section data-markdown>
-        ## Comentar y documentar el código. (RA7.h)
-
-
-    </section>
-    <section data-markdown>
-
+        - Los comentarios pueden ayudarte en el futuro
+            - Estarán ahi para recordarte lo que hiciste y por qué.
+            - Seguramente tu mente haya borrado información valiosa de por qué una variable tiene un valor de inicio y no otro.
+            - Tu yo futuro y tu equipo te agradecerán los comentarios aclaratorios de tomas de decisiones.
     </section>
 
     <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
 
-    </section>
-    <section data-markdown>
-        ## In
-        - En
+        - Los comentarios son una buena herramienta de diseño.
+            - Existen gurus, como John Ousterhout, en “A Philosophy of Software Design” que recomienda **empezar con los comentarios antes de programar**. Pero, ¿por qué lo recomienda?
+            - Escribir en un lenguaje humano cómo funciona algo antes de implementarlo realmente, te da la capacidad de ver si es lógico y suficiente, además te permite ponerte en los zapatos del usuario para notar deficiencias sobre todo en la interfaz. Los comentarios de interfaz es lo primero que deberías crear porque te servirán de guía para avanzar con tu diseño y, sobre todo, que sea lógico y fácil de usar.
+            - Una buena guía: si no eres capaz de crear un comentario **concreto y corto** sobre cómo funciona o por qué existe algo, lo más probable es que **tengas que re-pensar** tu diseño.
 
-        - ***Actividad:*** Mo
+        - El lenguaje de programación no es suficiente para expresar todo lo necesario
+            - Todos los lenguajes de programación están pensados para ser un subconjunto del lenguaje humano que elimine las ambigüedades, manteniendo el mayor poder expresivo posible. Esto nos lleva a sus limitantes: es imposible, o por lo menos impráctico, intentar expresar todas las ideas con el código.
+            - En la práctica, el tiempo y los recursos para lograr algo son limitados, por lo que a veces es más conveniente y fácil para todos explicar lenguaje humano algo que intentar expresarlo con código, como los puristas afirman.
+            - No te sientas mal si tienes que recurrir de vez en cuando a explicar la forma en que funciona algo, siempre y cuando *no sea la práctica común*.
 
-        ~~~Kt
-            interface A {
-
-        ~~~
-    </section>
-
-    <section data-markdown>
-        ##
-
+        - ¿Cómo usar los comentarios para que sean valiosos?
+            - No todos los comentarios son valiosos, hay **algunos que pueden estorbar** más de lo que ayudan, por ejemplo, los que no aportan información a lo que es obvio en el código.
+            - Hablemos de algunas formas de **aprovecharlos lo mejor posible** para que contribuyan positivamente a aumentar la calidad del proyecto.
     </section>
 
     <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
 
-
-
+        - Escribe los comentarios primero
+            - Una de las partes más importantes de los comentarios como documentación es que **deben ser concretos*+, cercanos a la realidad y que proporcionen la mayor cantidad de información útil posible.
+            - Para lograr esto, se tienen que **crear lo más cerca que puedas a la creación del código**. Pero como todos sabemos que después de escribir y probar (básicamente) el código vamos a sentir que ya está terminado, es buena práctica obligarte a escribirlos antes, **justo como propone TDD con las pruebas**.
+            - De esta manera te asegurarás que tu código esté documentado incluso antes de escribirlo y **te servirán como una herramienta de diseño** que te ayudará a pensar mejor en la usabilidad de tus módulos y piezas de software.
     </section>
 
     <section data-markdown>
-           ## BIBLIOGRAFÍA
-           - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
-           - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
-           - ![left](images/link.png) [Clases abstractas, interfaces, herencia] (https://code.tutsplus.com/es/tutorials/kotlin-from-scratch-abstract-classes-interfaces-inheritance-and-type-alias--cms-29744)
-           - ![left](images/link.png) [Clases abstractas] (https://www.develou.com/clases-abstractas-en-kotlin/)
-           - ![left](images/link.png) [Herencia en kotlin](https://www.develou.com/herencia-en-kotlin/)
-           - ![left](images/link.png) [Interfaces en kotlin I](https://www.develou.com/interfaces-en-kotlin/)
-           - ![left](images/link.png) [Interfaces en kotlin II](https://devexperto.com/interfaces-kotlin/)
+        ## Se ha comentado y documentado el código (h)
+
+        - Crea comentarios acerca de la **interfaz**
+            - **La interfaz es el medio de uso que tus módulos o funciones presentan** para que las demás partes de tu sistema lo usen.
+            - Lo primero que deberías documentar y explicar es esta interfaz, para que más personas a parte de ti puedan usar este pedazo de código.
+            - Debes escribir comentarios claros sobre:
+                - **Cómo usar esa pieza de código**
+                - **Por qué existe esa parte del sistema**
+                - **Qué efectos tiene usarla**
+            - Este tipo de comentarios son los que aportan mayor valor al sistema y si están lo suficientemente completos, con ejemplos y explicaciones claras, son una documentación válida que está en un muy buen lugar: es fácil de encontrar y no se va a perder enterrada entre otros documentes que después nadie va a consultar.
+    </section>
+
+    <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
+
+        - Evita los comentarios sobre la implementación
+            - Los comentarios sobre la implementación son aquello que describen qué estas haciendo, como por ejemplo, sumar número, abrir un archivo, etc.
+            - Estos comentarios normalmente son innecesarios, ya que lo que se está haciendo es obvio si el código es lo suficientemente expresivo y siempre deberíamos buscar que sea así.
+            - De hecho, estos son los comentarios que hacen que la gente odie a los comentarios en general, pues en vez de proporcionar información extra son una carga que hay que mantener y pueden confundir si no son actualizados.
+            - Si realmente sientes que tienes que explicar qué estás haciendo con cierta pieza de código, primero **pregúntate si no hay una manera de reescribirlo para que sea obvio**.
+            - Si no existe o no es práctica esta solución, entonces escribe el comentario de la manera más concisa posible, incluyendo la razón de la existencia de ese código.
+
+        Para hacer esto debes tomar muy en cuenta los recursos del proyecto: no te puedes tardar el triple del tiempo implementando la pieza de código perfecta porque no quieres escribir un comentario que explique cómo funciona.
+    </section>
+
+
+    <!--
+
+        <section data-markdown>
+            ## Principio de inversión de dependencias (RA7.)
+
+            - Básicamente lo que nos dice este principio es que:
+            - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las
+            abstracciones.
+            - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
+        </section>
+
+        <section data-markdown>
+            ## Principio de inversión de dependencias (RA7.)
+            - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño
+            orientado a objetos, en el que **se suministran objetos a una clase** en lugar de ser la propia clase quien cree
+            el objeto.
+            - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar
+            comportamientos a componentes.
+            - El término fue acuñado por primera vez por *Martin Fowler*.
+        </section>
+
+        <section data-markdown>
+            ## Principio de inversión de dependencias (RA7.)
+            - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un
+            mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
+            - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
+
+        </section>
+
+        <section data-markdown>
+            https://programmerclick.com/article/7789294027/
+            http://joaquin.medina.name/web2008/documentos/informatica/documentacion/logica/OOP/Principios/Oop_Solid_DIP/2012_09_14_DependencyInversionPrincipe.html
+            https://devexperto.com/principio-de-inversion-de-dependencias/
+        </section>
+        <section data-markdown>
+
+        </section>
+        <section data-markdown>
+
+        </section>
+
+        <section data-markdown>
+
+        </section>
+        <section data-markdown>
+            ## In
+            - En
+
+            - ***Actividad:*** Mo
+
+            ~~~Kt
+                interface A {
+
+            ~~~
+        </section>
+
+        <section data-markdown>
+            ##
+
+        </section>
+
+        <section data-markdown>
+
+
+
+        </section>
+    -->
+    <section data-markdown>
+        ## BIBLIOGRAFÍA
+        - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
+        - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
+        - ![left](images/link.png) [Clases abstractas, interfaces, herencia] (https://code.tutsplus.com/es/tutorials/kotlin-from-scratch-abstract-classes-interfaces-inheritance-and-type-alias--cms-29744)
+        - ![left](images/link.png) [Clases abstractas] (https://www.develou.com/clases-abstractas-en-kotlin/)
+        - ![left](images/link.png) [Herencia en kotlin](https://www.develou.com/herencia-en-kotlin/)
+        - ![left](images/link.png) [Interfaces en kotlin I](https://www.develou.com/interfaces-en-kotlin/)
+        - ![left](images/link.png) [Interfaces en kotlin II](https://devexperto.com/interfaces-kotlin/)
+        - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
+        - ![left](images/link.png) [https://blog.thedojo.mx/2020/12/30/deberias-comentar-tu-codigo.html)
            - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
        </section>
 
