@@ -1,9 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm") version "1.6.10-RC"
     id("org.jetbrains.dokka") version "1.6.10"
-}
+    plugins {
+        id("org.jetbrains.kotlinx.kover") version "0.5.0-RC2"
+    }}
 
 repositories {
     mavenCentral()
@@ -18,6 +20,7 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.20") // LOGGER
     implementation("org.slf4j:slf4j-simple:1.7.32") // LOGGER
     testImplementation(kotlin("test"))
+
 }
 
 tasks.test {
