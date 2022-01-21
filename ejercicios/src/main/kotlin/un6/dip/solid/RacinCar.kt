@@ -15,6 +15,25 @@ interface Car {
     fun accelerate()
 }
 
+open class SuperRacingCar (private var remainingFuel: Int): Car {
+    private var power = 0
+    override fun accelerate() {
+        increasePower()
+        decrementFuel()
+        i("Acelerate", "Gasolina:$remainingFuel, Power:$power")
+    }
+
+    open protected fun decrementFuel() {
+        remainingFuel-=2
+    }
+
+    open protected fun increasePower() {
+        power+=2
+    }
+
+}
+
+
 open class RacingCar (private var remainingFuel: Int): Car {
     private var power = 0
     override fun accelerate() {
