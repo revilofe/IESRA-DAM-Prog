@@ -161,47 +161,46 @@
         ## Incidencia de constructores en la herencia (RA7.c)
 
         - Ya vimos como inciden los constructores en la herencia:
-            - ![left](images/link.png) [Constructores en la herencia](https://revilofe.github.io/IESRA-DAM-Prog/#/5/8)
-    </section>
+v    </section>
 
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
         A la hora de comentar, hay dos escuelas:
 
-        - usar los comentarios para clarificar lo que quisiste expresar con tu código
-        - mientras que la segunda dice que deberías evitarlos al máximo y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.
+        - usar los comentarios para **clarificar lo que quisiste expresar con tu código**
+        - **evitarlos al máximo** y que comentar tu código es un mal necesario que sólo denota tu falta de habilidad para no hacer código lo suficientemente claro.
 
-        ¿A cuál de los dos consejos deberías hacerle caso?
+        >¿A cuál de los dos consejos deberías hacerle caso?
 
      </section>
 
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
-        - Un sistema sin documentación está incompleto
-            - Para tener calidad, necesita tener documentación, pero esta tiene que tener sentido: es decir, información acerca del sistema que comunique cosas como la razón de existir de ciertos módulos, valores y funciones y cómo usarlo.
-            - Si tienes que modificarlo, facilitará la comprensíón de lo que los programadores anteriores hicieron o intentarón hacer.
-        - Por tanto la documentación es totalmente necesaria, ahora, donde la ponemos:
-            - Documentos separados del código suelen olvidarse y no se mantienen.
-            - Ponerla lo más cerca del código, para eso tenemos los comentarios, facilitará encontrarlos y mantenerlos.
+        - Un sistema **sin documentación** está **incompleto**
+            - Para tener **calidad**, necesita tener **documentación**, pero esta tiene que tener sentido: es decir, *información acerca del sistema que comunique cosas como la razón de existir de ciertos módulos, valores y funciones y cómo usarlo*.
+            - Si tienes que modificarlo, facilitará la **comprensíón** de lo que los programadores anteriores hicieron o intentarón hacer.
+        - Por tanto la documentación es **totalmente necesaria**, ahora, donde la ponemos:
+            - Documentos **separados** del código suelen **olvidarse** y no se mantienen.
+            - Ponerla lo más **cerca del código**, para eso tenemos los comentarios, **facilitará encontrarlos y mantenerlos**.
     </section>
 
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
-        - Puedes usar los comentarios documentar:
+        - Puedes usar los comentarios **documentar**:
             - Decisiones de diseño
             - Explicaciones sobre la existencia, funcionamiento o razón de ser de cierta parte del código
             - Las interfaces y su ejemplo de uso
             - Efectos de usar cierto código
-            - Partes inconclusas o que se pueden mejorar (TODO’s)
+            - Partes no finalizadas o que se pueden mejorar (TODO’s)
     </section>
 
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
-        - Los comentarios pueden ayudarte en el futuro
+        - Los comentarios pueden **ayudarte en el futuro**
             - Estarán ahi para recordarte lo que hiciste y por qué.
             - Seguramente tu mente haya borrado información valiosa de por qué una variable tiene un valor de inicio y no otro.
             - Tu yo futuro y tu equipo te agradecerán los comentarios aclaratorios de tomas de decisiones.
@@ -210,13 +209,18 @@
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
-        - Los comentarios son una buena herramienta de diseño.
+        - Los comentarios son una **buena herramienta de diseño**.
             - Existen gurus, como John Ousterhout, en “A Philosophy of Software Design” que recomienda **empezar con los comentarios antes de programar**. Pero, ¿por qué lo recomienda?
-            - Escribir en un lenguaje humano cómo funciona algo antes de implementarlo realmente, te da la capacidad de ver si es lógico y suficiente, además te permite ponerte en los zapatos del usuario para notar deficiencias sobre todo en la interfaz. Los comentarios de interfaz es lo primero que deberías crear porque te servirán de guía para avanzar con tu diseño y, sobre todo, que sea lógico y fácil de usar.
-            - Una buena guía: si no eres capaz de crear un comentario **concreto y corto** sobre cómo funciona o por qué existe algo, lo más probable es que **tengas que re-pensar** tu diseño.
+            - Escribir en un lenguaje humano cómo funciona algo antes de implementarlo realmente, te da la capacidad de **ver si es lógico y suficiente**, además te permite **ponerte en los zapatos del usuario** para notar deficiencias sobre todo en la interfaz. Los **comentarios de la interfaz es lo primero que deberías crear** porque te servirán de guía para avanzar con tu diseño y, sobre todo, que sea lógico y fácil de usar.
+            - Una buena guía: si no eres capaz de crear un comentario **concreto y corto** sobre cómo funciona o por qué existe algo, lo más probable es que **tengas que re-pensar tu diseño**.
 
-        - El lenguaje de programación no es suficiente para expresar todo lo necesario
-            - Todos los lenguajes de programación están pensados para ser un subconjunto del lenguaje humano que elimine las ambigüedades, manteniendo el mayor poder expresivo posible. Esto nos lleva a sus limitantes: es imposible, o por lo menos impráctico, intentar expresar todas las ideas con el código.
+    </section>
+
+    <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
+
+        - **El lenguaje de programación no es suficiente** para expresar todo lo necesario
+            - Todos los lenguajes de programación están pensados para ser un subconjunto del lenguaje humano que elimine las ambigüedades, manteniendo el mayor poder expresivo posible. Esto nos lleva a sus limitantes: es **imposible**, o por lo menos impráctico, **intentar expresar todas las ideas con el código**.
             - En la práctica, el tiempo y los recursos para lograr algo son limitados, por lo que a veces es más conveniente y fácil para todos explicar lenguaje humano algo que intentar expresarlo con código, como los puristas afirman.
             - No te sientas mal si tienes que recurrir de vez en cuando a explicar la forma en que funciona algo, siempre y cuando *no sea la práctica común*.
 
@@ -228,8 +232,8 @@
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
-        - Escribe los comentarios primero
-            - Una de las partes más importantes de los comentarios como documentación es que **deben ser concretos*+, cercanos a la realidad y que proporcionen la mayor cantidad de información útil posible.
+        - Escribe *los comentarios primero*
+            - Una de las partes más importantes de los comentarios como documentación es que **deben ser concretos, cercanos a la realidad y que proporcionen la mayor cantidad de información útil posible**.
             - Para lograr esto, se tienen que **crear lo más cerca que puedas a la creación del código**. Pero como todos sabemos que después de escribir y probar (básicamente) el código vamos a sentir que ya está terminado, es buena práctica obligarte a escribirlos antes, **justo como propone TDD con las pruebas**.
             - De esta manera te asegurarás que tu código esté documentado incluso antes de escribirlo y **te servirán como una herramienta de diseño** que te ayudará a pensar mejor en la usabilidad de tus módulos y piezas de software.
     </section>
@@ -237,39 +241,88 @@
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
-        - Crea comentarios acerca de la **interfaz**
+        - **Crea** comentarios **sobre la interfaz**
             - **La interfaz es el medio de uso que tus módulos o funciones presentan** para que las demás partes de tu sistema lo usen.
             - Lo primero que deberías documentar y explicar es esta interfaz, para que más personas a parte de ti puedan usar este pedazo de código.
             - Debes escribir comentarios claros sobre:
-                - **Cómo usar esa pieza de código**
-                - **Por qué existe esa parte del sistema**
-                - **Qué efectos tiene usarla**
+            - -> **Cómo usar esa pieza de código**
+            - -> **Por qué existe esa parte del sistema**
+            - -> **Qué efectos tiene usarla**
             - Este tipo de comentarios son los que aportan mayor valor al sistema y si están lo suficientemente completos, con ejemplos y explicaciones claras, son una documentación válida que está en un muy buen lugar: es fácil de encontrar y no se va a perder enterrada entre otros documentes que después nadie va a consultar.
     </section>
 
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
-        - Evita los comentarios sobre la implementación
+        - **Evita** los comentarios **sobre la implementación**
             - Los comentarios sobre la implementación son aquello que describen qué estas haciendo, como por ejemplo, sumar número, abrir un archivo, etc.
-            - Estos comentarios normalmente son innecesarios, ya que lo que se está haciendo es obvio si el código es lo suficientemente expresivo y siempre deberíamos buscar que sea así.
-            - De hecho, estos son los comentarios que hacen que la gente odie a los comentarios en general, pues en vez de proporcionar información extra son una carga que hay que mantener y pueden confundir si no son actualizados.
+            - Estos comentarios normalmente **son innecesarios**, ya que lo que se está haciendo es obvio si el código es lo suficientemente expresivo y siempre deberíamos buscar que sea así.
+            - De hecho, estos son los comentarios que hacen que la gente odie a los comentarios en general, pues **en vez de proporcionar información extra son una carga que hay que mantener y pueden confundir si no son actualizados**.
             - Si realmente sientes que tienes que explicar qué estás haciendo con cierta pieza de código, primero **pregúntate si no hay una manera de reescribirlo para que sea obvio**.
             - Si no existe o no es práctica esta solución, entonces escribe el comentario de la manera más concisa posible, incluyendo la razón de la existencia de ese código.
+            - Para hacer esto debes tomar muy en cuenta los recursos del proyecto: **no te puedes tardar el triple del tiempo** implementando la pieza de código perfecta porque no quieres escribir un comentario que explique cómo funciona.
+    </section>
 
-        Para hacer esto debes tomar muy en cuenta los recursos del proyecto: no te puedes tardar el triple del tiempo implementando la pieza de código perfecta porque no quieres escribir un comentario que explique cómo funciona.
+    <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
+
+        > Escribir comentarios es una de las grandes tareas que los programadores debemos dominar.
+        > Los lenguajes de programación y los entornos de programación cada vez le dan más poder a esta parte de los programas y permiten incluso escribir pruebas en ellos, generar documentación automática y listar tareas a partir de ellos.
+        > Si pones el suficiente esmero en aprender a escribir buenos comentarios y mantenerlos, serán una gran herramienta de diseño y documentación de tu software.
+
+    </section>
+
+    <section data-markdown>
+    ## Se ha comentado y documentado el código (h)
+
+        ### DOKA
+        ![left](images/link.png) [Dokka](https://kotlin.github.io/dokka/1.6.10/)
+        - **Herramienta que permite genera la documentación**.
+        - Configuración básica y mínima: Añade al fichero  `build.gradle.kts:`
+
+        ~~~
+        plugins {
+            id("org.jetbrains.dokka") version "1.6.10"
+        }
+
+        repositories {
+            mavenCentral()
+        }
+        ~~~
+
+        - Ahora en aparecerán nuevas tareas en la pestaña de gradle.
+
+    </section>
+
+    <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
+
+        ### KDOC
+        ![left](images/link.png) [Sintaxis de KDoc](https://kotlinlang.org/docs/kotlin-doc.html#kdoc-syntax)
+        - **Lenguaje que permite documentar**.
+        - Documenta la interface de las clases, métodos, propiedades, etc.
+        - Para genera la documentación, en las opciones de `Gradle`, busca la tarea `Task->Documentación->DokkaHtml` y púlsala.
+        - La documentación se genera en la carpeta `build` de tu proyecto.
+
+    </section>
+
+    <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
+
+        - ***Actividad individual evaluable:***
+        [6.x Generera la documentación del programa.](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=436534)
     </section>
 
 
-    <!--
+
+
 
         <section data-markdown>
             ## Principio de inversión de dependencias (RA7.)
 
             - Básicamente lo que nos dice este principio es que:
-            - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las
-            abstracciones.
-            - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
+                - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
+                - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
         </section>
 
         <section data-markdown>
@@ -287,8 +340,17 @@
             - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un
             mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
             - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
+                - Inyección de dependencias (Patrón de diseño):  Las abstraciones nunca deben depender de los detalles.
+                - Inversión de dependencias (Principio DIP de SOLID)
 
         </section>
+
+        <section data-markdown>
+            ## Principio de inversión de dependencias (RA7.)
+            - Cumplir con el DIP hace que el código de la lógica de negocio de tu aplicación no dependa de los detalles de implementación, si no de abstracciones. Esto hará que en el futuro puedas cambiar los detalles de implementación sin tener que modificar el código de tu lógica de negocio.
+       </section>
+
+    <!--
 
         <section data-markdown>
             https://programmerclick.com/article/7789294027/
@@ -340,6 +402,7 @@
         - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
         - ![left](images/link.png) [https://blog.thedojo.mx/2020/12/30/deberias-comentar-tu-codigo.html)
            - Head First Kotlin, A Brain-Friendly Guide; Dawn Griffiths & David Griffiths; 2019 - O'Reilly Media
+           - A Philosophy of Software Design, John Ousterhout. (Le dedica 4 capítulos a buen uso de los comentarios)
        </section>
 
 
