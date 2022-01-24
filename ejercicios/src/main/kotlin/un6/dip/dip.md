@@ -15,8 +15,8 @@ Entre los objetivos de tener en cuenta estos 5 principios a la hora de escribir 
   sea **reutilizable y mantenible**.
 - Permitir **escalabilidad**: que acepte ser ampliado con nuevas funcionalidades de manera ágil.
 
-En este sentido la aplicación de los principios SOLID está muy relacionada con la comprensión y el uso de **patrones de
-diseño**, que nos permitirán mantener una **alta cohesión** y, por tanto, un **bajo acoplamiento** de software. En
+En este sentido la aplicación de los principios SOLID está muy relacionada con la comprensión y el uso de [**patrones de
+diseño**](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o), que nos permitirán mantener una **alta cohesión** y, por tanto, un **bajo acoplamiento** de software. En
 definitiva, desarrollar un software de calidad.
 
 El acoplamiento se refiere al **grado de interdependencia que tienen dos unidades de software entre sí**, entendiendo
