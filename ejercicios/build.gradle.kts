@@ -1,11 +1,12 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+//import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.6.10-RC"
     id("org.jetbrains.dokka") version "1.6.10"
-    plugins {
-        id("org.jetbrains.kotlinx.kover") version "0.5.0-RC2"
-    }}
+    //plugins {
+    //    id("org.jetbrains.kotlinx.kover") version "0.5.0-RC2"
+    //}
+}
 
 repositories {
     mavenCentral()
@@ -28,7 +29,8 @@ tasks.test {
     useJUnitPlatform()
 
 }
-
+/*
 tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
 }
+ */
