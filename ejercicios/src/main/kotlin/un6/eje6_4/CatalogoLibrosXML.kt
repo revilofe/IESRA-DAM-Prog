@@ -14,7 +14,10 @@ class CatalogoLibrosXML(private val cargador: String) {
     companion object {
         val l = KotlinLogging.logger("LOG")
     }
-
+    internal fun i(msg:String)
+    {
+        CatalogoLibrosXML.l.info { msg }
+    }
     private var xmlDoc: Document? = null
     init {
         try {
@@ -102,10 +105,7 @@ class CatalogoLibrosXML(private val cargador: String) {
             }
         return m
     }
-    fun i(msg:String)
-    {
-        CatalogoLibrosXML.l.info { msg }
-    }
+
 }
 
 fun main() {
