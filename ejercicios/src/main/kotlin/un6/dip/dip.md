@@ -173,11 +173,7 @@ open class RacingCar(private var remainingFuel: Int) : Car {
 }
 
 class Driver(car: Car) {
-    val racingCar: Car
-
-    init {
-        racingCar = RacingCar(100)
-    }
+    val racingCar: Car = car 
 
     fun increaseSpeed() {
         racingCar.accelerate()
