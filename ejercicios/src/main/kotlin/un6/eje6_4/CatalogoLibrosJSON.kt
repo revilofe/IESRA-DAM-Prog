@@ -12,17 +12,17 @@ val gson = Gson()
 
 
 //convert a data class to a map
-fun <T> T.serializeToMap(): Map<String, Any> {
+internal fun <T> T.serializeToMap(): Map<String, Any> {
     return convert()
 }
 
 //convert a map to a data class
-inline fun <reified T> Map<String, Any>.toDataClass(): T {
+internal inline fun <reified T> Map<String, Any>.toDataClass(): T {
     return convert()
 }
 
 //convert an object of type I to type O
-inline fun <I, reified O> I.convert(): O {
+internal inline fun <I, reified O> I.convert(): O {
     val json = gson.toJson(this)
     mi(json)
     return gson.fromJson(json, object : TypeToken<O>() {}.type)
@@ -32,7 +32,7 @@ inline fun <I, reified O> I.convert(): O {
  * Convierte un objeto de tipo I a tipo O
  * @return un objetio de tipo O
  */
-inline fun <reified O> String.fromJson(): O {
+internal inline fun <reified O> String.fromJson(): O {
     mi(this)
     return gson.fromJson(this, object : TypeToken<O>() {}.type)
 }
@@ -58,37 +58,6 @@ internal data class Book(
 )
 
 internal fun main() {
-
-    /*
-    val book =
-        Book("idk3d", "Eduardo", "Libro de eduardo", "Ficcion", 29.4, Date("2000/10/01"), "Descripción del libro")
-    val personAsMap: Map<String, Any> = book.serializeToMap()
-    mi("o2m",personAsMap.toString())
-
-    val map = mapOf(
-        "id" to "bk101",
-        "autor" to "Gambardella",
-        "title" to "XML Developer's Guide",
-        "genre" to "Computer",
-        "price" to "44.95",
-        "publish_date" to "2000-10-01",
-        "description" to "An in-depth look at creating applications with XML."
-    )
-    val mapAsPerson: Book = map.toDataClass()
-    mi("m2o", mapAsPerson.toString())
-
-
-    var json =
-        """[{"id":"bk101","autor":"Pedris1","title":"Libro de eduardo 1","genre":"Ficcion 1","price":29.41,"publish_date":"Oct 1, 2000 12:00:00 AM","description":"Descripción del libro 1"}
-        |,{"id":"bk102","autor":"Pedris2","title":"Libro de eduardo 2","genre":"Ficcion 2","price":29.42,"publish_date":"Oct 2, 2000 12:00:00 AM","description":"Descripción del libro 2"}
-        |,{"id":"bk103","autor":"Pedris3","title":"Libro de eduardo 3","genre":"Ficcion 3","price":29.43,"publish_date":"Oct 3, 2000 12:00:00 AM","description":"Descripción del libro 3"}
-        |,{"id":"bk104","autor":"Pedris4","title":"Libro de eduardo 4","genre":"Ficcion 4","price":29.44,"publish_date":"Oct 4, 2000 12:00:00 AM","description":"Descripción del libro 4"}
-        |,{"id":"bk105","autor":"Pedris5","title":"Libro de eduardo 5","genre":"Ficcion 5","price":29.45,"publish_date":"Oct 5, 2000 12:00:00 AM","description":"Descripción del libro 5"}
-        |]""".trimMargin()
-    mi("j2o", json.fromJson<List<Book>>().toString())
-    mi("j2o",json.fromJson<List<Map<String, Any>>>().toString())
-
-*/
 
     var jsonLibros = """[{"id":"bk101","autor":"Pedris1","title":"Libro de eduardo 1","genre":"Ficcion 1","price":29.41,"publish_date":"Oct 1, 2000 12:00:00 AM","description":"Descripción del libro 1"}
         |,{"id":"bk102","autor":"Pedris2","title":"Libro de eduardo 2","genre":"Ficcion 2","price":29.42,"publish_date":"Oct 2, 2000 12:00:00 AM","description":"Descripción del libro 2"}
@@ -116,7 +85,7 @@ public class CatalogoLibrosJSON(cargador:String)
     }
     internal fun i(msg:String)
     {
-        CatalogoLibrosXML.l.info { msg }
+        CatalogoLibrosXML.l.info {"[Clase]"+ msg }
     }
     fun infoLibro(idLibro: String): Map<String, Any> {
         var book = libros.first{ it.id == idLibro }
