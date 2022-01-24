@@ -305,50 +305,62 @@ v    </section>
         - La documentación se genera en la carpeta `build` de tu proyecto.
 
     </section>
+    <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
+
+        - *** ***
+        [6.x Generera la documentación del programa.](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=436534)
+    </section>
 
     <section data-markdown>
         ## Se ha comentado y documentado el código (h)
 
         - ***Actividad individual evaluable:***
-        [6.x Generera la documentación del programa.](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=436534)
+        [6.4 Comentar y documentar el código (RA7.h)](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=447140)
     </section>
 
+    <section data-markdown>
+        ## Se ha comentado y documentado el código (h)
 
+        - ***Actividad individual evaluable:*** Investiga sobre Depedencia, Asociación, Agregación composición.
+            - Describe que representa en el código, y para ello usa tambien un ejemplo de código
+            - Representa el ejemplo y la relación haciendo uso de UML
+        [Ejemplo](http://alumnosdc.blogspot.com/2013/05/agregacion-composicion-y-dependencia.html)
 
+    </section>
 
+    <section data-markdown>
+        ## Principio de inversión de dependencias (RA7.)
 
-        <section data-markdown>
-            ## Principio de inversión de dependencias (RA7.)
+        - Básicamente lo que nos dice este principio es que:
+            - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
+            - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
+    </section>
 
-            - Básicamente lo que nos dice este principio es que:
-                - Las clases de alto nivel no deberían depender de las clases de bajo nivel. Ambas deberían depender de las abstracciones.
-                - Las abstracciones no deberían depender de los detalles. Los detalles deberían depender de las abstracciones.
-        </section>
+    <section data-markdown>
+        ## Principio de inversión de dependencias (RA7.)
+        - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño
+        orientado a objetos, en el que **se suministran objetos a una clase** en lugar de ser la propia clase quien cree
+        el objeto.
+        - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar
+        comportamientos a componentes.
+        - El término fue acuñado por primera vez por *Martin Fowler*.
+    </section>
 
-        <section data-markdown>
-            ## Principio de inversión de dependencias (RA7.)
-            - En Informática, **Inyección de Dependencias** (en inglés Dependency Injection, DI) es un patrón de diseño
-            orientado a objetos, en el que **se suministran objetos a una clase** en lugar de ser la propia clase quien cree
-            el objeto.
-            - Es una herramienta comúnmente utilizada en varios patrones de diseño orientado a objetos, consiste en inyectar
-            comportamientos a componentes.
-            - El término fue acuñado por primera vez por *Martin Fowler*.
-        </section>
+    <section data-markdown>
+        ## Principio de inversión de dependencias (RA7.)
+        - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un
+        mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
+        - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
+            - Inyección de dependencias (Patrón de diseño):  Las abstraciones nunca deben depender de los detalles.
+            - Inversión de dependencias (Principio DIP de SOLID)
 
-        <section data-markdown>
-            ## Principio de inversión de dependencias (RA7.)
-            - Esto no es más que extraer responsabilidades a un componente para delegarlas en otro, estableciendo un
-            mecanismo a través del cual el nuevo componente pueda ser cambiado en tiempo de ejecución.
-            - Es conveniente no confundir **Inversión de dependencias (DIP)** con **Inversión de Control (IoC)**.
-                - Inyección de dependencias (Patrón de diseño):  Las abstraciones nunca deben depender de los detalles.
-                - Inversión de dependencias (Principio DIP de SOLID)
-
-        </section>
-
-        <section data-markdown>
-            ## Principio de inversión de dependencias (RA7.)
-            - Cumplir con el DIP hace que el código de la lógica de negocio de tu aplicación no dependa de los detalles de implementación, si no de abstracciones. Esto hará que en el futuro puedas cambiar los detalles de implementación sin tener que modificar el código de tu lógica de negocio.
-       </section>
+    </section>
+    <section data-markdown>
+        ## Principio de inversión de dependencias (RA7.)
+        - Cumplir con el DIP hace que el código de la lógica de negocio de tu aplicación no dependa de los detalles de implementación, si no de abstracciones. Esto hará que en el futuro puedas cambiar los detalles de implementación sin tener que modificar el código de tu lógica de negocio.
+        - [Ejemplo](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un6/dip/dip.md)
+    </section>
 
     <!--
 
