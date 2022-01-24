@@ -4,18 +4,16 @@ import java.util.logging.Level
 import java.util.logging.LogManager
 
 internal val l = LogManager.getLogManager().getLogger("").apply { level = Level.ALL }
-internal fun i(tag:String, msg:String)
-{
+internal fun i(tag: String, msg: String) {
     l.info("[$tag] - $msg")
 }
-
 
 
 interface Car {
     fun accelerate()
 }
 
-open class SuperRacingCar (private var remainingFuel: Int): Car {
+open class SuperRacingCar(private var remainingFuel: Int) : Car {
     private var power = 0
     override fun accelerate() {
         increasePower()
@@ -24,17 +22,17 @@ open class SuperRacingCar (private var remainingFuel: Int): Car {
     }
 
     open protected fun decrementFuel() {
-        remainingFuel-=2
+        remainingFuel -= 2
     }
 
     open protected fun increasePower() {
-        power+=2
+        power += 2
     }
 
 }
 
 
-open class RacingCar (private var remainingFuel: Int): Car {
+open class RacingCar(private var remainingFuel: Int) : Car {
     private var power = 0
     override fun accelerate() {
         increasePower()
@@ -54,6 +52,7 @@ open class RacingCar (private var remainingFuel: Int): Car {
 
 class Driver(car: Car) {
     val racingCar: Car
+
     init {
         racingCar = RacingCar(100)
         i("Driver", "Creado RacingCar")
