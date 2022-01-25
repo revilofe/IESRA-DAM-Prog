@@ -17,14 +17,14 @@ que realicemos un diseño de forma que podamos intercambiar la clase que accede 
 formatos. (JSON, BBDD, etc.)
 
 Para implementar esta funcionalidad, haremos uso del principio de inversión de dependencia visto en clase, de forma que
-podamos acceder a una clase u otra sin necesidad de modificar la lógica de la clase `GestorDeLibros`.
+podamos utilizar un método u otro (una clase u otra) sin necesidad de modificar la lógica de la clase `GestorDeLibros`.
 
 ### b) Inversión de dependencias sobre la interface (60%)
 
-Aplicando DIP crea la estructura de clases que consideres necesaria para desacoplar la parte del acceso a teclado y
-pantalla, a través de una clase `GestorDeLibrosIUT1` que se encargue de este trabajo, es decir, solicitar la información
-que necesita nuestra clase GestorDeLibros, y presentar la información tras realizar las consultas de los datos, de forma
-podamos utilizar esta clase u otra para solicitar y presentar los datos resultado.
+Aplicando DIP crea la estructura de clases que consideres necesaria para desacoplar en `GestorDeLibros` la parte del acceso a teclado y
+pantalla, a través del uso de una clase `GestorDeLibrosIUT1` que se encargue de este trabajo, es decir, solicitar la información
+que necesita nuestra clase `GestorDeLibros`, y presentar la información tras realizar las consultas de los datos, de forma
+podamos utilizar esta clase `GestorDeLibrosIUT1` u otra `GestorDeLibrosIUT2` para solicitar y presentar los datos resultado.
 
 Una vez este desacoplando, implementa otra clase `GestorDeLibrosIUT2` que haga el mismo trabajo pero de formas
 distintas (por ejemplo, cambiando los mensajes que muestra solicitando y mostrando los datos) de interactuar con el
@@ -33,6 +33,9 @@ teclado y la pantalla.
 Prueba las distintas configuraciones que puede hacer de tu programa haciendo uso de las clases que has creado.
 
 ## 2. Evaluación
+
+Se tendrá en cuenta el uso de superclases, interfaces, clases abstractas, el uso de jerarquía de clases ya conocidas y que nos las proporcionan kotlin, como por ejemplo List, Map, Set. etc.
+
 ###### d) Se han creado clases heredadas que sobrescriban la implementación de métodos de la superclase.
 0. No lo hace; 5. Crea clases heredadas que sobreescriben pero no adecuadamente o no completo; 10. Correcto. 
 ###### e) Se han diseñado y aplicado jerarquías de clases.
