@@ -1,6 +1,6 @@
 # Relación 6.4
 
-> Se evaluará el RAX, CE y
+> Se evaluará el RA7, CE d,e,f,g
 
 ## 1. Descripción de la práctica
 
