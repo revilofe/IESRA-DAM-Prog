@@ -12,14 +12,14 @@ Crear una lista inmutable con los días de la semana. Probar las propiedades y m
 
 Para crea una lista inmutable podemos llamar a la función listOf y pasar como parámetro los datos a almacenar, debemos indicar el tipo de datos que almacena luego de List:
 
-```
-    var lista1: List<String> = listOf("lunes", "martes", "miercoles", "jueves", "viernes", "sábado", "domingo")
+```Kt
+var lista1: List<String> = listOf("lunes", "martes", "miercoles", "jueves", "viernes", "sábado", "domingo")
 ```
 
 Una vez creada la lista no podemos modificar sus datos:
 
-```
-    lista1[0] = "domingo"
+```Kt
+lista1[0] = "domingo"
 ```
 
 Tampoco podemos agregar elementos:
@@ -29,16 +29,16 @@ Tampoco podemos agregar elementos:
 
 Lo que podemos hacer con una lista inmutable es acceder a sus elementos, por ejemplo recorrerla con un for:
 
-```
-    for(elemento in lista1)
-        print("$elemento ")
+```Kt
+for(elemento in lista1)
+   print("$elemento ")
 ```
 
 Acceder a cualquier elemento por un subíndice:
 
-```
-    println("Imprimir el primer elemento de la lista")
-    println(lista1[0])
+```Kt
+println("Imprimir el primer elemento de la lista")
+println(lista1[0])
 ```
 
 Si queremos conocer todas las propiedades y métodos de List podemos visitar la documentación de la [biblioteca estándar](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html) de Kotlin.
@@ -49,7 +49,7 @@ Veamos otro ejemplo de crear una lista inmutable pero utilizando la función Lis
 
 #### Proyecto174 - Principal.kt
 
-```
+```Kt
 fun cargar(): Int {
     print("Ingrese un entero:")
     val valor = readLine()!!.toInt()
@@ -66,7 +66,7 @@ En este ejemplo creamos una lista inmutable llamando a la función List a la cua
 
 En la función lambda llamamos a cargar pero podríamos haber codificado en dicho lugar la carga:
 
-```
+```Kt
 fun main(args: Array<String>) {
     var lista1: List<Int> = List(5) {
         print("Ingrese un entero:")
@@ -87,7 +87,7 @@ Crear una lista mutable con las edades de varias personas. Probar las propiedade
 
 #### Proyecto175 - Principal.kt
 
-```
+```Kt
 fun main(args: Array<String>) {
     val edades: MutableList<Int> = mutableListOf(23, 67, 12, 35, 12)
     println("Lista de edades")
@@ -127,36 +127,36 @@ fun main(args: Array<String>) {
 
 Este ejemplo muestra como crear una lista mutable llamando a la función mutableListOf e indicando los valores iniciales:
 
-```
-    val edades: MutableList<Int> = mutableListOf(23, 67, 12, 35, 12)
+```Kt
+val edades: MutableList<Int> = mutableListOf(23, 67, 12, 35, 12)
 ```
 
 Para agregar un nuevo elemento a la lista al final llamamos al método add:
 
-```
-    edades.add(50)
+```Kt
+edades.add(50)
 ```
 
 Pero podemos agregarlo en cualquier posición dentro de la lista mediante el método add con dos parámetros, en el primero indicamos la posición y en el segundo el valor a almacenar:
 
-```
-    edades.add(0, 17)
+```Kt
+edades.add(0, 17)
 ```
 
 Mediante el método count y pasando una lambda podemos contar todos los elementos que cumplen una condición:
 
-```
-    print("Cantidad de personas mayores de edad:")
-    val cant = edades.count { it >= 18 }
-    println(cant)
+```Kt
+print("Cantidad de personas mayores de edad:")
+val cant = edades.count { it >= 18 }
+println(cant)
 ```
 
 También podemos eliminar todos los elementos de la lista que cumplen una determinada condición indicada una lambda:
 
-```
-    edades.removeAll { it == 12 }
-    println("Lista de edades después de borrar las que tienen 12 años")
-    println(edades)
+```Kt
+edades.removeAll { it == 12 }
+println("Lista de edades después de borrar las que tienen 12 años")
+println(edades)
 ```
 
 Si queremos conocer todas las propiedades y métodos de MutableList podemos visitar la documentación de la [biblioteca estándar](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html) de Kotlin.
@@ -169,7 +169,7 @@ Eliminar los elementos que almacenan un 6.
 
 #### Proyecto176 - Principal.kt
 
-```
+```Kt
 fun main(args: Array<String>) {
     val lista: MutableList<Int> = MutableList(20) { ((Math.random() * 6) + 1).toInt() }
     println("Lista completa")
@@ -186,14 +186,14 @@ Para crear una lista de 20 elementos utilizamos la función MutableList y le pas
 
 Para contar los elementos que almacenan un 1 utilizamos la función count y pasamos una lambda con la condición que se debe cumplir para ser contado:
 
-```
-    val cant = lista.count { it == 1 }
+```Kt
+val cant = lista.count { it == 1 }
 ```
 
 Para eliminar llamamos al método removeAll:
 
-```
-    lista.removeAll { it == 6 }
+```Kt
+lista.removeAll { it == 6 }
 ```
 
 ### Problema 5
@@ -207,7 +207,7 @@ Imprimir cuantas personas son mayor de edad.
 
 #### Proyecto177 - Principal.kt
 
-```
+```Kt
 class Persona (var nombre: String, var edad: Int) {
 
     fun imprimir() {
@@ -234,7 +234,7 @@ fun main(args: Array<String>) {
 
 Declaramos la clase Persona con dos propiedades y dos métodos:
 
-```
+```Kt
 class Persona (var nombre: String, var edad: Int) {
 
     fun imprimir() {
@@ -252,29 +252,29 @@ class Persona (var nombre: String, var edad: Int) {
 
 Definimos una lista mutable que almacena componentes de tipo Persona:
 
-```
+```Kt
 fun main(args: Array<String>) {
     val personas: MutableList<Persona>
 ```
 
 Creamos la lista mediante el método mutableListOf y le pasamos la referencia de tres objetos de la clase Persona:
 
-```
-    personas = mutableListOf(Persona("Juan", 22), Persona("Ana", 19), Persona("Marcos", 12))
+```Kt
+personas = mutableListOf(Persona("Juan", 22), Persona("Ana", 19), Persona("Marcos", 12))
 ```
 
 Imprimimos todos los datos de las personas procesando cada objeto almacenado en la lista llamando al método forEach y en la función lambda llamando al método imprimir de cada persona:
 
-```
-    println("Listado de todas personas")
-    personas.forEach { it.imprimir() }
+```Kt
+println("Listado de todas personas")
+personas.forEach { it.imprimir() }
 ```
 
 Finalmente contamos la cantidad de personas mayores de edad:
 
-```
-    val cant = personas.count { it.edad >= 18}
-    println("La cantidad de personas mayores de edad es $cant")
+```Kt
+val cant = personas.count { it.edad >= 18}
+println("La cantidad de personas mayores de edad es $cant")
 ```
 
 ## Problemas propuestos

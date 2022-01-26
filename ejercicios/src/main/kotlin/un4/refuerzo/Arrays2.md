@@ -14,7 +14,7 @@ Persona. Calcular cuantas personas son mayores de edad.
 
 #### Proyecto144 - Principal.kt
 
-```
+```Kt
 class Persona(val nombre: String, val edad: Int) {
     fun imprimir() {
         println("Nombre: $nombre  Edad: $edad")
@@ -38,7 +38,7 @@ fun main(parametro: Array<String>) {
 
 La declaración de la clase Persona define 2 propiedades en el mismo constructor y sus dos métodos:
 
-```
+```Kt
 class Persona(val nombre: String, val edad: Int) {
     fun imprimir() {
         println("Nombre: $nombre  Edad: $edad")
@@ -51,7 +51,7 @@ class Persona(val nombre: String, val edad: Int) {
 En la función main definimos una variable llamada personas que es un Array con componentes de tipo Persona. Para definir
 sus componentes utilizamos la función arrayOf que nos provee la librería estándar de Kotlin:
 
-```
+```Kt
 val personas: Array<Persona> = arrayOf(Persona("ana", 22), Persona("juan", 13), Persona("carlos", 6), Persona("maria", 72))
 ```
 
@@ -61,7 +61,7 @@ Un Array una vez creado no puede cambiar su tamaño.
 
 La forma más fácil de recorrer el Array es mediante un for:
 
-```
+```Kt
 for(per in personas)
    per.imprimir()
 ```
@@ -71,7 +71,7 @@ En cada ciclo del for en la variable per se almacena una de las componentes del 
 De forma similar para contar la cantidad de personas mayores de edad procedemos a definir un contador y mediante un for
 recorremos el arreglo y llamamos al método esMayor para cada objeto:
 
-```
+```Kt
 var cant = 0
 for(per in personas)
    if (per.esMayor())
@@ -84,7 +84,7 @@ println("Cantidad de personas mayores de edad: $cant")
 A un Array lo podemos acceder por medio de un subíndice o por medio de llamadas a métodos, podemos cambiar el valor
 almacenado en una componente etc.:
 
-```
+```Kt
 //imprimir los datos de la persona almacenada en la componente 0
 personas[0].imprimir()
 //imprimir la cantidad de compoentes del arreglo
@@ -107,9 +107,11 @@ for(per in personas)
 ## Problemas propuestos
 
 145. Se tiene la declaración del siguiente data class:
-```
+
+```Kt
 data class Articulo(val codigo: Int, val descripcion: String, var precio: Float)
   ```
+
 Definir un Array con 4 elementos de tipo Articulo. Implementar dos funciones, una que le enviemos el Array y nos muestre
 todos sus componentes, y otra que también reciba el Array de artículos y proceda a aumentar en 10% a todos los
 productos.
@@ -119,4 +121,5 @@ productos.
      uno.
 
 ## Bibliografía
+
 https://www.tutorialesprogramacionya.com/kotlinya/detalleconcepto.php?punto=35&codigo=35&inicio=30

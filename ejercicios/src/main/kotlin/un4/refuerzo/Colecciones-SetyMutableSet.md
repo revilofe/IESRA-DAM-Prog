@@ -12,7 +12,7 @@ administrar el conjunto.
 
 #### Proyecto187 - Principal.kt
 
-```
+```Kt
 fun main(args: Array<String>) {
     val conjunto1: MutableSet<Int> = mutableSetOf(2, 7, 20, 150, 3)
     println("Listado completo del conjunto")
@@ -48,13 +48,13 @@ fun main(args: Array<String>) {
 
 Creamos un MutableSet con elementos de tipo Int y almacenamos 5 enteros:
 
-```
+```Kt
 val conjunto1: MutableSet<Int> = mutableSetOf(2, 7, 20, 150, 3)
 ```
 
 Podemos recorrer con un for todos los elementos de un conjunto igual que las otras colecciones que proporciona Kotlin:
 
-```
+```Kt
 for(elemento in conjunto1)
    print("$elemento ")
 ```
@@ -62,7 +62,7 @@ for(elemento in conjunto1)
 Para añadir un nuevo elemento a un conjunto llamamos al método add (esto se puede hacer solo con la clase MutableSet y
 no con Set):
 
-```
+```Kt
 conjunto1.add(500)
 ```
 
@@ -71,7 +71,7 @@ conjunto no pueden tener valores repetidos)
 
 Para verificar si un elemento se encuentra contenido en el conjunto podemos hacerlo mediante el operador in:
 
-```
+```Kt
 if (500 in conjunto1)
    println("El 500 está almacenado en el conjunto")
 else
@@ -80,7 +80,7 @@ else
 
 Para eliminar un elemento del conjunto podemos llamar al método remove y pasar el valor a eliminar:
 
-```
+```Kt
 conjunto1.remove(500)
 ```
 
@@ -98,7 +98,7 @@ verificar si se encuentra en el conjunto de feriados
 
 #### Proyecto188 - Principal.kt
 
-```
+```Kt
 data class Fecha(val dia: Int, val mes: Int, val año: Int)
 
 fun main(args: Array<String>) {
@@ -121,20 +121,20 @@ fun main(args: Array<String>) {
 
 Declaramos un data class que representa una fecha:
 
-```
+```Kt
 data class Fecha(val dia: Int, val mes: Int, val año: Int)
 ```
 
 Definimos un conjunto inmutable de tipo Fecha y guardamos dos fechas mediante la llamada a la función setOf:
 
-```
+```Kt
 var feriados: Set<Fecha> = setOf(Fecha(1, 1, 2017),
                                 Fecha(25, 12, 2017))
 ```
 
 Cargamos una fecha cualquiera por teclado:
 
-```
+```Kt
 println("Ingrese una fecha")
 print("Ingrese el día:")
 val dia = readLine()!!.toInt()
@@ -146,7 +146,7 @@ val año = readLine()!!.toInt()
 
 Mediante el operador in verificamos si la fecha ingresada se encuentra en el conjunto de feriados:
 
-```
+```Kt
 if (Fecha(dia, mes, año) in feriados)
    println("La fecha ingresada es feriado")
 else

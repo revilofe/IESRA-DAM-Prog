@@ -21,7 +21,7 @@ la cantidad de habitantes de dicho pais. Probar distintos métodos y propiedades
 
 #### Proyecto181 - Principal.kt
 
-```
+```Kt
 fun main(args: Array<String>) {
     val paises: Map<String, Int> = mapOf( Pair("argentina", 40000000),
                                           Pair("españa", 46000000),
@@ -48,7 +48,7 @@ fun main(args: Array<String>) {
 Para crear un Map en Kotlin debemos definir una variable e indicar de que tipo de datos son la clave del mapa y el valor
 que almacena. Mediante la función mapOf retornamos un Map indicando cada entrada en nuestro Map mediante un objeto Pair:
 
-```
+```Kt
 val paises: Map<String, Int> = mapOf( Pair("argentina", 40000000),
                                       Pair("españa", 46000000),
                                       Pair("uruguay", 3400000))
@@ -58,7 +58,7 @@ Hemos creado un Map que almacena tres entradas.
 
 La función println nos permite mostrar el Map en forma completo:
 
-```
+```Kt
 println("Listado completo del Map")
 println(paises)
 ```
@@ -66,20 +66,20 @@ println(paises)
 Si queremos recorrer e ir imprimiendo elemento por elemento las componentes del mapa podemos hacerlo mediante un for, en
 cada iteración recuperamos una clave y su valor:
 
-```
+```Kt
 for ((clave, valor) in paises)
     println("Para la clave $clave tenemos almacenado $valor")
 ```
 
 Como las listas la clase Map dispone de una propiedad size que nos retorna la cantidad de elementos del mapa:
 
-```
+```Kt
 println("La cantidad de elementos del mapa es ${paises.size}")
 ```
 
 Si necesitamos recuperar el valor para una determinada clave podemos hacerlo por medio de la sintaxis:
 
-```
+```Kt
 val cantHabitantes1: Int? = paises["argentina"]
 ```
 
@@ -88,7 +88,7 @@ almacenar un null si no existe el pais buscado.
 
 Luego con un if podemos controlar si se recuperó la cantidad de habitantes para el país buscado:
 
-```
+```Kt
 if (cantHabitantes1 != null)
     println("La cantidad de habitantes de argentina es $cantHabitantes1")
 val cantHabitantes2: Int? = paises["brasil"]
@@ -101,7 +101,7 @@ else
 Finalmente para acumular la cantidad de habitantes de todos los paises podemos recorrer el Map y sumar el valor de cada
 componente:
 
-```
+```Kt
 var suma = 0
 paises.forEach { suma += it.value }
 println("Cantidad total de habitantes de todos los paises es $suma")
@@ -109,7 +109,7 @@ println("Cantidad total de habitantes de todos los paises es $suma")
 
 Otra sintaxis común para crear el Map en Kotlin es:
 
-```
+```Kt
 val paises: Map<String, Int> = mapOf( "argentina" to 40000000,
                                       "españa" to 46000000,
                                       "uruguay" to 3400000)
@@ -118,7 +118,7 @@ val paises: Map<String, Int> = mapOf( "argentina" to 40000000,
 La función `to` ya veremos que mediante una definición "infix" podemos pasar un parámetro, luego el nombre de la función
 y finalmente el segundo parámetro. La función to ya existe y tiene esta sintaxis:
 
-```
+```Kt
 public infix fun <A, B> A.to(that: B): Pair<A, B> = Pair(this, that)
 ```
 
@@ -138,7 +138,7 @@ mismo. Desarrollar además las funciones de:
 
 #### Proyecto182 - Principal.kt
 
-```
+```Kt
 fun imprimir(productos: Map<String, Float>) {
     for((clave, valor) in productos)
         println("$clave tiene un precio $valor")
@@ -163,7 +163,7 @@ fun main(args: Array<String>) {
 
 En este caso creamos un mapa cuya clave es de tipo String y su valor es un Float:
 
-```
+```Kt
 fun main(args: Array<String>) {
     val productos: Map<String, Float> = mapOf("papas" to 12.5f,
                                               "manzanas" to 26f,
@@ -174,7 +174,7 @@ fun main(args: Array<String>) {
 
 Para mostrar el mapa en forma completo lo hacemos recorriendo por medio de un for:
 
-```
+```Kt
 fun imprimir(productos: Map<String, Float>) {
     for((clave, valor) in productos)
         println("$clave tiene un precio $valor")
@@ -185,7 +185,7 @@ fun imprimir(productos: Map<String, Float>) {
 Para contar la cantidad de productos que tienen un precio superior a 20 llamamos al método count y le pasamos una
 función lambda analizando el parámetro it en la propiedad value si cumple la condición de superar al valor 20:
 
-```
+```Kt
 fun cantidadPrecioMayor20(productos: Map<String, Float>) {
     val cant = productos.count{ it.value > 20}
     println("Cantidad de productos con un precio superior a 20: $cant")
@@ -203,7 +203,7 @@ valor es la palabra en castellano. Crear las siguientes funciones:
 
 #### Proyecto183 - Principal.kt
 
-```
+```Kt
 fun cargar(diccionario: MutableMap<String, String>) {
     do {
         print("Ingrese palabra en castellano:")
@@ -241,7 +241,7 @@ fun main(args: Array<String>) {
 
 En la función main definimos un MutableMap vacío:
 
-```
+```Kt
 fun main(args: Array<String>) {
     val diccionario: MutableMap<String, String> = mutableMapOf()
 ```
@@ -249,7 +249,7 @@ fun main(args: Array<String>) {
 En la función cargar procedemos a ingresar una palabra en ingles y su traducción en castellano, para cargarla al Map
 procedemos a acceder por medio del subíndice:
 
-```
+```Kt
         print("Ingrese palabra en castellano:")
         val palCastellano = readLine()!!
         print("Ingrese palabra en ingles:")
@@ -259,7 +259,7 @@ procedemos a acceder por medio del subíndice:
 
 La función cargar finaliza cuando el operador carga un String distinto a "si":
 
-```
+```Kt
         print("Continua cargando otra palabra en el diccionario? (si/no):")
         val fin = readLine()!!
     } while (fin=="si")
@@ -267,7 +267,7 @@ La función cargar finaliza cuando el operador carga un String distinto a "si":
 
 Para controlar si un Map contiene una determinada clave lo podemos hacer mediante el operador in:
 
-```
+```Kt
     print("Ingrese una palabra en ingles para verificar su traducción:")
     val ingles = readLine()
     if (ingles in diccionario)
@@ -294,7 +294,7 @@ Implementar las siguientes actividades:
 
 #### Proyecto184 - Principal.kt
 
-```
+```Kt
 data class Producto(val nombre: String, val precio: Float, val cantidad: Int)
 
 fun cargar(productos: MutableMap<Int, Producto>) {
@@ -336,7 +336,7 @@ fun main(args: Array<String>) {
 Definimos un Map mutable en la función main y llamamos a una serie de funciones donde en uno lo cargamos y en el resto
 procesamos sus elementos:
 
-```
+```Kt
 fun main(args: Array<String>) {
     val productos: MutableMap<Int, Producto> = mutableMapOf()
     cargar(productos);
@@ -348,7 +348,7 @@ fun main(args: Array<String>) {
 
 En la función de cargar llega el Map y agregamos tres productos:
 
-```
+```Kt
 fun cargar(productos: MutableMap<Int, Producto>) {
     productos[1] = Producto("Papas", 13.15f, 200)
     productos[15] = Producto("Manzanas", 20f, 0)
@@ -359,7 +359,7 @@ fun cargar(productos: MutableMap<Int, Producto>) {
 La función que analiza la cantidad de productos sin stock lo hacemos llamando a count y pasando una función lambda que
 contará todos los productos cuya cantidad sea cero:
 
-```
+```Kt
 fun sinStock(productos: MutableMap<Int, Producto>) {
     val cant = productos.count { it.value.cantidad == 0 }
     println("Cantidad de artículos sin stock: $cant")
@@ -380,7 +380,7 @@ Crear las siguientes funciones:
 
 #### Proyecto185 - Principal.kt
 
-```
+```Kt
 data class Materia(val nombre: String, val nota: Int)
 
 fun cargar(alumnos: MutableMap<Int, MutableList<Materia>>) {
@@ -439,14 +439,14 @@ fun main(args: Array<String>) {
 A medida que tenemos que representar conceptos más complejos necesitamos definir en este caso un Map cuya clave es un
 entero pero su valor es una lista mutable con elementos de la clase Materia:
 
-```
+```Kt
 fun main(args: Array<String>) {
     val alumnos: MutableMap<Int, MutableList<Materia>> = mutableMapOf()
 ```
 
 En la función de cargar previa a un for solicitamos la cantidad de alumnos a almacenar en el mapa:
 
-```
+```Kt
 fun cargar(alumnos: MutableMap<Int, MutableList<Materia>>) {
     print("Cuantos alumnos cargará ?:")
     val cant = readLine()!!.toInt()
@@ -455,7 +455,7 @@ fun cargar(alumnos: MutableMap<Int, MutableList<Materia>>) {
 Luego mediante un for procedemos a cargar el dni del alumno y crear una lista mutable donde se almacenarán las materias
 y sus respectivas notas del alumno:
 
-```
+```Kt
 for(i in 1..cant) {
     print("Ingrese dni:")
     val dni = readLine()!!.toInt()
@@ -464,7 +464,7 @@ for(i in 1..cant) {
 
 Mediante una estructura repetitiva cargamos cada materia y nota hasta que finalizamos con ese alumno:
 
-```
+```Kt
 do {
     print("Ingrese materia del alumno:")
     val nombre = readLine()!!
@@ -478,7 +478,7 @@ do {
 
 Cuando salimos del ciclo do/while procedemos a insertar la lista de materias en el mapa:
 
-```
+```Kt
         alumnos[dni] = listaMaterias
     }
 }
@@ -487,7 +487,7 @@ Cuando salimos del ciclo do/while procedemos a insertar la lista de materias en 
 Para imprimir en forma completa el mapa lo recorremos con un for que rescata en cada ciclo el dni del alumno y la lista
 de materias que cursa:
 
-```
+```Kt
 fun imprimir(alumnos: MutableMap<Int, MutableList<Materia>>) {
     for((dni, listaMaterias) in alumnos) {
         println("Dni del alumno: $dni")
@@ -495,7 +495,7 @@ fun imprimir(alumnos: MutableMap<Int, MutableList<Materia>>) {
 
 Mediante otro for interno recorremos la lista de materias de ese alumno y mostramos los nombres de materias y sus notas:
 
-```
+```Kt
         for(materia in listaMaterias) {
             println("Materia: ${materia.nombre}")
             println("Nota: ${materia.nota}")
@@ -508,7 +508,7 @@ Mediante otro for interno recorremos la lista de materias de ese alumno y mostra
 Por último la consulta de las materias que cursa un alumno se ingresa el dni y luego de controlar si está almacenado en
 el mapa procedemos a recorrer con un ciclo for todas las materias que cursa:
 
-```
+```Kt
 fun consultaPorDni(alumnos: MutableMap<Int, MutableList<Materia>>) {
     print("Ingrese el dni del alumno a consultar:")
     val dni = readLine()!!.toInt()
@@ -528,7 +528,7 @@ fun consultaPorDni(alumnos: MutableMap<Int, MutableList<Materia>>) {
 
 186. Confeccionar una agenda. Utilizar un MutableMap cuya clave sea de la clase Fecha:
 
-```
+```Kt
 data class Fecha(val dia: Int, val mes: Int, val año: Int)
 ```
 

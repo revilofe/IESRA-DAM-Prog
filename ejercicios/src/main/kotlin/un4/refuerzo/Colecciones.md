@@ -5,7 +5,7 @@ Kotlin provee un amplio abanico de clases para administrar colecciones de datos.
 Ya vimos algunas de las clases que permiten administrar colecciones:
 
 * Para tipos de datos básicos (se encuentran optimizadas)
-  ```
+  ```Kt
   ByteArray 
   ShortArray
   LongArray
@@ -15,18 +15,18 @@ Ya vimos algunas de las clases que permiten administrar colecciones:
   CharArray
   ```
 * Para cualquier tipo de dato:
-  ```
+  ```Kt
   Array
   ```
-* ```
+* ```Kt
   List
   MutableList
   ```
-* ```
+* ```Kt
   Map
   MutableMap
   ```
-* ```
+* ```Kt
   Set
   MutableSet
   ```
