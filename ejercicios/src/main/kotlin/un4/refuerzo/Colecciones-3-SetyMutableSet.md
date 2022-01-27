@@ -160,5 +160,3 @@ else
      detenerse cuando salgan todos los que contiene el cartón de lotería. Mostrar cuantos números tuvieron que sortearse
      hasta que se completó el cartón.
 
-## Bibliografía
-https://www.tutorialesprogramacionya.com/kotlinya/detalleconcepto.php?punto=47&codigo=47&inicio=45

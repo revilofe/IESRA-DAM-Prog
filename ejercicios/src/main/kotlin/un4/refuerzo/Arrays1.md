@@ -357,6 +357,4 @@ for((indice, elemento) in arreglo.withIndex())
      (Definir dos for, en el primero realizar la carga y en el segundo proceder a analizar cada elemento)
 104. Realizar un programa que pida la carga de dos arreglos numéricos enteros de 4 elementos. Obtener la suma de los dos
      arreglos elemento a elemento, dicho resultado guardarlo en un tercer arreglo del mismo tamaño.
-
-## Bibliografía
-https://www.tutorialesprogramacionya.com/kotlinya/detalleconcepto.php?punto=21&codigo=21&inicio=15
+     

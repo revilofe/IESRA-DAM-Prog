@@ -120,6 +120,3 @@ productos.
      valor. En la main definir un Array con 5 objetos de tipo Dado. Tirar los 5 dados e imprimir los valores de cada
      uno.
 
-## Bibliografía
-
-https://www.tutorialesprogramacionya.com/kotlinya/detalleconcepto.php?punto=35&codigo=35&inicio=30

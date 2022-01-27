@@ -537,6 +537,3 @@ Como valor en el mapa almacenar un String. Implementar las siguientes funciones:
 1) Carga de datos en la agenda.
 2) Listado completo de la agenda.
 3) Consulta de una fecha.
-
-## Bibliografía
-https://www.tutorialesprogramacionya.com/kotlinya/detalleconcepto.php?punto=46&codigo=46&inicio=45

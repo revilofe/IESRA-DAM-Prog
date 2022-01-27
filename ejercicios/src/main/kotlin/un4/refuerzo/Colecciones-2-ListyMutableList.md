@@ -290,6 +290,3 @@ println("La cantidad de personas mayores de edad es $cant")
 180. Cargar por teclado y almacenar en una lista inmutable las alturas de 5 personas (valores Float)
      Obtener el promedio de las mismas. Contar cuántas personas son más altas que el promedio y cuántas más bajas.
      Colecciones-List&MutableList.mdColecciones-List&MutableList.md
-
-## Bibliografía
-https://www.tutorialesprogramacionya.com/kotlinya/detalleconcepto.php?punto=45&codigo=45&inicio=30
