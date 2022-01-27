@@ -54,7 +54,7 @@ class Driver(car: Car) {
     val racingCar: Car
 
     init {
-        racingCar = RacingCar(100)
+        racingCar = car
         i("Driver", "Creado RacingCar")
     }
 
