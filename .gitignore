@@ -1,3 +1,4 @@
 # Project exclude paths
 /.gradle/
 /ejercicios/build/
+/.idea/markdown-navigator*.*
