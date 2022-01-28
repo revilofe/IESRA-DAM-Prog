@@ -1,5 +1,3 @@
-<script src="https://unpkg.com/kotlin-playground@1" data-selector="code"></script>
-
 # 1. INTRODUCCIÓN
 
 La principal función de una aplicación informática es la manipulación y transformación de datos. Estos datos pueden
