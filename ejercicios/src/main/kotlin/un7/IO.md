@@ -236,7 +236,7 @@ val f = `File`("Unidad11/apartado1/Actividades.txt");
 
 
 | **Directorio de trabajo** | **Ruta real**                                          |
-| :-------------------------- | :------------------------------------------------------- |
+|:--------------------------|:-------------------------------------------------------|
 | `C:/Proyectos/Java`       | `C:/Proyectos/Java/Unidad11/apartado1/Actividades.txt` |
 | `X:/Unidades`             | `X:/Unidades/Unidad11/apartado1/Actividades.txt`       |
 | `/Programas`              | `/Programas/Unidad11/apartado1/Actividades.txt`        |
@@ -416,7 +416,7 @@ métodos adecuados. Entre los más populares hay los siguientes:
   elemento representado por esta ruta. El resultado se codifica en un
   único número entero cuyo valor es el número de milisegundos que han
   pasado desde el 1 de junio de
-  1970.
+  1970. 
 
 El ejemplo siguiente muestra cómo funcionan estos métodos. Para
 probarlos crea el archivo `Documento.txt` en la carpeta `C:\Temp`.
@@ -616,6 +616,7 @@ object PruebasGestionFicheros3 {
 }
 
 ```
+
 <!--
 # 3. LECTURA Y ESCRITURA DE FICHEROS
 
@@ -666,9 +667,9 @@ separación.![](file:///tmp/lu37016xc6sfk.tmp/lu37016xc6sgf_tmp_e5d45b04953e17dd
 En esta unidad didáctica solo veremos el procesamiento de ficheros
 orientados a carácter.
 
-## 
+##
 
-## 
+##
 
 3.1. Ficheros orientados a carácter
 
@@ -725,7 +726,7 @@ java.util** , y**FileWriter**(para escritura) del **package java.io**
 
 |
 
-## 
+##
 
 3.2. Lectura de fichero (clase Scanner)
 
@@ -865,38 +866,38 @@ datos. Solo se puede trabajar con los datos que hay en el archivo y nada
 más. Esto tiene dos efectos sobre el proceso de lectura:
 
 1. Por un lado, recuerda que **cuando se lleva a cabo el proceso de
-   lectura de una secuencia de valores, siempre hay que tener cuidado de
-   usar el método adecuado al tipo de valor que se espera que venga a
-   continuación** . Qué tipo de valor se espera es algo que habréis
-   decidido vosotros a la hora de hacer el programa que escribió ese
-   archivo, por lo que es vuestra responsabilidad saber qué hay que leer
-   en cada momento. De todos modos nada garantiza que no se haya
-   cometido algún error o que el archivo haya sido manipulado por otro
-   programa o usuario. Como operamos con ficheros y no por el teclado,
-   no existe la opción de pedir al usuario que vuelva a escribir el
-   dato. Por lo tanto, el programa debería decir que se ha producido un
-   error ya que el archivo no tiene el formato correcto y finalizar el
-   proceso de lectura.
+lectura de una secuencia de valores, siempre hay que tener cuidado de
+usar el método adecuado al tipo de valor que se espera que venga a
+continuación** . Qué tipo de valor se espera es algo que habréis
+decidido vosotros a la hora de hacer el programa que escribió ese
+archivo, por lo que es vuestra responsabilidad saber qué hay que leer
+en cada momento. De todos modos nada garantiza que no se haya
+cometido algún error o que el archivo haya sido manipulado por otro
+programa o usuario. Como operamos con ficheros y no por el teclado,
+no existe la opción de pedir al usuario que vuelva a escribir el
+dato. Por lo tanto, el programa debería decir que se ha producido un
+error ya que el archivo no tiene el formato correcto y finalizar el
+proceso de lectura.
 
-   2. Por otra parte, **también es necesario controlar que nunca se lean
-      más valores de los que hay disponibles para leer** . En el caso de
-      la entrada de datos por el teclado el programa simplemente se
-      bloqueaba y espera a que el usuario escribiera nuevos valores.
-      Pero con ficheros esto no sucede. Intentar leer un nuevo valor
-      cuando el apuntador ya ha superado el último disponible se
-      considera erróneo y lanzará una excepción. Para evitarlo, ** será
-      necesario utilizar el método hasNext() antes de leer, que nos
-      devolverá true si existe un elemento a continuación** . Una vez se
-      llega al final del archivo ya no queda más remedio que invocar
-      close () y finalizar la lectura. Para verlo, intenta ejecutar el
-      ejemplo anterior modificando el archivo de forma que alguno de los
-      valores no sean de tipo entero, o haya menos de 10 valores.
+2. Por otra parte, **también es necesario controlar que nunca se lean
+más valores de los que hay disponibles para leer** . En el caso de
+la entrada de datos por el teclado el programa simplemente se
+bloqueaba y espera a que el usuario escribiera nuevos valores.
+Pero con ficheros esto no sucede. Intentar leer un nuevo valor
+cuando el apuntador ya ha superado el último disponible se
+considera erróneo y lanzará una excepción. Para evitarlo, ** será
+necesario utilizar el método hasNext() antes de leer, que nos
+devolverá true si existe un elemento a continuación** . Una vez se
+llega al final del archivo ya no queda más remedio que invocar
+close () y finalizar la lectura. Para verlo, intenta ejecutar el
+ejemplo anterior modificando el archivo de forma que alguno de los
+valores no sean de tipo entero, o haya menos de 10 valores.
 
-   ## 3.3. Escritura en fichero (clase FileWriter)
+## 3.3. Escritura en fichero (clase FileWriter)
 
-   Para escribir datos a un archivo la clase más sencilla de utilizar es
-   FileWriter. Esta clase tiene dos constructores que merece la pena
-   conocer:
+Para escribir datos a un archivo la clase más sencilla de utilizar es
+FileWriter. Esta clase tiene dos constructores que merece la pena
+conocer:
 
 * public FileWriter(File file)
 * public FileWriter(File file, boolean append)
