@@ -101,7 +101,7 @@ a cabo las operaciones.
 
 ```kotlin
 val ruta = "data.txt"
-val f = `File`(ruta);
+val f = File(ruta);
 ```
 
 Una ruta, path en inglés, es la forma general de un **nombre de archivo
