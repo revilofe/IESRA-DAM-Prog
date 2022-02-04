@@ -616,8 +616,25 @@ object PruebasGestionFicheros3 {
 }
 
 ```
+# 3. LECTURA Y ESCRITURA EN ENTRADA Y SALIDA ESTANDAR
+Dentro de la biblioteca estándar de Kotlin, el paquete `kotlin.io` proporciona elementos esenciales para trabajar con los flujos de entrada y salida estándar (Input/Output o I/O). Esta transmisión de información entre la memoria principal y los dispositivos de entrada y salida permite, entre otras cosas, leer y escribir datos.
 
-<!--
+Vamos a ver cómo se transfieren datos de entrada y salida en consola (el paquete `kotlin.io` también proporciona herramientas para trabajar con archivos, como veremos mas adelante), lo que es útil para mostrar una información en **pantalla** y para obtener información aportada por el usuario, habitualmente a través de un dispositivo de entrada como el **teclado**.
+
+## 3.1. Output: Escribir en consola
+Como ya hemos visto en multitud de ejemplos previos durante el curso, para enviar un mensaje a la salida estándar (la pantalla) usamos habitualmente las funciones `print()` y `println()`, que se diferencian en que la segunda incluye un salto de línea al final. Este salto de línea es reproducible a través del caracter especial `\n`, de la siguiente forma `print("\n")`
+```kotlin
+fun main(args : Array<String>) {
+	println("1. println ")
+	println("2. println ")
+
+	print("1. print ")
+	print("2. print ")
+}
+```
+
+
+
 # 3. LECTURA Y ESCRITURA DE FICHEROS
 
 Normalmente las aplicaciones que utilizan archivos no están centradas en
