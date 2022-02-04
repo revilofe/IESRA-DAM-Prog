@@ -236,7 +236,7 @@ val f = `File`("Unidad11/apartado1/Actividades.txt");
 
 
 | **Directorio de trabajo** | **Ruta real**                                          |
-|:--------------------------|:-------------------------------------------------------|
+| :-------------------------- | :------------------------------------------------------- |
 | `C:/Proyectos/Java`       | `C:/Proyectos/Java/Unidad11/apartado1/Actividades.txt` |
 | `X:/Unidades`             | `X:/Unidades/Unidad11/apartado1/Actividades.txt`       |
 | `/Programas`              | `/Programas/Unidad11/apartado1/Actividades.txt`        |
@@ -287,8 +287,6 @@ formato texto a qué ruta se está refiriendo, o al menos parte de ella.
 * `fun getAbsolutePath():String` devuelve la ruta absoluta. Si el objeto
   `File` se inicializó usando una ruta relativa, el resultado incluye
   también la carpeta de trabajo.
-
-![](file:///tmp/lu37016xc6sfk.tmp/lu37016xc6sgf_tmp_f51ce7fc1f34b301.png)
 
 Veamos un ejemplo de cómo funcionan estos tres métodos. Obsérvese que
 las rutas relativas se añaden a la ruta de la carpeta de trabajo (donde
@@ -416,7 +414,7 @@ métodos adecuados. Entre los más populares hay los siguientes:
   elemento representado por esta ruta. El resultado se codifica en un
   único número entero cuyo valor es el número de milisegundos que han
   pasado desde el 1 de junio de
-  1970. 
+  1970.
 
 El ejemplo siguiente muestra cómo funcionan estos métodos. Para
 probarlos crea el archivo `Documento.txt` en la carpeta `C:\Temp`.
@@ -616,13 +614,17 @@ object PruebasGestionFicheros3 {
 }
 
 ```
+
 # 3. LECTURA Y ESCRITURA EN ENTRADA Y SALIDA ESTANDAR
+
 Dentro de la biblioteca estándar de Kotlin, el paquete `kotlin.io` proporciona elementos esenciales para trabajar con los flujos de entrada y salida estándar (Input/Output o I/O). Esta transmisión de información entre la memoria principal y los dispositivos de entrada y salida permite, entre otras cosas, leer y escribir datos.
 
 Vamos a ver cómo se transfieren datos de entrada y salida en consola (el paquete `kotlin.io` también proporciona herramientas para trabajar con archivos, como veremos mas adelante), lo que es útil para mostrar una información en **pantalla** y para obtener información aportada por el usuario, habitualmente a través de un dispositivo de entrada como el **teclado**.
 
 ## 3.1. Output: Escribir en consola
+
 Como ya hemos visto en multitud de ejemplos previos durante el curso, para enviar un mensaje a la salida estándar (la pantalla) usamos habitualmente las funciones `print()` y `println()`, que se diferencian en que la segunda incluye un salto de línea al final. Este salto de línea es reproducible a través del caracter especial `\n`, de la siguiente forma `print("\n")`
+
 ```kotlin
 fun main(args : Array<String>) {
 	println("1. println ")
@@ -633,8 +635,208 @@ fun main(args : Array<String>) {
 }
 ```
 
+El programa anterior obtiene este resultado:
+
+```
+1. println 
+2. println 
+1. print 2. print
+```
+
+Podemos añadir un salto de línea en la función `print` (aunque para eso ya tenemos a `println`):
+
+```kotlin
+print("Función print con salto de línea\n")
+```
+
+Un ejemplo que utiliza la función println para mostrar valores en consola:
+
+```kotlin
+val numero = 12.3
+println("numero")           	// numero
+println(numero)             	// 12.3
+println("$numero")          	// 12.3
+println("numero = $numero") 	// numero = 12.3
+println("${numero + numero}")   // 24.6
+println(12.3)               	// 12.3
+```
+
+## 3.2. Input: Lectura de datos en consola
+
+Para la lectura de datos por teclado utilizamos la función `readLine` (otra opción que no vamos a ver ahora es utilizar la clase `Scanner` importada desde la librería estándar de Java con `import java.util.Scanner`):
+
+```kotlin
+
+fun main(args: Array<String>) {
+	print("Tu nombre: ")
+	val nombre = readLine()
+	println("Hola $nombre")
+}
+```
+
+La función `readLine()` convierte la entrada en un `String` (realmente devuelve un `String?` puesto que puede ser nulo) aunque es posible tomar la entrada y convertirla a otro tipo explícitamente:
+
+```kotlin
+print("Nombre: ")
+val nombre = readLine()
+print("Edad: ")
+val edad = Integer.valueOf(readLine()) // cuidadín!!   
+println("Tu nombre es $nombre y tienes $edad años.")
+```
+
+El programa anterior funcionará bien mientras el usuario introduzca un entero como valor de edad, pero en caso contrario saltará un excepción durante la ejecución (`NumberFormatException`). Una primera solución podría pasar por el uso del manejo de excepciones (que veremos en posteriores entradas) para capturar los casos problemáticos:
+
+```kotlin
+print("Nombre: ")
+val nombre = readLine()
+print("Edad: ")
+try {
+	val edad = Integer.valueOf(readLine())
+	println("Tu nombre es $nombre y tienes $edad años.")
+} catch (ex: NumberFormatException) {
+	println("Edad no válida")
+}
+```
+
+A veces se pueden ver ejemplos de código que intentan resolver este problema con el operador de aserción `!!` (revisar Gestión de tipos nulos en Kotlin), y de esta manera se le avisa al compilador que confíe que la función `readLine` siempre retornará un `String`, pero en general no es una buena manera de validar la entrada de datos.
+
+```kotlin
+val num: Int
+print("Introduce un número entero: ")
+num = readLine()!!.toInt() // prometemos algo que no podemos cumplir
+println(num)
+```
+
+A pesar de la pretendida seguridad del operador `!!`, seguimos sin escapar del `NumberFormatException`. Recuerda que además de la función `toInt()` también existen las funciones `toFloat()`, `toDouble()`, `toLong()`, `toShort()` y `toByte()` para la conversión de tipos (ver Tipos básicos de datos).
+
+Existen distintas formas de resolver éste y otros problemas similares respecto a la entrada de datos por parte del usuario. Algunas soluciones pasan por combinar la función `readLine` con el operador de llamada segura `?` y con la expresión `try` para devolver un valor (otras soluciones también utilizan el operador `as` que vimos en Comprobación y conversión de tipos con `is` y `as`). Un ejemplo:
+
+```kotlin
+val num: Int?
+print("Introduce un número entero: ")
+num = try {
+	readLine()?.toInt()
+} catch (ex: NumberFormatException) {
+	null
+}
+if (num != null) {
+	println("El número es: $num")
+} else {
+	println("¡Eso no es un número entero!")
+}
+```
+
+En este ejemplo el valor introducido es asignado a la variable anulable `num`, cuyo valor depende de que se procese el contenido de la expresión `try` (cuando se ingresa un entero) o de que, en caso contrario, se produzca un `NumberFormatException` que es capturado por `catch`, que retorna `null` que es asignado a la variable `num`.
+
+Pero podemos mejorarla prescindiendo de `try..catch` y sustituyendo la función `toInt` por la función `toIntOrNull`:
+
+```kotlin
+val num: Int?
+print("Introduce un número entero: ")
+num = readLine()?.toIntOrNull()
+if (num != null) {
+	println("El número es: $num")
+} else {
+	println("¡Eso no es un número entero!")
+}
+```
+
+En el ejemplo anterior llamamos a `readLine` con el operador `?` para realizar la conversión con `toIntOrNul` de forma segura. La función `toIntOrNull()` requiere que la variable sea de tipo anulable (`val num: Int?`) porque si la conversión a entero falla, se retorna null, que es asignado a `num`. Igualmente contamos con las funciones `toFloatOrNull()`, `toDoubleOrNull()`, `toLongOrNull()`, `toShortOrNull()` y `toByteOrNull()` que en caso de no poder realizar la conversión de tipos devuelven `null`.
+
+## 3.3. Aplicando formato a la salida estándar
+
+A continuacion veremos como aplicar formato a las cadenas que se imprimen en salida estandar. La explicación esta hecha en Kotlin pero en Java aplica prácticamente lo mismo.
+
+En Kotlin (Y la mayoría de los lenguajes de programación) podemos utilizar formatos para reemplazar variables dentro de los String, supongamos que queremos imprimir nuestro nombre, edad y peso, podríamos hacer algo así
+
+```kotlin
+val name: String = "Walter White"
+val age: Int = 50
+val weight: Double = 75.5
+
+val description = "Me llamo " + name + ", tengo " + age + " años y peso " + weight +" kg."
+println(description)
+
+// O mejor aún, en Kotlin podemos hacer esto
+val description = "Me llamo $name, tengo $age años y peso $weight kg"
+println(description)
+
+// Ahora, si usamos el String format
+val description = String.format("Me llamo %s, tengo %d años y peso %.2f kg", name, age, weight)
+println(description)
+```
+
+Las 3 soluciones son correctas e imprimen lo mismo, pero la tercera es la más útil al usar `Strings` donde tendrás que reemplazar variables porque te ayuda a tener código más limpio y soportar diferentes idiomas.
+
+Si observas en la última opción, lo que hacemos es poner ciertos formatos dentro del `String` y luego al final, separados por coma, ponemos las variables que queremos que se reemplacen en el `String`: `%s` para otros strings como `name`, `%d` para enteros como `age` y `%f` para `doubles` y `floats`, en el `.2` que ves en el `%f` el `2` es la cantidad de decimales que queremos que se impriman, así por ejemplo en este caso se imprimiría el peso como `75.50`.
+
+Aquí te dejo una tabla con los formatos más comunes, también pueden ser usados en Java:
 
 
+| **Formato** | Tipo de**dato**                                          |
+| ------------- | ---------------------------------------------------------- |
+| %b          | Boolean                                                  |
+| %c          | Char                                                     |
+| %d          | Integer                                                  |
+| %e          | Float en notación científica                           |
+| %f          | Float y Double (Agrega %**.n**f para forzar n decimales) |
+| %o          | Formato Octal                                            |
+| %s          | Strings                                                  |
+| %x          | Formato Hexadecimal                                      |
+
+Hay otros 3 o 4 formatos más pero son tan poco usuales que si los necesitas prefiero que los consultes tu en la documentación.
+
+¿Que muestra como salida el siguiente código?
+
+```kotlin
+ val str1 = String.format("%d", 404) // Integer value  
+ val str2 = String.format("%s", "Mehmet") // String value  
+ val str3 = String.format("%f", 404.00) // Float value  
+ val str4 = String.format("%x", 404) // Hexadecimal value  
+ val str5 = String.format("%c", 'c') // Char value  
+ println(str1)
+ println(str2)
+ println(str3)
+ println(str4)
+ println(str5)
+```
+
+## 3.3.1. Biblioteca KFormat
+
+https://github.com/marcelmay/kformat
+
+Existen bibliotecas hechas por otras personas, que intentan solucionar alguna necesidad que han encontrado en sus desarrollos.
+
+KFormat es una pequeña biblioteca de Kotlin para la salida de texto con formato, como por ejemplo la impresión de valores en una tabla estructurada. Los casos de uso típicos incluyen el desarrollo de herramientas CLI. (Command Line Interface)
+
+Un ejemplo: Dar formato a una tabla, incluido el cambio de tamaño de celda:
+
+```kotlin
+table {
+    header("A", "B", "C", "Long_Header")
+
+    row(10, "b...1", 2.1f, "foo")
+    row(20, "b2", 1/3f, "bar")
+
+    hints {
+        alignment("A", Hints.Alignment.LEFT)
+        precision("C", 2)
+        postfix("C", "%")
+        borderStyle = Table.BorderStyle.SINGLE_LINE // or NONE
+    }
+}.render(StringBuilder())
+```
+
+Genera la siguiente salida:
+
+```
+A  |     B |     C | Long_Header
+---|-------|-------|------------
+10 | b...1 | 2.10% |         foo
+20 |    b2 | 0.33% |         bar
+```
+
+<!--
 # 3. LECTURA Y ESCRITURA DE FICHEROS
 
 Normalmente las aplicaciones que utilizan archivos no están centradas en
@@ -1072,3 +1274,7 @@ También se ha utilizado como referencia las siguientes fuentes:
 [2] Apuntes de programación de Natividad Prieto, Francisco Marqués y
 Javier Piris (E.T.S. de Informática, Universidad Politécnica de
 Valencia).
+
+[3] https://kotlindoc.blogspot.com/2019/04/io-entrada-y-salida-de-datos-en-consola.html
+
+[4] https://hackaprende.com/2020/11/25/formatos-de-string-en-kotlin/
