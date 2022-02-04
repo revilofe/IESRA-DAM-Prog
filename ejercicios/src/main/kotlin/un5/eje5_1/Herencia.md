@@ -40,6 +40,8 @@ Recorre el mapa y dispara y muestra su información cada vez que dispares.
 | RA4.h Se han definido y utilizado clases heredadas | No funciona o no adecuada 0          | Se han implmentado la herencia, los metodos y propiedades pero no del todo correcto 5| Funciona y es correcta la implementación 10 |
 
 Adicionalmente se tendrá en cuenta:
+- El uso de modificadores de acceso (RA4.g)
+- El uso de métodos y propiedades estaticas (RA4.i)
 - El código realizado es óptimo.
 - El código realizado es limpio y está comentado.
 - Se cumple requisitos de entrega.
