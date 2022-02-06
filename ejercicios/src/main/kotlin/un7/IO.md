@@ -79,7 +79,7 @@ pertenece al *`package java.io`* de Java. Por lo tanto será necesario
 importarla antes de poder usarla.
 
 ```kotlin
-import java.io.File;
+import java.io.File
 ```
 
 Esta clase permite manipular cualquier aspecto vinculado al sistema de
@@ -101,7 +101,7 @@ a cabo las operaciones.
 
 ```kotlin
 val ruta = "data.txt"
-val f = File(ruta);
+val f = File(ruta)
 ```
 
 Una ruta, path en inglés, es la forma general de un **nombre de archivo
@@ -140,9 +140,9 @@ manipular varios objetos. Por ejemplo, en el siguiente código se
 instancian tres objetos `File` diferentes.
 
 ```kotlin
-var carpetaFotos: File = File("C:/Fotos");
-var unaFoto: File = File("C:/Fotos/Foto1.png");
-var otraFoto: File = File("C:/Fotos/Foto2.png");
+var carpetaFotos: File = File("C:/Fotos")
+var unaFoto: File = File("C:/Fotos/Foto1.png")
+var otraFoto: File = File("C:/Fotos/Foto2.png")
 ```
 
 ## 2.2. Rutas absolutas y relativas
@@ -231,7 +231,7 @@ elemento al que se refiere el siguiente objeto `File` varía según el
 directorio de trabajo.
 
 ```kotlin
-val f = `File`("Unidad11/apartado1/Actividades.txt");
+val f = File("Unidad11/apartado1/Actividades.txt")
 ```
 
 
@@ -247,7 +247,7 @@ que los archivos y carpetas permanezcan en la misma ruta relativa al
 directorio de trabajo. Veámoslo con un ejemplo:
 
 ```kotlin
-val f = `File`("Activdades.txt");
+val f = File("Activdades.txt")
 ```
 
 Dada esta ruta relativa, basta garantizar que el fichero
@@ -503,12 +503,12 @@ object PruebasGestionFicheros {
         val doc = File("C:/Temp/Documento.txt")
         val mkdirFot: Boolean = fotos.mkdir()
         if (mkdirFot) {
-            System.out.println("Creada carpeta " + fotos.getName().toString() + "? " + mkdirFot)
+            println("Creada carpeta " + fotos.getName().toString() + "? " + mkdirFot)
         } else {
             val delCa: Boolean = fotos.delete()
-            System.out.println("Borrada carpeta " + fotos.getName().toString() + "? " + delCa)
+            println("Borrada carpeta " + fotos.getName().toString() + "? " + delCa)
             val delAr: Boolean = doc.delete()
-            System.out.println("Borrado archivo " + doc.getName().toString() + "? " + delAr)
+            println("Borrado archivo " + doc.getName().toString() + "? " + delAr)
         }
     }
 }
