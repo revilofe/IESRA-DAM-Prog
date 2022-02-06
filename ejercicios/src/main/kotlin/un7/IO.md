@@ -1265,16 +1265,16 @@ sobreescribe el fichero, sino que se añaden los 20 números al final.
 
 Parte del contenido de esta unidad didáctica es una traducción al
 castellano de los apuntes de programación de Joan Arnedo Moreno
-(Institut Obert de Catalunya, IOC).
+(Institut Obert de Catalunya, IOC) y recopilación de varios articulos.
 
 También se ha utilizado como referencia las siguientes fuentes:
 
-[1] Apuntes de programación de Jose Luis Comesaña (sitiolibre.com).
+1. Apuntes de programación de Jose Luis Comesaña (sitiolibre.com).
 
-[2] Apuntes de programación de Natividad Prieto, Francisco Marqués y
+2. Apuntes de programación de Natividad Prieto, Francisco Marqués y
 Javier Piris (E.T.S. de Informática, Universidad Politécnica de
 Valencia).
 
-[3] https://kotlindoc.blogspot.com/2019/04/io-entrada-y-salida-de-datos-en-consola.html
+3. https://kotlindoc.blogspot.com/2019/04/io-entrada-y-salida-de-datos-en-consola.html
 
-[4] https://hackaprende.com/2020/11/25/formatos-de-string-en-kotlin/
+4. https://hackaprende.com/2020/11/25/formatos-de-string-en-kotlin/
