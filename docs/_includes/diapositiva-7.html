@@ -2,16 +2,16 @@
 
 <section>
     <section data-markdown>
-        # Unidad 6
-        ## Creación de programas haciendo uso de características avanzadas de la POO: Herencia y polimorfismo
+        # Unidad 7
+        ## Operaciones de entrada/Salida y GUI
     </section>
     <!--
         Bloques de diapositivas
     -->
     <section data-markdown>
-        ## Resultado de Aprendizaje 7
+        ## Resultado de Aprendizaje 5
 
-        > Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación.
+        > Realiza operaciones de E/ y S/ usando el lenguaje y librerias
 
     </section>
     <section data-markdown>
@@ -30,17 +30,17 @@
 
         Información desde el sistema de archivos.
         1. Fundamentos de sistema de archivos.
-        1.1. Archivos (Texto, Binarios)
-        1.2. Directorios.
-        1.3. Flujos de E/S (Texto, Bytes)
+            1.1. Archivos (Texto, Binarios)
+            1.2. Directorios.
+            1.3. Flujos de E/S (Texto, Bytes)
         2. La consola y el teclado (RA5.a, b)
-        2.1. Escribir por consola
-        2.2. Lectura desde teclado
-        2.3. Formato a la información. (Scanner & println)
+            2.1. Escribir por consola
+            2.2. Lectura desde teclado
+            2.3. Formato a la información. (Scanner & println)
         3. API para trabajar con ficheros (RA5.c)
         4. Trabajar con ficheros (RA5.d, e)
-        4.1. Texto
-        4.2. Binarios
+            4.1. Texto
+            4.2. Binarios
     </section>
     <section data-markdown>
         ## Contenidos mínimos:
@@ -48,8 +48,8 @@
         Información desde interfaz gráfica de usuario
         5. Elementos básicos de una interface (RA5.f)
         6. Gestión de eventos (RA5.g)
-        6.1. Eventos
-        6.2. Controlador de eventos
+            6.1. Eventos
+            6.2. Controlador de eventos
         7. Uso de GUI para E/S de información (RA5.h)
     </section>
 
@@ -128,6 +128,7 @@ Información desde interfaz gráfica de usuario
 
         En Kotlin, heredado de Java, se define la abstracción de stream (flujo) para tratar la comunicación de información entre el programa y el exterior
         - Entre una fuente y un destino fluye una secuencia de datos
+
         Los flujos actúan como interfaz con el dispositivo o clase asociada
         - Operación independiente del tipo de datos y del dispositivo
         - Mayor flexibilidad (p.e. redirección, combinación)
@@ -145,7 +146,8 @@ Información desde interfaz gráfica de usuario
         - Entrada estándar - habitualmente el teclado
         - Salida estándar - habitualmente la consola
         - Salida de error - habitualmente la consola
-        En Java se accede a la E/S estándar a través de campos estáticos de la clase java.lang.System
+
+        En Java se accede a la E/S estándar a través de campos estáticos de la clase `java.lang.System`
         - System.in implementa la entrada estándar
         - System.out implementa la salida estándar
         - System.err implementa la salida de error
@@ -155,12 +157,17 @@ Información desde interfaz gráfica de usuario
     </section>
 
     <section data-markdown>
-        ## Consola
+        ## E/S por Consola (RA5.a, b)
 
-        API
+        - ![left](images/link.png) [Lectura y escritura en entrada y salida estándar](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/IO.md#3-lectura-y-escritura-en-entrada-y-salida-estandar)
+
+        ###API:
         - Escribir: `print`, `println`
         - Leer: `readline`, `readln`
-        - Formato: String.Format
+            - Evita el uso de `!!`
+            - Haz uso de `try` y `?:`
+            - Haz uso de `?` y `toIntOrNull` y similares
+        - Formato: `String.Format`
 
     </section>
 
