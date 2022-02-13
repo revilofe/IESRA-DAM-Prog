@@ -348,11 +348,36 @@ Información desde interfaz gráfica de usuario
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
         - `FIle`: **Gestión de ficheros**
-            - `renameTo`: permite crear una carpeta, indicando la ruta junto con el nombre de la carperta
-            - `delete`: borra el archivo o carpeta. Se podrá borrar una carpeta si está vacía.
+            - `renameTo`: permite cambiar el nombre y ubicación de un archivo o directorio.
 
     </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
 
+        - ***Actividad individual:***
+        Dentro de la carpeta `Temp` crea una carpeta llamada `Media` y otra llamada `Fotos`. Dentro de la carpeta `Fotos` crea
+        dos documentos llamados `Documento.txt` y `Fotos.txt`. Después de ejecutar el programa, observa como la carpeta `Fotos` se
+        ha movido y ha cambiado de nombre, pero mantiene en su interior el archivo `Fotos.txt`. El archivo `Documento.txt` se ha
+        movido hasta la carpeta `Temp`. Puedes modificarlo para asegurarte que existen los directorios destino.
+
+        [Ejemplo5](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E05RenombraFicheroYDirectorios.kt)
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+        - `FIle`: **Listar contenido de directorio**
+            - `listFiles`:  vector de objectos `File` con todos los elementos contenidos en la carpeta.
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+
+        - ***Actividad individual:***
+        Antes de ejecutarlo, crea una carpeta `Temp`. Dentro crea o copia cualquier cantidad de carpetas o archivos.
+
+        [Ejemplo6](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E06ListaContenidoDirectorio.kt)
+
+    </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
 
