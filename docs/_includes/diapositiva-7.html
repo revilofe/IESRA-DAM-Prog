@@ -62,7 +62,7 @@
     -->
 
     <!--
-OBJETIVOS DIDDACTIVOS
+OBJETIVOS DIDACTIVOS
 
 Información desde el sistema de archivos.
 1. Reconocer los paquetes y funciones más importantes para las operaciones de entrada/salida. (RA5.c)
@@ -115,7 +115,7 @@ Información desde interfaz gráfica de usuario
     <section data-markdown>
         ## Aplicaciones y sistema de archivos
 
-        - La gestión del sistema de archivos ¿es una función del ... ?
+        - La gestión del **sistema de archivos** ¿es una función del ... ?
         - Los lenguajes de programación también proporcionan su propia biblioteca para trabajar con el sistema de archivos
         - Kotlin ofrece un conjunto de clases incluidas dentro del [Package `kotlin.io`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
         - Estas clases están basadas en las ofrecidas por Java en el package `java.io`.
@@ -148,12 +148,12 @@ Información desde interfaz gráfica de usuario
         - Salida de error - habitualmente la consola
 
         En Java se accede a la E/S estándar a través de campos estáticos de la clase `java.lang.System`
-        - System.in implementa la entrada estándar
-        - System.out implementa la salida estándar
-        - System.err implementa la salida de error
+        - `System.in` implementa la entrada estándar
+        - `System.out` implementa la salida estándar
+        - `System.err` implementa la salida de error
 
         ![center](images/flujo2.png)
-        Curiosidad: Mira la implementación de println(), readline()
+        Curiosidad: Mira la implementación de `println()`, `readline()`
     </section>
 
     <section data-markdown>
@@ -161,10 +161,10 @@ Información desde interfaz gráfica de usuario
 
         - ![left](images/link.png) [Lectura y escritura en entrada y salida estándar](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/IO.md#3-lectura-y-escritura-en-entrada-y-salida-estandar)
 
-        ###API:
+        ### API:
         - Escribir: `print`, `println`
         - Leer: `readline`, `readln`
-            - Evita el uso de `!!`
+            - **Evita el uso de `!!`**
             - Haz uso de `try` y `?:`
             - Haz uso de `?` y `toIntOrNull` y similares
         - Formato: `String.Format`
@@ -172,18 +172,91 @@ Información desde interfaz gráfica de usuario
     </section>
 
     <section data-markdown>
-        ## herencia, superclase, subclase. (RA7.a)
+        ## API para trabajar con ficheros (RA5.c)
 
-        - Existen varias funcionalidades que se le puede dar a la herencia:
-        3. **Especificación (define interface)**: Se crea una estructura en la que la superclase especifica la interface
-        de sus descendientes. `Texto, Linea, Figura -> ObjetoGrafico`
-        - `ObjetoGráfico` especifica como trabajar con objetos gráficos, los descendientes pueden implementar los detalles.
-        4. **Construcción (Usado para construir la subbase)**: La hija puede aprovechar la padre pero no tienen conexión. `Pila -> Lista`
-        - la clase `Lista` contribuye a crear una `Pila` a través de la herencia.
+        - La clases mas básica para operar con archivos es la clase `File`, ubicada en el package `java.io` de java.
+            - habrá que importarla `import java.io.File`
+            - `File`, ademas, representa la ruta dentro del sistema de archivos.
+        - Esta clase permite manipular *cualquier aspecto vinculado al sistema de archivos*:
+            -   Ficheros: abrir, cerrar, renombrar,...
+            -   Directorios: abrir, listar contenido,...
+
 
     </section>
     <section data-markdown>
-        ## herencia, superclase, subclase. (RA7.a)
+        ## API para trabajar con ficheros (RA5.c)
+
+        - `File` tendremos que instanciarla y recibe como argumento una `String` que corresponde a la ruta del archivo.
+            - La ruta, **Path** en inglés, contiene el camino al archivo o directorio, junto al nombre.
+            - La ruta, es única en un sistema de archivos.
+            - La ruta puede ser relativa y absoluta.
+        ~~~Kotlin
+        val ruta = "./data.txt"
+        val f = File(ruta)
+        ~~~
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+
+        - Sobre la ruta podemos decir:
+            - Que dependen del sistema de archivos: Por ejemplo, Windows (`C:\` y `\`) y Linux (`/var` y `/`)
+            - Kotlin nos permite usar `/` para representar rutas.
+            - Un objeto `File` representa solo una ruta. Para varias rutas, habrá que crear farios objetos `File`'s
+
+        ~~~Kotlin
+        var carpetaFotos: File = File("C:/Fotos")
+        var unaFoto: File = File("C:/Fotos/Foto1.png")
+        var otraFoto: File = File("C:/Fotos/Foto2.png")
+        ~~~
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+        - Conceptos:
+            - **Raíz**: Punto de inicio de la estructura de archivos. La Raíz depende del sistema operativo.
+            - **Directorio de trabajo**: Directorio que se asigna a un programa cuando se ejecuta, normalmente el directorio en el que esta el ejecutable.
+
+        *¿Cual es el directorio de trabajo de nuestro IDE, cuando ejecutamos un proyecto?*
+
+        - Rutas relativas y absolutas
+            - **Absoluta**: Referencia de un objeto desde la raíz.
+            - **Relativa**: Referencia a un objeto desde el directorio de trabajo. El directorio de trabajo puede cambiar cada vez que se ejecuta el programa.
+
+
+        *¿Cuando usar una y cuando usar otra?*
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+
+        - La ruta relativa es similar a la absoluta, pero nunca se indica la raiz.
+        - Incluye la raiz a pesar de indicarse.
+
+        Por ejemplo:
+
+        ```kotlin
+        val f = File("Unidad11/apartado1/Actividades.txt")
+        ```
+
+        Dependiendo del directorio de trabajo sería:
+
+        | Directorio de trabajo | Ruta real |
+        | :--------------------------: | :-------------------------------------------------------: |
+        | `C:/Proyectos/Java`       | `C:/Proyectos/Java/Unidad11/apartado1/Actividades.txt` |
+        | `X:/Unidades`       | `X:/Unidades/Unidad11/apartado1/Actividades.txt` |
+        | `/Programas`       | `/Programas/Unidad11/apartado1/Actividades.txt` |
+
+        * Permite la portabilidad del software.
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+
+        -
+    </section>
+
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
 
         - ***Actividad individual evaluable:***
         [6.1 De los 4 tipos vistos, pon ejemplo de 2](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=436534)
