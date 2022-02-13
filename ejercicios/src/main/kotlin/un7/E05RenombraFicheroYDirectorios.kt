@@ -3,7 +3,7 @@ package un7
 import java.io.File
 import kotlin.jvm.JvmStatic
 
-object PruebasGestionFicheros2 {
+object E05RenombraFicheroYDirectorios {
     @JvmStatic
     fun main(args: Array<String>) {
         val origenDir = File("C:/Temp/Fotos")
