@@ -3,7 +3,7 @@ package un7
 import java.io.File
 import kotlin.jvm.JvmStatic
 
-object E03CreaBorraDirectorios {
+object E04CreaBorraDirectorios {
     @JvmStatic
     fun main(args: Array<String>) {
         val fotos = File("./Temp/Fotos")
