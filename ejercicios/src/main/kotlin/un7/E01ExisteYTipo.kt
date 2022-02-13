@@ -1,15 +1,14 @@
 package un7
 
 import kotlin.jvm.JvmStatic
-import un7.PruebaExiste
 import java.io.File
 
-object PruebaExiste {
+object E01ExisteYTipo {
     @JvmStatic
     fun main(args: Array<String>) {
-        val temp = File("C:/Temp")
-        val fotos = File("C:/Temp/Fotos")
-        val document = File("C:/Temp/Documento.txt")
+        val temp = File("./Temp")
+        val fotos = File("./Temp/Fotos")
+        val document = File("./Temp/Documento.txt")
         println(temp.absolutePath + " ¿existe? " + temp.exists())
         mostrarEstado(fotos)
         mostrarEstado(document)

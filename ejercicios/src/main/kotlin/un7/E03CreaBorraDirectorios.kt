@@ -3,11 +3,11 @@ package un7
 import java.io.File
 import kotlin.jvm.JvmStatic
 
-object PruebasGestionFicheros {
+object E03CreaBorraDirectorios {
     @JvmStatic
     fun main(args: Array<String>) {
-        val fotos = File("C:/Temp/Fotos")
-        val doc = File("C:/Temp/Documento.txt")
+        val fotos = File("./Temp/Fotos")
+        val doc = File("./Temp/Documento.txt")
         val mkdirFot: Boolean = fotos.mkdir()
         if (mkdirFot) {
             System.out.println("Creada carpeta " + fotos.getName().toString() + "? " + mkdirFot)
