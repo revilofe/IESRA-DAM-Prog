@@ -6,7 +6,7 @@ import kotlin.jvm.JvmStatic
 object E06ListaContenidoDirectorio {
     @JvmStatic
     fun main(args: Array<String>) {
-        val dir = File("C:/Temp")
+        val dir = File("./Temp")
         val lista = dir.listFiles()
         println("Contenido de " + dir.absolutePath + " :")
 
