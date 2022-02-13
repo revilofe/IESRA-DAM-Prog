@@ -21,7 +21,8 @@
         - c) Se han reconocido las posibilidades de entrada/salida del lenguaje y las librerías asociadas.
         - d) Se han utilizado ficheros para almacenar y recuperar información.
         - e) Se han creado programas que utilicen diversos métodos de acceso al contenido de los ficheros.
-        - f) Se han utilizado las herramientas del entorno de desarrollo para crear interfaces gráficos de usuario simples.
+        - f) Se han utilizado las herramientas del entorno de desarrollo para crear interfaces gráficos de usuario
+        simples.
         - g) Se han programado controladores de eventos.
         - h) Se han escrito programas que utilicen interfaces gráficos para la entrada y salida de información.
     </section>
@@ -30,17 +31,17 @@
 
         Información desde el sistema de archivos.
         1. Fundamentos de sistema de archivos.
-            1.1. Archivos (Texto, Binarios)
-            1.2. Directorios.
-            1.3. Flujos de E/S (Texto, Bytes)
+        1.1. Archivos (Texto, Binarios)
+        1.2. Directorios.
+        1.3. Flujos de E/S (Texto, Bytes)
         2. La consola y el teclado (RA5.a, b)
-            2.1. Escribir por consola
-            2.2. Lectura desde teclado
-            2.3. Formato a la información. (Scanner & println)
+        2.1. Escribir por consola
+        2.2. Lectura desde teclado
+        2.3. Formato a la información. (Scanner & println)
         3. API para trabajar con ficheros (RA5.c)
         4. Trabajar con ficheros (RA5.d, e)
-            4.1. Texto
-            4.2. Binarios
+        4.1. Texto
+        4.2. Binarios
     </section>
     <section data-markdown>
         ## Contenidos mínimos:
@@ -48,8 +49,8 @@
         Información desde interfaz gráfica de usuario
         5. Elementos básicos de una interface (RA5.f)
         6. Gestión de eventos (RA5.g)
-            6.1. Eventos
-            6.2. Controlador de eventos
+        6.1. Eventos
+        6.2. Controlador de eventos
         7. Uso de GUI para E/S de información (RA5.h)
     </section>
 
@@ -109,24 +110,29 @@ Información desde interfaz gráfica de usuario
         ![center](images/programa.gif)
         - Trabajamos con datos, variables.... ¿Que pasa cuando se cierra la aplicación?
         - ¿Que nos facilita el sistema de Archivos?
-        - ¿Que elementos puedes encontrar en un [sistema de archivos](https://es.wikipedia.org/wiki/Sistema_de_archivos)?
+        - ¿Que elementos puedes encontrar en un [sistema de
+        archivos](https://es.wikipedia.org/wiki/Sistema_de_archivos)?
 
     </section>
     <section data-markdown>
         ## Aplicaciones y sistema de archivos
 
         - La gestión del **sistema de archivos** ¿es una función del ... ?
-        - Los lenguajes de programación también proporcionan su propia biblioteca para trabajar con el sistema de archivos
-        - Kotlin ofrece un conjunto de clases incluidas dentro del [Package `kotlin.io`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+        - Los lenguajes de programación también proporcionan su propia biblioteca para trabajar con el sistema de
+        archivos
+        - Kotlin ofrece un conjunto de clases incluidas dentro del [Package
+        `kotlin.io`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
         - Estas clases están basadas en las ofrecidas por Java en el package `java.io`.
-        - Mediante la invocación de los métodos adecuados definidos de estas clases es posible llevar a cabo prácticamente cualquier tarea sobre el sistema de archivos.
+        - Mediante la invocación de los métodos adecuados definidos de estas clases es posible llevar a cabo
+        prácticamente cualquier tarea sobre el sistema de archivos.
 
     </section>
 
     <section data-markdown>
         ## Flujos
 
-        En Kotlin, heredado de Java, se define la abstracción de stream (flujo) para tratar la comunicación de información entre el programa y el exterior
+        En Kotlin, heredado de Java, se define la abstracción de stream (flujo) para tratar la comunicación de
+        información entre el programa y el exterior
         - Entre una fuente y un destino fluye una secuencia de datos
 
         Los flujos actúan como interfaz con el dispositivo o clase asociada
@@ -134,8 +140,8 @@ Información desde interfaz gráfica de usuario
         - Mayor flexibilidad (p.e. redirección, combinación)
         - Diversidad de dispositivos (fichero, pantalla, teclado, red, …)
         - Diversidad de formas de comunicación
-            - Modo de acceso: secuencial, aleatorio
-            - Información intercambiada: binaria, caracteres, líneas
+        - Modo de acceso: secuencial, aleatorio
+        - Información intercambiada: binaria, caracteres, líneas
         ![center](images/flujo1.png)
     </section>
 
@@ -164,9 +170,9 @@ Información desde interfaz gráfica de usuario
         ### API:
         - Escribir: `print`, `println`
         - Leer: `readline`, `readln`
-            - **Evita el uso de `!!`**
-            - Haz uso de `try` y `?:`
-            - Haz uso de `?` y `toIntOrNull` y similares
+        - **Evita el uso de `!!`**
+        - Haz uso de `try` y `?:`
+        - Haz uso de `?` y `toIntOrNull` y similares
         - Formato: `String.Format`
 
     </section>
@@ -175,11 +181,11 @@ Información desde interfaz gráfica de usuario
         ## API para trabajar con ficheros (RA5.c)
 
         - La clases mas básica para operar con archivos es la clase `File`, ubicada en el package `java.io` de java.
-            - habrá que importarla `import java.io.File`
-            - `File`, ademas, representa la ruta dentro del sistema de archivos.
+        - habrá que importarla `import java.io.File`
+        - `File`, ademas, representa la ruta dentro del sistema de archivos.
         - Esta clase permite manipular *cualquier aspecto vinculado al sistema de archivos*:
-            -   Ficheros: abrir, cerrar, renombrar,...
-            -   Directorios: abrir, listar contenido,...
+        - Ficheros: abrir, cerrar, renombrar,...
+        - Directorios: abrir, listar contenido,...
 
 
     </section>
@@ -187,9 +193,9 @@ Información desde interfaz gráfica de usuario
         ## API para trabajar con ficheros (RA5.c)
 
         - `File` tendremos que instanciarla y recibe como argumento una `String` que corresponde a la ruta del archivo.
-            - La ruta, **Path** en inglés, contiene el camino al archivo o directorio, junto al nombre.
-            - La ruta, es única en un sistema de archivos.
-            - La ruta puede ser relativa y absoluta.
+        - La ruta, **Path** en inglés, contiene el camino al archivo o directorio, junto al nombre.
+        - La ruta, es única en un sistema de archivos.
+        - La ruta puede ser relativa y absoluta.
         ~~~Kotlin
         val ruta = "./data.txt"
         val f = File(ruta)
@@ -200,9 +206,9 @@ Información desde interfaz gráfica de usuario
         ## API para trabajar con ficheros (RA5.c)
 
         - Sobre la ruta podemos decir:
-            - Que dependen del sistema de archivos: Por ejemplo, Windows (`C:\` y `\`) y Linux (`/var` y `/`)
-            - Kotlin nos permite usar `/` para representar rutas.
-            - Un objeto `File` representa solo una ruta. Para varias rutas, habrá que crear farios objetos `File`'s
+        - Que dependen del sistema de archivos: Por ejemplo, Windows (`C:\` y `\`) y Linux (`/var` y `/`)
+        - Kotlin nos permite usar `/` para representar rutas.
+        - Un objeto `File` representa solo una ruta. Para varias rutas, habrá que crear farios objetos `File`'s
 
         ~~~Kotlin
         var carpetaFotos: File = File("C:/Fotos")
@@ -215,22 +221,25 @@ Información desde interfaz gráfica de usuario
         ## API para trabajar con ficheros (RA5.c)
 
         - ***Actividad individual:***
-        Accede al ejemplo, ejecutalo y investiga y actúa para que el programa responda `true` a la pregunta ¿Existe? y ¿archivo? ¿carpeta?
+        Accede al ejemplo, ejecutalo y investiga y actúa para que el programa responda `true` a la pregunta ¿Existe? y
+        ¿archivo? ¿carpeta?
 
-        [Ejemplo 1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
+        [Ejemplo1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
 
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
         - Conceptos:
-            - **Raíz**: Punto de inicio de la estructura de archivos. La Raíz depende del sistema operativo.
-            - **Directorio de trabajo**: Directorio que se asigna a un programa cuando se ejecuta, normalmente el directorio en el que esta el ejecutable.
+        - **Raíz**: Punto de inicio de la estructura de archivos. La Raíz depende del sistema operativo.
+        - **Directorio de trabajo**: Directorio que se asigna a un programa cuando se ejecuta, normalmente el directorio
+        en el que esta el ejecutable.
 
         *¿Cual es el directorio de trabajo de nuestro IDE, cuando ejecutamos un proyecto?*
 
         - Rutas relativas y absolutas
-            - **Absoluta**: Referencia de un objeto desde la raíz.
-            - **Relativa**: Referencia a un objeto desde el directorio de trabajo. El directorio de trabajo puede cambiar cada vez que se ejecuta el programa.
+        - **Absoluta**: Referencia de un objeto desde la raíz.
+        - **Relativa**: Referencia a un objeto desde el directorio de trabajo. El directorio de trabajo puede cambiar
+        cada vez que se ejecuta el programa.
 
 
         *¿Cuando usar una y cuando usar otra?*
@@ -253,16 +262,17 @@ Información desde interfaz gráfica de usuario
 
         | Directorio de trabajo | Ruta real |
         | :--------------------------: | :-------------------------------------------------------: |
-        | `C:/Proyectos/Java`       | `C:/Proyectos/Java/Unidad11/apartado1/Actividades.txt` |
-        | `X:/Unidades`       | `X:/Unidades/Unidad11/apartado1/Actividades.txt` |
-        | `/Programas`       | `/Programas/Unidad11/apartado1/Actividades.txt` |
+        | `C:/Proyectos/Java` | `C:/Proyectos/Java/Unidad11/apartado1/Actividades.txt` |
+        | `X:/Unidades` | `X:/Unidades/Unidad11/apartado1/Actividades.txt` |
+        | `/Programas` | `/Programas/Unidad11/apartado1/Actividades.txt` |
 
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
 
         - ***Actividad individual:***
-        Accede al ejemplo, ejecutalo y investiga y actúa para que el programa muestre información de las dos rutas relativas y absolutas.
+        Accede al ejemplo, ejecutalo y investiga y actúa para que el programa muestre información de las dos rutas
+        relativas y absolutas.
 
         [Ejemplo 2](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E02RutaRelativaAbsoluta.kt)
 
@@ -271,11 +281,14 @@ Información desde interfaz gráfica de usuario
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
 
-        [File Java 17](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html)
-        [File Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+        - URLs de consulta:
+            - [File Java 17](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html)
+            - [File Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
 
-        - `FIle`: Obtener la ruta
-            - `getParent`:  devuelve la ruta de la carpeta del elemento referido por esta ruta.
+        ----
+
+        - `FIle`: **Obtener la ruta**
+            - `getParent`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
             - `getName`: devuelve el nombre del elemento que representa en la ruta.
             - `getAbosultePath`: devuelve la ruta absoluta.
 
@@ -284,29 +297,68 @@ Información desde interfaz gráfica de usuario
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
-        - `FIle`: Comprobaciones de estado
-            - `exists`:  devuelve la ruta de la carpeta del elemento referido por esta ruta.
+        - `FIle`: **Comprobaciones de estado**
+            - `exists`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
             - `isFile`: devuelve el nombre del elemento que representa en la ruta.
             - `isDirectory`: devuelve la ruta absoluta.
 
-        [Ver Ejemplo 1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
+        [Ver Ejemplo1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
 
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
-        - `FIle`: Propiedades de ficheros
-            - `length`:  devuelve la ruta de la carpeta del elemento referido por esta ruta.
+        - `FIle`: **Propiedades de ficheros**
+            - `length`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
             - `lastModified`: devuelve el nombre del elemento que representa en la ruta.
 
-
-        [Ver Ejemplo 1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
+        [Ver Ejemplo3](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E03PropiedadesFicheroYDirectorios.kt)
 
     </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+
+        - ***Actividad individual:***
+        Accede al ejemplo, ejecutalo y investiga y actúa para que el programa muestre información distinta a la primera
+        ejecución.
+
+        [Ejemplo3](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E03PropiedadesFicheroYDirectorios.kt)
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+        - `FIle`: **Gestión de ficheros**
+            - `mkdir`: permite crear una carpeta, indicando la ruta junto con el nombre de la carperta
+            - `delete`: borra el archivo o carpeta. Se podrá borrar una carpeta si está vacía.
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+
+        - ***Actividad individual:***
+        Para probar el ejemplo primero asegúrate de que en el Directorio de Trabajo no hay ninguna carpeta llamada Temp
+        y ejecute el programa.
+        Todo fallará, ya que las rutas son incorrectas (no existe `Temp`). Luego, crea la carpeta `Temp` y en su interior
+        crea un nuevo documento llamado `Documento.txt` (puede estar vacío). Ejecuta el programa y verás que se habrá
+        creado una nueva carpeta llamada `Fotos`. Si lo vuelves a ejecutar por tercera vez podrás comprobar que se habrá
+        borrado.
+
+        [Ejemplo4](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E04CreaBorraDirectorios.kt)
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+        - `FIle`: **Gestión de ficheros**
+            - `renameTo`: permite crear una carpeta, indicando la ruta junto con el nombre de la carperta
+            - `delete`: borra el archivo o carpeta. Se podrá borrar una carpeta si está vacía.
+
+    </section>
+
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
 
         - ***Actividad individual evaluable:***
-        [6.1 De los 4 tipos vistos, pon ejemplo de 2](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=436534)
+        [6.1 De los 4 tipos vistos, pon ejemplo de
+        2](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=436534)
     </section>
 
     <section data-markdown>
@@ -315,9 +367,11 @@ Información desde interfaz gráfica de usuario
     <section data-markdown>
         ## BIBLIOGRAFÍA
         - ![left](images/link.png) [https://kotlinlang.org/](https://kotlinlang.org)
-        - ![left](images/link.png) [https://www.fdi.ucm.es/profesor/jpavon/poo/2.13.EntradaySalida.pdf](https://www.fdi.ucm.es/profesor/jpavon/poo/2.13.EntradaySalida.pdf)
+        - ![left](images/link.png)
+        [https://www.fdi.ucm.es/profesor/jpavon/poo/2.13.EntradaySalida.pdf](https://www.fdi.ucm.es/profesor/jpavon/poo/2.13.EntradaySalida.pdf)
         - ![left](images/link.png) [Apuntes de kotlin](https://github.com/revilofe/_kotlin_)
-        - ![left](images/link.png) [Clases abstractas, interfaces, herencia] (https://code.tutsplus.com/es/tutorials/kotlin-from-scratch-abstract-classes-interfaces-inheritance-and-type-alias--cms-29744)
+        - ![left](images/link.png) [Clases abstractas, interfaces, herencia]
+        (https://code.tutsplus.com/es/tutorials/kotlin-from-scratch-abstract-classes-interfaces-inheritance-and-type-alias--cms-29744)
 
     </section>
 
