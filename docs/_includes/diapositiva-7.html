@@ -213,6 +213,15 @@ Información desde interfaz gráfica de usuario
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
+
+        - ***Actividad individual:***
+        Accede al ejemplo, ejecutalo y investiga y actúa para que el programa responda `true` a la pregunta ¿Existe? y ¿archivo? ¿carpeta?
+
+        [Ejemplo 1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
         - Conceptos:
             - **Raíz**: Punto de inicio de la estructura de archivos. La Raíz depende del sistema operativo.
             - **Directorio de trabajo**: Directorio que se asigna a un programa cuando se ejecuta, normalmente el directorio en el que esta el ejecutable.
@@ -231,7 +240,8 @@ Información desde interfaz gráfica de usuario
         ## API para trabajar con ficheros (RA5.c)
 
         - La ruta relativa es similar a la absoluta, pero nunca se indica la raiz.
-        - Incluye la raiz a pesar de indicarse.
+        - Incluye la raíz a pesar de indicarse.
+        - Permite la portabilidad del software.
 
         Por ejemplo:
 
@@ -247,14 +257,51 @@ Información desde interfaz gráfica de usuario
         | `X:/Unidades`       | `X:/Unidades/Unidad11/apartado1/Actividades.txt` |
         | `/Programas`       | `/Programas/Unidad11/apartado1/Actividades.txt` |
 
-        * Permite la portabilidad del software.
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
 
-        -
+        - ***Actividad individual:***
+        Accede al ejemplo, ejecutalo y investiga y actúa para que el programa muestre información de las dos rutas relativas y absolutas.
+
+        [Ejemplo 2](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E02RutaRelativaAbsoluta.kt)
+
     </section>
 
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+
+        [File Java 17](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html)
+        [File Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+
+        - `FIle`: Obtener la ruta
+            - `getParent`:  devuelve la ruta de la carpeta del elemento referido por esta ruta.
+            - `getName`: devuelve el nombre del elemento que representa en la ruta.
+            - `getAbosultePath`: devuelve la ruta absoluta.
+
+        [Ver Ejemplo 2](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E02RutaRelativaAbsoluta.kt)
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+        - `FIle`: Comprobaciones de estado
+            - `exists`:  devuelve la ruta de la carpeta del elemento referido por esta ruta.
+            - `isFile`: devuelve el nombre del elemento que representa en la ruta.
+            - `isDirectory`: devuelve la ruta absoluta.
+
+        [Ver Ejemplo 1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
+
+    </section>
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c)
+        - `FIle`: Propiedades de ficheros
+            - `length`:  devuelve la ruta de la carpeta del elemento referido por esta ruta.
+            - `lastModified`: devuelve el nombre del elemento que representa en la ruta.
+
+
+        [Ver Ejemplo 1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
+
+    </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c)
 
