@@ -10,12 +10,12 @@ object E04CreaBorraDirectorios {
         val doc = File("./Temp/Documento.txt")
         val mkdirFot: Boolean = fotos.mkdir()
         if (mkdirFot) {
-            System.out.println("Creada carpeta " + fotos.getName().toString() + "? " + mkdirFot)
+            println("Creada carpeta " + fotos.getName()+ "? " + mkdirFot)
         } else {
             val delCa: Boolean = fotos.delete()
-            System.out.println("Borrada carpeta " + fotos.getName().toString() + "? " + delCa)
+            println("Borrada carpeta " + fotos.getName() + "? " + delCa)
             val delAr: Boolean = doc.delete()
-            System.out.println("Borrado archivo " + doc.getName().toString() + "? " + delAr)
+            println("Borrado archivo " + doc.getName()+ "? " + delAr)
         }
     }
 }
