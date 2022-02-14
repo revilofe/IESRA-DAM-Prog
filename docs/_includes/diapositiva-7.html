@@ -295,9 +295,12 @@ Información desde interfaz gráfica de usuario
             - [File Java 17](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html)
             - [File Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
 
-        ----
+    </section>
 
-        - `FIle`: **Obtener la ruta**
+    <section data-markdown>
+        ## API para trabajar con ficheros (RA5.c) - API `File`
+
+        - `File`: **Obtener la ruta**
             - `getParent`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
             - `getName`: devuelve el nombre del elemento que representa en la ruta.
             - `getAbosultePath`: devuelve la ruta absoluta.
@@ -310,21 +313,22 @@ Información desde interfaz gráfica de usuario
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c) - API `File`
-        - `FIle`: **Comprobaciones de estado**
+        - `File`: **Comprobaciones de estado**
             - `exists`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
             - `isFile`: devuelve el nombre del elemento que representa en la ruta.
             - `isDirectory`: devuelve la ruta absoluta.
 
         [Ver Ejemplo1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
 
+        - ¿Detectas algún método mas de `File` que de información sobre el estado del fichero o directorio? `isHidden()`
+
+
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c) - API `File`
-        - `FIle`: **Propiedades de ficheros**
+        - `File`: **Propiedades de ficheros**
             - `length`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
             - `lastModified`: devuelve el nombre del elemento que representa en la ruta.
-
-        [Ver Ejemplo3](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E03PropiedadesFicheroYDirectorios.kt)
 
     </section>
     <section data-markdown>
@@ -336,10 +340,14 @@ Información desde interfaz gráfica de usuario
 
         [Ejemplo3](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E03PropiedadesFicheroYDirectorios.kt)
 
+        - ¿Detectas algún método mas de `File` que de información sobre propiedades del fichero o directorio? `canWrite()`, `canRead()`
+        - ¿Te ha funcionado?, ¿que has tenido que modificar?
+
+
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c) - API `File`
-        - `FIle`: **Gestión de ficheros**
+        - `File`: **Gestión de ficheros**
             - `mkdir`: permite crear una carpeta, indicando la ruta junto con el nombre de la carperta
             - `delete`: borra el archivo o carpeta. Se podrá borrar una carpeta si está vacía.
 
@@ -348,7 +356,7 @@ Información desde interfaz gráfica de usuario
         ## API para trabajar con ficheros (RA5.c) - API `File`, Ejemplo
 
         - ***Actividad individual:***
-        Para probar el ejemplo primero asegúrate de que en el Directorio de Trabajo no hay ninguna carpeta llamada Temp
+        Para probar el ejemplo primero asegúrate de que en el Directorio de Trabajo no hay ninguna carpeta llamada `Temp`
         y ejecute el programa.
         Todo fallará, ya que las rutas son incorrectas (no existe `Temp`). Luego, crea la carpeta `Temp` y en su interior
         crea un nuevo documento llamado `Documento.txt` (puede estar vacío). Ejecuta el programa y verás que se habrá
@@ -357,10 +365,15 @@ Información desde interfaz gráfica de usuario
 
         [Ejemplo4](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E04CreaBorraDirectorios.kt)
 
+        - ¿Te ha funcionado?, ¿que has tenido que modificar?
+        - ¿Entiendes la lógica del ejemplo?
+
+
+
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c) - API `File`
-        - `FIle`: **Gestión de ficheros**
+        - `File`: **Gestión de ficheros**
             - `renameTo`: permite cambiar el nombre y ubicación de un archivo o directorio.
 
     </section>
@@ -371,14 +384,17 @@ Información desde interfaz gráfica de usuario
         Dentro de la carpeta `Temp` crea una carpeta llamada `Media` y otra llamada `Fotos`. Dentro de la carpeta `Fotos` crea
         dos documentos llamados `Documento.txt` y `Fotos.txt`. Después de ejecutar el programa, observa como la carpeta `Fotos` se
         ha movido y ha cambiado de nombre, pero mantiene en su interior el archivo `Fotos.txt`. El archivo `Documento.txt` se ha
-        movido hasta la carpeta `Temp`. Puedes modificarlo para asegurarte que existen los directorios destino.
+        movido hasta la carpeta `Temp`.
 
         [Ejemplo5](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E05RenombraFicheroYDirectorios.kt)
+
+        - ¿Te ha funcionado?, ¿que has tenido que modificar?
+        - ¿Entiendes la lógica del ejemplo?
 
     </section>
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c) - API `File`
-        - `FIle`: **Listar contenido de directorio**
+        - `File`: **Listar contenido de directorio**
             - `listFiles`:  vector de objectos `File` con todos los elementos contenidos en la carpeta.
 
     </section>
@@ -389,6 +405,9 @@ Información desde interfaz gráfica de usuario
         Antes de ejecutarlo, crea una carpeta `Temp`. Dentro crea o copia cualquier cantidad de carpetas o archivos.
 
         [Ejemplo6](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E06ListaContenidoDirectorio.kt)
+
+        - ¿Te ha funcionado?, ¿que has tenido que modificar?
+        - ¿Entiendes la lógica del ejemplo?
 
     </section>
     <section data-markdown>
