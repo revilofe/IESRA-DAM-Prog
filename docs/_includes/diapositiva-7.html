@@ -190,8 +190,8 @@ Información desde interfaz gráfica de usuario
         - Kotlin extiende `File` añadiéndole nuevos métodos para facilitar su uso, en el paquete `kotlin.io`
         - `File`, además, representa la **ruta de un archivo o directorio dentro del sistema de archivos**.
         - Esta clase permite manipular *cualquier aspecto vinculado al sistema de archivos*:
-            - Ficheros: abrir, cerrar, borrar, renombrar, ...
-            - Directorios: abrir, listar contenido,  borrar, renombrar, ...
+            - **Ficheros**: abrir, cerrar, borrar, renombrar, ...
+            - **Directorios**: abrir, listar contenido,  borrar, renombrar, ...
 
 
     </section>
@@ -319,9 +319,9 @@ Información desde interfaz gráfica de usuario
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c) - API `File`
         - `File`: **Comprobaciones de estado**
-            - `exists`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
-            - `isFile`: devuelve el nombre del elemento que representa en la ruta.
-            - `isDirectory`: devuelve la ruta absoluta.
+            - `exists`: comprueba si la ruta existe dentro del sistema de ficheros.
+            - `isFile`: comprueba el sistema de ficheros en busca de la ruta y devuelve true si existe y es un fichero.
+            - `isDirectory`: funciona como el anterior pero comprueba si es una carpeta
 
         [Ver Ejemplo1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
 
@@ -332,8 +332,8 @@ Información desde interfaz gráfica de usuario
     <section data-markdown>
         ## API para trabajar con ficheros (RA5.c) - API `File`
         - `File`: **Propiedades de ficheros**
-            - `length`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
-            - `lastModified`: devuelve el nombre del elemento que representa en la ruta.
+            - `length`: devuelve el tamaño de un archivo en bytes.
+            - `lastModified`: devuelve la última fecha de edición del elemento representado por esta ruta.
 
     </section>
     <section data-markdown>
