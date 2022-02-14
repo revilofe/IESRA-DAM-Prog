@@ -178,79 +178,81 @@ Información desde interfaz gráfica de usuario
     </section>
 
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - Clase `File`
 
         - La clases mas básica para operar con archivos es la clase `File`, ubicada en el package `java.io` de java.
         - habrá que importarla `import java.io.File`
-        - `File`, ademas, representa la ruta dentro del sistema de archivos.
+        - Kotlin extiende `File` añadiéndole nuevos métodos para facilitar su uso, en el paquete `kotlin.io`
+        - `File`, además, representa la **ruta de un archivo o directorio dentro del sistema de archivos**.
         - Esta clase permite manipular *cualquier aspecto vinculado al sistema de archivos*:
-        - Ficheros: abrir, cerrar, renombrar,...
-        - Directorios: abrir, listar contenido,...
+            - Ficheros: abrir, cerrar, borrar, renombrar, ...
+            - Directorios: abrir, listar contenido,  borrar, renombrar, ...
 
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - Clase `File`
 
-        - `File` tendremos que instanciarla y recibe como argumento una `String` que corresponde a la ruta del archivo.
-        - La ruta, **Path** en inglés, contiene el camino al archivo o directorio, junto al nombre.
+        - `File` tendremos que instanciarla, y recibe como argumento una `String` que corresponde a la ruta del archivo o directorio.
+        - La ruta, **Path** en inglés, contiene el camino o ruta donde encontrarlo, junto al nombre del archivo o directorio .
         - La ruta, es única en un sistema de archivos.
         - La ruta puede ser relativa y absoluta.
         ~~~Kotlin
-        val ruta = "./data.txt"
+        val ruta = "./data.txt" //Relativa
         val f = File(ruta)
         ~~~
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - Clase `File`
 
         - Sobre la ruta podemos decir:
-        - Que dependen del sistema de archivos: Por ejemplo, Windows (`C:\` y `\`) y Linux (`/var` y `/`)
-        - Kotlin nos permite usar `/` para representar rutas.
-        - Un objeto `File` representa solo una ruta. Para varias rutas, habrá que crear farios objetos `File`'s
+            - Que dependen del sistema de archivos: Por ejemplo, Windows (`C:\` y `\`) y Linux (`/var` y `/`)
+            - Kotlin nos permite usar `/` para representar rutas.
+            - Un objeto `File` representa solo una ruta. Para varias rutas, habrá que crear varios objetos `File`'s
 
         ~~~Kotlin
-        var carpetaFotos: File = File("C:/Fotos")
+        var carpetaFotos: File = File("C:/Fotos")  //Absoluta
         var unaFoto: File = File("C:/Fotos/Foto1.png")
         var otraFoto: File = File("C:/Fotos/Foto2.png")
         ~~~
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - Clase `File`, Ejemplo
 
         - ***Actividad individual:***
         Accede al ejemplo, ejecutalo y investiga y actúa para que el programa responda `true` a la pregunta ¿Existe? y
-        ¿archivo? ¿carpeta?
+        ¿archivo? ¿carpeta?. ¿Usarás ruta relativa o absoluta? ¿En que SO trabajas?
 
         [Ejemplo1](https://github.com/revilofe/IESRA-DAM-Prog/blob/master/ejercicios/src/main/kotlin/un7/E01ExisteYTipo.kt)
 
+
+
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - Tipos de rutas
         - Conceptos:
-        - **Raíz**: Punto de inicio de la estructura de archivos. La Raíz depende del sistema operativo.
-        - **Directorio de trabajo**: Directorio que se asigna a un programa cuando se ejecuta, normalmente el directorio
-        en el que esta el ejecutable.
+            - **Raíz**: Punto de inicio de la estructura de archivos. La Raíz depende del sistema operativo.
+            - **Directorio de trabajo**: Directorio que se asigna a un programa cuando se ejecuta, normalmente el directorio en el que esta el ejecutable.
 
         *¿Cual es el directorio de trabajo de nuestro IDE, cuando ejecutamos un proyecto?*
 
         - Rutas relativas y absolutas
-        - **Absoluta**: Referencia de un objeto desde la raíz.
-        - **Relativa**: Referencia a un objeto desde el directorio de trabajo. El directorio de trabajo puede cambiar
-        cada vez que se ejecuta el programa.
+            - **Absoluta**: Referencia de un objeto desde la raíz.
+            - **Relativa**: Referencia a un objeto desde el directorio de trabajo. El directorio de trabajo puede cambiar cada vez que se ejecuta el programa.
 
 
         *¿Cuando usar una y cuando usar otra?*
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - Tipos de rutas
 
-        - La ruta relativa es similar a la absoluta, pero nunca se indica la raiz.
-        - Incluye la raíz a pesar de indicarse.
-        - Permite la portabilidad del software.
+        - La ruta relativa
+            - Es similar a la absoluta, pero nunca se indica la raíz.
+            - Incluye la raíz a pesar de NO indicarse.
+            - Permite la portabilidad del software.
 
         Por ejemplo:
 
@@ -268,7 +270,7 @@ Información desde interfaz gráfica de usuario
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - Tipos de rutas, Ejemplo
 
         - ***Actividad individual:***
         Accede al ejemplo, ejecutalo y investiga y actúa para que el programa muestre información de las dos rutas
@@ -279,7 +281,7 @@ Información desde interfaz gráfica de usuario
     </section>
 
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`
 
         - URLs de consulta:
             - [File Java 17](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html)
@@ -296,7 +298,7 @@ Información desde interfaz gráfica de usuario
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`
         - `FIle`: **Comprobaciones de estado**
             - `exists`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
             - `isFile`: devuelve el nombre del elemento que representa en la ruta.
@@ -306,7 +308,7 @@ Información desde interfaz gráfica de usuario
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`
         - `FIle`: **Propiedades de ficheros**
             - `length`: devuelve la ruta de la carpeta del elemento referido por esta ruta.
             - `lastModified`: devuelve el nombre del elemento que representa en la ruta.
@@ -315,7 +317,7 @@ Información desde interfaz gráfica de usuario
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`, Ejemplo
 
         - ***Actividad individual:***
         Accede al ejemplo, ejecutalo y investiga y actúa para que el programa muestre información distinta a la primera
@@ -325,14 +327,14 @@ Información desde interfaz gráfica de usuario
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`
         - `FIle`: **Gestión de ficheros**
             - `mkdir`: permite crear una carpeta, indicando la ruta junto con el nombre de la carperta
             - `delete`: borra el archivo o carpeta. Se podrá borrar una carpeta si está vacía.
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`, Ejemplo
 
         - ***Actividad individual:***
         Para probar el ejemplo primero asegúrate de que en el Directorio de Trabajo no hay ninguna carpeta llamada Temp
@@ -346,13 +348,13 @@ Información desde interfaz gráfica de usuario
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`
         - `FIle`: **Gestión de ficheros**
             - `renameTo`: permite cambiar el nombre y ubicación de un archivo o directorio.
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`, Ejemplo
 
         - ***Actividad individual:***
         Dentro de la carpeta `Temp` crea una carpeta llamada `Media` y otra llamada `Fotos`. Dentro de la carpeta `Fotos` crea
@@ -364,13 +366,13 @@ Información desde interfaz gráfica de usuario
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`
         - `FIle`: **Listar contenido de directorio**
             - `listFiles`:  vector de objectos `File` con todos los elementos contenidos en la carpeta.
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - API `File`, Ejemplo
 
         - ***Actividad individual:***
         Antes de ejecutarlo, crea una carpeta `Temp`. Dentro crea o copia cualquier cantidad de carpetas o archivos.
@@ -379,11 +381,12 @@ Información desde interfaz gráfica de usuario
 
     </section>
     <section data-markdown>
-        ## API para trabajar con ficheros (RA5.c)
+        ## API para trabajar con ficheros (RA5.c) - Actividad
 
         - ***Actividad individual evaluable:***
-        [6.1 De los 4 tipos vistos, pon ejemplo de
-        2](https://educacionadistancia.juntadeandalucia.es/centros/cadiz/mod/assign/view.php?id=436534)
+        7.2. Realiza una tabla resumen con los método mas importantes de `File`,
+        signatura, descripción (parámetros de entrada y valores de retorno) y ejemplo de uso.
+        Ten en cuenta los métodos de Java y los de Kotlin.
     </section>
 
     <section data-markdown>
