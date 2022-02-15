@@ -747,7 +747,7 @@ En el ejemplo anterior llamamos a `readLine` con el operador `?` para realizar l
 [Aquí](https://stackoverflow.com/questions/41283393/reading-console-input-in-kotlin) hay un grupo extendido (inspirado en el [artículo](https://kotlinlang.org/docs/competitive-programming.html#functional-operators-example-long-number-problem))  de funciones de ayuda para leer todos los tipos posibles, listas, arrays, arrays 2D, etc.:
 
 ```Kotlin
-private fun readln() = readLine()!!
+// private fun readln() = readLine()!! //Ya disponib le en la versión 1.6
 private fun readlnByte() = readln().toByte()
 private fun readlnShort() = readln().toShort()
 private fun readlnInt() = readln().toInt()
@@ -903,13 +903,13 @@ A  |     B |     C | Long_Header
 20 |    b2 | 0.33% |         bar
 ```
 
-<!--
-# 3. LECTURA Y ESCRITURA DE FICHEROS
+
+# 4. LECTURA Y ESCRITURA DE FICHEROS
 
 Normalmente las aplicaciones que utilizan archivos no están centradas en
 la gestión del sistema de archivos de su ordenador. El objetivo
-principal de usar ficheros es poder almacenar datos de modo que entre
-diferentes ejecuciones del programa, incluso en diferentes equipos, sea
+principal de usar ficheros es **poder almacenar datos de modo que entre
+diferentes ejecuciones del programa**, incluso en diferentes equipos, sea
 posible recuperarlos. El caso más típico es un editor de documentos, que
 mientras se ejecuta se encarga de gestionar los datos relativos al texto
 que está escribiendo, pero en cualquier momento puede guardarlo en un
@@ -919,46 +919,40 @@ documento lo puede abrir tanto en el editor de su ordenador como en el
 de otro compañero.
 
 Para saber cómo tratar los datos de un fichero en un programa, hay que
-tener muy claro cómo se estructuran. Dentro de un archivo se pueden
+**tener muy claro cómo se estructuran**. Dentro de un archivo se pueden
 almacenar todo tipo de valores de cualquier tipo de datos. La parte más
-importante es que estos valores se almacenan en forma de secuencia, uno
+importante es que estos valores **se almacenan en forma de secuencia**, uno
 tras otro. Por lo tanto, como pronto veréis, la forma más habitual de
-tratar ficheros es secuencialmente, de forma parecida a como se hace
+tratar ficheros es **secuencialmente**, de forma parecida a como se hace
 para leerlas del teclado, mostrarlas por pantalla o recorrer las
 posiciones de un array.
 
-| ...Se denomina**acceso secuencial**al procesamiento de un conjunto de
-elementos de manera que sólo es posible acceder a ella de acuerdo a su
-orden de aparición. Para procesar un elemento es necesario procesar
-primero todos los elementos
-anteriores.![](file:///tmp/lu37016xc6sfk.tmp/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
-| |
+> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
+>
+> Se denomina **acceso secuencial** al procesamiento de un conjunto de
+> elementos de manera que sólo es posible acceder a ella de acuerdo a su
+>orden de aparición. Para procesar un elemento es necesario procesar
+> primero todos los elementos anteriores.
+>
 
-|
-
-Java, junto con otros lenguajes de programación, diferencia entre dos
+Kotlin, junto con otros lenguajes de programación, diferencia entre dos
 tipos de archivos según cómo se representan los valores almacenados en
 un archivo.
 
-| ...En los **ficheros orientados a carácter** , los datos se
-representan como una secuencia de cadenas de texto, donde cada valor se
-diferencia del otro usando un delimitador. En cambio, en los **ficheros
-orientados a byte** , los datos se representan directamente de acuerdo a
-su formato en binario, sin ninguna
-separación.![](file:///tmp/lu37016xc6sfk.tmp/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
-| |
+> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
+>
+> En los **ficheros orientados a carácter** , los datos se
+> representan como una secuencia de cadenas de texto, donde cada valor se
+> diferencia del otro usando un delimitador. En cambio, en los **ficheros
+> orientados a byte**, los datos se representan directamente de acuerdo a
+> su formato en binario, sin ninguna separación. Estos últimos ficheros son
+> no son legibles a simple vista, y son interpretados por programas que  
+> entienden su formato. Por ejemplo, pdf, doc, xls.
 
-|
+Nos centraremos principalmente en el procesamiento de ficheros orientados  
+a carácter.
 
-En esta unidad didáctica solo veremos el procesamiento de ficheros
-orientados a carácter.
-
-##
-
-##
-
-3.1. Ficheros orientados a carácter
-
+## 3.1. Ficheros orientados a carácter
 Un fichero orientado a carácter no es más que un documento de texto,
 como el que podría generar con cualquier editor de texto simple. Los
 valores están almacenados según su representación en cadena de texto,
