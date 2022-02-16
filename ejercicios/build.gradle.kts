@@ -20,6 +20,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.5") // GSON -> DataClass
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.20") // LOGGER
     implementation("org.slf4j:slf4j-simple:1.7.32") // LOGGER
+    implementation("de.m3y.kformat:kformat:0.9") //KFORMAT
     testImplementation(kotlin("test"))
 
 }
