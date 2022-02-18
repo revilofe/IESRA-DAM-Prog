@@ -181,6 +181,7 @@ siguiente objeto `File` varía según el directorio de trabajo.
 val f = File("Unidad11/apartado1/Actividades.txt")
 ```
 
+
 | **Directorio de trabajo** | **Ruta real**                                          |
 | :-------------------------- | :------------------------------------------------------- |
 | `C:/Proyectos/Java`       | `C:/Proyectos/Java/Unidad11/apartado1/Actividades.txt` |
@@ -334,7 +335,7 @@ métodos adecuados. Entre los más populares hay los siguientes:
   represente un archivo, de lo contrario no se puede garantizar que el resultado sea válido.
 * `fun lastModified(): Long` devuelve la última fecha de edición del elemento representado por esta ruta. El resultado
   se codifica en un único número entero cuyo valor es el número de milisegundos que han pasado desde el 1 de junio de
-    1970.
+  1970.
 
 El ejemplo siguiente muestra cómo funcionan estos métodos. Para probarlos crea el archivo `Documento.txt` en la
 carpeta `C:\Temp`. Primero deja el archivo vacío y ejecuta el programa. Luego, con un editor de texto, escribe cualquier
@@ -610,7 +611,6 @@ formato. Si se proporciona un `ByteArray` vacío, se crea el archivo y no se esc
 > ![](./../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
 >
 > En caso de que el archivo ya exista, se sobrescribe y los datos existentes se pierden
-
 
 Utilice este método si está seguro de que el archivo aún no existe o si sobrescribir los datos existentes no afecta a su
 aplicación.
@@ -895,6 +895,7 @@ cantidad de decimales que queremos que se impriman, así por ejemplo en este cas
 
 Aquí te dejo una tabla con los formatos más comunes, también pueden ser usados en Java:
 
+
 | **Formato** | Tipo de**dato**                                          |
 | ------------- | ---------------------------------------------------------- |
 | %b          | Boolean                                                  |
@@ -984,7 +985,6 @@ hace para leerlas del teclado, mostrarlas por pantalla o recorrer las posiciones
 > elementos de manera que sólo es posible acceder a ella de acuerdo a su
 > orden de aparición. Para procesar un elemento es necesario procesar
 > primero todos los elementos anteriores.
->
 
 Kotlin, junto con otros lenguajes de programación, diferencia entre dos tipos de archivos según cómo se representan los
 valores almacenados en un archivo.
@@ -1001,7 +1001,7 @@ valores almacenados en un archivo.
 
 Nos centraremos principalmente en el procesamiento de ficheros orientados a carácter.
 
-## 3.1. Ficheros orientados a carácter
+## 4.1. Ficheros orientados a carácter
 
 Un fichero orientado a carácter no es más que un **documento de texto**, como el que podría generar con cualquier editor
 de texto simple. Los valores están almacenados según su representación en cadena de texto, exactamente en el mismo
@@ -1054,7 +1054,6 @@ trabajar con los datos que hay en el archivo y nada más. Esto tiene dos efectos
    no por el teclado, no existe la opción de pedir al usuario que vuelva a escribir el dato. Por lo tanto, el programa
    debería decir que se ha producido un error ya que el archivo no tiene el formato correcto y finalizar el proceso de
    lectura.
-
 2. Por otra parte, **también es necesario controlar que nunca se lean más valores de los que hay disponibles para leer**
    . En el caso de la entrada de datos por el teclado el programa simplemente se bloqueaba y espera a que el usuario
    escribiera nuevos valores. Pero con ficheros esto no sucede. Intentar leer un nuevo valor cuando el apuntador ya ha
@@ -1062,7 +1061,7 @@ trabajar con los datos que hay en el archivo y nada más. Esto tiene dos efectos
    algún procedimiento que nos permita saber si se ha llegado al final de fichero en vez de suponer que siguen
    existiendo datos que leer.
 
-## 3.2. Lectura de fichero
+### 4.1.1. Lectura de fichero
 
 En Kotlin demos leer el contenido de un archivo utilizando los métodos estándar de la clase `java.io.File` o los métodos
 que proporciona Kotlin como una extensión de `java.io.File`.
@@ -1070,7 +1069,7 @@ que proporciona Kotlin como una extensión de `java.io.File`.
 Examinaremos programas de ejemplo para los métodos de extensión, proporcionados por Kotlin a la clase `java.io.File` de
 Java, para leer el contenido de un archivo.
 
-### 3.2.1. Usar `File.bufferedReader()` de Java
+#### 4.1.1.1. Usar `java.io.File.bufferedReader()` de Java
 
 [Ver mas info](https://dcodingames.com/como-usar-la-clase-bufferedreader/)
 
@@ -1081,7 +1080,7 @@ Se puede configurar específicamente el tamaño del buffer, o usar el que se oto
 grande para la mayoría de los casos.
 
 Dado que esta clase extiende de `Reader`, cada petición de lectura causa una petición de lectura del flujo de entrada, por
-lo que es aconsejable envolverla con la clase `InputStreamReader` o `FileReader`, según el propósito de la lectura. 
+lo que es aconsejable envolverla con la clase `InputStreamReader` o `FileReader`, según el propósito de la lectura.
 
 A continuación podemos ver cómo leer el contenido de un archivo en `BufferedReader`, El proceso es el siguiente:
 
@@ -1108,7 +1107,7 @@ fun main(args: Array<String>) {
 
 El contenido del archivo se imprime en la consola.
 
-### 3.2.2. Usar `File.forEachLine()` de Kotlin
+#### 4.1.1.2. Usar `java.io.File.forEachLine()` de Kotlin
 
 Lee un archivo línea por línea en Kotlin. El proceso es el siguiente:
 
@@ -1128,16 +1127,6 @@ fun main(args: Array<String>) {
 ```
 
 El contenido del archivo se imprime en la consola.
-
-### 3.2.3. Oros métodos de lectura
-
-Existen otras formas de leer archivos:
-
-- `File.inputStream().readBytes()`: Lee el contenido del archivo en InputStream
-- `File.readBytes()`: devuelve todo el contenido del archivo como ByteArray
-- `File.readLines()`: devuelve todo el contenido del archivo como una lista de líneas
-- `File.readText()`: devuelve todo el contenido del archivo como una sola cadena
-- `java.util.Scanner`: permite leer indicando el tipo de dato a leer.
 
 <!--
 > ![](./../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
@@ -1257,15 +1246,143 @@ e.printStackTrace(); } }
 }
 -->
 
-## 3.3. Escritura en fichero (clase FileWriter)
+#### 4.1.1.3. Oros métodos de lectura
 
-Para escribir datos a un archivo la clase más sencilla de utilizar es FileWriter. Esta clase tiene dos constructores que
+Existen otras formas de leer archivos:
+
+- `File.inputStream().readBytes()`: Lee el contenido del archivo en InputStream
+- `File.readBytes()`: devuelve todo el contenido del archivo como ByteArray
+- `File.readLines()`: devuelve todo el contenido del archivo como una lista de líneas
+- `File.readText()`: devuelve todo el contenido del archivo como una sola cadena
+- `java.util.Scanner`: permite leer indicando el tipo de dato a leer.
+
+### 4.1.2. Escritura en fichero
+
+Con en el lenguaje de programación Kotlin tambien se puede escribir en un archivo. Por lo general, en los archivos orientados a caracteres se escriben cadenas de texto.
+
+Igual que para la lectura, haciendo uso de Kotlin podremos escribir en un archivo usando las funciones de extensión proporcionadas por Kotlin (o decir de manera idiomática o de Kotlin) o también puede usar el código Java existente que escribe contenido en un archivo.
+
+A continuación veremos ejemplos de cómo usar clases de Java como `PrintWriter` para escribir en un archivo y más ejemplos usando funciones de extensión de Kotlin.
+
+#### 4.1.2.1. Usar `java.io.File.bufferedWriter`
+
+Podemos usar la función de extensión `java.io.File.bufferedWriter()` para obtener el objeto de escritura y luego usar la función `write()` en el objeto de escritura para escribir contenido en el archivo.
+
+1. Tenga su contenido como una cadena.
+2. Pase el nombre del archivo al constructor de archivos.
+3. Luego llame al método `bufferedWriter()` de la clase `File`.
+4. Haciendo uso de la función `use()`, llama al método `writer(content)` del bufer escritor devuelto por `bufferedWriter()`, y que se encarga de escribir el contenido en el archivo.
+
+```kotlin
+import java.io.File
+ 
+/**
+ * Example to use File.bufferedWriter() in Kotlin to write content to a text file
+ */
+fun main(args: Array<String>) {
+    // content to be written to file
+    var content = "Hello World. Welcome to Kotlin!!"
+ 
+    // write content to file
+    File("file.txt").bufferedWriter().use { out ->
+        out.write(content)
+    }
+}
+```
+
+#### 4.1.2.2. Usar `java.io.File.writeText()`
+
+Si está escribiendo exclusivamente texto en un archivo, puede usar la función de extensión `java.io.File.writeText()`.
+
+En el siguiente ejemplo, hemos usado esta función de extensión de kotlin para escribir texto en un archivo.
+
+```kotlin
+import java.io.File
+ 
+/**
+ * Example to use File.writeText in Kotlin to write text to a file
+ */
+fun main(args: Array<String>) {
+    // content to be written to file
+    var content = "Hello World. Welcome to Kotlin!!"
+ 
+    // write content to file
+    File("file.txt").writeText(content)
+}
+```
+
+#### 4.1.2.3. Usar `java.io.File.printWriter`
+
+En este ejemplo, usaremos la función de extensión de Kotlin `printWriter()` para la clase `java.io.File`. El siguiente es el proceso para escribir en el archivo.
+
+1. Tenga su contenido como una cadena.
+2. Pase el nombre del archivo al constructor de archivos.
+3. Luego llame al método `printWriter()` de la clase `File`.
+4. Haciendo uso de la función `use()`, llama al método `println(content)` del escritor devuelto por `printWriter()`, y que se encarga de escribir el contenido en el archivo.
+
+```kotlin
+import java.io.File
+ 
+/**
+ * Example to use File.printWriter in Kotlin to write content to a text file
+ */
+fun main(args: Array<String>) {
+    // content to be written to file
+    var content = "Hello World. Welcome to Kotlin!!"
+ 
+    // write content to file
+    File("file.txt").printWriter().use { out ->
+        out.println(content)
+    }
+}
+```
+
+#### 4.1.2.4. Usar `java.io.PrintWriter`
+
+En este ejemplo, tomamos una cadena y la escribimos en un archivo usando la clase `java.io.PrintWriter`. Para ello se siguen los siguientes pasos.
+
+1. Tenga sus datos listos como una cadena en una variable.
+2. Inicialice un objeto escritor de la clase `PrintWriter`.
+3. Agregue la cadena al archivo usando la función `PrintWriter.append()`.
+4. Cerrar el escritor.
+
+```kotlin
+import java.io.PrintWriter
+
+/**
+ * Example to use standard Java method in Kotlin to write content to a text file
+ */
+fun main(args: Array<String>) {
+    // content to be written to file
+    var content = "Hello World. Welcome to Kotlin!!"
+
+    // using java class java.io.PrintWriter
+    val writer = PrintWriter("file.txt")
+    writer.append(content)
+    writer.close()
+}
+```
+
+En los ejemplso, se creará un nuevo archivo con el nombre `file.txt`, como se especifica para el argumento de `PrintWriter()`, con el contenido. Si el archivo ya está presente, primero se borra el contenido del archivo y luego se escribe el nuevo contenido en el archivo.
+
+#### 4.1.2.5. Oros métodos de escritura
+
+Existen otras formas de leer archivos:
+
+- `java.io.FileWriter`: Escribe en un fichero haciendo uso del método `writer()`.
+
+<!--
+Existen muchas formas de acceder a un fichero para escribir en él. Una de las formas más fáciles, es el uso de la clase  `FileWriter`.
+
+### 4.1.2.1. Usar `FileWriter`
+
+Esta clase tiene dos constructores que
 merece la pena conocer:
 
 * public FileWriter(File file)
 * public FileWriter(File file, boolean append)
 
-El primer cnostructor es muy parecido al del Scanner. Solo hay que pasarle un objeto `File` con la ruta al archivo. Al
+El primer constructor es muy parecido al del Scanner. Solo hay que pasarle un objeto `File` con la ruta al archivo. Al
 tratarse de escritura la ruta puede indicar un fichero que puede existir o no dentro del sistema. **Si el fichero no
 existe, se creará uno nuevo** . Pero
 **si el fichero ya existe, su contenido se borra por completo, con tamaño igual a 0** . Esto puede ser peligroso ya que
@@ -1376,7 +1493,171 @@ instanciación del FileWriter agregando el segundo argumento (“append”) a tr
 FileWriterfw = new FileWriter(f, true); Pruébalo y verás que ya no se sobreescribe el fichero, sino que se añaden los 20
 números al final. -->
 
-# 4. BIBLIOGRAFÍA
+## 4.2. Ficheros binarios.
+
+Los Data Stream (Flujos de datos) se utilizan para escribir datos binarios. `DataOutputStream` escribe datos binarios de tipos primitivos(`Int`, `Long`, `String`) mientras que `DataInputStream` lee datos del flujo binario y los convierte en tipos primitivos.
+
+A continuación veremos un programa de ejemplo que escribe datos en un archivo y luego los vuelve a leer a memoria para luego imprimirlos por salida estándar.
+
+```kotlin
+import java.io.DataInputStream
+import java.io.DataOutputStream
+import java.io.FileInputStream
+import java.io.FileOutputStream
+ 
+fun main(args : Array<String>){
+    val burgers = "data.burgers"
+ 
+    //Open the file in binary mode
+    DataOutputStream(FileOutputStream(burgers)).use { dos ->
+        with(dos){
+            //Notice we have to write our data types
+            writeInt("Bob is Great\n".length) //Record length of the array
+            writeChars("Bob is Great\n") //Write the array
+            writeBoolean(true) //Write a boolean
+ 
+            writeInt("How many burgers can Bob cook?\n".length) //Record length of array
+            writeBytes("How many burgers can Bob cook?\n") //Write the array
+            writeInt(Int.MAX_VALUE) //Write an int
+ 
+            for (i in 0..5){
+                writeByte(i) //Write a byte
+                writeDouble(i.toDouble()) //Write a double
+                writeFloat(i.toFloat()) //Write a float
+                writeInt(i) //Write an int
+                writeLong(i.toLong()) //Write a long
+            }
+        }
+    }
+ 
+    //Open a binary file in read mode. It has to be read in the same order
+    //in which it was written
+    DataInputStream(FileInputStream(burgers)).use {dis ->
+        with (dis){
+            val bobSize = readInt() //Read back the size of the array
+            for (i in 0 until bobSize){
+                print(readChar()) //Print the array one character at a time
+            }
+            println(readBoolean()) //Read a boolean
+ 
+            val burgerSize = readInt() //Length of the next array
+            for (i in 0 until burgerSize){
+                print(readByte().toChar()) //Print array one character at a time
+            }
+            println(readInt()) //Read an int
+ 
+            for (i in 0..5){
+                println(readByte()) //Read a byte
+                println(readDouble()) //Read a double
+                println(readFloat()) //Read a float
+                println(readInt()) //Read an int
+                println(readLong()) //Read a long
+            }
+        }
+ 
+    }
+}
+```
+
+El programa crea un objeto `FileOutputStream` y pasa el nombre del archivo a su constructor. Luego, el objeto `FileOutputStream` se pasa al constructor de `DataOutputStream`. Aplicamos la función `use()` para **garantizar que todos los recursos se liberen correctamente cuando hayamos terminado**. El archivo ahora está abierto para escritura en modo binario.
+
+> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
+>
+> Aplicamos la función `use()` para **garantizar que todos los recursos se liberen correctamente cuando hayamos terminado**
+
+Cuando deseamos usar el mismo objeto repetidamente, podemos pasarlo a la función `with()`. En nuestro caso, tenemos la intención de seguir usando nuestro objeto `DataOutputStream`, por lo que en la línea 11, lo pasamos a la función `with()`. Dentro de la función `with()`, todas las llamadas a métodos apuntarán al objeto dos porque se proporcionó a `with()`.
+
+> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
+>
+> Cuando deseamos usar un mismo objeto repetidamente, podemos pasarlo a la función `with()`. Cuan un objeto es pasado a la función `with()`, dentro de esta, **todas las llamadas a métodos apuntarán al objeto que se le ha pasado por parámetro**.
+
+Dado que tenemos la intención de escribir un `String` en el archivo, necesitamos registrar la longitud de la cadena, ya que de otra forma no sabriamos cuantos bytes se han escrito. Hacemos esto usando la función `writeInt` y pasándole la longitud de nuestra cadena. Luego podemos usar `writeChars()` para escribir una matriz de caracteres en el archivo. El argumento `String` se convierte en una matriz de caracteres y se escribe en el archivo. Finalmente, llamamos a `writeBoolean()` para escribir valores `true`/`false` en el archivo.
+
+La siguiente sección es una repetición de la primera. Tenemos la intención de escribir otro `String` en el archivo, pero al hacerlo, necesitamos registrar la longitud en el archivo. Una vez más, recurrimos a `writeInt()` para registrar un valor `int`. En la siguiente línea, usamos `writeBytes()` en lugar de `writeChars()` para demostrar cómo podemos escribir una matriz de bytes en lugar de una cadena. La clase `DataOutputStream` se ocupa de los detalles de convertir un `String` en una matriz de bytes. Finalmente, escribimos otro valor int en la secuencia.
+
+A continuación, se ejecuta un ciclo `for` en la línea 21. Dentro del ciclo `for`, demostramos escribir diferentes tipos primitivos en el archivo. Podemos usar `writeByte()` para un `byte`, `writeDouble()` para un `double`, y así sucesivamente para cada tipo primitivo. **La clase `DataOutputStream` conoce el tamaño de cada tipo primitivo y escribe el número correcto de bytes para cada primitivo**.
+
+Cuando terminamos de escribir el objeto, lo abrimos nuevamente para leerlo. La línea 33 crea un objeto `FileInputStream` que acepta la ruta al archivo en su constructor. El objeto `FileInputStream` está encadenado a `DataInputStream` pasándolo al constructor de `DataInputStream`. Aplicamos la función `use()` para garantizar que todos los recursos estén correctamente cerrados.
+
+La lectura del archivo requiere que el archivo se lea en el mismo orden en que se escribe. Nuestra primera orden del día es tomar el tamaño de la matriz de caracteres que escribimos en el archivo anteriormente. Usamos `readInt()` en la línea 35 seguido de un ciclo `for` que termina en el tamaño de la matriz en la línea 36. Cada iteración del ciclo `for` llama a `readChar()` y la cadena se imprime en la consola. Cuando terminamos, leemos un booleano en la línea 39.
+
+Nuestra siguiente matriz fue una matriz de bytes. Una vez más, necesitamos su tamaño final, por lo que llamamos a `readInt()` en la línea 41. Las líneas 42-44 recorren la matriz y llaman a `readByte()` hasta que finaliza el bucle. Cada `byte` se convierte en un objeto de carácter mediante `toChar()`. En la línea 45, leemos un `int` usando `readInt()`.
+
+La parte final del programa repite el ciclo for encontrado anteriormente. En este caso, ingresamos un ciclo for que termina después de cinco iteraciones (línea 47). Dentro del ciclo `for`, llamamos a `readByte()`, `readDouble()`, `readFloat()`, y así sucesivamente. Cada llamada imprime la variable restaurada en la consola.
+
+# 5. Kotlin Command-Line Arguments
+
+Al invocar un programa desde la línea de comandos, puedes pasarle un número variable de argumentos. Por ej: `> tar -vzzf file.tar.gz`
+
+## 5.1 Línea de comandos en `Main`
+
+Para capturar los argumentos de la línea de comandos, debes proporcionar un parámetro predefinido a `main()`:
+
+```kotlin
+fun main (argumentos: Array < String >) {
+   para   (a en argumentos) {
+    imprimir (a)
+  }
+}
+```
+
+El parámetro se llama tradicionalmente `args` aunque puede llamarlo de cualquier manera, y el tipo de `args` solo puede ser `Array<String>` (Array of String).
+
+También se puede usar el compilador kotlinc para crear un programa que se ejecuta desde línea de comandos.
+
+Una vez que haya creado y guardado y compilado el código para un programa llamado `MainArgs.kt`, escriba lo siguiente en el símbolo del sistema:
+
+
+```Bash
+kotlinc MainArgsKt
+```
+
+Puedes proporcionar los argumentos de la línea de comandos después de la invocación del programa, así:
+
+```Bash
+kotlin MainArgsKt aaa 42 3.14159.
+```
+Y por salida estandar, saldra lo siguiente:
+
+```
+aaa
+42
+3.14159
+```
+
+Si una vez leidos los parametros quieres convertir un parámetro `String` en un tipo específico, Kotlin proporciona funciones de conversión, como`toInt()` para convertir a `Int` y `toFloat()` para convertir a `Float`.
+
+El uso de estos métodos supone que los argumentos de la línea de comandos aparecen en un orden particular.
+
+Por ejemplo, en el siguiente código, el programa espera un `String`, seguido de algo convertible a `Int`, seguido de algo convertible a `Float`:
+
+
+
+```kotlin
+fun main (args: Array < String >) {
+   if   (args.size < 3) return 
+  val primero = args[0]
+   val segundo = args[1].toInt ()
+   val tercero = args[2].toFloat ()
+  println( "$primero $segundo $tercero" )
+}
+```
+
+La primera línea de `main()` cierra el programa si no hay suficientes argumentos.
+
+Si no proporciona algo convertible a `Int` y `Float` como segundo y tercer argumento de la línea de comandos, verá errores de tiempo de ejecución.
+
+Compila y ejecuta `MainArgConversion.kt` con los mismos argumentos de línea de comandos que usamos antes, y verás:
+```
+aaa 42 3.14159
+```
+
+## 5.2 Parseador de línea de comandos
+
+ Revisa https://github.com/Kotlin/kotlinx-cli
+
+
+# 6. BIBLIOGRAFÍA
 
 Parte del contenido de esta unidad didáctica es una traducción al castellano de los apuntes de programación de Joan
 Arnedo Moreno
@@ -1385,13 +1666,12 @@ Arnedo Moreno
 También se ha utilizado como referencia las siguientes fuentes:
 
 1. Apuntes de programación de Jose Luis Comesaña (sitiolibre.com).
-
 2. Apuntes de programación de Natividad Prieto, Francisco Marqués y Javier Piris (E.T.S. de Informática, Universidad
    Politécnica de Valencia).
-
 3. https://kotlindoc.blogspot.com/2019/04/io-entrada-y-salida-de-datos-en-consola.html
-
 4. https://hackaprende.com/2020/11/25/formatos-de-string-en-kotlin/
-
 5. https://www.tutorialkart.com/kotlin/kotlin-create-file/
-
+6. https://stonesoupprogramming.com/2017/11/24/kotlin-data-streams
+7. https://www.baeldung.com/kotlin/read-file
+8. https://www.baeldung.com/kotlin/inputstream-to-string
+9. https://www.demo2s.com/kotlin/kotlin-command-line-arguments.html
