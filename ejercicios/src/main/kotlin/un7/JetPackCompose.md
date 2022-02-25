@@ -625,5 +625,5 @@ fun MainScreen() {
 }
 ```
 # Bibliografía
-- https://github.com/JetBrains/compose-jb/tree/master/tutorials
+- https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
 - https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los argumentos de clases, muy util en Jetpack Compose
