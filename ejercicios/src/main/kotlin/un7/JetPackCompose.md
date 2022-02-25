@@ -626,3 +626,4 @@ fun MainScreen() {
 ```
 # Bibliografía
 - https://github.com/JetBrains/compose-jb/tree/master/tutorials
+- https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los argumentos de clases, muy util en Jetpack Compose
