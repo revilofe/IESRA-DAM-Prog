@@ -1103,6 +1103,365 @@ implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
 
 Los eventos de `TextField` recogidos en la lambda son enviados ahora a nuestro `MainViewModel` y a su vez notificados a `LiveData` a través del método `onTextChange`.
 
+# Listas y Theming
+
+## Listas con Lazy Composable
+
+En lecciones anteriores vimos cómo implementar listas de elementos a través de los componentes **Column** y  **Row** .
+
+Cuando el número de elementos a mostrar es grande, es preferible usar componentes Lazy Composable como **LazyColumn** o  **LazyRow** . Las ventajas de usar estos componentes son:
+
+* Implementación de scroll de forma automática.
+* Reciclaje de elementos de la lista.
+* Mismos principios que el componente  **RecyclerView** .
+
+La diferencia entre **LazyColumn** y **LazyRow** es la orientación en la que se integran sus elementos y se desplazan.
+
+**LazyColumn** produce un desplazamiento vertical mientras que **LazyRow** produce un desplazamiento horizontal.
+
+### LazyListScope
+
+Al igual que **Column** y  **Row** , los componentes Lazy Composable ofrecen un **Scope** para añadir contenido.
+
+En el caso de  **LazyListScope** , se ofrece un conjunto de funciones para añadir elementos a la lista.
+
+```kotlin
+LazyColumn {  
+    // Add a single item  
+    item {  
+        Text(text = "First item")  
+    }  
+    // Add 3 items  
+    items(3) { index ->  
+        Text(text = "Item: $index")  
+    }  
+    // Add another single item  
+    item {  
+        Text(text = "Last item")  
+    }  
+}
+```
+
+* **item** : Agrega un solo elemento a la lista.
+* **items(N)** : Agrega varios elementos a la lista.
+
+```kotlin
+@Composable  
+funMessageList(messages: List<String>) {  
+    LazyColumn {  
+        items(messages) { message ->  
+            MessageRow(message)  
+        }
+    }
+}  
+
+@Composable  
+funMessageRow(message: String) {  
+    Text(text = message)  
+}
+```
+
+Como vemos en el código anterior, existen funciones de extensión que permiten agregar colecciones de elementos como  **List** .
+
+Para agregar padding alrededor de los bordes del contenido de la lista, el componente permite añadir parámetros del tipo **PaddingValues** al parámetro **contentPadding** como se muestra a continuación:
+
+```kotlin
+LazyColumn(  
+    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),  
+) {  
+    // ...  
+}
+```
+
+En este ejemplo, se agregan 16.dp de padding a los bordes horizontales (izquierda y derecha) y 8.dp al principio y al final del contenido.
+
+Para agregar espaciado entre elementos, puede usarse  **Arrangement.spacedBy** . En el siguiente ejemplo, se agregan 4.dp de espacio entre cada elemento:
+
+```kotlin
+LazyColumn(  
+    verticalArrangement = Arrangement.spacedBy(4.dp),  
+) {  
+  // ...  
+}
+```
+
+## Card, Image y Coil
+
+### El componente Card
+
+El componente **Card** es el equivalente del componente  **CardView** . Este componente sirve para mostrar contenido y acciones de un tema determinado aceptando para ello elementos como imágenes o texto. Puedes visitar la [documentación](https://material.io/components/cards#usage) de Material Design para obtener más información sobre el uso de este componente.
+
+**Card** acepta un atributo **elevation** que hace que el componente tenga una elevación sobre el eje Z dando una sensación de profundidad y estableciendo un sombreado sobre su vista padre.
+
+```kotlin
+@Composable  
+fun CardItem() {  
+    Card(  
+        Modifier
+            .padding(10.dp)  
+            .fillMaxWidth(),  
+        elevation = 10.dp
+    ) {  
+        Column(  
+            Modifier.padding(10.dp)  
+        ) {  
+            Text(text = "Hello OpenWebinars")  
+            Text(text = "This is a card test")  
+        }  
+    }
+}
+```
+
+### El componente Image
+
+El componente **Image** es el equivalente de  **ImageView** . Permite cargar imágenes en Android. Recibe por parámetro:
+
+* **painter** : Recurso gráfico que se pintará en el componente.
+* **contentDescription** : Corresponde con la descripción de la imagen. Será leído por herramientas de accesibilidad.
+
+### Coil
+
+[Coil](https://coil-kt.github.io/coil/compose/) es una librería de carga de imágenes para Android. Está implementada usando coroutines y es muy ligera y fácil de integrar en Jetpack Compose.
+
+Para su integración hay que incluir la dependencia: **implementation(“io.coil-kt::coil-compose::1.3.2”)**
+
+**Como es una librería que permite la carga de imágenes de red es indispensable añadir el permiso de **INTERNET** al **fichero AndroidManifest.xml.****
+
+<pre class="hljs applescript"><strong><code class="language-xml">  <uses-permission android:name="android.permission.INTERNET" /></code></strong></pre>
+
+<pre class="hljs lisp"><strong><code class="language-kotlin">Image(  
+    painter = rememberImagePainter("https://images.dog.ceo/breeds/bulldog-boston/n02096585_1761.jpg"),  
+    contentDescription = "This is a beautiful dog",  
+)</code></strong></pre>
+
+## Theming
+
+En esta lección se explica cómo estilizar una aplicación Android de forma sencilla usando Jetpack Compose con la ayuda de  **Material Theming** .
+
+Tradicionalmente, para definir temas en Android, se usa el fichero **themes.xml** pero con Jetpack Compose todo se resuelve a nivel de clases Kotlin.
+
+A continuación, se detalla cómo customizar colores, tipografías y formas de manera sencilla con solo unas pocas líneas de código.
+
+### MaterialTheme
+
+La clase **MaterialTheme** define estilos basándose en los principios de Material Design. En Jetpack Compose, esta clase está disponible como una función que admite composición en la cual se pueden customizar los valores por defecto.
+
+```kotlin
+@Composable
+fun MaterialTheme(
+    colors: Colors = MaterialTheme.colors,
+    typography: Typography = MaterialTheme.typography,
+    shapes: Shapes = MaterialTheme.shapes,
+    content: @Composable () -> Unit
+)
+```
+
+Tal y como se muestra en el código anterior, se pueden modificar los siguientes atributos:  **colors** , **typography** y  **shapes** . A continuación, se explica detalladamente cada uno de los siguientes atributos con el objetivo de entender mejor cómo modificarlos para obtener una customización específica.
+
+### Color
+
+Antes de explicar la clase **Colors** es importante saber cómo se utiliza la clase  **Color** . Jetpack Compose utiliza **Color** para representar un color. Hay dos formas básicas de definir un color mediante esta clase:
+
+* Hexadecimal:
+
+```kotlin
+val red = Color(0xffff0000)
+```
+
+* RGB:
+
+```kotlin
+val red = Color(red = 1f, green = 0f, blue = 0f)
+```
+
+Es una buena práctica definir los colores de la aplicación en un fichero  **Color.kt** .
+
+```kotlin
+import androidx.compose.ui.graphics.Color  
+
+val brown = Color(0xECE1D0)  
+val yellow = Color(0xFFDAA95E)
+```
+
+Y acceder a ellos como se indica a continuación:
+
+```kotlin
+Text("Hello Openwebinars", color = brown)
+```
+
+Para soportar un estilo Material Design, es importante definir un conjunto de colores en un tema referenciándolos después desde ahí. A continuación, se muestra cómo hacerlo.
+
+### Colors
+
+La clase Colors es provista por Jetpack Compose y facilita la definición de dicho conjunto de colores para soportar el sistema Material Design.
+
+```kotlin
+class Colors(
+    primary: Color,
+    primaryVariant: Color,
+    secondary: Color,
+    secondaryVariant: Color,
+    background: Color,
+    surface: Color,
+    error: Color,
+    onPrimary: Color,
+    onSecondary: Color,
+    onBackground: Color,
+    onSurface: Color,
+    onError: Color,
+    isLight: Boolean
+)
+```
+
+El objetivo de esta lección no es definir a qué aspecto de una aplicación corresponde cada atributo de la clase  **Colors** , sin embargo, toda esta información puede consultarse en la documentación de [Material Design sobre el sistema de colores](https://material.io/design/color/the-color-system.html#color-usage-and-palettes).
+
+Jetpack Compose cuenta por defecto con funciones de tipo builder para crear conjuntos de temas predefinidos del tipo light y dark: **lightColors** y  **darkColors** . A continuación, se muestra la función  **darkColors** .
+
+```kotlin
+fun darkColors(  
+    primary: Color = Color(0xFFBB86FC),  
+    primaryVariant: Color = Color(0xFF3700B3),  
+    secondary: Color = Color(0xFF03DAC6),  
+    secondaryVariant: Color = secondary,  
+    background: Color = Color(0xFF121212),  
+    surface: Color = Color(0xFF121212),  
+    error: Color = Color(0xFFCF6679),  
+    onPrimary: Color = Color.Black,  
+    onSecondary: Color = Color.Black,  
+    onBackground: Color = Color.White,  
+    onSurface: Color = Color.White,  
+    onError: Color = Color.Black  
+): Colors = Colors(  
+    primary,  
+    primaryVariant,  
+    secondary,  
+    secondaryVariant,  
+    background,  
+    surface,  
+    error,  
+    onPrimary,  
+    onSecondary,  
+    onBackground,  
+    onSurface,  
+    onError,  
+    false)
+```
+
+Se considera una buena práctica definir las paletas de colores de una aplicación, usando las funciones builder mencionadas anteriormente, en un fichero **Theme.kt** tal y como se muestra a continuación:
+
+```kotlin
+private val DarkColorPalette = darkColors(  
+    primary = Purple200,  
+    primaryVariant = Purple700,  
+    secondary = Teal200  
+)  
+
+private val LightColorPalette = lightColors(  
+    primary = Purple500,  
+    primaryVariant = Purple700,  
+    secondary = Teal200  
+ )
+```
+
+### Typography
+
+La clase  **Typography** , provista por Jetpack Compose, es la encargada de ayudar a crear estilos para etiquetas de texto. A través de dicha clase podemos definir el estilo de cada tipo de texto reflejado en Material Design (h1, h2, button, caption, body1, body2, etc). A continuación, se muestra el constructor por defecto de dicha clase para ayudar a comprender mejor su funcionamiento.
+
+```kotlin
+constructor(  
+    defaultFontFamily: FontFamily = FontFamily.Default,  
+    h1: TextStyle = TextStyle(  
+        fontWeight = FontWeight.Light,  
+        fontSize = 96.sp,  
+        letterSpacing = (-1.5).sp  
+    ),  
+    h2: TextStyle = TextStyle(  
+        fontWeight = FontWeight.Light,  
+        fontSize = 60.sp,  
+        letterSpacing = (-0.5).sp  
+    ),  
+
+    .... 
+
+    subtitle1: TextStyle = TextStyle(  
+        fontWeight = FontWeight.Normal,  
+        fontSize = 16.sp,  
+        letterSpacing = 0.15.sp  
+    ),  
+    subtitle2: TextStyle = TextStyle(  
+        fontWeight = FontWeight.Medium,  
+        fontSize = 14.sp,  
+        letterSpacing = 0.1.sp  
+    ),  
+    body1: TextStyle = TextStyle(  
+        fontWeight = FontWeight.Normal,  
+        fontSize = 16.sp,  
+        letterSpacing = 0.5.sp  
+    ),  
+    button: TextStyle = TextStyle(  
+        fontWeight = FontWeight.Medium,  
+        fontSize = 14.sp,  
+        letterSpacing = 1.25.sp  
+    ),
+
+    ....
+
+  )
+```
+
+Para conocer en detalle la escala de cada valor de cada tipo se recomienda visitar la [documentación de Material Design](https://material.io/design/typography/the-type-system.html#type-scale).
+
+Para customizar los atributos de texto de la aplicación se recomienda como buena práctica crear un objeto de la clase **Typography** en un fichero **Type.kt** y sobrescribir los tipos de texto que se deseen tal y como se muestra en el ejemplo a continuación.
+
+```kotlin
+val Typography = Typography(  
+    body1 = TextStyle(  
+        fontFamily = FontFamily.Default,  
+        fontWeight = FontWeight.Normal,  
+        fontSize = 16.sp  
+    ),  
+    button = TextStyle(  
+        fontFamily = FontFamily.Default,  
+        fontWeight = FontWeight.W500,  
+        fontSize = 14.sp  
+    ),  
+    caption = TextStyle(  
+        fontFamily = FontFamily.Default,  
+        fontWeight = FontWeight.Normal,  
+        fontSize = 12.sp 
+    )  
+)
+```
+
+### Shapes
+
+En muchas ocasiones, durante el desarrollo de una aplicación, es necesario definir formas que actúen como background de vistas con el objetivo de redondear bordes, establecer apariencias circulares, cuadradas, etc.
+
+Tradicionalmente, las formas se definen en un fichero XML bajo el tag  **shape** . Crear formas con Jetpack Compose es más sencillo y, además, pueden ser provistas a la función **MaterialTheme** haciendo que los componentes nativos como **Button** o **TextField** varíen su aspecto por defecto.
+
+### Uso de MatherialTheme
+
+Después de describir todos los parámetros que puede recibir  **MaterialTheme** , se recomienda crear una función que admita composición y que aplique las sobrescrituras previas definidas de cada uno de ellos tal y como se muestra a continuación.
+
+```kotlin
+@Composable  
+fun AppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {  
+    val colors = if (darkTheme) {  
+        DarkColorPalette  
+    } else {  
+        LightColorPalette  
+    }  
+    MaterialTheme(  
+        colors = colors,  
+        typography = Typography,  
+        shapes = Shapes,  
+        content = content  
+    )  
+}
+```
+
+Un punto muy importante de esta función es la comprobación sobre si el sistema está en modo oscuro mediante la utilidad  **isSystemInDarkTheme** . Con el uso de esta función, pueden aplicarse paletas de colores distintas si el modo oscuro está activo o no.
+
 # Bibliografía
 
 - https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
