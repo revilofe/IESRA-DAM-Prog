@@ -398,7 +398,7 @@ fun GreetingText(name: String) {
 
 ## Layouts: El componente `Surface`
 
-El componente `Surface()` es un componente `@componsable` que representa un bloque de UI que podemos añadir a nuestra interfaz y que puede tener color, modificadores, etc. y contener otros componentes, en concreto uno, a través de una lamda.
+El componente `Surface()` es un componente `@Componsable` que representa un bloque de UI que podemos añadir a nuestra interfaz y que puede tener color, modificadores, etc. y contener otros componentes, en concreto uno, a través de una lamda.
 Si no le aplicamos modificadores no tendrá dimensiones y no podrá verse en la pantalla, por tanto aplicamos `fillMaxWidth()`.
 Este componente puede formar nuestro componente principal `MainScreen` `@Composable` en la que ir colocando otros componentes.
 
@@ -432,7 +432,7 @@ fun MainScreen() {
 }
 ```
 
-`Text()` utiliza el método `wrapContentSize()` como modificador que indica que use solo el espacio necesario para pintar su contenido, en este caso `Hi mates!`. `wrapContentSize()` aplicará una alineación automática en `Surface()`, Alignment.Center, y situará el componente `Text()` en el centro del componente. Aunque esto se puede cambiar haciendo uso de la clase `Alignment`, ya que tiene multitud de valores para posicionar un componente dentro de su componente padre.
+`Text()` utiliza el método `wrapContentSize()` como modificador que indica que use solo el espacio necesario para pintar su contenido, en este caso `Hi mates!`. `wrapContentSize()` aplicará una alineación automática en `Surface()`, `Alignment.Center`, y situará el componente `Text()`en el centro del componente. Aunque esto se puede cambiar haciendo uso de la clase `Alignment`, ya que tiene multitud de valores para posicionar un componente dentro de su componente padre.
 
 También podemos anidar componentes `Surface()`.
 
@@ -459,19 +459,19 @@ fun MainScreen() {
 
 Anidando componentes de esta forma se puede establecer un background para el componente `Text()`. El modificador `wrapContentSize()` puede moverse ahora al componente padre `Surface()`, y por tanto, este componente `Surface()` ocupará solo lo que ocupe el componente `Text()` que contiene.
 
-El componente `Surface()` acepta un solo componente hijo. Más adelante veremos cómo añadir varios componentes dentro de un componente padre.
+Recordamos que el componente `Surface()` acepta **un solo** componente hijo. Más adelante veremos cómo añadir varios componentes dentro de un componente padre.
 
 ## Otros contenedores
 
-Para situaciones en las que se tengan más de un componente hijo, Jetpack Compose ofrece los componentes: **Row** , **Column** y  **Box** :
+Para situaciones en las que se tengan más de un componente hijo, Jetpack Compose ofrece los componentes: **Row**, **Column** y **Box** :
 
-* **Row** : Componente que puede albergar contenido de forma horizontal.
-* **Column** : Componente que puede albergar contenido de forma vertical.
-* **Box** : Componente que permite tener componentes encima o debajo de otros componentes de forma sencilla.
+* **Row**: Componente que puede albergar contenido de forma horizontal.
+* **Column**: Componente que puede albergar contenido de forma vertical.
+* **Box**: Componente que permite tener componentes encima o debajo de otros componentes de forma sencilla.
 
 ### Row
 
-Al igual que  **Button** , **Row** contiene un **RowScope** que nos indica que podemos añadir componentes que admiten composición en su interior. Como indicamos anteriormente, dichos componentes se alinearán de forma horizontal.
+Al igual que  **Button**, **Row** contiene un **RowScope** que nos indica que podemos añadir componentes que admiten composición en su interior. Como indicamos anteriormente, dichos componentes se alinearán de forma horizontal.
 
 A continuación, se muestra un ejemplo de componente **Row** con dos componentes **Surface** cuadrados que se alinean horizontalmente:
 
@@ -494,13 +494,13 @@ fun MainScreen() {
  } }}
 ```
 
-Si vemos los argumentos que acepta el componente **Row** podemos observar dos muy interesantes: **verticalAlignment** y  **horizontalArrangement** .
+Si vemos los argumentos que acepta el componente **Row** podemos observar dos muy interesantes: **verticalAlignment** y **horizontalArrangement** .
 
 #### verticalAlignment
 
-Mediante este argumento podemos indicar cómo queremos posicionar los hijos de nuestro componente **Row** con respecto a la línea vertical. Este argumento solo acepta parámetros del tipo **Alignment.Vertical** (valores como:  **Top** , **CenterVertically** y  **Bottom** ).
+Mediante este argumento podemos indicar cómo queremos posicionar los hijos de nuestro componente **Row** con respecto a la línea vertical. Este argumento solo acepta parámetros del tipo **Alignment.Vertical** (valores como: **Top**, **CenterVertically** y **Bottom** ).
 
-En el código que se muestra a continuación los hijos de posicionan centrados verticalmente con  **CenterVertically** :
+En el código que se muestra a continuación los hijos de posicionan centrados verticalmente con **CenterVertically** :
 
 ```kotlin
 @Composable  
@@ -580,7 +580,7 @@ fun MainScreen() {
 }
 ```
 
-De forma similar al componente `Row` , `Column` acepta los siguientes argumentos: `horizontalAlignment` y `verticalArrangement`.
+De forma similar al componente `Row`, `Column` acepta los siguientes argumentos: `horizontalAlignment` y `verticalArrangement`.
 
 #### `horizontalAlignment`
 
@@ -613,7 +613,7 @@ fun MainScreen() {
 
 #### `verticalArrangement`
 
-Este argumento permite indicar cómo disponer los elementos hijos en la línea vertical. Acepta valores de la clase `Arrangement.Vertical** (valores como: `Top`, `Bottom`o`Center`).
+Este argumento permite indicar cómo disponer los elementos hijos en la línea vertical. Acepta valores de la clase `Arrangement.Vertical` (valores como: `Top`, `Bottom`o`Center`).
 
 En el código que se muestra a continuación los hijos se posicionan centrados verticalmente y horizontalmente con `Arrangement.Center`
 
@@ -640,11 +640,6 @@ fun MainScreen() {
     }
 }
 ```
-
-# Bibliografía
-
-- https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
-- https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los argumentos de clases, muy util en Jetpack Compose
 
 # Reusar componentes
 
@@ -734,32 +729,34 @@ fun MainScreen() {
 
 La recomposición es el proceso que se encarga de actualizar la pantalla, en concreto, los componentes que admiten composición.
 
-Para lanzar la recomposición es indispensable tener una implementación de **State** para cada componente composable, al menos para los que tienen un estado que cambia o puede cambiar a lo largo del tiempo.
+Para lanzar la recomposición es indispensable tener una implementación de `State`  para cada componente composable, al menos para los que tienen un estado que cambia o puede cambiar a lo largo del tiempo.
 
 ## State
 
-El **State** de una aplicación se puede definir como **cualquier valor que puede cambiar a lo largo del tiempo** .
+El `State` de una aplicación se puede definir como **cualquier valor o dato que puede cambiar a lo largo del tiempo**, ya sea por un evento click en una lista, una entrada de datos en un formulario de texto, etc.
 
-En Jetpack Compose **State** es un componente más del propio componente composable.
+En Jetpack Compose `State` es un componente más del propio componente composable.
 
 ## Flujo de datos unidireccional
 
-El flujo de UI en Jetpack Compose puede pensarse como un bucle en el que se dispara un evento que actualiza un **State**, por ejemplo, un click a un botón que desencadena la actualización de una lista. Este nuevo valor de **State** pasa por todo el árbol de la UI de elementos composables que deben tener en cuenta los posibles valores de dicho **State** y actualizar la UI.
+El flujo de UI en Jetpack Compose puede pensarse como un bucle en el que se dispara un evento que actualiza un `State`, por ejemplo, un click a un botón que desencadena la actualización de una lista. Este nuevo valor de `State` pasa por todo el árbol de la UI de elementos composables vinculados a ese `State`, es decir, que deben tener en cuenta los posibles valores de dicho `State` y actualizar la UI.
 
-Este flujo de **Event - State** es unidireccional lo que proporciona ciertas ventajas como:
+.![image.png](./assets/image.png)
 
-* **Mayor testeabilidad** : State está desacoplado de la UI, es muy fácil hacer tests de ambas partes de forma aislada.
-* **Mayor consistencia en la UI** : Este flujo obliga a que todos los **State** sean reflejados en la UI de forma continua eliminando las posibles inconsistencias entre los componentes visuales y los estados.
+Este flujo de **`Event` - `State`** es unidireccional lo que proporciona ciertas ventajas como:
+
+* **Mayor testeabilidad** : `State` está desacoplado de la UI, es muy fácil hacer tests de ambas partes de forma aislada.
+* **Mayor consistencia en la UI** : Este flujo obliga a que todos los `State` sean reflejados en la UI de forma continua eliminando las posibles inconsistencias entre los componentes visuales y los estados.
 
 ## Controlar State en una lista
 
-Partimos de un componente **MainScreen** que contiene una lista **StudentList** de componentes **StudentText** y un **Button** que añade nuevos elementos a la lista de estudiantes.
+Partimos de un componente `MainScreen` que contiene una lista `StudentList` de componentes `StudentText` y un `Button` que añade nuevos elementos a la lista de estudiantes.
 
-**MainScreen**
+**`MainScreen`**
 
 ```kotlin
 @Composable
-funMainScreen() {
+fun MainScreen() {
     Surface(
         color = Color.LightGray,
         modifier = Modifier.fillMaxSize()
@@ -769,11 +766,11 @@ funMainScreen() {
 }
 ```
 
-**StudentList**
+**`StudentList`**
 
 ```kotlin
 @Composable
-funStudentList() {
+fun StudentList() {
     val students = mutableListOf("Juan", "Victor", "Esther", "Jaime")
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -791,11 +788,11 @@ funStudentList() {
 }
 ```
 
-**StudentText**
+**`StudentText`**
 
 ```kotlin
 @Composable
-funStudentText(name: String) {
+fun StudentText(name: String) {
     Text(
         text = name,
         style = MaterialTheme.typography.h5,
@@ -804,15 +801,15 @@ funStudentText(name: String) {
 }
 ```
 
-Si activamos el modo interactivo y pulsamos el botón añadir podemos observar cómo la lista no añade el nuevo valor aunque modifiquemos la lista de estudiantes. Esto es debido a que no se ha implementado ningún **State** a la lista de datos que dispare la recomposición.
+Si activamos el modo interactivo y pulsamos el botón añadir podemos observar cómo la lista no añade el nuevo valor aunque modifiquemos la lista de estudiantes. Esto es debido a que no se ha implementado ningún `State` a la lista de datos que dispare la recomposición.
 
-Para añadir **State** a la lista es necesario crear la lista del tipo **SnapshotStateList** a través del método **mutableStateListOf**
+Para añadir `State` a la lista es necesario crear la lista del tipo `SnapshotStateList` a través del método `mutableStateListOf`
 
 ```kotlin
 val studentsState = mutableStateListOf("Juan", "Victor", "Esther", "Jaime")
 ```
 
-Observamos que el compilador nos obliga a utilizar el bloque  **remember** . Este bloque permite que el estado sea recordado durante la recomposición y que no desaparezca después.
+Observamos que el compilador nos obliga a utilizar el bloque `remember`. Este bloque permite que el estado sea recordado durante la recomposición y que no desaparezca después.
 
 ```kotlin
 val studentsState = remember { mutableStateListOf("Juan", "Victor", "Esther", "Jaime") }
@@ -842,7 +839,274 @@ fun StudentList() {
 
 Si activamos ahora el modo interactivo y pulsamos el botón añadir vemos cómo el nuevo elemento se añade de forma satisfactoria al final de la lista.
 
+# El patrón State Hoisting
+
+El patrón **State Hosting** consiste en mover los estados al componente padre de tal forma que los hijos nunca tengan que manejarlos.
+
+El principal objetivo es reemplazar la variable de estado por dos argumentos en cada función composable hija:
+
+* `value: T` El valor para mostrar.
+* `onValueChange: (T) -> Unit` Evento (lambda) que dispara la modificación del `State`.
+
+El patrón **State Hosting** ofrece las siguientes ventajas:
+
+* Manejar los estados de forma única y centralizada.
+* Solo las funciones que manejan estados pueden modificarlos.
+* Funciones composable hijas no tienen que preocuparse por manejar estados, solo:
+  * pintar información: Los datos tiene un flujo top-down
+  * elevar eventos: Los eventos tiene un flujo bottom-up.
+
+![Ilustración del flujo de datos en una IU de Compose, desde los objetos de nivel superior hasta sus elementos secundarios.](https://developer.android.com/images/jetpack/compose/mmodel-flow-data.png?hl=es-419)
+
+![Ilustración de cómo responden los elementos de la IU a la interacción mediante la activación de eventos controlados por la lógica de la app.](https://developer.android.com/images/jetpack/compose/mmodel-flow-events.png?hl=es-419)[Mas informacion](https://developer.android.com/jetpack/compose/mental-model?hl=es-419#paradigm)
+
+A continuación, vamos a aplicar el patrón **State Hosting** a la aplicación de alumnos de la lección anterior. Para ello, seguiremos los siguientes pasos:
+
+* Mover la lista de estudiantes al punto de entrada `MainScreen`.
+* Parametrizar la función `StudentList` con el valor a mostrar y la función lambda de eventos de click.
+
+Modificamos la función:
+
+```kotlin
+@Composable
+fun StudentList(students: List<String>, onButtonClick: () -> Unit) {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        for(student in students) {
+            StudentText(name = student)
+        }
+        Button(
+            onClick = onButtonClick,
+        ) {
+            Text(text = "Add new student")
+        }
+    }
+}
+```
+
+Y modificamos el código en la que se hace uso de esta función:
+
+```kotlin
+@Composable  
+fun MainScreen() {  
+    val studentsState = remember { mutableStateListOf("Esther", "Jaime") }  
+    Surface(  
+        color = Color.LightGray,  
+        modifier = Modifier.fillMaxSize()  
+    ) {  
+        StudentList(studentsState) {  
+            studentsState.add("Miguel")  
+        }  
+    }
+ }
+```
+
+Como podemos observar en el código, el componente `StudentList` ya no sabe nada sobre estados. Le hemos aplicado las dos premisas del patrón **State Hoisting** la parametrización de la lista de estudiantes y la función para elevar los eventos de click del botón añadir. Ahora es el componente `MainScreen` el encargado de manejar estados y de modificarlos.
+
+# El componente `TextField` con State
+
+El componente `TextField` es el equivalente al componente `EditText` de Android tradicional.
+
+En esta lección veremos cómo manejar correctamente el estado de este componente a través de `State`.
+
+Vamos a iterar nuestra aplicación de añadir alumnos incorporando un campo de introducción de texto `TextField` que permita al usuario escribir el nombre del alumno.
+
+Cuando usamos `TextField`, es prácticamente obligatorio hacerlo de la mano de `State` de forma que podamos ver cómo el valor del componente cambia cada vez que se introduce texto tal y como se muestra a continuación:
+
+```kotlin
+val newStudentState = remember { mutableStateOf("")}  
+TextField(  
+    value = newStudentState.value,  
+    onValueChange = {  
+        newInput -> newStudentState.value = newInput  
+    }  
+)
+```
+
+Como vemos en el código anterior, se usa `mutableStateOf` para guardar el estado del componente `TextField`.
+
+Podríamos incorporar este snippet de código en nuestro componente `StudentList` pero implementaremos **State Hoisting** para no manejar estados en componentes internos y elevarlos al componente `MainScreen`.
+
+```kotlin
+@Composable  
+fun StudentList(
+    students: List<String>,  
+    onButtonClick: () -> Unit,  
+    studentName: String,  
+    onStudentNameChange: (String) -> Unit  
+) {  
+    Column(  
+        modifier = Modifier.fillMaxSize(),  
+        horizontalAlignment = Alignment.CenterHorizontally  
+    ) {  
+        for (student in students) {  
+            StudentText(name = student)  
+        }  
+        TextField(  
+            value = studentName,  
+            onValueChange = onStudentNameChange  
+        )  
+        Button(  
+            onClick = onButtonClick
+        ) {  
+            Text(text = "Add new student")  
+        } 
+    }
+}
+```
+
+En el código anterior se puede observar como parametrizamos `StudentList` con los siguientes argumentos:
+
+* `studentName: String` Contiene el valor del `TextField`. Como veremos en `MainScreen` a continuación, hace referencia a un `State`.
+* `onStudentNameChange: (String)->Unit` lambda que eleva el valor del componente `TextField` cuando cambia.
+
+```kotlin
+@Composable  
+fun MainScreen() {  
+    val studentsState = remember { mutableStateListOf("Esther", "Jaime") }  
+    val newStudentState = remember { mutableStateOf("") }  
+    Surface(  
+        color = Color.LightGray,  
+        modifier = Modifier.fillMaxSize()  
+    ) {  
+        StudentList(  
+            studentsState,  
+            { studentsState.add(newStudentState.value) },  
+            newStudentState.value,  
+            { newStudent -> newStudentState.value = newStudent }  
+        )  
+    }  
+}
+```
+
+* `newStudentState: MutableState` el valor de `TextField` es un `State` y todas las variaciones que se produzcan sobre él dispararán la recomposición.
+* Vemos como en las lambdas `onButtonClick` y `onStudentNameChange` se inserta un valor en la lista de estudiantes y se modifica el valor del componente `TextField` respectivamente.
+
+# `ViewModel` y `LiveData`
+
+## Introducción a `ViewModel` y `LiveData`
+
+En lecciones anteriores vimos el patrón **State Hoisting** y cómo elevar los estados lo más arriba posible dentro de la jerarquía de componentes composables.
+
+El siguiente objetivo es evitar que nuestras vistas (`Fragments` y `Activities`) sean las encargadas de manejar estados y trasladar dicha responsabilidad al componente `ViewModel`
+
+> `Fragments` y `Activities` son vistas usadas en **Jetpack Compose Android**.
+
+`ViewModel` y `LiveData` son componentes de Jetpack y forman parte de la arquitectura **Model View-View Model (MVVM)** propuesta por Google para el desarrollo de aplicaciones Android.
+
+### `ViewModel`
+
+* Es responsable de preparar y manejar estados para la UI (`Fragments` y `Activities`). Tiene una relación directa con la vista para mostrar los datos.
+* Mediante el uso de `ViewModel` seremos capaces de desacoplar la lógica de presentación de los componentes de UI.
+* `ViewModel` está directamente relacionado con el modelo de los datos que se van a mostrar en la vista. Esto es debido a que `ViewModel` es parte de la arquitectura  **MVVM** .
+* La vista espera un estado de UI proporcionado por `ViewModel` y, a su vez, `ViewModel` podrá actualizar dicho estado de UI si se producen eventos desde la vista.
+* En resumen, la vista podrá recibir actualizaciones del estado de UI desde el `ViewModel`.
+* En esta arquitectura, la vista no pregunta por el estado de la UI al `ViewModel` continuamente. Tiene la posibilidad de subscribirse al componente `LiveData` dentro de `ViewModel`
+
+![image.png](./assets/1646405734783-image.png)
+
+### `LiveData`
+
+* `LiveData` es un componente observable, permite que otros componentes se suscriban a él con el fin de ser notificados si se produce algún cambio.
+* `LiveData` contiene un estado y su principal responsabilidad es avisar a sus suscriptores cuando dicho estado cambie.
+* `Fragments` y `Activities` pueden suscribirse a un componente `LiveData` para ser notificados siempre que se produzca una actualización sobre un `State`.
+* Si se produce un evento y el `State` relacionado con el componente `LiveData` cambia, los `Fragments` y `Activities` suscritos a él serán notificados al mismo tiempo.
+* `LiveData` está pendiente del ciclo de vida de `Fragments` y `Activities`. Si estos van a un estado `onDestroy` el componente `LiveData` cierra y destruye la conexión con ellos automáticamente.
+
+![image.png](./assets/1646405775503-image.png)
+
+## `State` en `ViewModel`
+
+Partimos de una aplicación que contiene un componente `TextField()` y un componente `Text()` que refleja los cambios que se producen en `TextField()` cuando el usuario introduce texto en él.
+
+`MainScreen`
+
+```kotlin
+@Composable  
+fun MainScreen() {  
+    val nameState = remember { mutableStateOf("") }  
+    Surface(  
+        color = Color.LightGray,  
+        modifier = Modifier.fillMaxSize()  
+    ) {  
+        MainLayout(  
+            nameState.value  
+        ) { newName -> nameState.value = newName }  
+    }
+}
+```
+
+`MainLayout`
+
+```kotlin
+@Composable  
+fun MainLayout(  
+    name: String,  
+    onTextFieldChange: (String) -> Unit  
+) {  
+    Column(  
+        modifier = Modifier.fillMaxSize(),  
+        horizontalAlignment = Alignment.CenterHorizontally  
+    ) {  
+        TextField(  
+            value = name,  
+            onValueChange = onTextFieldChange  
+        )  
+        Text(text = name)  
+    }  
+}
+```
+
+El siguiente paso será mover `nameState` a un componente `ViewModel`. Para ello, creamos una nueva clase `MainViewModel` que herede de `ViewModel` como se muestra a continuación:
+
+```kotlin
+class MainViewModel: ViewModel() {  
+
+    val textFieldState = MutableLiveData("")  
+
+    fun onTextChange(newText: String) {  
+        textFieldState.value = newText  
+    }  
+}
+```
+
+`textFieldState: MutableLiveData` refleja ahora el estado del dato al cual nuestra UI tendrá que suscribirse para recibir actualizaciones.
+
+A través del método público `onTextChange`, la UI mandará el evento de cambio de texto que genere el componente `TextField`.
+
+Para leer los datos de nuestro nuevo `MainViewModel` desde la vista `MainScreen` tendremos que modificar el componente de la siguiente forma:
+
+```kotlin
+@Composable  
+fun MainScreen(viewModel: MainViewModel = MainViewModel()) {  
+    val nameState = viewModel.textFieldState.observeAsState("")  
+    Surface(  
+        color = Color.LightGray,  
+        modifier = Modifier.fillMaxSize()  
+    ) {  
+        MainLayout(  
+            nameState.value  
+        ) { newName -> viewModel.onTextChange(newName) }  
+    }
+}
+```
+
+El valor de `nameState` proviene ahora del componente `LiveData` definido en nuestro nuevo `MainViewModel`.
+
+Necesitamos que `nameState` sea un `State` y no un `LiveData`. Para conseguir esto, hay que añadir una nueva dependencia a nuestro fichero `build.gradle`, permitiendo el uso del método `observeAsState` encargado de la conversión a `State`:
+
+```groovy
+implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+```
+
+Los eventos de `TextField` recogidos en la lambda son enviados ahora a nuestro `MainViewModel` y a su vez notificados a `LiveData` a través del método `onTextChange`.
+
 # Bibliografía
 
 - https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
-- https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los argumentos de clases, muy util en Jetpack Compose
+- https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los  argumentos de clases, muy util en Jetpack Compose
+- https://medium.com/droid-latam/jetpack-compose-i-motivaci%C3%B3n-50e085543923 - Que es Jetpack Compose
+- https://medium.com/@facundomr/jetpack-compose-ii-funciones-composable-8d4d1d40ed44 - Funciones @Composables
+- https://medium.com/@facundomr/jetpack-compose-iii-flujo-de-datos-y-eventos-e62d5f8bce6f - Arquitectura de la IU, flujo de informacion y eventos.
