@@ -21,6 +21,7 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.20") // LOGGER
     implementation("org.slf4j:slf4j-simple:1.7.32") // LOGGER
     implementation("de.m3y.kformat:kformat:0.9") //KFORMAT
+    implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.4") //Kotlinx-cli
     testImplementation(kotlin("test"))
 
 }
