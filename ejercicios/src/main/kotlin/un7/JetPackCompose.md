@@ -89,9 +89,11 @@ Hablaremos más adelante sobre el parámetro  *showBackground* .
 
 # Primeros componentes
 
+Jetpack Compose se basa en funciones "componibles". Estas funciones le permiten definir la interfaz de usuario de tu aplicación mediante la descripción de cómo debería verse y proporcionando dependencias de datos, en lugar de centrarse en el proceso de construcción de la interfaz de usuario (inicializar un elemento, adjuntarlo a un padre, etc.). Para crear una función componible, simplemente agregue la anotación `@Composable` al nombre de la función.
+
 ## Mostrar etiquetas:
 
-Como se puede observar en el codigo de abajo, la función `Greeting` contiene un elemento  `Text`, y esta tambien es una funcion etiquetada con `@Composable`.
+Como se puede observar en el codigo de abajo, la función `Greeting()` contiene un elemento  `Text()`, y esta también es una funcion etiquetada con `@Composable`.
 
 ```kotlin
 @Composable  
@@ -100,15 +102,15 @@ fun Greeting(name: String) {
 }
 ```
 
-`Text` es una función propia del SDK de Android que admite composición.
+`Text()` es una función propia del SDK de Android que admite composición.
 
-`Text` admite por parámetro argumentos como  `text`, `modifier`, `color`, `fontSize` , etc.
+`Text()` admite por parámetro argumentos como  `text`, `modifier`, `color`, `fontSize` , etc.
 
-Dichos parámetros pueden ser requeridos (como en el caso de  *text* ) o no requeridos con valores por defecto ( *color* , *modifier* ). Consulta los parametros de la funcion `Text`.
+Dichos parámetros pueden ser requeridos (como en el caso de  `text`) o no requeridos con valores por defecto (`color`, `modifier`). Consulta los parámetros de la función `Text()`.
 
 Siempre que cambiemos valores de la interfaz, recuerda usar la opción *Build Refresh* para actualizar los valores en la Preview.
 
-Se pueden incluir funciones Compose definidas en el SDK de Android directamente en la función  `setContent` :
+Se pueden incluir funciones Compose definidas en el SDK de Android directamente en la función `setContent`. El bloque `setContent` define el diseño de la interface, por tanto, en este bloque, llamaremos a las funciones componibles. **Las funciones componibles solo se pueden llamar desde otras funciones componibles**.
 
 ```kotlin
 class MainActivity : ComponentActivity() {  
@@ -121,9 +123,23 @@ class MainActivity : ComponentActivity() {
 }
 ```
 
-El nombre de las funciones que admiten composición ¿¿¿¿no????? empieza por letra mayúscula, ya que estas funciones actúan como widgets.
+El nombre de las funciones que admiten composición deben empezar por letra mayúscula, ya que estas funciones actúan como widgets.
 
 Las funciones *[@Composable](https://github.com/Composable "@Composable")* *no están ligadas* a ninguna clase, pueden ser definidas en cualquier sitio.
+
+> En Jetpack Compose Desktop, el contenido tendrá que ir dentro de la función `application`, punto de entrada para la aplicación, y que a la vez recibe un componente `@Composable`, normalmente un componente `Window`. Como puedes apreciar no hay rastros de `Activity`, ni de `setContent`.
+
+Un Ejemplo de lo anterior:
+
+```kotlin
+fun main() = application {
+    Window(onCloseRequest = ::exitApplication) {
+        App()
+    }
+}
+```
+
+y la función `App` estará definida como `@Composable`.
 
 ## Creación de un botón y manejo de eventos
 
@@ -447,17 +463,17 @@ El componente `Surface()` acepta un solo componente hijo. Más adelante veremos 
 
 ## Otros contenedores
 
-Para situaciones en las que se tengan más de un componente hijo, Jetpack Compose ofrece los componentes: **Row** , **Column** y  **Box** :
+Para situaciones en las que se tengan más de un componente hijo, Jetpack Compose ofrece los componentes: `Row` , `Column` y `Box`:
 
-* **Row** : Componente que puede albergar contenido de forma horizontal.
-* **Column** : Componente que puede albergar contenido de forma vertical.
-* **Box** : Componente que permite tener componentes encima o debajo de otros componentes de forma sencilla.
+* `Row`: Componente que puede albergar contenido de forma horizontal.
+* `Column`: Componente que puede albergar contenido de forma vertical.
+* `Box`: Componente que permite tener componentes encima o debajo de otros componentes de forma sencilla.
 
-### Row
+### `Row`
 
-Al igual que  **Button** , **Row** contiene un **RowScope** que nos indica que podemos añadir componentes que admiten composición en su interior. Como indicamos anteriormente, dichos componentes se alinearán de forma horizontal.
+Al igual que `Button`, `Row` contiene un `RowScope` que nos indica que podemos añadir componentes que admiten composición en su interior. Como indicamos anteriormente, dichos componentes se alinearán de forma horizontal.
 
-A continuación, se muestra un ejemplo de componente **Row** con dos componentes **Surface** cuadrados que se alinean horizontalmente:
+A continuación, se muestra un ejemplo de componente `Row` con dos componentes `Surface` cuadrados que se alinean horizontalmente:
 
 ```kotlin
 @Composable  
@@ -478,13 +494,13 @@ fun MainScreen() {
  } }}
 ```
 
-Si vemos los argumentos que acepta el componente **Row** podemos observar dos muy interesantes: **verticalAlignment** y  **horizontalArrangement** .
+Si vemos los argumentos que acepta el componente `Row` podemos observar dos muy interesantes: `verticalAlignment` y  `horizontalArrangement`
 
-#### verticalAlignment
+#### `verticalAlignment`
 
-Mediante este argumento podemos indicar cómo queremos posicionar los hijos de nuestro componente **Row** con respecto a la línea vertical. Este argumento solo acepta parámetros del tipo **Alignment.Vertical** (valores como:  **Top** , **CenterVertically** y  **Bottom** ).
+Mediante este argumento podemos indicar cómo queremos posicionar los hijos de nuestro componente `Row` con respecto a la línea vertical. Este argumento solo acepta parámetros del tipo `Alignment.Vertical` (valores como:  `Top` , `CenterVertically` y  `Bottom`).
 
-En el código que se muestra a continuación los hijos de posicionan centrados verticalmente con  **CenterVertically** :
+En el código que se muestra a continuación los hijos se posicionan centrados verticalmente con  ´CenterVertically´:
 
 ```kotlin
 @Composable  
@@ -507,11 +523,11 @@ fun MainScreen() {
 }
 ```
 
-#### horizontalArrangement
+#### `horizontalArrangement`
 
-Este argumento nos permite indicar cómo disponer los elementos hijos en la línea horizontal. Acepta valores de la clase **Arrangement.Horizontal** (valores como:  **Start** , **End** o  **Center** ).
+Este argumento nos permite indicar cómo disponer los elementos hijos en la línea horizontal. Acepta valores de la clase `Arrangement.Horizontal` (valores como: `Start`, `End` o `Center`).
 
-En el código que se muestra a continuación los hijos de posicionan centrados verticalmente y horizontalmente con  **Arrangement.Center** :
+En el código que se muestra a continuación los hijos se posicionan centrados verticalmente y horizontalmente con `Arrangement.Center`:
 
 ```kotlin
 @Composable  
@@ -521,7 +537,7 @@ fun MainScreen() {
         modifier = Modifier.fillMaxSize()  
     ) {  
         Row(  
-            verticalAlignment = Alignment.CenterVertically,      
+            verticalAlignment = Alignment.CenterVertically,  
             horizontalArrangement = Arrangement.Center  
         ) {  
             Surface(  
@@ -537,11 +553,11 @@ fun MainScreen() {
 }
 ```
 
-### Column
+### `Column`
 
-Como indicamos anteriormente, el componente Column alberga hijos de forma vertical.
+Como indicamos anteriormente, el componente `Column` alberga hijos de forma vertical.
 
-A continuación, se muestra un ejemplo de componente **Column** con dos componentes **Surface** cuadrados que se alinean verticalmente:
+A continuación, se muestra un ejemplo de componente `Column` con dos componentes `Surface` cuadrados que se alinean verticalmente:
 
 ```kotlin
 @Composable  
@@ -564,13 +580,13 @@ fun MainScreen() {
 }
 ```
 
-De forma similar al componente  **Row** , **Column** acepta los siguientes argumentos: **horizontalAlignment** y  **verticalArrangement** .
+De forma similar al componente `Row` , `Column` acepta los siguientes argumentos: `horizontalAlignment` y `verticalArrangement`.
 
-#### horizontalAlignment
+#### `horizontalAlignment`
 
-Mediante este argumento podemos indicar cómo queremos posicionar los hijos de nuestro componente **Column** con respecto a la línea horizontal. Este argumento solo acepta parámetros del tipo **Alignment.Horizontal** (valores como:  **Start** , **CenterHorizontally** y  **End** ).
+Mediante este argumento podemos indicar cómo queremos posicionar los hijos de nuestro componente `Column` con respecto a la línea horizontal. Este argumento solo acepta parámetros del tipo `Alignment.Horizontal` (valores como: `Start`, `CenterHorizontally` y `End`).
 
-En el código que se muestra a continuación los hijos de posicionan centrados horizontalmente con  **CenterHorizontally** :
+En el código que se muestra a continuación los hijos se posicionan centrados horizontalmente con `CenterHorizontally`:
 
 ```kotlin
 @Composable  
@@ -595,11 +611,11 @@ fun MainScreen() {
 }
 ```
 
-#### verticalArrangement
+#### `verticalArrangement`
 
-Este argumento permite indicar cómo disponer los elementos hijos en la línea vertical. Acepta valores de la clase **Arrangement.Vertical** (valores como:  **Top** , **Bottom** o  **Center** ).
+Este argumento permite indicar cómo disponer los elementos hijos en la línea vertical. Acepta valores de la clase `Arrangement.Vertical** (valores como: `Top`, `Bottom`o`Center`).
 
-En el código que se muestra a continuación los hijos de posicionan centrados verticalmente y horizontalmente con **Arrangement.Center**
+En el código que se muestra a continuación los hijos se posicionan centrados verticalmente y horizontalmente con `Arrangement.Center`
 
 ```kotlin
 @Composable  
@@ -624,3 +640,199 @@ fun MainScreen() {
     }
 }
 ```
+
+# Reusar componentes
+
+Tomando como ejemplo uno de los códigos vistos anteriormente, podemos observar que los hijos de `Column` son dos cuadrados representados con un componte `Surface` que son iguales y estamos añadiendo código repetitivo.
+
+```kotlin
+@Composable  
+fun MainScreen() {  
+    Surface(  
+        color = Color.LightGray,  
+        modifier = Modifier.fillMaxSize()  
+    ) {  
+      Column {  
+          Surface(  
+              color = Color.Green,  
+              modifier = Modifier.size(60.dp)  
+          ) {}  
+          Surface(  
+              color = Color.Black,  
+              modifier = Modifier.size(60.dp)  
+          ) {}  
+        }
+    }
+}
+```
+
+El componente `Surface` puede abstraerse en una función de composición específica y ser reutilizado de una forma mucho más sencilla.
+
+Abstracción en componente `MySquare`:
+
+```kotlin
+ @Composable  
+fun MySquare() {  
+    Surface(  
+        color = Color.Green,
+        modifier = Modifier.size(60.dp)
+    ) {}  
+}
+```
+
+Utilización de componente `MySquare`:
+
+```kotlin
+@Composable  
+fun MainScreen() {  
+    Surface(  
+        color = Color.LightGray,  
+        modifier = Modifier.fillMaxSize()  
+    ) {  
+        Column {  
+            MySquare()  
+            MySquare()  
+            MySquare()  
+        }  
+ }}
+```
+
+Podemos parametrizar nuestro nuevo componente `MySquare` pasándole como argumento el color.
+
+```kotlin
+@Composable  
+fun MySquare(color: Color) {  
+    Surface(  
+        color = color,  
+        modifier = Modifier.size(60.dp)  
+    ) {}  
+}
+
+@Composable  
+fun MainScreen() {  
+    Surface(  
+        color = Color.LightGray,  
+        modifier = Modifier.fillMaxSize()  
+    ) {  
+        Column {  
+            MySquare(Color.Red)  
+            MySquare(Color.Yellow)  
+            MySquare(Color.Green)  
+        }  
+    }
+ }
+```
+
+# Cómo funciona State
+
+## Recomposición
+
+La recomposición es el proceso que se encarga de actualizar la pantalla, en concreto, los componentes que admiten composición.
+
+Para lanzar la recomposición es indispensable tener una implementación de **State** para cada componente composable, al menos para los que tienen un estado que cambia o puede cambiar a lo largo del tiempo.
+
+## State
+
+El **State** de una aplicación se puede definir como **cualquier valor que puede cambiar a lo largo del tiempo** .
+
+En Jetpack Compose **State** es un componente más del propio componente composable.
+
+## Flujo de datos unidireccional
+
+El flujo de UI en Jetpack Compose puede pensarse como un bucle en el que se dispara un evento que actualiza un **State**, por ejemplo, un click a un botón que desencadena la actualización de una lista. Este nuevo valor de **State** pasa por todo el árbol de la UI de elementos composables que deben tener en cuenta los posibles valores de dicho **State** y actualizar la UI.
+
+Este flujo de **Event - State** es unidireccional lo que proporciona ciertas ventajas como:
+
+* **Mayor testabilidad** : State está desacoplado de la UI, es muy fácil hacer tests de ambas partes de forma aislada.
+* **Mayor consistencia en la UI** : Este flujo obliga a que todos los **State** sean reflejados en la UI de forma continua eliminando las posibles inconsistencias entre los componentes visuales y los estados.
+
+## Controlar State en una lista
+
+Partimos de un componente **MainScreen** que contiene una lista **StudentList** de componentes **StudentText** y un **Button** que añade nuevos elementos a la lista de estudiantes.
+
+**MainScreen**
+
+```kotlin
+@Composable  
+funMainScreen() {  
+    Surface(  
+        color = Color.LightGray,  
+        modifier = Modifier.fillMaxSize()  
+    ) {  
+        StudentList()
+    }
+}
+```
+
+**StudentList**
+
+```kotlin
+@Composable  
+funStudentList() {
+    val students = mutableListOf("Juan", "Victor", "Esther", "Jaime")  
+    Column(  
+        modifier = Modifier.fillMaxSize(),  
+        horizontalAlignment = Alignment.CenterHorizontally  
+    ) {  
+        for (student in students) {  
+            StudentText(name = student)  
+        }  
+        Button(  
+            onClick = { students.add("Miguel") },  
+        ) {  
+            Text(text = "Add new student")  
+        }
+    }
+}
+```
+
+**StudentText**
+
+```kotlin
+@Composable  
+funStudentText(name: String) {  
+    Text(  
+        text = name,  
+        style = MaterialTheme.typography.h5,  
+        modifier = Modifier.padding(10.dp)  
+    )  
+}
+```
+
+Si activamos el modo interactivo y pulsamos el botón añadir podemos observar cómo la lista no añade el nuevo valor aunque modifiquemos la lista de estudiantes. Esto es debido a que no se ha implementado ningún **State** a la lista de datos que dispare la recomposición.
+
+Para añadir **State** a la lista es necesario crear la lista del tipo **SnapshotStateList** a través del método **mutableStateListOf**
+
+```kotlin
+val studentsState = mutableStateListOf("Juan", "Victor", "Esther", "Jaime")
+```
+
+Observamos que el compilador nos obliga a utilizar el bloque  **remember** . Este bloque permite que el estado sea recordado durante la recomposición y que no desaparezca después.
+
+```kotlin
+val studentsState = remember { mutableStateListOf("Juan", "Victor", "Esther", "Jaime") }
+```
+
+Finalmente, la función StudentList queda de esta forma:
+
+```kotlin
+@Composable  
+fun StudentList() {  
+    val studentsState = remember { mutableStateListOf("Juan", "Victor", "Esther", "Jaime") }  
+    Column(  
+        modifier = Modifier.fillMaxSize(),  
+        horizontalAlignment = Alignment.CenterHorizontally  
+    ) {  
+        for (student in studentsState) {  
+            StudentText(name = student)  
+        }  
+        Button(  
+            onClick = { studentsState.add("Miguel") },  
+        ) {  
+            Text(text = "Add new student")  
+        }
+    }
+}
+```
+
+Si activamos ahora el modo interactivo y pulsamos el botón añadir vemos cómo el nuevo elemento se añade de forma satisfactoria al final de la lista.
