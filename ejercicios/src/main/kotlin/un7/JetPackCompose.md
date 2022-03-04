@@ -463,17 +463,17 @@ El componente `Surface()` acepta un solo componente hijo. Más adelante veremos 
 
 ## Otros contenedores
 
-Para situaciones en las que se tengan más de un componente hijo, Jetpack Compose ofrece los componentes: `Row` , `Column` y `Box`:
+Para situaciones en las que se tengan más de un componente hijo, Jetpack Compose ofrece los componentes: **Row** , **Column** y  **Box** :
 
-* `Row`: Componente que puede albergar contenido de forma horizontal.
-* `Column`: Componente que puede albergar contenido de forma vertical.
-* `Box`: Componente que permite tener componentes encima o debajo de otros componentes de forma sencilla.
+* **Row** : Componente que puede albergar contenido de forma horizontal.
+* **Column** : Componente que puede albergar contenido de forma vertical.
+* **Box** : Componente que permite tener componentes encima o debajo de otros componentes de forma sencilla.
 
-### `Row`
+### Row
 
-Al igual que `Button`, `Row` contiene un `RowScope` que nos indica que podemos añadir componentes que admiten composición en su interior. Como indicamos anteriormente, dichos componentes se alinearán de forma horizontal.
+Al igual que  **Button** , **Row** contiene un **RowScope** que nos indica que podemos añadir componentes que admiten composición en su interior. Como indicamos anteriormente, dichos componentes se alinearán de forma horizontal.
 
-A continuación, se muestra un ejemplo de componente `Row` con dos componentes `Surface` cuadrados que se alinean horizontalmente:
+A continuación, se muestra un ejemplo de componente **Row** con dos componentes **Surface** cuadrados que se alinean horizontalmente:
 
 ```kotlin
 @Composable  
@@ -494,13 +494,13 @@ fun MainScreen() {
  } }}
 ```
 
-Si vemos los argumentos que acepta el componente `Row` podemos observar dos muy interesantes: `verticalAlignment` y  `horizontalArrangement`
+Si vemos los argumentos que acepta el componente **Row** podemos observar dos muy interesantes: **verticalAlignment** y  **horizontalArrangement** .
 
-#### `verticalAlignment`
+#### verticalAlignment
 
-Mediante este argumento podemos indicar cómo queremos posicionar los hijos de nuestro componente `Row` con respecto a la línea vertical. Este argumento solo acepta parámetros del tipo `Alignment.Vertical` (valores como:  `Top` , `CenterVertically` y  `Bottom`).
+Mediante este argumento podemos indicar cómo queremos posicionar los hijos de nuestro componente **Row** con respecto a la línea vertical. Este argumento solo acepta parámetros del tipo **Alignment.Vertical** (valores como:  **Top** , **CenterVertically** y  **Bottom** ).
 
-En el código que se muestra a continuación los hijos se posicionan centrados verticalmente con  ´CenterVertically´:
+En el código que se muestra a continuación los hijos de posicionan centrados verticalmente con  **CenterVertically** :
 
 ```kotlin
 @Composable  
@@ -537,7 +537,7 @@ fun MainScreen() {
         modifier = Modifier.fillMaxSize()  
     ) {  
         Row(  
-            verticalAlignment = Alignment.CenterVertically,  
+            verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center  
         ) {  
             Surface(  
@@ -640,27 +640,30 @@ fun MainScreen() {
     }
 }
 ```
+# Bibliografía
+- https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
+- https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los argumentos de clases, muy util en Jetpack Compose
 
 # Reusar componentes
 
 Tomando como ejemplo uno de los códigos vistos anteriormente, podemos observar que los hijos de `Column` son dos cuadrados representados con un componte `Surface` que son iguales y estamos añadiendo código repetitivo.
 
 ```kotlin
-@Composable  
-fun MainScreen() {  
-    Surface(  
-        color = Color.LightGray,  
-        modifier = Modifier.fillMaxSize()  
-    ) {  
-      Column {  
-          Surface(  
-              color = Color.Green,  
-              modifier = Modifier.size(60.dp)  
-          ) {}  
-          Surface(  
-              color = Color.Black,  
-              modifier = Modifier.size(60.dp)  
-          ) {}  
+@Composable
+fun MainScreen() {
+    Surface(
+        color = Color.LightGray,
+        modifier = Modifier.fillMaxSize()
+    ) {
+      Column {
+          Surface(
+              color = Color.Green,
+              modifier = Modifier.size(60.dp)
+          ) {}
+          Surface(
+              color = Color.Black,
+              modifier = Modifier.size(60.dp)
+          ) {}
         }
     }
 }
@@ -671,54 +674,54 @@ El componente `Surface` puede abstraerse en una función de composición especí
 Abstracción en componente `MySquare`:
 
 ```kotlin
- @Composable  
-fun MySquare() {  
-    Surface(  
+ @Composable
+fun MySquare() {
+    Surface(
         color = Color.Green,
         modifier = Modifier.size(60.dp)
-    ) {}  
+    ) {}
 }
 ```
 
 Utilización de componente `MySquare`:
 
 ```kotlin
-@Composable  
-fun MainScreen() {  
-    Surface(  
-        color = Color.LightGray,  
-        modifier = Modifier.fillMaxSize()  
-    ) {  
-        Column {  
-            MySquare()  
-            MySquare()  
-            MySquare()  
-        }  
+@Composable
+fun MainScreen() {
+    Surface(
+        color = Color.LightGray,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column {
+            MySquare()
+            MySquare()
+            MySquare()
+        }
  }}
 ```
 
 Podemos parametrizar nuestro nuevo componente `MySquare` pasándole como argumento el color.
 
 ```kotlin
-@Composable  
-fun MySquare(color: Color) {  
-    Surface(  
-        color = color,  
-        modifier = Modifier.size(60.dp)  
-    ) {}  
+@Composable
+fun MySquare(color: Color) {
+    Surface(
+        color = color,
+        modifier = Modifier.size(60.dp)
+    ) {}
 }
 
-@Composable  
-fun MainScreen() {  
-    Surface(  
-        color = Color.LightGray,  
-        modifier = Modifier.fillMaxSize()  
-    ) {  
-        Column {  
-            MySquare(Color.Red)  
-            MySquare(Color.Yellow)  
-            MySquare(Color.Green)  
-        }  
+@Composable
+fun MainScreen() {
+    Surface(
+        color = Color.LightGray,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column {
+            MySquare(Color.Red)
+            MySquare(Color.Yellow)
+            MySquare(Color.Green)
+        }
     }
  }
 ```
@@ -753,12 +756,12 @@ Partimos de un componente **MainScreen** que contiene una lista **StudentList** 
 **MainScreen**
 
 ```kotlin
-@Composable  
-funMainScreen() {  
-    Surface(  
-        color = Color.LightGray,  
-        modifier = Modifier.fillMaxSize()  
-    ) {  
+@Composable
+funMainScreen() {
+    Surface(
+        color = Color.LightGray,
+        modifier = Modifier.fillMaxSize()
+    ) {
         StudentList()
     }
 }
@@ -767,20 +770,20 @@ funMainScreen() {
 **StudentList**
 
 ```kotlin
-@Composable  
+@Composable
 funStudentList() {
-    val students = mutableListOf("Juan", "Victor", "Esther", "Jaime")  
-    Column(  
-        modifier = Modifier.fillMaxSize(),  
-        horizontalAlignment = Alignment.CenterHorizontally  
-    ) {  
-        for (student in students) {  
-            StudentText(name = student)  
-        }  
-        Button(  
-            onClick = { students.add("Miguel") },  
-        ) {  
-            Text(text = "Add new student")  
+    val students = mutableListOf("Juan", "Victor", "Esther", "Jaime")
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        for (student in students) {
+            StudentText(name = student)
+        }
+        Button(
+            onClick = { students.add("Miguel") },
+        ) {
+            Text(text = "Add new student")
         }
     }
 }
@@ -789,13 +792,13 @@ funStudentList() {
 **StudentText**
 
 ```kotlin
-@Composable  
-funStudentText(name: String) {  
-    Text(  
-        text = name,  
-        style = MaterialTheme.typography.h5,  
-        modifier = Modifier.padding(10.dp)  
-    )  
+@Composable
+funStudentText(name: String) {
+    Text(
+        text = name,
+        style = MaterialTheme.typography.h5,
+        modifier = Modifier.padding(10.dp)
+    )
 }
 ```
 
@@ -816,23 +819,27 @@ val studentsState = remember { mutableStateListOf("Juan", "Victor", "Esther", "J
 Finalmente, la función StudentList queda de esta forma:
 
 ```kotlin
-@Composable  
-fun StudentList() {  
-    val studentsState = remember { mutableStateListOf("Juan", "Victor", "Esther", "Jaime") }  
-    Column(  
-        modifier = Modifier.fillMaxSize(),  
-        horizontalAlignment = Alignment.CenterHorizontally  
-    ) {  
-        for (student in studentsState) {  
-            StudentText(name = student)  
-        }  
-        Button(  
-            onClick = { studentsState.add("Miguel") },  
-        ) {  
-            Text(text = "Add new student")  
+@Composable
+fun StudentList() {
+    val studentsState = remember { mutableStateListOf("Juan", "Victor", "Esther", "Jaime") }
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        for (student in studentsState) {
+            StudentText(name = student)
+        }
+        Button(
+            onClick = { studentsState.add("Miguel") },
+        ) {
+            Text(text = "Add new student")
         }
     }
 }
 ```
 
 Si activamos ahora el modo interactivo y pulsamos el botón añadir vemos cómo el nuevo elemento se añade de forma satisfactoria al final de la lista.
+
+# Bibliografía
+- https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
+- https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los argumentos de clases, muy util en Jetpack Compose
