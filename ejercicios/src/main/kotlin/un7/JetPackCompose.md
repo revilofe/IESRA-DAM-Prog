@@ -17,7 +17,7 @@ Las ventajas principales de Jetpack Compose son:
 
 ## Imperativa:
 
-Se define paso a paso la casuistica de la aplicación, es decir, cuando se pinta algo, cuando cambia de color, etc.... Se indica a través del código lo que tiene que hacer y como tiene que hacerlo.
+Se define paso a paso la casuística de la aplicación, es decir, cuando se pinta algo, cuando cambia de color, etc.... Se indica a través del código lo que tiene que hacer y como tiene que hacerlo.
 
 Manipular las vistas de forma manual
 
@@ -71,7 +71,7 @@ fun DefaultPreview() {
 }
 ```
 
-Recuerda intentar indicar en la sección de `@Preview` el mismo codigo que le pasas a la función `setContent`. De esta forma siempre podrás ver en la previsualización el contenido final de la pantalla.
+Recuerda intentar indicar en la sección de `@Preview` el mismo código que le pasas a la función `setContent`. De esta forma siempre podrás ver en la previsualización el contenido final de la pantalla.
 
 ```kotlin
 setContent {  
@@ -93,7 +93,7 @@ Jetpack Compose se basa en funciones "componibles". Estas funciones le permiten 
 
 ## Mostrar etiquetas:
 
-Como se puede observar en el codigo de abajo, la función `Greeting()` contiene un elemento  `Text()`, y esta también es una funcion etiquetada con `@Composable`.
+Como se puede observar en el código de abajo, la función `Greeting()` contiene un elemento  `Text()`, y esta también es una función etiquetada con `@Composable`.
 
 ```kotlin
 @Composable  
@@ -380,7 +380,7 @@ Jetpack Compose ya provee de estilos, llamados [Material Design](https://materia
 * `body`.
 * etc.
 
-Podemos aplicar un `style` de tipo `TextStyle` predefinido como por ejemplo `MaterialTheme.typography.h5` y sobrescribir algún parámetro concreto por ejempo el `fontWeight` haciendo uso de los valores ya predefinidos como `FontWeight.SemiBold`
+Podemos aplicar un `style` de tipo `TextStyle` predefinido como por ejemplo `MaterialTheme.typography.h5` y sobrescribir algún parámetro concreto por ejemplo el `fontWeight` haciendo uso de los valores ya predefinidos como `FontWeight.SemiBold`
 
 ```kotlin
 @Composable  
@@ -400,7 +400,7 @@ fun GreetingText(name: String) {
 
 El componente `Surface()` es un componente `@componsable` que representa un bloque de UI que podemos añadir a nuestra interfaz y que puede tener color, modificadores, etc. y contener otros componentes, en concreto uno, a través de una lamda.
 Si no le aplicamos modificadores no tendrá dimensiones y no podrá verse en la pantalla, por tanto aplicamos `fillMaxWidth()`.
-Este componente puede formar nuestro componente principal `MainScreen` `@componsable` en la que ir colocando otros componentes.
+Este componente puede formar nuestro componente principal `MainScreen` `@Composable` en la que ir colocando otros componentes.
 
 ```kotlin
 @Composable  
@@ -409,7 +409,7 @@ fun MainScreen() {
         color = Color.LightGray,  
         modifier = Modifier.fillMaxSize()  
     ) {
-        //Aquçi un componente
+        //Aquí un componente
     }  
 }
 ```
@@ -432,7 +432,7 @@ fun MainScreen() {
 }
 ```
 
-`Text()` utiliza el método `wrapContentSize()` como modificador que indica que use solo el espacio necesario para pintar su contenido, en este caso `Hi mates!`. `wrapContentSize()` aplicará una alineación automatica en `Surface()`, Alignment.Center, y situará el componente `Text()` en el centro del componente. Aunque esto se puede cambiar haciendo uso de la clase `Alignment`, ya que tiene multitud de valores para posicionar un componente dentro de su componente padre.
+`Text()` utiliza el método `wrapContentSize()` como modificador que indica que use solo el espacio necesario para pintar su contenido, en este caso `Hi mates!`. `wrapContentSize()` aplicará una alineación automática en `Surface()`, Alignment.Center, y situará el componente `Text()` en el centro del componente. Aunque esto se puede cambiar haciendo uso de la clase `Alignment`, ya que tiene multitud de valores para posicionar un componente dentro de su componente padre.
 
 También podemos anidar componentes `Surface()`.
 
@@ -640,7 +640,9 @@ fun MainScreen() {
     }
 }
 ```
+
 # Bibliografía
+
 - https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
 - https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los argumentos de clases, muy util en Jetpack Compose
 
@@ -746,7 +748,7 @@ El flujo de UI en Jetpack Compose puede pensarse como un bucle en el que se disp
 
 Este flujo de **Event - State** es unidireccional lo que proporciona ciertas ventajas como:
 
-* **Mayor testabilidad** : State está desacoplado de la UI, es muy fácil hacer tests de ambas partes de forma aislada.
+* **Mayor testeabilidad** : State está desacoplado de la UI, es muy fácil hacer tests de ambas partes de forma aislada.
 * **Mayor consistencia en la UI** : Este flujo obliga a que todos los **State** sean reflejados en la UI de forma continua eliminando las posibles inconsistencias entre los componentes visuales y los estados.
 
 ## Controlar State en una lista
@@ -841,5 +843,6 @@ fun StudentList() {
 Si activamos ahora el modo interactivo y pulsamos el botón añadir vemos cómo el nuevo elemento se añade de forma satisfactoria al final de la lista.
 
 # Bibliografía
+
 - https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
 - https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los argumentos de clases, muy util en Jetpack Compose
