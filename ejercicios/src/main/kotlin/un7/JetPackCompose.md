@@ -1465,10 +1465,12 @@ Un punto muy importante de esta función es la comprobación sobre si el sistema
 # Bibliografía
 
 - https://github.com/JetBrains/compose-jb/tree/master/tutorials - Tutorial sobre los principales componentes de **Jetpack Compose Desktop**
-- https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los  argumentos de clases, muy util en Jetpack Compose
-- https://medium.com/droid-latam/jetpack-compose-i-motivaci%C3%B3n-50e085543923 - Que es Jetpack Compose
-- https://medium.com/@facundomr/jetpack-compose-ii-funciones-composable-8d4d1d40ed44 - Funciones @Composables
-- https://medium.com/@facundomr/jetpack-compose-iii-flujo-de-datos-y-eventos-e62d5f8bce6f - Arquitectura de la IU, flujo de informacion y eventos.
+- https://www.tutorialesprogramacionya.com/composeya/ - Conceptos de compose
 - https://www.develou.com/category/android/ - Articulos sobre compose
 - https://www.develou.com/android-estado-en-compose/ - Estado en compose
 - https://github.com/jamesreve/android-jetpack-compose - Ejemplos de Jetpack compose
+- https://medium.com/droid-latam/jetpack-compose-i-motivaci%C3%B3n-50e085543923 - Que es Jetpack Compose
+- https://medium.com/@facundomr/jetpack-compose-ii-funciones-composable-8d4d1d40ed44 - Funciones @Composables
+- https://medium.com/@facundomr/jetpack-compose-iii-flujo-de-datos-y-eventos-e62d5f8bce6f - Arquitectura de la IU, flujo de informacion y eventos.
+- https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class - Plugin para rellenar los  argumentos de clases, muy util en Jetpack Compose
+
