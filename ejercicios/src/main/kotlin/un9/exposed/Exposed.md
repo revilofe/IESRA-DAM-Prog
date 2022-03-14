@@ -750,5 +750,6 @@ por Alessio Stalla[](https://www.baeldung.com/kotlin/author/alessio-stalla "Entr
 
 ## 10. Bibliografia
 
+- https://www.baeldung.com/kotlin/exposed-persistence
 - https://github.com/JetBrains/Exposed
 - https://github.com/JetBrains/Exposed/wiki
