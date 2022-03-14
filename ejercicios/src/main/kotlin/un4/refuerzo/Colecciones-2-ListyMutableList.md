@@ -289,4 +289,3 @@ println("La cantidad de personas mayores de edad es $cant")
      Agregar un nuevo empleado a la lista y calcular nuevamente el gasto en sueldos.
 180. Cargar por teclado y almacenar en una lista inmutable las alturas de 5 personas (valores Float)
      Obtener el promedio de las mismas. Contar cuántas personas son más altas que el promedio y cuántas más bajas.
-     Colecciones-List&MutableList.mdColecciones-List&MutableList.md

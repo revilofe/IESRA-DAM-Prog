@@ -83,11 +83,9 @@ val sueldos = IntArray(5)
 
 ### Acotaciones
 
-La [biblioteca estándar de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/index.html) contiene todas las clases
-básicas que se requieren para programar con este lenguaje organizado en paquetes.
+La [biblioteca estándar de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/index.html) contiene todas las clases básicas que se requieren para programar con este lenguaje organizado en paquetes.
 
-En el paquete [kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html) podemos identificar que se
-encuentra declarada la clase IntArray.
+En el paquete [kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html) podemos identificar que se encuentra declarada la clase IntArray.
 
 Las otras clases de arreglos que suministra Kotlin son:
 
@@ -357,4 +355,8 @@ for((indice, elemento) in arreglo.withIndex())
      (Definir dos for, en el primero realizar la carga y en el segundo proceder a analizar cada elemento)
 104. Realizar un programa que pida la carga de dos arreglos numéricos enteros de 4 elementos. Obtener la suma de los dos
      arreglos elemento a elemento, dicho resultado guardarlo en un tercer arreglo del mismo tamaño.
-     
+
+# Bibliografía
+
+* https://www.tutorialesprogramacionya.com/kotlinya/
+* https://www.tutorialesprogramacionya.com/kotlinya/detalleconcepto.php?punto=21&codigo=21

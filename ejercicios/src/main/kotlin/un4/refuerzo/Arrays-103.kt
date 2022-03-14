@@ -11,7 +11,7 @@ fun main(parametro: Array<String>) {
     var cantMayor50 = 0
     for(elemento in arreglo) {
         suma += elemento
-        if (elemento > 30)
+        if (elemento > 36)
             sumaMayor36 += elemento
         if (elemento > 50)
             cantMayor50++

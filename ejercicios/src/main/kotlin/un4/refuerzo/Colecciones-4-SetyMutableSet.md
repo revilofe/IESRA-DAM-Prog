@@ -159,4 +159,3 @@ else
      representa un cartón de lotería. Comenzar a generar valores aleatorios (comprendidos entre 1 y 5) todos distintos y
      detenerse cuando salgan todos los que contiene el cartón de lotería. Mostrar cuantos números tuvieron que sortearse
      hasta que se completó el cartón.
-

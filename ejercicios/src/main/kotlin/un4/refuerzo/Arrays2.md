@@ -110,7 +110,7 @@ for(per in personas)
 
 ```Kt
 data class Articulo(val codigo: Int, val descripcion: String, var precio: Float)
-  ```
+```
 
 Definir un Array con 4 elementos de tipo Articulo. Implementar dos funciones, una que le enviemos el Array y nos muestre
 todos sus componentes, y otra que también reciba el Array de artículos y proceda a aumentar en 10% a todos los
@@ -119,4 +119,3 @@ productos.
 146. Declarar una clase Dado que tenga como propiedad su valor y dos métodos que permitan tirar el dado e imprimir su
      valor. En la main definir un Array con 5 objetos de tipo Dado. Tirar los 5 dados e imprimir los valores de cada
      uno.
-
