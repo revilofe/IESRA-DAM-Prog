@@ -753,3 +753,5 @@ por Alessio Stalla[](https://www.baeldung.com/kotlin/author/alessio-stalla "Entr
 - https://www.baeldung.com/kotlin/exposed-persistence
 - https://github.com/JetBrains/Exposed
 - https://github.com/JetBrains/Exposed/wiki
+- https://www.youtube.com/watch?v=ip4pk1-GGYM
+- https://www.youtube.com/watch?v=ap9EhNXlaak
