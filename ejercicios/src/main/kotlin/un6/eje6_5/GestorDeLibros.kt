@@ -15,7 +15,7 @@ fun main() {
 
     val gestorDeLibros = gestionLibros(portatil)
     gestorDeLibros.preguntarPorUnLibro()
-    gestorDeLibros.mostrarInfoDeUnLibro()
+//    gestorDeLibros.mostrarInfoDeUnLibro()
 
 }
 
@@ -35,16 +35,16 @@ class gestionLibros(cargador:String)
         else
             println("El libro $idLibro NO existe!")
     }
-
+/*
     fun mostrarInfoDeUnLibro()
     {
         println("Introduzca un ID: ")
-        var idLibro = readln()
+        var idLibro = readLine()
         var infoLibro = cat.infoLibro(idLibro)
         if (!infoLibro.isEmpty())
             println("La información sobre es la siguiente\n$infoLibro")
         else
             println("No se encontró información sobre el libro")
     }
-
+*/
 }
