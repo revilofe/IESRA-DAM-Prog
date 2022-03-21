@@ -1,4 +1,4 @@
-package un7
+package un7.io.ejemplos
 
 import kotlinx.cli.*
 

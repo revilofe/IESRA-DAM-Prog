@@ -60,7 +60,7 @@ import java.io.File
 Esta clase permite manipular cualquier aspecto vinculado al sistema de ficheros. Su nombre ("archivo", en inglés) es un
 poco engañoso, ya que no se refiere exactamente a un archivo.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
 >
 > **La clase `File` representa una ruta dentro del sistema de archivos**
 
@@ -114,7 +114,7 @@ En los ejemplos empleados hasta el momento para crear objetos de la clase `File`
 la manera de dejar más claro a qué elemento dentro del sistema de archivos, ya sea archivo o carpeta, se está haciendo
 referencia.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
 >
 > Una **ruta absoluta** es aquella que **se refiere a un elemento a
 > partir del raíz** del sistema de ficheros.
@@ -155,7 +155,7 @@ cual no es muy cómodo.
 Para resolver este problema, a la hora de inicializar una variable de tipo `File`, también se puede hacer referencia a
 una ruta relativa.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
 >
 > Una **ruta relativa** es aquella que **no incluye el raíz** y por ello
 > se considera que**parte desde el directorio de trabajo **de la
@@ -576,7 +576,7 @@ proporciona una cadena vacía, se crea el archivo y no se escribe nada en él. D
 codificado como UTF-8. Pasar cualquier otro conjunto de caracteres como segundo argumento codifica el archivo en
 consecuencia.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
 >
 > En caso de que el archivo ya exista, se sobrescribe y los datos existentes se pierden
 
@@ -608,7 +608,7 @@ hemos pasado una cadena vacía, como dato a escribir en el archivo.
 `File.writeBytes()` crea un nuevo archivo si aún no existe y escribe los bytes del `ByteArray` proporcionado sin ningún
 formato. Si se proporciona un `ByteArray` vacío, se crea el archivo y no se escribe nada en él.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
 >
 > En caso de que el archivo ya exista, se sobrescribe y los datos existentes se pierden
 
@@ -979,7 +979,7 @@ de datos. La parte más importante es que estos valores **se almacenan en forma 
 tanto, como pronto veréis, la forma más habitual de tratar ficheros es **secuencialmente**, de forma parecida a como se
 hace para leerlas del teclado, mostrarlas por pantalla o recorrer las posiciones de un array.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
 >
 > Se denomina **acceso secuencial** al procesamiento de un conjunto de
 > elementos de manera que sólo es posible acceder a ella de acuerdo a su
@@ -989,7 +989,7 @@ hace para leerlas del teclado, mostrarlas por pantalla o recorrer las posiciones
 Kotlin, junto con otros lenguajes de programación, diferencia entre dos tipos de archivos según cómo se representan los
 valores almacenados en un archivo.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_e5d45b04953e17dd.png)
 >
 > En los **ficheros orientados a carácter** , los datos se
 > representan como una secuencia de cadenas de texto, donde cada valor se
@@ -1561,13 +1561,13 @@ fun main(args : Array<String>){
 
 El programa crea un objeto `FileOutputStream` y pasa el nombre del archivo a su constructor. Luego, el objeto `FileOutputStream` se pasa al constructor de `DataOutputStream`. Aplicamos la función `use()` para **garantizar que todos los recursos se liberen correctamente cuando hayamos terminado**. El archivo ahora está abierto para escritura en modo binario.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
 >
 > Aplicamos la función `use()` para **garantizar que todos los recursos se liberen correctamente cuando hayamos terminado**
 
 Cuando deseamos usar el mismo objeto repetidamente, podemos pasarlo a la función `with()`. En nuestro caso, tenemos la intención de seguir usando nuestro objeto `DataOutputStream`, por lo que en la línea 11, lo pasamos a la función `with()`. Dentro de la función `with()`, todas las llamadas a métodos apuntarán al objeto dos porque se proporcionó a `with()`.
 
-> ![](./../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
+> ![](../../../resources/img/un7/lu37016xc6sgf_tmp_4f43f86e4682ec35.png)
 >
 > Cuando deseamos usar un mismo objeto repetidamente, podemos pasarlo a la función `with()`. Cuan un objeto es pasado a la función `with()`, dentro de esta, **todas las llamadas a métodos apuntarán al objeto que se le ha pasado por parámetro**.
 

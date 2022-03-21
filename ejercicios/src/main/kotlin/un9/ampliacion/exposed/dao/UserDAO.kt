@@ -21,7 +21,7 @@ class UserDAO(id: EntityID<Int>) : IntEntity(id) {
     var age by UsersTable.age
 
     override fun toString(): String {
-        return "UserDAO(name='$name', city=${city.name}, age=$age)"
+        return "un9.jdbc.ejemplos.jdbcDAO.UserDAO(name='$name', city=${city.name}, age=$age)"
     }
 
 

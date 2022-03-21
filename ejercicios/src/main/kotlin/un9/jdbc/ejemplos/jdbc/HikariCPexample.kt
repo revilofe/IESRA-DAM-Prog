@@ -1,18 +1,22 @@
-import java.sql.DriverManager
+package un9.jdbc.ejemplos.jdbc
 
-// the model class
-data class User(val id: Int, val name: String)
+import com.zaxxer.hikari.HikariDataSource
 
-fun main() {
+fun main(){
+    // create a dataSource
+    val dataSource = HikariDataSource()
 
-    val jdbcUrl = "jdbc:postgresql://localhost:5555/example"
+    // set the jdbcUrl
+    dataSource.jdbcUrl = "jdbc:postgresql://localhost:5432/example"
 
-    // get the connection
-    val connection = DriverManager
-        .getConnection(jdbcUrl, "revilofe", "Boti")
+    // set the username
+    dataSource.username = "postgres"
 
-    // prints true if the connection is valid
-    println(connection.isValid(0))
+    // set the password
+    dataSource.password = "postgres"
+
+    // get a connection
+    val connection = dataSource.connection
 
     // the query is only prepared not executed
     val query = connection.prepareStatement("SELECT * FROM users")
@@ -37,9 +41,12 @@ fun main() {
          */
         users.add(User(id, name))
     }
+
     /*
     [User(id=1, name=Kohli), User(id=2, name=Rohit),
     User(id=3, name=Bumrah), User(id=4, name=Dhawan)]
      */
     println(users)
+
 }
+

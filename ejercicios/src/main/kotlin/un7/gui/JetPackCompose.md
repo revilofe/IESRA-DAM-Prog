@@ -741,7 +741,7 @@ En Jetpack Compose `State` es un componente más del propio componente composabl
 
 El flujo de UI en Jetpack Compose puede pensarse como un bucle en el que se dispara un evento que actualiza un `State`, por ejemplo, un click a un botón que desencadena la actualización de una lista. Este nuevo valor de `State` pasa por todo el árbol de la UI de elementos composables vinculados a ese `State`, es decir, que deben tener en cuenta los posibles valores de dicho `State` y actualizar la UI.
 
-.![image.png](./assets/image.png)
+.![image.png](assetsmage.png)
 
 Este flujo de **`Event` - `State`** es unidireccional lo que proporciona ciertas ventajas como:
 
@@ -1005,7 +1005,7 @@ El siguiente objetivo es evitar que nuestras vistas (`Fragments` y `Activities`)
 * En resumen, la vista podrá recibir actualizaciones del estado de UI desde el `ViewModel`.
 * En esta arquitectura, la vista no pregunta por el estado de la UI al `ViewModel` continuamente. Tiene la posibilidad de subscribirse al componente `LiveData` dentro de `ViewModel`
 
-![image.png](./assets/1646405734783-image.png)
+![image.png](assets646405734783-image.png)
 
 ### `LiveData`
 
@@ -1015,7 +1015,7 @@ El siguiente objetivo es evitar que nuestras vistas (`Fragments` y `Activities`)
 * Si se produce un evento y el `State` relacionado con el componente `LiveData` cambia, los `Fragments` y `Activities` suscritos a él serán notificados al mismo tiempo.
 * `LiveData` está pendiente del ciclo de vida de `Fragments` y `Activities`. Si estos van a un estado `onDestroy` el componente `LiveData` cierra y destruye la conexión con ellos automáticamente.
 
-![image.png](./assets/1646405775503-image.png)
+![image.png](assets646405775503-image.png)
 
 ## `State` en `ViewModel`
 

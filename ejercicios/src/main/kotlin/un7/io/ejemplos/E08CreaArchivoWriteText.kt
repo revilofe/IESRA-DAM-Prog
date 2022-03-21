@@ -1,4 +1,4 @@
-package un7
+package un7.io.ejemplos
 
 import java.io.File
 
@@ -9,5 +9,6 @@ fun main(args: Array<String>) {
     var file = File(fileName)
 
     // create a new file
-    file.writeBytes(ByteArray(0))
+    file.writeText("")
+
 }

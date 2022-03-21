@@ -1,20 +1,17 @@
-import com.zaxxer.hikari.HikariDataSource
+package un9.jdbc.ejemplos.jdbc
 
-fun main(){
-    // create a dataSource
-    val dataSource = HikariDataSource()
+import java.sql.DriverManager
 
-    // set the jdbcUrl
-    dataSource.jdbcUrl = "jdbc:postgresql://localhost:5432/example"
+fun main() {
 
-    // set the username
-    dataSource.username = "postgres"
+    val jdbcUrl = "jdbc:postgresql://localhost:5555/example"
 
-    // set the password
-    dataSource.password = "postgres"
+    // get the connection
+    val connection = DriverManager
+        .getConnection(jdbcUrl, "revilofe", "Boti")
 
-    // get a connection
-    val connection = dataSource.connection
+    // prints true if the connection is valid
+    println(connection.isValid(0))
 
     // the query is only prepared not executed
     val query = connection.prepareStatement("SELECT * FROM users")
@@ -39,11 +36,9 @@ fun main(){
          */
         users.add(User(id, name))
     }
-
     /*
     [User(id=1, name=Kohli), User(id=2, name=Rohit),
     User(id=3, name=Bumrah), User(id=4, name=Dhawan)]
      */
     println(users)
-
 }
