@@ -5,11 +5,11 @@ data class User(val id: Int, val name: String)
 
 fun main() {
 
-    val jdbcUrl = "jdbc:postgresql://localhost:5432/example"
+    val jdbcUrl = "jdbc:postgresql://localhost:5555/example"
 
     // get the connection
     val connection = DriverManager
-        .getConnection(jdbcUrl, "postgres", "postgres")
+        .getConnection(jdbcUrl, "revilofe", "Boti")
 
     // prints true if the connection is valid
     println(connection.isValid(0))
