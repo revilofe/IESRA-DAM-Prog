@@ -26,21 +26,21 @@ fun main() {
             // Insertamos 4 usuarios
             repeat(4)
             {
-                h2DAO.insertUser(MyUser(name = "Edu", email = "falto", country = "spain"))
+                h2DAO.insert(MyUser(name = "Edu", email = "falto", country = "spain"))
             }  // Buscar un usuario
-            var u = h2DAO.selectUser(1)
+            var u = h2DAO.selectById(1)
 
             // Actualizar un usuario
             if (u!=null)
             {
                 u.name = "Nuevo usuario"
-                h2DAO.updateUser(u)
+                h2DAO.update(u)
             }
             // Borrar un usuario
-            h2DAO.deleteUser(2)
+            h2DAO.deleteById(2)
 
             // Seleccionar todos los usuarios
-            println(h2DAO.selectAllUsers())
+            println(h2DAO.selectAll())
         }
     } else
         println("Conexión ERROR")
@@ -129,7 +129,7 @@ class UserDAO(private val c: Connection) {
         }
     }
 
-    fun insertUser(user: MyUser) {
+    fun insert(user: MyUser) {
         println(INSERT_USERS_SQL)
         // try-with-resource statement will auto close the connection.
         try {
@@ -147,7 +147,7 @@ class UserDAO(private val c: Connection) {
         }
     }
 
-    fun selectUser(id: Int): MyUser? {
+    fun selectById(id: Int): MyUser? {
         var user: MyUser? = null
         // Step 1: Establishing a Connection
         try {
@@ -172,7 +172,7 @@ class UserDAO(private val c: Connection) {
         return user
     }
 
-    fun selectAllUsers(): List<MyUser> {
+    fun selectAll(): List<MyUser> {
 
         // using try-with-resources to avoid closing resources (boiler plate code)
         val users: MutableList<MyUser> = ArrayList()
@@ -199,7 +199,7 @@ class UserDAO(private val c: Connection) {
         return users
     }
 
-    fun deleteUser(id: Int): Boolean {
+    fun deleteById(id: Int): Boolean {
         var rowDeleted = false
 
         try {
@@ -215,7 +215,7 @@ class UserDAO(private val c: Connection) {
         return rowDeleted
     }
 
-    fun updateUser(user: MyUser): Boolean {
+    fun update(user: MyUser): Boolean {
         var rowUpdated = false
 
         try {
