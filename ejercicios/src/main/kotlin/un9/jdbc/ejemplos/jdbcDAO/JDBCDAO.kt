@@ -17,8 +17,23 @@ fun main() {
     if (c.connection.isValid(10)) {
         println("Conexión válida")
 
+        // Deshabilito el autoCommit. Si no, tengo que quitar los commit()
+        c.connection.autoCommit = false
+
+        // Uso la conexión. De esta manera cierra la conexión cuando termine el bloque
         c.connection.use {
-            val h2DAO = UserDAO(c.connection)
+
+            // Me creo mi objeto DAO (Data Access Object), el cual sabe acceder a los ç
+            // datos de la tabla USER. Necesita la conexión (it) para poder acceder a la
+            // base de datos.
+            // El objeto DAO va a tener todos los metodos necesarios para trabajar con
+            // la tabla USER, y devolverá entidades MyUser.
+            // Fuera de este objeto no debería hablarse de nada relacioando con la base
+            // de datos.
+            // Los objetos MyUser, tambien llamados entidades, se llaman
+            // Objetos TO (Transfer Object) porque son objetos que transfieren datos.
+            // desde la base de datos hasta las capas de logica de negocio y presentación.
+            val h2DAO = UserDAO(it)
 
             // Creamos la tabla o la vaciamos si ya existe
             h2DAO.prepareTable()
@@ -30,7 +45,8 @@ fun main() {
             }  // Buscar un usuario
             var u = h2DAO.selectById(1)
 
-            // Actualizar un usuario
+            // Si ha conseguido el usuario, por tanto no es nulo, entonces
+            // actualizar el usuario
             if (u!=null)
             {
                 u.name = "Nuevo usuario"
@@ -47,21 +63,22 @@ fun main() {
 }
 
 /**
- * AbstractDAO.java This DAO class provides CRUD database operations for the
- * table users in the database.
+ * Connection builder construye una conexión
  *
- * @author edu
+ * @constructor Create empty Connection builder
  */
-
 class ConnectionBuilder {
     // TODO Auto-generated catch block
     lateinit var connection: Connection
+
+    // La URL de conexión. Tendremos que cambiarsa según el SGBD que se use.
     private val jdbcURL = "jdbc:h2:mem:default"
     private val jdbcUsername = ""
     private val jdbcPassword = ""
 
     init {
         try {
+            // Aqui construimos la conexión
             connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword)
         } catch (e: SQLException) {
             // TODO Auto-generated catch block
@@ -71,12 +88,29 @@ class ConnectionBuilder {
             e.printStackTrace()
         }
     }
+    // Si termina sin excepción, habrá creado la conexión.
 
 }
 
+/**
+ * UserDAO.java This DAO class provides CRUD database operations for the
+ * table users in the database.
+ *
+ * @property c una conexión
+ * @constructor Create empty UserDAO
+ *
+ * @author edu
+ */
 
 class UserDAO(private val c: Connection) {
 
+    // En el companion object creamos todas las constantes.
+    // Las constante definirán las plantillas de las sentencias que necesitamos para construir
+    // los selects, inserts, deletes, updates.
+
+    // En aquellos casos en donde necesitemos insertar un parametro, pondremos un ?
+    // Luego lo sistituiremos llamando a métodos setX, donde X será (Int, String, ...)
+    // dependiendo del tiempo de dato que corresponda.
     companion object {
         private const val SCHEMA = "default"
         private const val TABLE = "USERS"
@@ -93,9 +127,12 @@ class UserDAO(private val c: Connection) {
 
     fun prepareTable() {
         val metaData = c.metaData
+
+        // Consulto en el esquema (Catalogo) la existencia de la TABLE
         val rs = metaData.getTables(null, SCHEMA, TABLE, null)
 
-        if (!rs.next()) createTable() else truncateTable()
+        // Si en rs hay resultados, borra la tabla con truncate, sino la crea
+        if (rs.next())  truncateTable() else createTable()
     }
 
     private fun truncateTable() {
@@ -129,6 +166,21 @@ class UserDAO(private val c: Connection) {
         }
     }
 
+    /**
+     * Insert Inserta un objeto MyUser en la base de datos.
+     * El proceso siempre es el mismo:
+     *      Haciendo uso de la conexión, prepara una Statement pasandole la sentencia que se va a ejecutar
+     *      en este caso, INSERT_USERS_SQL
+     *      A la Statement devuelta se le aplica use
+     *          Establecemos los valores por cada ? que existan en la plantilla.
+     *          En este caso son 3, pq en INSERT_USERS_SQL hay tres ?
+     *          Los indices tienen que ir en el mismo orden en el que aparecen
+     *
+     *          Finalmente, se ejecuta la Statement
+     *          Se llama a commit.
+     *
+     * @param user
+     */
     fun insert(user: MyUser) {
         println(INSERT_USERS_SQL)
         // try-with-resource statement will auto close the connection.
@@ -149,15 +201,18 @@ class UserDAO(private val c: Connection) {
 
     fun selectById(id: Int): MyUser? {
         var user: MyUser? = null
-        // Step 1: Establishing a Connection
+        // Step 1: Preparamos la Statement, asignado los valores a los indices
+        //          en función de las ? que existen en la plantilla
         try {
             c.prepareStatement(SELECT_USER_BY_ID).use { st ->
                 st.setInt(1, id)
                 println(st)
-                // Step 3: Execute the query or update query
+                // Step 3: Ejecuta la Statement
                 val rs = st.executeQuery()
 
-                // Step 4: Process the ResultSet object.
+                // Step 4: Procesamos el objeto ResultSet (rs), mientras tenga valores.
+                //          En este caso, si hay valores, tendrá un unico valor, puesto
+                //          que estamos buscando por el ID, que es la clave primaria.
                 while (rs.next()) {
                     val name = rs.getString("name")
                     val email = rs.getString("email")
