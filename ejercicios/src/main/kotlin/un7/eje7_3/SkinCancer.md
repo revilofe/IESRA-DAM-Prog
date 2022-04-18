@@ -1,28 +1,40 @@
-Skin Cancer
-9 points
-Introduction
-Computer vision is a broad field that will increase in the coming years. Automated disease
-diagnosis will also be an important field. Today we will merge both, making an algorithm that
-diagnoses skin cancer. For this purpose, the algorithm has to evaluate the average of the values
-obtained and their standard deviation (stdev).
-Remember that the standard deviation formula is:
-where xi = {x1, x2, x3, ...} are the observed values of the sample items, x̅ is the mean value of these
-observations, and N is the number of observations in the sample.
-Your algorithm will be feed with images from a microscope composed by an array of 5x5 grayscale
-pixels. (0: means a dark pixel and 255: a white one).
-On this simple detector, we can consider a skin cancer if 40 ≤ average ≤ 80 and stdev ≥10. If stdev
-is lower it's a benign skin mole (benign is a medical term to indicate non-hazardous).
-It is also considered a benign skin mole if 80 < average ≤ 230. Independent of stdev.
-And microscope calibration is needed when: average < 40 or average > 230. Independent of stdev.
-HINT: perform all operations as
-floats.
-Input
-The input consists of one line of 25 integers separated by spaces.
-Output
-Print out one of the following outputs classification:
-•
-Skin cancer
-30CODEWARS 2021
-SPAIN Virtual Edition
-• Benign skin mole
-• Recalibrate microscope
+# (16) Cáncer de piel 
+
+## Introducción 
+La visión artificial es un campo amplio que se incrementará en los próximos años. El diagnóstico automatizado de enfermedades también será un campo importante. Hoy fusionaremos ambos, creando un algoritmo que diagnostique el cáncer de piel. 
+
+Para ello, el algoritmo tiene que evaluar la media de los valores obtenidos y su desviación estándar (stdev). Recuerde que la fórmula de desviación estándar es: 
+
+![img.png](img.png)
+
+donde:
+`xi = {x1, x2, x3, ...}` son los valores observados de los elementos de la muestra, 
+`x̅` es el valor medio de estas observaciones
+`N` es el número de observaciones en la muestra. 
+
+Su algoritmo se alimentará con imágenes de un microscopio compuesto por una matriz de píxeles de escala de grises de `5x5`. 
+- 0: significa un píxel oscuro 
+- 255: uno blanco. 
+  
+En este detector simple, podemos considerar:
+- Un **cáncer de piel** si `40 ≤ promedio ≤ 80` y `stdev ≥10`.  Si `stdev` es más bajo, es un **lunar cutáneo benigno** de la piel (benigno es un término médico para indicar que no es peligroso). 
+- También se considera un **lunar cutáneo benigno** si `80 < promedio ≤ 230`. Independiente de la desviación estándar. 
+- La **calibración del microscopio** es necesaria cuando: `promedio < 40 o promedio > 230`. Independiente de la desviación estándar. 
+  
+> SUGERENCIA: realice todas las operaciones como flotantes.  
+
+## Entrada 
+
+- El nombre de archivo se pasará por línea de comandos: `$ battleRoyal test-1.in`
+- La entrada consta de una línea de 25 enteros separados por espacios. 
+
+## Salida 
+- La salida será en un archivo con el mismo nombre que el de entrada, pero con la extensión `ans`: `test-1.ans`
+- Imprimir una de las siguientes clasificaciones de salida: 
+    - Cáncer de piel 
+    - Lunar de piel benigno 
+    - Recalibrar microscopio 
+
+## Ejemplos
+
+![img_1.png](img_1.png)
