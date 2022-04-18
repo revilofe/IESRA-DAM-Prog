@@ -1,35 +1,50 @@
-#The Battle Royal Game
-## Introduction
-You work in the development of a new battle royal game.
-The players will fight each other inside a fixed map size, but every 10 minutes the size of the map
-gets reduced and any player outside the limits will lose the game.
-You have been requested to develop a small prototype to check how the map limits will work.
-HINT:
-The map is defined NxN
-The valid player's positions go from 0 to N-1
-Note that the map gets reduced by all sides! (top, bottom, right, left) and that players
-do not move from their positions
-Here's an example.
-Input
-The input will be:
-•
-The size of the map given as maximum rows and columns (only squares are valid
-3x3,4x4,5x5 etc).
-25CODEWARS 2021
-SPAIN Virtual Edition
-• The match time in minutes in which we want to evaluate the number of players remaining.
-• Several positions on the map, representing the player's position at the beginning of the
-match. (T=0 min)
-The process should stop reading player's position when the program finds the character '#'.
-4 4
-15
-1 2
+# El juego Battle Royal.
+
+## Introducción
+Trabajas en el desarrollo de un nuevo juego Battle Royal. 
+
+Los jugadores lucharán entre sí dentro de un tablero fijo, pero cada 10 minutos el tamaño del mapa se reduce y cualquier jugador fuera de los límites perderá el juego.
+
+Se te pide que desarrolles un pequeño prototipo de esa funcionalidad para comprobar cómo funcionarán los límites del mapa. 
+
+> **PISTA**: El mapa se define NxN.
+> 
+> Las posiciones válidas de los jugadores van de 0 a N-1 
+> 
+>¡Observe que el mapa se reduce por todos lados! (arriba, abajo, derecha, izquierda) y que los jugadores no se muevan de sus posiciones 
+ 
+Aquí tienes un ejemplo:
+
+![img.png](img.png)
+
+## Entrada 
+
+La entrada será: 
+- El nombre de archivo se pasará por linea de comandos: `$ battleRoyal test-1.in`
+- El tamaño del tablero, referente al máximo de filas y columnas (sólo los cuadrados son válidos 3x3,4x4,5x5 etc).
+- El tiempo de partida,  en minutos, en el que queremos evaluar el número de jugadores restantes.
+- Varias posiciones en el mapa, representando la posición del jugador al comienzo del partido. (T=0 min) 
+  
+El proceso debería dejar de leer posiciones de jugador cuando el programa encuentra el carácter '#'. 
+
+### Ejemplo de entrada
+```
+4 4 
+15 
+1 2 
 3 3
-#
-In this example the first line describes that this is a 4x4 map.
-The second line refers to 15 minutes from the start of the match.
-The third line provides the position of a player on row 1 and column 2.
-At the fourth line another player position is set on row 3 and column 3.
-Finally the character '#' marks stop reading input file.
-Output
-The output will be the number of players that remain in the match at that specific point in time.
+```
+
+En este ejemplo, la primera línea describe que se trata de un mapa 4x4. 
+La segunda línea se refiere a que se evaluará 15 minutos desde el inicio del partido. 
+La tercera línea proporciona la posición de un jugador en la fila 1 y la columna 2. 
+En la cuarta línea se establece otra posición de jugador en la fila 3 y la columna 3. 
+Finalmente, el carácter '#' marca detener la lectura del archivo de entrada. 
+
+## Salida
+
+- La salida será en un archivo con el mismo nombre que el de entrada, pero con la extensión `ans`: `test-1.ans`  
+- La salida será el número de jugadores que permanecen vivos en el partida en ese momento específico.
+
+## Ejemplos 
+![img_1.png](img_1.png)
