@@ -85,13 +85,11 @@ COMMIT;
 
 ## 2. Evaluación
 
-Desarrollo de los objetos DAO para acceder a TIENDAS e INVENTARIOS
-
-Dado que el dólar se ha encontrado en su valor máximo histórico en el país, los proveedores han incrementado un 15% el
+- Desarrollo de los objetos DAO para acceder a TIENDAS e INVENTARIOS
+- Dado que el dólar se ha encontrado en su valor máximo histórico en el país, los proveedores han incrementado un 15% el
 valor de cada producto. Por lo que los gerentes de ventas han solicitado al Administrador de Base de Datos incrementar
 un 15% el precio de los productos que cuyo valor sea mayor a $2,000.00 pesos.
-
-Moder mostrar las tiendas, y los inventarios por tiendas.
+- Poder mostrar las tiendas, y los inventarios por tiendas.
 
 ### 2.1. Otros puntos de evaluación
 
@@ -106,11 +104,8 @@ Adicionalmente se tendrá en cuenta:
 
 ## 4. Condiciones de entrega
 
-Se entrega la URL al repositorio, el repositorio será:
-
-- **privado**
-- Compartido conmigo.
-- El nombre del repositorio será `DAM1_id_iniciales` donde:
+- Uso de la base de datos h2
+- Se entrega la URL al repositorio, el repositorio será: El nombre del repositorio será `DAM1_id_iniciales` donde:
     - `id`: es el ide de la actividad, por ejemplo 9_3
     - `iniciales': son tus iniciales por ejemplo EFO las mías.
 
