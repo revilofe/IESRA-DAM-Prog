@@ -10,7 +10,7 @@ se va a acceder a través de 2 métodos:
 - `fun preguntarPorUnLibro()`
 - `fun mostrarInfoDeUnLibro()`
 
-### a) Inversión de dependencias sobre el acceso a los datos. (40%)
+### a) Inversión de dependencias sobre el acceso a los datos.
 
 Esta clase utiliza internamente una clase sobre la que delega el acceso a un fichero XML. Nuestro cliente nos solicita
 que realicemos un diseño de forma que podamos intercambiar la clase que accede a los datos haciendo uso de otros
@@ -19,7 +19,7 @@ formatos. (JSON, BBDD, etc.)
 Para implementar esta funcionalidad, haremos uso del principio de inversión de dependencia visto en clase, de forma que
 podamos utilizar un método u otro (una clase u otra) sin necesidad de modificar la lógica de la clase `GestorDeLibros`.
 
-### b) Inversión de dependencias sobre la interface (60%)
+### b) Inversión de dependencias sobre la interface
 
 Aplicando DIP crea la estructura de clases que consideres necesaria para desacoplar en `GestorDeLibros` la parte del acceso a teclado y
 pantalla, a través del uso de una clase `GestorDeLibrosIUT1` que se encargue de este trabajo, es decir, solicitar la información
