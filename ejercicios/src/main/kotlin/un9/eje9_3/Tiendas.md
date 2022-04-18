@@ -93,7 +93,7 @@ un 15% el precio de los productos que cuyo valor sea mayor a $2,000.00 pesos.
 
 Moder mostrar las tiendas, y los inventarios por tiendas.
 
-## 3. Evaluación
+### 2.1. Otros puntos de evaluación
 
 Se tendrá en cuenta el uso de superclases, interfaces, clases abstractas, el uso de jerarquía de clases ya conocidas y
 que nos las proporcionan kotlin, como por ejemplo List, Map, Set. etc.
